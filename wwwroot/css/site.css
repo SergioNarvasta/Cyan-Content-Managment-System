@@ -194,7 +194,7 @@ body {
         position: relative;
     }
 
-#auspicio {
+#projects {
     width: 100%;
     height: 280px;
     background: #0065b3;
@@ -217,12 +217,12 @@ body {
     justify-content: space-around;
 }
 
-#auspicio .unjfsc .spinout .innova .SM1551 {
+#projects .unjfsc .spinout .innova .SM1551 {
     width: 160px;
     height: 160px;
 }
 
-#auspicio .def {
+#projects .def {
     width: 1000px;
     height: 50px;
     display: -webkit-flex;
