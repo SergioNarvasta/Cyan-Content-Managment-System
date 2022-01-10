@@ -237,19 +237,11 @@ body {
     text-align: center;
 }
 /* -----------------------footer--------------------------- */
-#footer-page {
-    width: 100%;
-    height: 300px;
-    position: relative;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+#footer {
     display: flex;
     background: #1d262d;
-    justify-content: space-around;
-    font-family: 'segoe UI';
 }
-
-    #footer-page .ft-1 {
+ #footer .ft-1 {
         width: 20%;
         height: 150px;
         margin-top: 25px;
@@ -266,7 +258,7 @@ body {
     transition: 300ms;
 }
 
-#footer-page .ft-2 {
+#footer .ft-2 {
     width: 20%;
     height: 180px;
     margin-top: 25px;
@@ -287,7 +279,7 @@ body {
         transform: scale(1.05);
     }
 
-#footer-page .ft-3 {
+#footer .ft-3 {
     width: 20%;
     height: 200px;
     margin-top: 25px;
@@ -308,7 +300,7 @@ body {
         transform: scale(1.05);
     }
 
-#footer-page .ft-4 {
+#footer .ft-4 {
     width: 20%;
     height: 100px;
     margin-top: 25px;
