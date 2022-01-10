@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CK9wEQ/pValf2TazUrLftk/tUKJvJc4blqm/+fkKZDbcdhTfU77QB+s5Ku5bPOVtk9cnaz/2xUu0W90YpAD7bw==",
+  "success": true,
+  "projectFilePath": "D:\\PROYECTOS\\Briefcase .Net 5.0\\Briefcase2\\Briefcase2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512"
+  ],
+  "logs": []
+}
