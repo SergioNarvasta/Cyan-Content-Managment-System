@@ -29,7 +29,7 @@ a {
 html {
   font-size: 14px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1008px) {
   html {
     font-size: 16px;
   }
@@ -55,7 +55,7 @@ button.accept-policy {
 -------------------------------------------------- */
 html {
   position: relative;
-  min-height: 100%;
+  min-height: 150%;
 }
 
 body {
@@ -110,7 +110,7 @@ body {
 
 #Niveles {
     width: 80%;
-    height: 430px;
+    height: 330px;
     text-align: center;
     font-family: 'segoe UI';
     font-size: 30px;
@@ -130,7 +130,7 @@ body {
 
     #Niveles .Niv-Basico {
         width: 270px;
-        height: 400px;
+        height: 300px;
         background: linear-gradient(to top, #0000FF 0%, #00CED1 100%);
         border-radius: 30px;
         float: left;
@@ -150,7 +150,7 @@ body {
 
     #Niveles .Niv-Intermedio {
         width: 260px;
-        height: 400px;
+        height: 300px;
         background: linear-gradient(to top, #FFFF00 0%, #00FF00 100%);
         border-radius: 30px;
         float: left;
@@ -170,7 +170,7 @@ body {
 
     #Niveles .Niv-Avanzado {
         width: 270px;
-        height: 400px;
+        height: 300px;
         background: linear-gradient(to top, #DA70D6 0%, #800080 100%);
         border-radius: 30px;
         float: left;
@@ -240,12 +240,15 @@ body {
 #footer {
     display: flex;
     background: #1d262d;
+    justify-content: space-around;
+    height:150px;
+    align-self:flex-end;
 }
  #footer .ft-1 {
         width: 20%;
-        height: 150px;
-        margin-top: 25px;
+        height: 100px;
         cursor: pointer;
+        
     }
 
 .ft-1 p {
@@ -259,36 +262,25 @@ body {
 }
 
 #footer .ft-2 {
-    width: 20%;
-    height: 180px;
-    margin-top: 25px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
+
 }
 
 .ft-2 a {
     color: #869fb2;
-    font-size: 18px;
+    font-size: 14px;
     text-decoration: none;
 }
-
     .ft-2 a:hover {
         color: white;
         transform: scale(1.05);
     }
-
 #footer .ft-3 {
-    width: 20%;
-    height: 100px;
-    margin-top: 25px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
+    grid-gap: -10px;
 }
-
 .ft-3 p {
     color: white;
     font-size: 14px;
@@ -297,13 +289,24 @@ body {
 
 .ft-3 a {
     color: #869fb2;
-    font-size: 18px;
+    font-size: 14px;
     text-decoration: none;
 }
- .ft-3 a:hover {
+    .ft-3 a:hover {
         color: white;
         transform: scale(1.05);
     }
+.ft-3 p {
+    color: #869fb2;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.ft-3 p:hover {
+    color: white;
+    transform: scale(1.05);
+}
+ 
 
 
 
