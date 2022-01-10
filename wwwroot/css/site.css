@@ -281,27 +281,6 @@ body {
 
 #footer .ft-3 {
     width: 20%;
-    height: 200px;
-    margin-top: 25px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-}
-
-.ft-3 a {
-    color: #869fb2;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-    .ft-3 a:hover {
-        color: white;
-        transform: scale(1.05);
-    }
-
-#footer .ft-4 {
-    width: 20%;
     height: 100px;
     margin-top: 25px;
     display: -webkit-flex;
@@ -310,19 +289,18 @@ body {
     flex-direction: column;
 }
 
-.ft-4 p {
+.ft-3 p {
     color: white;
     font-size: 14px;
     text-decoration: none;
 }
 
-.ft-4 a {
+.ft-3 a {
     color: #869fb2;
     font-size: 18px;
     text-decoration: none;
 }
-
-    .ft-4 a:hover {
+ .ft-3 a:hover {
         color: white;
         transform: scale(1.05);
     }
