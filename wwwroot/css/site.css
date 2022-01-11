@@ -280,11 +280,11 @@ body {
    justify-content:space-evenly;
 }
 /* -----------------------Certificates--------------------------- */
-#Certi{
+#Certif{
     width: 600px;
-    height: 400px;
-    align-items:center;
-    border: 2px solid blue;
+    height: 405px;
+    display:flex;
+    margin-left:20%;
 }
 /* -----------------------footer--------------------------- */
 #footer {
