@@ -279,8 +279,13 @@ body {
    display:flex;
    justify-content:space-evenly;
 }
-
-
+/* -----------------------Certificates--------------------------- */
+#Certi{
+    width: 600px;
+    height: 400px;
+    align-items:center;
+    border: 2px solid blue;
+}
 /* -----------------------footer--------------------------- */
 #footer {
     display: flex;
