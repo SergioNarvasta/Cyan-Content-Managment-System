@@ -247,9 +247,21 @@ body {
     color:white;
     font-size:20px;
 }
-#Projects{
-gap:10px 30px;
-
+#Projects {
+ display:flex;
+ align-content:flex-start;
+ background:orange;
+}
+.Project1 {
+    width: 350px;
+    height: 280px;
+    border: 1px solid black;
+    background: linear-gradient(to top, #0000FF 0%, #00CED1 100%);
+    border-radius: 20px;
+    text-align:center;
+}
+.Project1 p,h8{
+    color:white;
 }
 
 
