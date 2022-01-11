@@ -241,27 +241,39 @@ body {
     text-align:center;
     background-color: #0065b3;
     width:100%;
-    height: 60px;
+    height: 80px;
+    margin-top:-20px;
 }
 .title p{
     color:white;
-    font-size:20px;
+    font-size:24px;
+    margin-top:0px;
+
 }
 #Projects {
- display:flex;
- align-content:flex-start;
- background:orange;
+
+
+
 }
-.Project1 {
+.Project {
     width: 350px;
     height: 280px;
     border: 1px solid black;
     background: linear-gradient(to top, #0000FF 0%, #00CED1 100%);
     border-radius: 20px;
-    text-align:center;
+    text-align: center;
+    cursor: pointer;
+    margin-top:10px;
+    margin-right:10px;
+    margin-left:10px;
+    margin-bottom:10px;
 }
 .Project1 p,h8{
     color:white;
+}
+.caja{
+   display:flex;
+   justify-content:space-evenly;
 }
 
 
