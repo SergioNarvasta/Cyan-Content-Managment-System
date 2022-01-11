@@ -69,7 +69,7 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
-/* -------------------------------------------------- */
+/* ------------------Index-------------------------------- */
 #welcome {
     width: 100%;
     height: 240px;
@@ -236,6 +236,23 @@ body {
 .def p {
     text-align: center;
 }
+/* ------------------Section projects-------------------------------- */
+.title {
+    text-align:center;
+    background-color: #0065b3;
+    width:100%;
+    height: 60px;
+}
+.title p{
+    color:white;
+    font-size:20px;
+}
+#Projects{
+gap:10px 30px;
+
+}
+
+
 /* -----------------------footer--------------------------- */
 #footer {
     display: flex;
