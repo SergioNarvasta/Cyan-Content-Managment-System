@@ -110,7 +110,7 @@ body {
 
 #Niveles {
     width: 80%;
-    height: 330px;
+    height: 230px;
     text-align: center;
     font-family: 'segoe UI';
     font-size: 30px;
@@ -130,7 +130,7 @@ body {
 
     #Niveles .Niv-Basico {
         width: 270px;
-        height: 300px;
+        height: 200px;
         background: linear-gradient(to top, #0000FF 0%, #00CED1 100%);
         border-radius: 30px;
         float: left;
@@ -150,7 +150,7 @@ body {
 
     #Niveles .Niv-Intermedio {
         width: 260px;
-        height: 300px;
+        height: 200px;
         background: linear-gradient(to top, #FFFF00 0%, #00FF00 100%);
         border-radius: 30px;
         float: left;
@@ -170,7 +170,7 @@ body {
 
     #Niveles .Niv-Avanzado {
         width: 270px;
-        height: 300px;
+        height: 200px;
         background: linear-gradient(to top, #DA70D6 0%, #800080 100%);
         border-radius: 30px;
         float: left;
@@ -241,19 +241,17 @@ body {
     display: flex;
     background: #1d262d;
     justify-content: space-around;
-    height:150px;
-    align-self:flex-end;
+    height:240px;   
 }
  #footer .ft-1 {
-        width: 20%;
-        height: 100px;
+       
         cursor: pointer;
-        
-    }
+        align-items: flex-start;
+ }
 
 .ft-1 p {
     color: #869fb2;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .ft-1 img:hover {
@@ -269,8 +267,9 @@ body {
 
 .ft-2 a {
     color: #869fb2;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
+    align-items: flex-end;
 }
     .ft-2 a:hover {
         color: white;
@@ -279,33 +278,19 @@ body {
 #footer .ft-3 {
     display: flex;
     flex-direction: column;
-    grid-gap: -10px;
+    align-items: center;
+    column-gap: 0.1px;
 }
-.ft-3 p {
-    color: white;
-    font-size: 14px;
-    text-decoration: none;
-}
-
 .ft-3 a {
     color: #869fb2;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
 }
     .ft-3 a:hover {
         color: white;
         transform: scale(1.05);
     }
-.ft-3 p {
-    color: #869fb2;
-    font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-}
-.ft-3 p:hover {
-    color: white;
-    transform: scale(1.05);
-}
+
  
 
 
