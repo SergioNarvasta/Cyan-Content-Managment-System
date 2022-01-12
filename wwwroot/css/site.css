@@ -287,12 +287,30 @@ body {
     text-align:center;
     margin-top: -20px;
 }
+.titlecert p{color:white; font-size:18px;}
 
 #Certif{
     width: 600px;
     height: 405px;
     display:flex;
     margin-left:20%;
+    margin-top:20px;
+}
+#caja-cert{
+   display:flex;
+   gap:10px 30px;
+   width:100%;
+   
+}
+.cert{
+
+}
+.cert-desc{
+    width:300px;
+    height:200px;
+   display:flex;
+   flex-direction:column;
+
 }
 /* -----------------------footer--------------------------- */
 #footer {
