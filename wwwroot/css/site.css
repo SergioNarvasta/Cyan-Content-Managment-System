@@ -241,12 +241,12 @@ body {
     text-align: center;
     background-color: #0065b3;
     width: 100%;
-    height: 100px;
+    height: 110px;
     margin-top: -20px;
 }
 .titleproj p{
     color:white;
-    font-size:24px;
+    font-size:20px;
     margin-top:0px;
 
 }
@@ -282,12 +282,12 @@ body {
 /* -----------------------Certificates--------------------------- */
 .titlecert {
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-color: #0065b3;
     text-align:center;
     margin-top: -20px;
 }
-.titlecert p{color:white; font-size:18px;}
+.titlecert p{color:white; font-size:20px;}
 
 #Certif{
     width: 600px;
@@ -321,16 +321,16 @@ body {
 .cert-desc{  
    display:flex;
    flex-direction:column;
-
 }
-/* -----------------------footer--------------------------- */
-#footer {
-    display: flex;
-    background: #1d262d;
-    justify-content: space-around;
-    height:240px;  
-    align-items:center;
-}
+    .cert-desc p,h4{color:white;}
+    /* -----------------------footer--------------------------- */
+    #footer {
+        display: flex;
+        background: #1d262d;
+        justify-content: space-around;
+        height: 240px;
+        align-items: center;
+    }
  #footer .ft-1 {
        
         cursor: pointer;
