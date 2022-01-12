@@ -72,170 +72,20 @@ body {
 /* ------------------Index-------------------------------- */
 #welcome {
     width: 100%;
-    height: 240px;
-    background: #0065b3;
+    height: 750px;
+    background-image: url(../img/dev.jpg);
     font-family: 'segoe UI';
     color: white;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    margin-top:-20px;
+    flex-direction:row;
+
 }
-
-    #welcome .caja {
-        width: 80%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-.buho-gif {
-    width: 70px;
-    height: 80px;
-}
-
-.title h1 {
-    font-size: 18px;
-    padding-top: 20px;
-}
-
-.title h2 {
-    font-size: 40px;
-}
-
-.title h3 {
-    font-size: 18px;
-}
-
-#Niveles {
-    width: 80%;
-    height: 230px;
-    text-align: center;
-    font-family: 'segoe UI';
-    font-size: 30px;
-    cursor: pointer;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: space-around;
-    margin-left: 10%;
-    margin-top: 2%;
-}
-
-    #Niveles .fondo {
-        position: absolute;
-        width: 100%;
-    }
-
-    #Niveles .Niv-Basico {
-        width: 270px;
-        height: 200px;
-        background: linear-gradient(to top, #0000FF 0%, #00CED1 100%);
-        border-radius: 30px;
-        float: left;
-        justify-content: flex-start;
-        position: relative;
-    }
-
-        #Niveles .Niv-Basico img {
-            padding-top: 30px;
-            padding-left: 15px;
-        }
-
-        #Niveles .Niv-Basico:hover {
-            transform: scale(1.05);
-            transition: 500ms;
-        }
-
-    #Niveles .Niv-Intermedio {
-        width: 260px;
-        height: 200px;
-        background: linear-gradient(to top, #FFFF00 0%, #00FF00 100%);
-        border-radius: 30px;
-        float: left;
-        position: relative;
-    }
-
-        #Niveles .Niv-Intermedio img {
-            width: 200px;
-            height: 150px;
-            padding-top: 65px;
-        }
-
-        #Niveles .Niv-Intermedio:hover {
-            transform: scale(1.05);
-            transition: 500ms;
-        }
-
-    #Niveles .Niv-Avanzado {
-        width: 270px;
-        height: 200px;
-        background: linear-gradient(to top, #DA70D6 0%, #800080 100%);
-        border-radius: 30px;
-        float: left;
-        position: relative;
-    }
-
-        #Niveles .Niv-Avanzado img {
-            width: 150px;
-            height: 200px;
-            padding-top: 45px;
-        }
-
-        #Niveles .Niv-Avanzado:hover {
-            transform: scale(1.05);
-            transition: 500ms;
-        }
-
-    #Niveles a {
-        color: white;
-        text-decoration: none;
-        position: relative;
-    }
-
-#projects {
-    width: 100%;
-    height: 280px;
-    background: #0065b3;
-    font-family: 'segoe UI';
-    color: white;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.centro {
-    margin-top: 20px;
-    width: 1000px;
-    height: 150px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: space-around;
-}
-
-#projects .unjfsc .spinout .innova .SM1551 {
-    width: 160px;
-    height: 160px;
-}
-
-#projects .def {
-    width: 1000px;
-    height: 50px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-family: 'segoe UI';
-}
-
-.def p {
-    text-align: center;
-}
+.foto{margin-left:50px;}
+.foto img{width:180px; height:250px; border:5px solid white;}
+.enlaces { margin-left: 50px;}
+.enlaces a{font-size:30px;color:white;}
+.enlace{display:flex; flex-direction:column}
+#welcome p{color:white;}
 /* ------------------Projects-------------------------------- */
 .titleproj{
     text-align: center;
