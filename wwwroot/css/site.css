@@ -290,12 +290,13 @@ body {
 .titlecert p{color:white; font-size:20px;}
 
 #Certif{
-    width: 600px;
-    height: 405px;
-    display:flex;
-    margin-left:20%;
+    width: 700px;
+    height: 605px;
+    margin-left:165px;
     margin-top:20px;
 }
+#Certif img{width:650px; height:580px;}
+
 #cert-main {
     background-color: #0065b3;
 }
@@ -308,11 +309,10 @@ body {
 }
 #caja-cert2 {
     width: 100%;
-    height: 450px;
+    height: 420px;
     display: flex;
     justify-content: space-evenly;
-    margin-bottom:20px;
-    margin-top:35px;
+    margin-top:10px;
 }
 .cert {
     width: 220px;
