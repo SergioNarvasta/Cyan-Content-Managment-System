@@ -87,12 +87,23 @@ body {
 .enlace{display:flex; flex-direction:column}
 #welcome p{color:white;}
 .inf p {margin-left: 40px;color:white;}
-
-.Carsl {
-    width: 200px;
-    height: 150px;
+.enlaces a:hover{
+    transform: scale(1.5);
+    transition: 500ms;
 }
-.Carsl img{width:200px;height:150px;}
+#Carsl{
+    width: 280px;
+    height: 240px;
+    margin-top:70px;
+    margin-left:340px;
+    
+}
+#control img{
+    width: 270px;
+    height: 235px;
+    border-radius:15px 15px;
+}
+
 /* ------------------Projects-------------------------------- */
 .titleproj{
     text-align: center;
@@ -105,12 +116,6 @@ body {
     color:white;
     font-size:20px;
     margin-top:0px;
-
-}
-#Projects p{
-    
-
-
 }
 .Project {
     width: 350px;
