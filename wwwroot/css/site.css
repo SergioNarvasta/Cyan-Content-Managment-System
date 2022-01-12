@@ -82,10 +82,17 @@ body {
 }
 .foto{margin-left:50px;}
 .foto img{width:180px; height:250px; border:5px solid white;}
-.enlaces { margin-left: 50px;}
+.enlaces { margin-left: 100px;}
 .enlaces a{font-size:30px;color:white;}
 .enlace{display:flex; flex-direction:column}
 #welcome p{color:white;}
+.inf p {margin-left: 40px;color:white;}
+
+.Carsl {
+    width: 200px;
+    height: 150px;
+}
+.Carsl img{width:200px;height:150px;}
 /* ------------------Projects-------------------------------- */
 .titleproj{
     text-align: center;
