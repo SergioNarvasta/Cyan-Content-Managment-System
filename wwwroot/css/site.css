@@ -103,9 +103,21 @@ body {
     height: 235px;
     border-radius:15px 15px;
 }
+/* ------------------About-------------------------------- */
+.About {
 
+}
+.About-foto img{
+    width: 180px;
+    height: 250px;
+    border: 5px solid white;
+}
+.About-desc p{
+    color:white;
+    font-size:18px;
+}
 /* ------------------Projects-------------------------------- */
-.titleproj{
+.titleproj {
     text-align: center;
     background-color: #0065b3;
     width: 100%;
