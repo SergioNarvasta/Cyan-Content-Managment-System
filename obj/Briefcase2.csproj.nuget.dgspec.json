@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROYECTOS\\Briefcase .Net 5.0\\Briefcase2\\Briefcase2.csproj": {}
+    "C:\\Users\\MI PC\\Source\\Repos\\Briefcase-2.0\\Briefcase2.csproj": {}
   },
   "projects": {
-    "D:\\PROYECTOS\\Briefcase .Net 5.0\\Briefcase2\\Briefcase2.csproj": {
+    "C:\\Users\\MI PC\\Source\\Repos\\Briefcase-2.0\\Briefcase2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROYECTOS\\Briefcase .Net 5.0\\Briefcase2\\Briefcase2.csproj",
+        "projectUniqueName": "C:\\Users\\MI PC\\Source\\Repos\\Briefcase-2.0\\Briefcase2.csproj",
         "projectName": "Briefcase2",
-        "projectPath": "D:\\PROYECTOS\\Briefcase .Net 5.0\\Briefcase2\\Briefcase2.csproj",
-        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "D:\\PROYECTOS\\Briefcase .Net 5.0\\Briefcase2\\obj\\",
+        "projectPath": "C:\\Users\\MI PC\\Source\\Repos\\Briefcase-2.0\\Briefcase2.csproj",
+        "packagesPath": "C:\\Users\\MI PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MI PC\\Source\\Repos\\Briefcase-2.0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

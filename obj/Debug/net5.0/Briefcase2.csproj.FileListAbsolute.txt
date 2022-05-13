@@ -41,3 +41,46 @@ D:\PROYECTOS\Briefcase .Net 5.0\Briefcase2\obj\Debug\net5.0\ref\Briefcase2.dll
 D:\PROYECTOS\Briefcase .Net 5.0\Briefcase2\obj\Debug\net5.0\Briefcase2.pdb
 D:\PROYECTOS\Briefcase .Net 5.0\Briefcase2\obj\Debug\net5.0\Briefcase2.genruntimeconfig.cache
 D:\PROYECTOS\Briefcase .Net 5.0\Briefcase2\obj\Debug\net5.0\Briefcase2.csproj.CopyComplete
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\appsettings.json
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\Briefcase2.exe
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\Briefcase2.deps.json
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\Briefcase2.runtimeconfig.json
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\Briefcase2.runtimeconfig.dev.json
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\Briefcase2.dll
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\ref\Briefcase2.dll
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\Briefcase2.pdb
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\Briefcase2.Views.dll
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\bin\Debug\net5.0\Briefcase2.Views.pdb
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.csproj.AssemblyReference.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.AssemblyInfoInputs.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.AssemblyInfo.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.csproj.CoreCompileInputs.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.RazorAssemblyInfo.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.RazorAssemblyInfo.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\staticwebassets\Briefcase2.StaticWebAssets.Manifest.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\staticwebassets\Briefcase2.StaticWebAssets.xml
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\scopedcss\bundle\Briefcase2.styles.css
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.TagHelpers.input.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.TagHelpers.output.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.RazorCoreGenerate.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\Home\Certificates.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\Home\Projects.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.RazorTargetAssemblyInfo.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.RazorTargetAssemblyInfo.cs
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.Views.pdb
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.dll
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\ref\Briefcase2.dll
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.pdb
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.genruntimeconfig.cache
+C:\Users\MI PC\Source\Repos\Briefcase-2.0\obj\Debug\net5.0\Briefcase2.csproj.CopyComplete
