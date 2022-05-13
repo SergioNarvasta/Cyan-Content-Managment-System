@@ -106,7 +106,6 @@ body {
 /* ------------------About-------------------------------- */
 .About {
     display:flex;
-    border:1px solid black;
     justify-content:flex-start
 }
 .About-foto{
