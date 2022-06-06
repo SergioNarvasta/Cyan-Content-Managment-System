@@ -1,11 +1,13 @@
 Use EQUILIBRA_V17
-
+select*from CEX_EstadoPago
+---TioConfirmacion ,PaisOrigen ,AlmacenDestino
 Select  
-     a.FechaETA         ,      a.estado             ,      a.CodigoImportacion       ,       a.FechaIngAlm,
+     a.FechaETA         ,      q.EstadoPago         ,       a.CodigoImportacion  ,       a.FechaIngAlm,
 	 a.OCompraSG        ,      a.TotalUSD           ,       C.ProveedorCEX       ,       B.ProductoCEX,
 	 a.CantidadTM       ,      a.CantidadCNT        ,       a.NroDAM             ,       a.FechaDAMLevante,
 	 a.FechaVB          ,      v.PAI_NOMCOR as Pais ,       a.NaveDestino        ,       a.BL,
-	 l.Naviera          ,      g.PuertoDestino         	
+	 l.Naviera          ,      g.PuertoDestino      ,       a.Contrato           ,       v.PAI_NOMCOR AS PaisOrigen,
+	 a.Almacen          ,      y.ConfirmaFecha      
 	From CEX_Importacion A
 	Left Join Cex_ProductoCEX B on A.IdProductoCEX=B.IdProductoCEX
 	Left Join Cex_ProveedorCEX C on A.IdProveedorCEX=C.IdProveedorCEX
@@ -31,13 +33,7 @@ Select
 	Left Join pais_pai V on a.pai_codpai=v.PAI_CODPAI
 	Left Join CEX_TerminalMar W on a.IdTerminalMar=w.IdTerminalMar
 	Left Join CEX_AlmacenDestino X on a.IdAlmacenDestino=x.IdAlmacenDestino
-	left join( select cia_codcia,IdImportacion,
-				COUNT(IdImportacion) as CantFechaETD
-		  from CEX_ImportacionETD 
-		  group by cia_codcia,IdImportacion
-	)as etd on a.cia_codcia=etd.cia_codcia and a.IdImportacion=etd.IdImportacion
-	left join (select cia_codcia,IdImportacion,
-				COUNT(IdImportacion) as CantFechaETA
-		  from CEX_ImportacionETA 
-		  group by cia_codcia,IdImportacion
-	)as eta on a.cia_codcia=eta.cia_codcia and a.IdImportacion=eta.IdImportacion
+	left join CEX_ConfirmaFecha Y on y.IdConfirmaFecha = a.IdConfirmaAlm 
+	
+	---------------------------------------------------------0011 0579 0202936376
+	
