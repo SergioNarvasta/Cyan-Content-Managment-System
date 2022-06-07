@@ -13,7 +13,12 @@ namespace WebAPIObject.Data
             : base(options)
         {
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
 
-        public DbSet<WebAPIObject.Models.Item>? Item { get; set; }
+            optionsBuilder.UseSqlServer("Server=HDWSDES01;Database=BD;Trusted_Connection=true; MultipleActiveResultSets=true;");
+        }
+        public DbSet<WebAPIObject.Models.OrdenCompraImp>? OrdenCompraImp{ get; set; }
+        
     }
 }
