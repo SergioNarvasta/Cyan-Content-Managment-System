@@ -9,5 +9,11 @@ namespace Registro6.Data
             : base(options)
         {
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+
+            optionsBuilder.UseSqlServer("Server=HDWSDES01;Database=BDEsp;Trusted_Connection=true; MultipleActiveResultSets=true;");
+        }
+        public DbSet<Registro6.Models.OrdenCompraImp> OrdenCompraImp { get; set; }
     }
 }
