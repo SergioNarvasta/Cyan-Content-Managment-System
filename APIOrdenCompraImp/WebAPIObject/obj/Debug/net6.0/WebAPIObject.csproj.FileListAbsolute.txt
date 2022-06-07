@@ -524,3 +524,5 @@ C:\Users\snarvasta\Documents\Docs Sergio\PROYECTOS\ASP.NET Core\Briefcase 5.0\AP
 C:\Users\snarvasta\Documents\Docs Sergio\PROYECTOS\ASP.NET Core\Briefcase 5.0\APIOrdenCompraImp\WebAPIObject\obj\Debug\net6.0\WebAPIObject.pdb
 C:\Users\snarvasta\Documents\Docs Sergio\PROYECTOS\ASP.NET Core\Briefcase 5.0\APIOrdenCompraImp\WebAPIObject\obj\Debug\net6.0\WebAPIObject.genruntimeconfig.cache
 C:\Users\snarvasta\Documents\Docs Sergio\PROYECTOS\ASP.NET Core\Briefcase 5.0\APIOrdenCompraImp\WebAPIObject\obj\Debug\net6.0\ref\WebAPIObject.dll
+C:\Users\snarvasta\Documents\Docs Sergio\PROYECTOS\ASP.NET Core\Briefcase 5.0\APIOrdenCompraImp\WebAPIObject\obj\Debug\net6.0\WebAPIObject.RazorAssemblyInfo.cache
+C:\Users\snarvasta\Documents\Docs Sergio\PROYECTOS\ASP.NET Core\Briefcase 5.0\APIOrdenCompraImp\WebAPIObject\obj\Debug\net6.0\WebAPIObject.RazorAssemblyInfo.cs

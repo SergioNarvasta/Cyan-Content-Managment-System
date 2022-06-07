@@ -12,7 +12,7 @@
     "WebAPIObject": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "WebAPIObject/Models/OrdenCompraImp",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -22,7 +22,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "api/OrdenCompraImp",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

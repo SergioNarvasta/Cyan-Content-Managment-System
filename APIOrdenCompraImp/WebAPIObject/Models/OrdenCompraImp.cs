@@ -55,14 +55,6 @@ namespace WebAPIObject.Models
         [MaxLength(18, ErrorMessage = "No debe de tener mas de 18 caracteres")]
         public String CondicionPago { get; set; }
 
-
-
-
-
-
-
-
-
         //public virtual ICollection<OrdenCompraDet> OrdenCompraDet { get; set; }  //Relacionar entidades
     }
 }
