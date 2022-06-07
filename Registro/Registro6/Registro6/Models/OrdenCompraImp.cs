@@ -7,20 +7,20 @@ namespace Registro6.Models
         [Key]
         public int IdOrdenCompraImp { get; set; }
 
-        [Display(Name = "TipoOrdenCompra")]
-        //[Required(ErrorMessage = "Debe de ingresar el TipoOCompra")]
+        [Display(Name = "Tipo")]
+        [Required(ErrorMessage = "Debe de ingresar el TipoOCompra")]
         [MaxLength(13, ErrorMessage = "El campo no debe de tener mas de 13 caracteres")]
         public string TipoOCompra { get; set; }
 
-        [Display(Name = "NroOrdenCompra")]
-        //[Required(ErrorMessage = "Debe de ingresar NroOCompra")]
+        [Display(Name = "Numero")]
+        [Required(ErrorMessage = "Debe de ingresar NroOCompra")]
 
         public int NroOCompra { get; set; }
 
         public DateTime Fecha { get; set; }
         public float TipoCambio { get; set; }
 
-       // [Required(ErrorMessage = "Debe Seleccionar Estado")]
+        [Required(ErrorMessage = "Debe Seleccionar Estado")]
         [MaxLength(12, ErrorMessage = "El campo no debe de tener mas de 12 caracteres")]
         public String Estado { get; set; }
 
@@ -28,7 +28,7 @@ namespace Registro6.Models
         public int CodInterno { get; set; }
 
         [Display(Name = "CotizacionVenta")]
-       // [Required(ErrorMessage = "Debe de ingresar el CodCotizacion")]
+        [Required(ErrorMessage = "Debe de ingresar el CodCotizacion")]
         
         public int CodCotizacion { get; set; }
 

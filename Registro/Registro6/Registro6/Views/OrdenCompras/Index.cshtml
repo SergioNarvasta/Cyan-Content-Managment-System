@@ -9,8 +9,8 @@
 <p>
     <a asp-action="Create">Registrar</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table  table-hover" >
+    <thead class="table-responsive table-danger">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.TipoOCompra)
@@ -48,12 +48,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.CondicionPago)
             </th>
-            <th></th>
+            <th>Accion</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-warning">
 @foreach (var item in Model) {
-        <tr>
+        <tr >
             <td>
                 @Html.DisplayFor(modelItem => item.TipoOCompra)
             </td>
