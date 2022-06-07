@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Registro6.Models.OrdenCompraImp>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoOCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NroOCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoCambio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodInterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodCotizacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contacto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CondicionPago)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoOCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NroOCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoCambio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodInterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodCotizacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contacto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CondicionPago)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdOrdenCompraImp">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdOrdenCompraImp">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdOrdenCompraImp">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

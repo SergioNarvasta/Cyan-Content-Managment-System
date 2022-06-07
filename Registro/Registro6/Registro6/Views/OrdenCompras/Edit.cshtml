@@ -1,0 +1,89 @@
+﻿@model Registro6.Models.OrdenCompraImp
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>OrdenCompraImp</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdOrdenCompraImp" />
+            <div class="form-group">
+                <label asp-for="TipoOCompra" class="control-label"></label>
+                <input asp-for="TipoOCompra" class="form-control" />
+                <span asp-validation-for="TipoOCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NroOCompra" class="control-label"></label>
+                <input asp-for="NroOCompra" class="form-control" />
+                <span asp-validation-for="NroOCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha" class="control-label"></label>
+                <input asp-for="Fecha" class="form-control" />
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoCambio" class="control-label"></label>
+                <input asp-for="TipoCambio" class="form-control" />
+                <span asp-validation-for="TipoCambio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodInterno" class="control-label"></label>
+                <input asp-for="CodInterno" class="form-control" />
+                <span asp-validation-for="CodInterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodCotizacion" class="control-label"></label>
+                <input asp-for="CodCotizacion" class="form-control" />
+                <span asp-validation-for="CodCotizacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proveedor" class="control-label"></label>
+                <input asp-for="Proveedor" class="form-control" />
+                <span asp-validation-for="Proveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacto" class="control-label"></label>
+                <input asp-for="Contacto" class="form-control" />
+                <span asp-validation-for="Contacto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Area" class="control-label"></label>
+                <input asp-for="Area" class="form-control" />
+                <span asp-validation-for="Area" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoCompra" class="control-label"></label>
+                <input asp-for="TipoCompra" class="form-control" />
+                <span asp-validation-for="TipoCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CondicionPago" class="control-label"></label>
+                <input asp-for="CondicionPago" class="form-control" />
+                <span asp-validation-for="CondicionPago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
