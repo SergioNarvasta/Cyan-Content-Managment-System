@@ -1,9 +1,14 @@
-﻿namespace WebAPIObject.Models
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebAPIObject.Models
 {
     public class OrdenCompraImp
     {
         [Key]
-        public int idOrdenCompraCab { get; set; }
+        public int IdOrdenCompraCab { get; set; }
 
         [Display(Name = "RUC")]
         [Required(ErrorMessage = "Debe de ingresar el RUC de la empresa")]
