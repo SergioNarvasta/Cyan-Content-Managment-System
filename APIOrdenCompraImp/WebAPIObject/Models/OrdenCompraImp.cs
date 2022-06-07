@@ -8,23 +8,44 @@ namespace WebAPIObject.Models
     public class OrdenCompraImp
     {
         [Key]
-        public int IdOrdenCompraCab { get; set; }
+        public int IdOrdenCompraImp { get; set; }
 
-        [Display(Name = "RUC")]
-        [Required(ErrorMessage = "Debe de ingresar el RUC de la empresa")]
-        [MaxLength(10, ErrorMessage = "El campo no debe de tener mas de 10 caracteres")]
-        public string RUC { get; set; }
+        [Display(Name = "TipoOCompra")]
+        [Required(ErrorMessage = "Debe de ingresar el TipoOCompra")]
+        [MaxLength(10, ErrorMessage = "El campo no debe de tener mas de 20 caracteres")]
+        public string TipoOCompra { get; set; }
 
-        [Display(Name = "Razon Social")]
-        [Required(ErrorMessage = "Debe de ingrear la razon social del Proveedor")]
-        [MaxLength(80, ErrorMessage = "El campo no debe de tener mas de 80 caracteres")]
-        public string RazonSocial { get; set; }
+        [Display(Name = "NroOCompra")]
+        [Required(ErrorMessage = "Debe de ingresar NroOCompra")]
+        [MaxLength(80, ErrorMessage = "El campo no debe de tener mas de 12 caracteres")]
+        public int NroOCompra { get; set; }
+    
+        public DateTime Fecha { get; set; }
+
+        [Display(Name = "TipoOCompra")]
+        [Required(ErrorMessage = "Debe de ingresar el TipoOCompra")]
+        [MaxLength(10, ErrorMessage = "El campo no debe de tener mas de 20 caracteres")]
+        public string TipoOCompra { get; set; }
+
+        [Display(Name = "NroOCompra")]
+        [Required(ErrorMessage = "Debe de ingresar NroOCompra")]
+        [MaxLength(80, ErrorMessage = "El campo no debe de tener mas de 12 caracteres")]
+        public int NroOCompra { get; set; }
 
         [Display(Name = "Direccion")]
         [Required(ErrorMessage = "Debe de ingresar la direccion del proveedor")]
         [MaxLength(100, ErrorMessage = "El campo no debe de tener mas de 100 caracteres")]
         public string Direccion { get; set; }
 
-        public virtual ICollection<OrdenCompraDet> OrdenCompraDet { get; set; }  //Para relacionar entidades
+
+
+
+
+
+
+
+
+
+        //public virtual ICollection<OrdenCompraDet> OrdenCompraDet { get; set; }  //Relacionar entidades
     }
 }
