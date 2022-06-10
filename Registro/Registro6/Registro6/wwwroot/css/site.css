@@ -16,3 +16,7 @@ html {
 body {
   margin-bottom: 60px;
 }
+.tblInfo{
+    border-radius:10px 10px 10px 10px ;
+    border-color:blue;
+}
