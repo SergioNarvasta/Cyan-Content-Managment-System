@@ -105,9 +105,4 @@ SELECT
 			    When e.TipoCarga Like '%Breakbulk%' and g.PuertoDestino = '%Paita%'Then 7
 			    Else 0 End)AS Num
 			  FROM CEX_TipoCarga e, CEX_PuertoDestino g )AS TIng ON a.IdTipoCarga=TIng.IdTipoCarga and a.IdPuertoDestino=TIng.IdPuertoDestino
-	
-
-
-
-
 	order by Año desc
