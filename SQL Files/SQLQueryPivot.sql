@@ -1,42 +1,32 @@
 
 
---select*from CEX_ImportacionETD
+
+--Where YEAR(b.FechaETD)>=2022 and a.CodigoImportacion ='MF06500022' 
+--group by a.CodigoImportacion,b.IdImportacion
+--group by b.FechaETD,b.NroSec
+
+
+Select a.CodigoImportacion, ETD.Fecha7,ETD.Fecha6,ETD.Fecha5,ETD.Fecha4,ETD.Fecha3,ETD.Fecha2,ETD.Fecha1
+From CEX_Importacion A left join (
+      Select b.cia_codcia,b.IdImportacion,
+      (Case When b.NroSec=7 Then b.FechaETD End)AS Fecha7,
+      (Case When b.NroSec=6 Then b.FechaETD End)AS Fecha6,
+      (Case When b.NroSec=5 Then b.FechaETD End)AS Fecha5,
+      (Case When b.NroSec=4 Then b.FechaETD End)AS Fecha4,
+      (Case When b.NroSec=3 Then b.FechaETD End)AS Fecha3,
+      (Case When b.NroSec=2 Then b.FechaETD End)AS Fecha2,
+      (Case When b.NroSec=1 Then b.FechaETD End)AS Fecha1 FROM CEX_ImportacionETD b )AS ETD 
+   ON (a.cia_codcia=ETD.cia_codcia and a.IdImportacion=ETD.IdImportacion)
+group by a.CodigoImportacion,ETD.Fecha7,ETD.Fecha6,ETD.Fecha5,ETD.Fecha4,ETD.Fecha3,ETD.Fecha2,ETD.Fecha1
+
+
+
 go
-Select top 4
-   a.CodigoImportacion,b.IdImportacion,b.NroSec, b.FechaETD          
-From CEX_Importacion A
-	left join CEX_ImportacionETD b on (a.cia_codcia = b.cia_codcia and a.IdImportacion = b.IdImportacion )
-WHERE YEAR(b.FechaETD)>=2022 and a.CodigoImportacion ='MF001A0022'
-Order by a.CodigoImportacion,b.NroSec desc
-
-go
-Declare @Indice INT
-
-Select 
-	SELECT top 1 b.FechaETD FROM CEX_ImportacionETD where b.NroSec= Count(b.NroSec)-1 order by b.NroSec desc)     
-From CEX_Importacion A
-	left join CEX_ImportacionETD b on (a.cia_codcia = b.cia_codcia and a.IdImportacion = b.IdImportacion )
-WHERE YEAR(b.FechaETD)>=2022 and a.CodigoImportacion ='MF001A0022'
-Order by a.CodigoImportacion,b.NroSec desc
-
-go
+--(SELECT cia_codcia,IdImportacion,count(NroSec)AS cant FROM CEX_ImportacionETD group by cia_codcia,IdImportacion)
+--left join AS cETD ON (a.cia_codcia=cETD.cia_codcia and a.IdImportacion=cETD.IdImportacion)
 
 
-Select b.CodigoImportacion, b.FechaETD ,
-         (SELECT top 1 b.FechaETD FROM CEX_ImportacionETD where b.NroSec= Count(b.NroSec)-1 order by b.NroSec desc)
-
-  FROM CEX_Importacion  A
-  left join 
-   (Select 
-   a.CodigoImportacion,b.IdImportacion,b.NroSec, b.FechaETD          
-   From CEX_Importacion A
-	left join CEX_ImportacionETD b on (a.cia_codcia = b.cia_codcia and a.IdImportacion = b.IdImportacion )
-   ) AS b on a.CodigoImportacion = b.CodigoImportacion
- WHERE YEAR(b.FechaETD)>=2022 and a.CodigoImportacion ='MF001A0022'
-group by b.CodigoImportacion,b.FechaETD
-
-
-
+/*
 Select *
 From
 (
@@ -52,5 +42,5 @@ PIVOT(
 	FOR  (FechaETD) IN ([FechaETD4],[FechaETD3],[FechaETD2],[FechaETD1])
 
 )AS PivotTable
-
 go
+*/
