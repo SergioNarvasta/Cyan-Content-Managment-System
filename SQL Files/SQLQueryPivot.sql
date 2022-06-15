@@ -5,10 +5,7 @@
 --group by a.CodigoImportacion,b.IdImportacion
 --group by b.FechaETD,b.NroSec
 
-Select a.CodigoImportacion,
---COALESCE( 
-ETD.Fecha7,ETD.Fecha6,ETD.Fecha5,ETD.Fecha4,ETD.Fecha3,ETD.Fecha2,ETD.Fecha1 
---)AS FECHA7_FECHA6_
+Select a.CodigoImportacion,ETD.Fecha7,ETD.Fecha6,ETD.Fecha5,ETD.Fecha4,ETD.Fecha3,ETD.Fecha2,ETD.Fecha1 
 From CEX_Importacion A left join (
       Select b.cia_codcia,b.IdImportacion,
       (Case When b.NroSec=7 Then b.FechaETD End)AS Fecha7,
@@ -18,13 +15,25 @@ From CEX_Importacion A left join (
       (Case When b.NroSec=3 Then b.FechaETD End)AS Fecha3,
       (Case When b.NroSec=2 Then b.FechaETD End)AS Fecha2,
       (Case When b.NroSec=1 Then b.FechaETD End)AS Fecha1 FROM CEX_ImportacionETD b)AS ETD 
-   ON (a.cia_codcia=ETD.cia_codcia and a.IdImportacion=ETD.IdImportacion)
+   ON (a.cia_codcia=ETD.cia_codcia and a.IdImportacion=ETD.IdImportacion )
+--Where ETD.Fecha1 IS NOT NULL 
 group by a.CodigoImportacion,ETD.Fecha7,ETD.Fecha6,ETD.Fecha5,ETD.Fecha4,ETD.Fecha3,ETD.Fecha2,ETD.Fecha1
 
 GO
+/*
+SELECT A.CodigoImportacion,b.IdImportacion,B.FechaETD
+FROM CEX_Importacion A left join CEX_ImportacionETD b ON (a.cia_codcia=B.cia_codcia and a.IdImportacion=B.IdImportacion )
+ORDER BY A.CodigoImportacion
+*/
 
 
+--Cooper v16 Unidad P
+--tin -prd
+--linea - prd
+--fam --prd
 
+
+/*
 Select a.CodigoImportacion,
 COALESCE( 
 ETD.Fecha7,ETD.Fecha6,ETD.Fecha5,ETD.Fecha4,ETD.Fecha3,ETD.Fecha2,ETD.Fecha1 
@@ -40,7 +49,7 @@ From CEX_Importacion A left join (
       (Case When b.NroSec=1 Then b.FechaETD End)AS Fecha1 FROM CEX_ImportacionETD b)AS ETD 
    ON (a.cia_codcia=ETD.cia_codcia and a.IdImportacion=ETD.IdImportacion)
 group by a.CodigoImportacion,ETD.Fecha7,ETD.Fecha6,ETD.Fecha5,ETD.Fecha4,ETD.Fecha3,ETD.Fecha2,ETD.Fecha1
-
+*/
 
 
 go
