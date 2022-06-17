@@ -101,12 +101,7 @@ SELECT
 	Left Join (Select cia_codcia, idimportacion, max(nrosec) as maxsec,min(NroSec)as minsec from CEX_ImportacionETA group by cia_codcia, idimportacion ) dETA on (a.cia_codcia=dETA.cia_codcia and a.IdImportacion=dETA.IdImportacion)
 	Left Join CEX_ImportacionETA as miETA on a.cia_codcia=miETA.cia_codcia and a.IdImportacion=miETA.IdImportacion and dETA.minsec=miETA.NroSec
 	Left Join CEX_ImportacionETA as maETA on a.cia_codcia=maETA.cia_codcia and a.IdImportacion=maETA.IdImportacion and dETA.maxsec=maETA.NroSec
-	/*
-	Left Join (Select e.IdTipoCarga,g.IdPuertoDestino ,(Case When e.TipoCarga Like 'Contenedor %' Then 4 When e.TipoCarga Like '%Granel%' Then 2 
-	            When e.TipoCarga Like '%Breakbulk%' and g.PuertoDestino = '%Callao%'Then 10
-			    When e.TipoCarga Like '%Breakbulk%' and g.PuertoDestino = '%Paita%'Then 7
-			    Else 0 End)AS Num
-			  FROM CEX_TipoCarga e, CEX_PuertoDestino g )AS TIng ON a.IdTipoCarga=TIng.IdTipoCarga and a.IdPuertoDestino=TIng.IdPuertoDestino  */
+	
 
 Select x.cia_codcia, x.IdImportacion, x.CodigoImportacion,
 Max(x.FechaETD1) as FechaETD1,
@@ -117,12 +112,20 @@ From
 (
 	Select 
 	a.cia_codcia, a.IdImportacion, A.CodigoImportacion, c.MaxSec,
-	(Case when c.MaxSec>4 then (case when b.NroSec=(c.MaxSec-4+1) then b.FechaETD else null end)else (case when b.NroSec=1 then b.FechaETD else null end) end) FechaETD1,
-	(Case when c.MaxSec>4 then (case when b.NroSec=(c.MaxSec-4+2) then b.FechaETD else null end)else (case when b.NroSec=2 then b.FechaETD else null end) end) FechaETD2,
-	(Case when c.MaxSec>4 then (case when b.NroSec=(c.MaxSec-4+3) then b.FechaETD else null end)else (case when b.NroSec=3 then b.FechaETD else null end) end) FechaETD3,
-	(Case when c.MaxSec>4 then (case when b.NroSec=(c.MaxSec-4+4) then b.FechaETD else null end)else (case when b.NroSec=4 then b.FechaETD else null end) end) FechaETD4
+	(Case when c.MaxSec>4 then(case when b.NroSec=(c.MaxSec-4+1)then b.FechaETD else null end)else(case when b.NroSec=1 then b.FechaETD else null end) end) FechaETD1,
+	(Case when c.MaxSec>4 then(case when b.NroSec=(c.MaxSec-4+2)then b.FechaETD else null end)else(case when b.NroSec=2 then b.FechaETD else null end) end) FechaETD2,
+	(Case when c.MaxSec>4 then(case when b.NroSec=(c.MaxSec-4+3)then b.FechaETD else null end)else(case when b.NroSec=3 then b.FechaETD else null end) end) FechaETD3,
+	(Case when c.MaxSec>4 then(case when b.NroSec=(c.MaxSec-4+4)then b.FechaETD else null end)else(case when b.NroSec=4 then b.FechaETD else null end) end) FechaETD4
 	From CEX_Importacion A
 	Left Join (Select cia_codcia, IdImportacion, max(NroSec) as MaxSec From CEX_ImportacionETD Group by cia_codcia, IdImportacion) C ON a.cia_codcia=c.cia_codcia and a.IdImportacion=c.IdImportacion
 	Left Join CEX_ImportacionETD b on a.cia_codcia=b.cia_codcia and a.IdImportacion=b.IdImportacion
 ) as X
 Group by x.cia_codcia, x.IdImportacion, x.CodigoImportacion
+
+
+/*
+	Left Join (Select e.IdTipoCarga,g.IdPuertoDestino ,(Case When e.TipoCarga Like 'Contenedor %' Then 4 When e.TipoCarga Like '%Granel%' Then 2 
+	            When e.TipoCarga Like '%Breakbulk%' and g.PuertoDestino = '%Callao%'Then 10
+			    When e.TipoCarga Like '%Breakbulk%' and g.PuertoDestino = '%Paita%'Then 7
+			    Else 0 End)AS Num
+			  FROM CEX_TipoCarga e, CEX_PuertoDestino g )AS TIng ON a.IdTipoCarga=TIng.IdTipoCarga and a.IdPuertoDestino=TIng.IdPuertoDestino  */
