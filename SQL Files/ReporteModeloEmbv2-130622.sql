@@ -1,6 +1,7 @@
 
 SELECT
-      ISNULL(YEAR(a.FechaETA),'')AS Año,             
+      ISNULL(YEAR(a.FechaETA),'')AS Año,   
+	  a.CodigoImportacion,          
 	  d.Seguimiento AS Estatus,                  
 	  ISNULL(a.CodAnt,' ')AS MF ,                           
       ISNULL(B.ProductoCEX,' ')AS Producto, 
@@ -24,7 +25,7 @@ SELECT
 	  ISNULL(a.FechaContrato,' ')AS FechaContrato,
 	  ISNULL(DATEPART(WEEK,a.FechaContrato),0)AS SemContrato,
 	  ISNULL(miETD.FechaETD,0)AS ETDInicial,
-	  ISNULL(Datepart(Week,miETD.FechaETD),'')AS SemETDIni,  
+	  ISNULL(Datepart(Week,miETD.FechaETD),'')AS SemETDIni, 	      
 	  Space(5)as FechaETD1,Space(5)as FechaETD2,Space(5)as FechaETD3,Space(5)as FechaETD4,   	           
 	  ISNULL(maETD.FechaETD,'')AS UltimoETD,            
 	  ISNULL(Datepart(Week,maETD.FechaETD),'')AS SemETDReal, 
@@ -63,7 +64,6 @@ SELECT
 	  ISNULL(a.OCEstatus,'')AS EstatusOC,                  
 	  Space(5)AS NCompra,Space(5)AS MDemora,Space(5)AS Coment ,
 	  ISNULL(prd.prd_estado,'')AS EstProd
-
 	From CEX_Importacion A
 	Left Join Cex_ProductoCEX B on A.IdProductoCEX=B.IdProductoCEX
 	Left Join Cex_ProveedorCEX C on A.IdProveedorCEX=C.IdProveedorCEX
@@ -91,18 +91,14 @@ SELECT
 	Left Join CEX_AlmacenDestino X on a.IdAlmacenDestino=x.IdAlmacenDestino
 	left join CEX_ConfirmaFecha Y on a.IdConfirmaAlm = y.IdConfirmaFecha   
 	left join CEX_PresentacionCEX ab on a.IdPresentacion = ab.IdPresentacionCEX
-	
 	Left Join (Select cia_codcia, idimportacion, max(nrosec) as maxsec,min(NroSec)as minsec from CEX_ImportacionETD group by cia_codcia, idimportacion ) as dETD on (a.cia_codcia=dETD.cia_codcia and a.IdImportacion=dETD.IdImportacion)
 	Left Join CEX_ImportacionETD as maETD on a.cia_codcia=maETD.cia_codcia and a.IdImportacion=maETD.IdImportacion and dETD.maxsec=maETD.NroSec
 	Left Join CEX_ImportacionETD as miETD on a.cia_codcia=miETD.cia_codcia and a.IdImportacion=miETD.IdImportacion and dETD.maxsec= miETD.NroSec
-	
 	Left Join (Select cia_codcia, idimportacion, max(nrosec) as maxsec,min(NroSec)as minsec from CEX_ImportacionETA group by cia_codcia, idimportacion ) as dETA on (a.cia_codcia=dETA.cia_codcia and a.IdImportacion=dETA.IdImportacion)
 	Left Join CEX_ImportacionETA as miETA on a.cia_codcia=miETA.cia_codcia and a.IdImportacion=miETA.IdImportacion and dETA.minsec=miETA.NroSec
 	Left Join CEX_ImportacionETA as maETA on a.cia_codcia=maETA.cia_codcia and a.IdImportacion=maETA.IdImportacion and dETA.maxsec=maETA.NroSec
-	
 	Left Join (Select e.IdTipoCarga,g.IdPuertoDestino ,(Case When e.TipoCarga Like 'Contenedor %' Then 4 When e.TipoCarga Like '%Granel%' Then 2 
 	            When e.TipoCarga Like '%Breakbulk%' and g.PuertoDestino = '%Callao%'Then 10
-			    When e.TipoCarga Like '%Breakbulk%' and g.PuertoDestino = '%Paita%'Then 7
-			    Else 0 End)AS Num
+			    When e.TipoCarga Like '%Breakbulk%' and g.PuertoDestino = '%Paita%'Then 7 Else 0 End)AS Num
 			  FROM CEX_TipoCarga e, CEX_PuertoDestino g )AS TIng ON a.IdTipoCarga=TIng.IdTipoCarga and a.IdPuertoDestino=TIng.IdPuertoDestino
-	order by Año desc
+	--order by Año desc
