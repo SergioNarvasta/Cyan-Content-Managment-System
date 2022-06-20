@@ -66,10 +66,9 @@ SELECT
 	  ISNULL((DATEDIFF(DAY,a.FechaContrato,maETD.FechaETD)+DATEDIFF(DAY,maETD.FechaETD,maETA.fechaETA)+ad.NroDiasETA),'')AS LeadTimeReal,
 	  Space(5)AS PVariacion ,
 	  (Case When maETA.FechaETA=miETA.fechaETA Then 'VERDADERO'Else 'FALSO' End)AS CumpIngreso,
-	  Space(5)AS CumpLeadTime ,
-	  ISNULL(a.IdImportacion,'')AS CodigoOC,     	                          ISNULL(a.OCEstatus,'')AS EstatusOC,                  
+	  Space(5)AS CumpLeadTime , A.CodigoSG AS Codigo,
+	  ISNULL(A.OCompraSG,'')AS CodigoOC,    	                          ISNULL(a.OCEstatus,'')AS EstatusOC,                  
 	  Space(5)AS NCompra,Space(5)AS MDemora,Space(5)AS Coment ,               ISNULL(prd.prd_estado,'')AS EstProd
-
 	From CEX_Importacion A
 	Left Join Cex_ProductoCEX B on A.IdProductoCEX=B.IdProductoCEX
 	Left Join Cex_ProveedorCEX C on A.IdProveedorCEX=C.IdProveedorCEX
