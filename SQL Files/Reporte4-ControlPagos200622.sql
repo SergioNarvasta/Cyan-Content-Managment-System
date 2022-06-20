@@ -19,8 +19,6 @@ SELECT
 	Space(5)AS FirmaResp,
 	Space(5)AS FechaFirma
 	
-
-
 	From CEX_Importacion A
 	Left Join Cex_ProductoCEX B on A.IdProductoCEX=B.IdProductoCEX
 	Left Join Cex_ProveedorCEX C on A.IdProveedorCEX=C.IdProveedorCEX
@@ -33,7 +31,3 @@ SELECT
 	left join CEX_DiasPlazo P on a.IdDiasPlazo=p.IdDiasPlazo
 	left join CEX_EstadoPago Q on a.IdEstadoPago=q.IdEstadoPago
 	left join PRODUCTOS_PRD R on a.prd_codepk=R.prd_codepk
-
-
-	GO
-	--SELECT * FROM INVENTARIO_FISICO_IFI
