@@ -13,8 +13,11 @@ SELECT
 	a.CantidadTM,
 	a.PrecioUSDTM,
 	ISNULL(a.CantidadTM*a.PrecioUSDTM,0)AS Total,
-	ISNULL(a.FechaETD,'')AS EmbProg,
-	Space(8)AS Coment
+	ISNULL(a.FechaETD,'')AS EmbProg, --Verificar
+	Space(5)AS Coment,
+	Space(5)AS FechaEnvInv,          --Verificar
+	Space(5)AS FirmaResp,
+	Space(5)AS FechaFirma
 	
 
 
