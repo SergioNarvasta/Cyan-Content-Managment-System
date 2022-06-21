@@ -13,9 +13,9 @@ SELECT
 	a.CantidadTM,
 	a.PrecioUSDTM,
 	ISNULL(a.CantidadTM*a.PrecioUSDTM,0)AS Total,
-	ISNULL(a.FechaETD,'')AS EmbProg, --Verificar
-	Space(5)AS Coment,
-	Space(5)AS FechaEnvInv,          --Verificar
+	ISNULL(maETD.FechaETD,'')AS EmbProg, 
+	Isnull((Select top 1 DetalleLog From CEX_LogImportacion Where cia_codcia=a.cia_codcia and IdImportacion=a.IdImportacion Order by IdLogImp Desc),'') as Coment,
+	ISNULL(a.FechaIngAlm,'')AS FechaEnvInv,         
 	Space(5)AS FirmaResp,
 	Space(5)AS FechaFirma
 	
@@ -31,3 +31,7 @@ SELECT
 	left join CEX_DiasPlazo P on a.IdDiasPlazo=p.IdDiasPlazo
 	left join CEX_EstadoPago Q on a.IdEstadoPago=q.IdEstadoPago
 	left join PRODUCTOS_PRD R on a.prd_codepk=R.prd_codepk
+	Left Join (Select cia_codcia, idimportacion, max(nrosec) as maxsec from CEX_ImportacionETD group by cia_codcia, idimportacion ) dETD on (a.cia_codcia=dETD.cia_codcia and a.IdImportacion=dETD.IdImportacion)
+	Left Join CEX_ImportacionETD as maETD on a.cia_codcia=maETD.cia_codcia and a.IdImportacion=maETD.IdImportacion and dETD.maxsec=maETD.NroSec
+
+	
