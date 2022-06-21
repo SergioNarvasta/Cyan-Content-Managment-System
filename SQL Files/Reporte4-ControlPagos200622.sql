@@ -1,6 +1,5 @@
 SELECT	  
-    a.Año,
-	a.FechaContrato,
+	Q.EstadoPago,
 	ISNULL(a.CodAnt,' ')AS MF ,                         
 	ISNULL(B.ProductoCEX,' ')AS Producto,                   
 	ISNULL(C.ProveedorCEX,' ')AS Proveedor    ,
@@ -34,5 +33,5 @@ SELECT
 	left join PRODUCTOS_PRD R on a.prd_codepk=R.prd_codepk
 	Left Join (Select cia_codcia, idimportacion, max(nrosec) as maxsec from CEX_ImportacionETD group by cia_codcia, idimportacion ) dETD on (a.cia_codcia=dETD.cia_codcia and a.IdImportacion=dETD.IdImportacion)
 	Left Join CEX_ImportacionETD as maETD on a.cia_codcia=maETD.cia_codcia and a.IdImportacion=maETD.IdImportacion and dETD.maxsec=maETD.NroSec
-
+	where año=2022 and (Q.EstadoPago='PENDIENTE')
 	
