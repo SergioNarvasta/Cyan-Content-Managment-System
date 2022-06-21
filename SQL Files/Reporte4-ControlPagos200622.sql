@@ -1,4 +1,6 @@
 SELECT	  
+    a.Año,
+	a.FechaContrato,
 	ISNULL(a.CodAnt,' ')AS MF ,                         
 	ISNULL(B.ProductoCEX,' ')AS Producto,                   
 	ISNULL(C.ProveedorCEX,' ')AS Proveedor    ,
@@ -17,8 +19,7 @@ SELECT
 	Isnull((Select top 1 DetalleLog From CEX_LogImportacion Where cia_codcia=a.cia_codcia and IdImportacion=a.IdImportacion Order by IdLogImp Desc),'') as Coment,
 	ISNULL(a.FechaIngAlm,'')AS FechaEnvInv,         
 	Space(5)AS FirmaResp,
-	Space(5)AS FechaFirma
-	
+	Space(5)AS FechaFirma	
 	From CEX_Importacion A
 	Left Join Cex_ProductoCEX B on A.IdProductoCEX=B.IdProductoCEX
 	Left Join Cex_ProveedorCEX C on A.IdProveedorCEX=C.IdProveedorCEX
