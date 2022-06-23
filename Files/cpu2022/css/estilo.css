@@ -1,0 +1,90 @@
+@font-face{
+
+font-family: "Roboto-Black";
+src: url("../fonts/Roboto-Black.ttf");
+
+}
+
+html{
+
+height: 100%;
+
+}
+
+
+body{
+
+background-image: linear-gradient(to top,#000 0%,#fff 100%);
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+
+
+#grupo{
+
+
+width: 30%;
+margin: auto;
+background-color: white;
+border-style: none;
+box-shadow: 0px 5px 5px;
+border-radius: 15px 0px 15px 0px;
+
+
+}
+
+.txt{
+
+height: 40px;
+width: 80%;
+background-position: left center;
+padding-left: 45px;
+background-image: url('../sesion.png');
+background-repeat: no-repeat;
+margin-bottom: 20px;
+font-family: Roboto-Black;
+
+border-left-style: none;
+border-top-style: none;
+border-right-style: none;
+
+}
+
+
+.pwd{
+
+height: 40px;
+width: 80%;
+background-position: left center;
+padding-left: 45px;
+background-image: url('../pass.png');
+background-repeat: no-repeat;
+margin-bottom: 20px;
+font-family: Roboto-Black;
+
+border-left-style: none;
+border-top-style: none;
+border-right-style: none;
+
+}
+
+
+.btn{
+height: 40px;
+width: 80%;
+font-family: Roboto-Black;
+margin-bottom: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
