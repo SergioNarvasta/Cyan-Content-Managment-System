@@ -36,7 +36,6 @@ namespace Registro6.Controllers
             {
                 return NotFound();
             }
-
             return View(ordenCompraImp);
         }
         // GET: /Create
@@ -80,7 +79,6 @@ namespace Registro6.Controllers
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 try
@@ -103,7 +101,6 @@ namespace Registro6.Controllers
             }
             return View(ordenCompraImp);
         }
-
         // GET: OrdenCompras/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -118,10 +115,8 @@ namespace Registro6.Controllers
             {
                 return NotFound();
             }
-
             return View(ordenCompraImp);
         }
-
         // POST: OrdenCompras/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
