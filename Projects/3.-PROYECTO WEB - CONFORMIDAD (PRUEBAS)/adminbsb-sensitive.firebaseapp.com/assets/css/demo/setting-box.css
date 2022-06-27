@@ -1,0 +1,108 @@
+.setting-box {
+  background: #fff;
+  border: 1px solid #009688;
+  color: #666;
+  font-size: 13px;
+  width: 215px;
+  position: fixed;
+  right: -215px;
+  top: 100px;
+  z-index: 9999;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s; }
+  .setting-box.open {
+    right: 0; }
+  .setting-box .open-close-ear {
+    position: absolute;
+    background: #009688;
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    border: 1px solid #009688;
+    left: -34px;
+    top: -1px;
+    cursor: pointer;
+    line-height: 43px; }
+    .setting-box .open-close-ear .material-icons {
+      font-size: 20px;
+      color: #fff; }
+  .setting-box .configuration-list-container ul {
+    margin: 0;
+    padding: 10px 15px;
+    list-style: none; }
+    .setting-box .configuration-list-container ul li {
+      display: block;
+      margin-bottom: 15px; }
+  .setting-box .label {
+    color: #fff;
+    padding: 10px 0;
+    background: #009688;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    margin-bottom: 5px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+  .setting-box .switch {
+    float: right; }
+  .setting-box .theme-choose-list-container {
+    margin-top: -5px; }
+    .setting-box .theme-choose-list-container ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      .setting-box .theme-choose-list-container ul li {
+        border-bottom: 1px solid #eee;
+        padding: 8px 8px 4px 8px;
+        position: relative;
+        cursor: pointer;
+        -moz-transition: .5s;
+        -o-transition: .5s;
+        -webkit-transition: .5s;
+        transition: .5s; }
+        .setting-box .theme-choose-list-container ul li.active {
+          background-color: #f3f3f3; }
+          .setting-box .theme-choose-list-container ul li.active:after {
+            font-family: 'Material Icons';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            content: '\E876';
+            font-size: 18px;
+            font-weight: bold; }
+        .setting-box .theme-choose-list-container ul li div {
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          border-radius: 3px; }
+          .setting-box .theme-choose-list-container ul li div.red {
+            background-color: #da4453; }
+          .setting-box .theme-choose-list-container ul li div.blue {
+            background-color: #2992A7; }
+          .setting-box .theme-choose-list-container ul li div.default {
+            background-color: #009688; }
+          .setting-box .theme-choose-list-container ul li div.purple {
+            background-color: #a7296a; }
+          .setting-box .theme-choose-list-container ul li div.warning {
+            background-color: #f6b225; }
+        .setting-box .theme-choose-list-container ul li span {
+          position: relative;
+          bottom: 7px;
+          left: 5px; }
+        .setting-box .theme-choose-list-container ul li:hover {
+          background-color: #f3f3f3; }
+
+.demo-google-material-icon {
+  margin-bottom: 5px;
+  text-align: left; }
+  .demo-google-material-icon .icon-name {
+    position: relative;
+    top: -8px;
+    left: 7px; }

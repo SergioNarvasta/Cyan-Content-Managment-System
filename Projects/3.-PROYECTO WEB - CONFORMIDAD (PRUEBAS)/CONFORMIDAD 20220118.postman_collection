@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "8ab0482d-8c6c-49c4-97c2-a150dbc49e07",
+		"name": "CONFORMIDAD 20220110",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TOKEN - CONFORMIDAD - EQUILIBRA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "https://api.sunat.gob.pe",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "97dee99e-984b-4369-a72e-fb03a6c3defa",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "caWpscwQt8zFaK5t1kgftg==",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "20601647649EFACT001",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "factu2018",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api-seguridad.sunat.gob.pe/v1/clientessol/97dee99e-984b-4369-a72e-fb03a6c3defa/oauth2/token/",
+					"protocol": "https",
+					"host": [
+						"api-seguridad",
+						"sunat",
+						"gob",
+						"pe"
+					],
+					"path": [
+						"v1",
+						"clientessol",
+						"97dee99e-984b-4369-a72e-fb03a6c3defa",
+						"oauth2",
+						"token",
+						""
+					]
+				},
+				"description": "GENERAR TOKEN (POST)"
+			},
+			"response": []
+		},
+		{
+			"name": "CONSULTA CPE PND",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJhcGkuc3VuYXQuZ29iLnBlLmtpZDAwMSIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIyMDYwMTY0NzY0OSIsImF1ZCI6Ilt7XCJhcGlcIjpcImh0dHBzOlwvXC9hcGktY3BlLnN1bmF0LmdvYi5wZVwiLFwicmVjdXJzb1wiOlt7XCJpZFwiOlwiXC92MVwvY29udHJpYnV5ZW50ZVwvY29udHJvbGNwZVwiLFwiaW5kaWNhZG9yXCI6XCIxXCIsXCJndFwiOlwiMTAwMDAwXCJ9XX1dIiwidXNlcmRhdGEiOnsibnVtUlVDIjoiMjA2MDE2NDc2NDkiLCJ0aWNrZXQiOiIxMTAxNTE1MzcwNTAiLCJucm9SZWdpc3RybyI6IiIsImFwZU1hdGVybm8iOiIiLCJsb2dpbiI6IjIwNjAxNjQ3NjQ5RUZBQ1QwMDEiLCJub21icmVDb21wbGV0byI6IkVRVUlMSUJSQSBQRVJVIFMuQSIsIm5vbWJyZXMiOiJFUVVJTElCUkEgUEVSVSBTLkEiLCJjb2REZXBlbmQiOiIwMDExIiwiY29kVE9wZUNvbWVyIjoiIiwiY29kQ2F0ZSI6IiIsIm5pdmVsVU8iOjAsImNvZFVPIjoiIiwiY29ycmVvIjoiIiwidXN1YXJpb1NPTCI6IkVGQUNUMDAxIiwiaWQiOiIiLCJkZXNVTyI6IiIsImRlc0NhdGUiOiIiLCJhcGVQYXRlcm5vIjoiIiwiaWRDZWx1bGFyIjpudWxsLCJtYXAiOnsiaXNDbG9uIjpmYWxzZSwiZGRwRGF0YSI6eyJkZHBfbnVtcnVjIjoiMjA2MDE2NDc2NDkiLCJkZHBfbnVtcmVnIjoiMDAxMSIsImRkcF9lc3RhZG8iOiIwMCIsImRkcF9mbGFnMjIiOiIwMCIsImRkcF91YmlnZW8iOiIxNTAxNDAiLCJkZHBfdGFtYW5vIjoiMDEiLCJkZHBfdHBvZW1wIjoiMjYiLCJkZHBfY2lpdSI6IjUxMjEyIn0sImlkTWVudSI6IjExMDE1MTUzNzA1MCIsImpuZGlQb29sIjoicDAwMTEiLCJ0aXBVc3VhcmlvIjoiMSIsInRpcE9yaWdlbiI6IklUIiwicHJpbWVyQWNjZXNvIjp0cnVlfX0sIm5iZiI6MTY0MTg0NTczNywiY2xpZW50SWQiOiI5N2RlZTk5ZS05ODRiLTQzNjktYTcyZS1mYjAzYTZjM2RlZmEiLCJpc3MiOiJodHRwczpcL1wvYXBpLXNlZ3VyaWRhZC5zdW5hdC5nb2IucGVcL3YxXC9jbGllbnRlc3NvbFwvOTdkZWU5OWUtOTg0Yi00MzY5LWE3MmUtZmIwM2E2YzNkZWZhXC9vYXV0aDJcL3Rva2VuXC8iLCJleHAiOjE2NDE4NDkzMzcsImdyYW50VHlwZSI6InBhc3N3b3JkIiwiaWF0IjoxNjQxODQ1NzM3fQ.Aee_QS8pXp5VjDaVaOIdzVKG99KZH39gywJI6amZotwBmCfcScKEfCfBdadsn2WaOCEc48ffsMcHuNnY2-NOE8mFlSktisVB-U9gxd0chBg3ztOgwBOHGVIxM8Wb7v21P_wNKDF5cR32apuuEh3nUhsh0_gHbjHXtmcNG2uNoD5IvEQoz9uLe8bQGLAscFBcPj3M-dUKQeyMYTGUdj6M-QMqccvs2OIt0W6OeubqW_OQLA0r9X5CzJ0XO--Q_6cIHnJfWpIM3fpXjFdxJklCXsXRUsciVva1Llm4izoLUtLtF1NJZPaDK53b7o83TNWbCXzxJmmQAj4CH5nvKFNtVA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-cpe.sunat.gob.pe/v1/contribuyente/controlcpe/comprobantes?indFechaFiltro=FE&codCpe=01&fecInicio=2021-12-01&fecFin=2022-12-31&numPag=1&numRegPag=50&codEstado=01&codTipTransaccion=&codMoneda=PEN&numSerie=&numCpe=&numRuc=&codTipoDocAdqui=&numDocAdqui=&indContribuyente=C",
+					"protocol": "https",
+					"host": [
+						"api-cpe",
+						"sunat",
+						"gob",
+						"pe"
+					],
+					"path": [
+						"v1",
+						"contribuyente",
+						"controlcpe",
+						"comprobantes"
+					],
+					"query": [
+						{
+							"key": "indFechaFiltro",
+							"value": "FE"
+						},
+						{
+							"key": "codCpe",
+							"value": "01"
+						},
+						{
+							"key": "fecInicio",
+							"value": "2021-12-01"
+						},
+						{
+							"key": "fecFin",
+							"value": "2022-12-31"
+						},
+						{
+							"key": "numPag",
+							"value": "1"
+						},
+						{
+							"key": "numRegPag",
+							"value": "50"
+						},
+						{
+							"key": "codEstado",
+							"value": "01"
+						},
+						{
+							"key": "codTipTransaccion",
+							"value": ""
+						},
+						{
+							"key": "codMoneda",
+							"value": "PEN"
+						},
+						{
+							"key": "numSerie",
+							"value": ""
+						},
+						{
+							"key": "numCpe",
+							"value": ""
+						},
+						{
+							"key": "numRuc",
+							"value": ""
+						},
+						{
+							"key": "codTipoDocAdqui",
+							"value": ""
+						},
+						{
+							"key": "numDocAdqui",
+							"value": ""
+						},
+						{
+							"key": "indContribuyente",
+							"value": "C"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ENVÍO CONFORMIDAD MASIVO (TXT)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJhcGkuc3VuYXQuZ29iLnBlLmtpZDAwMSIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIyMDYwMTY0NzY0OSIsImF1ZCI6Ilt7XCJhcGlcIjpcImh0dHBzOlwvXC9hcGktY3BlLnN1bmF0LmdvYi5wZVwiLFwicmVjdXJzb1wiOlt7XCJpZFwiOlwiXC92MVwvY29udHJpYnV5ZW50ZVwvY29udHJvbGNwZVwiLFwiaW5kaWNhZG9yXCI6XCIxXCIsXCJndFwiOlwiMTAwMDAwXCJ9XX1dIiwidXNlcmRhdGEiOnsibnVtUlVDIjoiMjA2MDE2NDc2NDkiLCJ0aWNrZXQiOiIxMTAxMTM1MTU0ODEiLCJucm9SZWdpc3RybyI6IiIsImFwZU1hdGVybm8iOiIiLCJsb2dpbiI6IjIwNjAxNjQ3NjQ5RUZBQ1QwMDEiLCJub21icmVDb21wbGV0byI6IkVRVUlMSUJSQSBQRVJVIFMuQSIsIm5vbWJyZXMiOiJFUVVJTElCUkEgUEVSVSBTLkEiLCJjb2REZXBlbmQiOiIwMDExIiwiY29kVE9wZUNvbWVyIjoiIiwiY29kQ2F0ZSI6IiIsIm5pdmVsVU8iOjAsImNvZFVPIjoiIiwiY29ycmVvIjoiIiwidXN1YXJpb1NPTCI6IkVGQUNUMDAxIiwiaWQiOiIiLCJkZXNVTyI6IiIsImRlc0NhdGUiOiIiLCJhcGVQYXRlcm5vIjoiIiwiaWRDZWx1bGFyIjpudWxsLCJtYXAiOnsiaXNDbG9uIjpmYWxzZSwiZGRwRGF0YSI6eyJkZHBfbnVtcnVjIjoiMjA2MDE2NDc2NDkiLCJkZHBfbnVtcmVnIjoiMDAxMSIsImRkcF9lc3RhZG8iOiIwMCIsImRkcF9mbGFnMjIiOiIwMCIsImRkcF91YmlnZW8iOiIxNTAxNDAiLCJkZHBfdGFtYW5vIjoiMDEiLCJkZHBfdHBvZW1wIjoiMjYiLCJkZHBfY2lpdSI6IjUxMjEyIn0sImlkTWVudSI6IjExMDExMzUxNTQ4MSIsImpuZGlQb29sIjoicDAwMTEiLCJ0aXBVc3VhcmlvIjoiMSIsInRpcE9yaWdlbiI6IklUIiwicHJpbWVyQWNjZXNvIjp0cnVlfX0sIm5iZiI6MTY0MTgzMjUxNSwiY2xpZW50SWQiOiI5N2RlZTk5ZS05ODRiLTQzNjktYTcyZS1mYjAzYTZjM2RlZmEiLCJpc3MiOiJodHRwczpcL1wvYXBpLXNlZ3VyaWRhZC5zdW5hdC5nb2IucGVcL3YxXC9jbGllbnRlc3NvbFwvOTdkZWU5OWUtOTg0Yi00MzY5LWE3MmUtZmIwM2E2YzNkZWZhXC9vYXV0aDJcL3Rva2VuXC8iLCJleHAiOjE2NDE4MzYxMTUsImdyYW50VHlwZSI6InBhc3N3b3JkIiwiaWF0IjoxNjQxODMyNTE1fQ.A5s-OwU3hLXQySdE4bqKgtsvQ1ChWUTqjGxS022NnxWna8QcPNsJVWuMuIYSfu7M0ITJFinLOB553BixvmO17N6pKM5gwzHRuL-6uhxdUN21QwxJ-k2VA42LkkkCNX5bxwVpfmJMVsjIQMCx-H5CU9G293nPrerGAv3hxwDBMT2eLIR_IUTnthApJkBbu4UT1g30-lILSZfpQmNhPa84xCHxpJTgdKiL3ejbM6FOuMTKU4ayli8mh8rTJ7ZRKe4nK3SC-K5MzOntAXmKlb3pjic4NOlCAOCr-7-dQrvSWmiD3R4ltLlZ1mCATDnSQ0XXJUZkUoIlD3i014XfFfM9DQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/D:/Datos/wgnegron/Escritorio/CONFORMIDAD/collection SAC - 20220000006/20601647649-PND-20220110-9.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api-cpe.sunat.gob.pe/v1/contribuyente/controlcpe/enviosmasivo/01",
+					"protocol": "https",
+					"host": [
+						"api-cpe",
+						"sunat",
+						"gob",
+						"pe"
+					],
+					"path": [
+						"v1",
+						"contribuyente",
+						"controlcpe",
+						"enviosmasivo",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONSULTA TICKET (TXT ENVIADO)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJhcGkuc3VuYXQuZ29iLnBlLmtpZDAwMSIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIyMDYwMTY0NzY0OSIsImF1ZCI6Ilt7XCJhcGlcIjpcImh0dHBzOlwvXC9hcGktY3BlLnN1bmF0LmdvYi5wZVwiLFwicmVjdXJzb1wiOlt7XCJpZFwiOlwiXC92MVwvY29udHJpYnV5ZW50ZVwvY29udHJvbGNwZVwiLFwiaW5kaWNhZG9yXCI6XCIxXCIsXCJndFwiOlwiMTAwMDAwXCJ9XX1dIiwidXNlcmRhdGEiOnsibnVtUlVDIjoiMjA2MDE2NDc2NDkiLCJ0aWNrZXQiOiIxMTAxNTE1MzcwNTAiLCJucm9SZWdpc3RybyI6IiIsImFwZU1hdGVybm8iOiIiLCJsb2dpbiI6IjIwNjAxNjQ3NjQ5RUZBQ1QwMDEiLCJub21icmVDb21wbGV0byI6IkVRVUlMSUJSQSBQRVJVIFMuQSIsIm5vbWJyZXMiOiJFUVVJTElCUkEgUEVSVSBTLkEiLCJjb2REZXBlbmQiOiIwMDExIiwiY29kVE9wZUNvbWVyIjoiIiwiY29kQ2F0ZSI6IiIsIm5pdmVsVU8iOjAsImNvZFVPIjoiIiwiY29ycmVvIjoiIiwidXN1YXJpb1NPTCI6IkVGQUNUMDAxIiwiaWQiOiIiLCJkZXNVTyI6IiIsImRlc0NhdGUiOiIiLCJhcGVQYXRlcm5vIjoiIiwiaWRDZWx1bGFyIjpudWxsLCJtYXAiOnsiaXNDbG9uIjpmYWxzZSwiZGRwRGF0YSI6eyJkZHBfbnVtcnVjIjoiMjA2MDE2NDc2NDkiLCJkZHBfbnVtcmVnIjoiMDAxMSIsImRkcF9lc3RhZG8iOiIwMCIsImRkcF9mbGFnMjIiOiIwMCIsImRkcF91YmlnZW8iOiIxNTAxNDAiLCJkZHBfdGFtYW5vIjoiMDEiLCJkZHBfdHBvZW1wIjoiMjYiLCJkZHBfY2lpdSI6IjUxMjEyIn0sImlkTWVudSI6IjExMDE1MTUzNzA1MCIsImpuZGlQb29sIjoicDAwMTEiLCJ0aXBVc3VhcmlvIjoiMSIsInRpcE9yaWdlbiI6IklUIiwicHJpbWVyQWNjZXNvIjp0cnVlfX0sIm5iZiI6MTY0MTg0NTczNywiY2xpZW50SWQiOiI5N2RlZTk5ZS05ODRiLTQzNjktYTcyZS1mYjAzYTZjM2RlZmEiLCJpc3MiOiJodHRwczpcL1wvYXBpLXNlZ3VyaWRhZC5zdW5hdC5nb2IucGVcL3YxXC9jbGllbnRlc3NvbFwvOTdkZWU5OWUtOTg0Yi00MzY5LWE3MmUtZmIwM2E2YzNkZWZhXC9vYXV0aDJcL3Rva2VuXC8iLCJleHAiOjE2NDE4NDkzMzcsImdyYW50VHlwZSI6InBhc3N3b3JkIiwiaWF0IjoxNjQxODQ1NzM3fQ.Aee_QS8pXp5VjDaVaOIdzVKG99KZH39gywJI6amZotwBmCfcScKEfCfBdadsn2WaOCEc48ffsMcHuNnY2-NOE8mFlSktisVB-U9gxd0chBg3ztOgwBOHGVIxM8Wb7v21P_wNKDF5cR32apuuEh3nUhsh0_gHbjHXtmcNG2uNoD5IvEQoz9uLe8bQGLAscFBcPj3M-dUKQeyMYTGUdj6M-QMqccvs2OIt0W6OeubqW_OQLA0r9X5CzJ0XO--Q_6cIHnJfWpIM3fpXjFdxJklCXsXRUsciVva1Llm4izoLUtLtF1NJZPaDK53b7o83TNWbCXzxJmmQAj4CH5nvKFNtVA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-cpe.sunat.gob.pe/v1/contribuyente/controlcpe/enviosmasivo?indTipoRegistro=01&fecEnvioInicial=2022-01-01&fecEnvioFinal=2022-01-10&numPag=1&numRegPag=20&codTicketMasivo=202200000009",
+					"protocol": "https",
+					"host": [
+						"api-cpe",
+						"sunat",
+						"gob",
+						"pe"
+					],
+					"path": [
+						"v1",
+						"contribuyente",
+						"controlcpe",
+						"enviosmasivo"
+					],
+					"query": [
+						{
+							"key": "indTipoRegistro",
+							"value": "01"
+						},
+						{
+							"key": "fecEnvioInicial",
+							"value": "2022-01-01"
+						},
+						{
+							"key": "fecEnvioFinal",
+							"value": "2022-01-10"
+						},
+						{
+							"key": "numPag",
+							"value": "1"
+						},
+						{
+							"key": "numRegPag",
+							"value": "20"
+						},
+						{
+							"key": "codTicketMasivo",
+							"value": "202200000009"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ENVÍO DE SUSTENTO DE DISCONFORMIDAD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"value": "",
+							"type": "default"
+						},
+						{
+							"key": "comprobantes",
+							"value": "[ { \"numRuc\": \"20145236524\", \"codCpe\": \"01\", \"numSerie\": \"E001\", \"numCpe\": 81 },{ \"numRuc\": \"20145236524\", \"codCpe\": \"02\",\"numSerie\": \"E002\", \"numCpe\": 90 }]",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api-cpe.sunat.gob.pe/v1/contribuyente/controlcpe/comprobantes/sustento",
+					"protocol": "https",
+					"host": [
+						"api-cpe",
+						"sunat",
+						"gob",
+						"pe"
+					],
+					"path": [
+						"v1",
+						"contribuyente",
+						"controlcpe",
+						"comprobantes",
+						"sustento"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

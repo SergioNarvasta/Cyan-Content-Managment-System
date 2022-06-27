@@ -1,0 +1,80 @@
+﻿h1 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+code {
+    background-color: transparent;
+    padding: 0;
+}
+
+pre {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+
+/*Colorbox*/
+.colorbox .shape {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: none;
+    margin-bottom: -5px;
+}
+
+.colorbox .code {
+    position: relative;
+    top: -2px;
+    left: 5px;
+}
+
+.colorbox .shape.theme-color-default {
+    background-color: #009688;
+}
+
+.colorbox .shape.theme-color-blue {
+    background-color: #2992A7;
+}
+
+.colorbox .shape.theme-color-red {
+    background-color: #da4453;
+}
+
+.colorbox .shape.theme-color-purple {
+    background-color: #a7296a;
+}
+
+.colorbox .shape.theme-color-warning {
+    background-color: #f6b225;
+}
+
+.colorbox .shape.color-default {
+    background-color: #bdc3c6;
+}
+
+.colorbox .shape.color-danger {
+    background-color: #DA4453;
+}
+
+.colorbox .shape.color-info {
+    background-color: #01C0C8;
+}
+
+.colorbox .shape.color-success {
+    background-color: #16a085;
+}
+
+.colorbox .shape.color-primary {
+    background-color: #2980b9;
+}
+
+.colorbox .shape.color-warning {
+    background-color: #f6b225;
+}

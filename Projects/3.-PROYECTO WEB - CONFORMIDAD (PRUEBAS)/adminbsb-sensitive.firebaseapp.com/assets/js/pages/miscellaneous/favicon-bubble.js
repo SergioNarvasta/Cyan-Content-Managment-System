@@ -1,0 +1,32 @@
+﻿(function ($) {
+    'use strict';
+    $(function () {
+        //Init color picker
+        $('.colorpicker-component').colorpicker();
+
+        $('.page-body .js-setfavicon').on('click', setBubble);
+
+        function setBubble() {
+            //Tinycon options
+            Tinycon.setOptions({
+                color: $('.js-text-color').val(),
+                background: $('.js-background-color').val(),
+                font: '10px Arial'
+            });
+
+            var val = parseInt($(this).parents('.input-group').find('input').val()) || $(this).parents('.input-group').find('input').val();
+            Tinycon.setBubble(val);
+        }
+
+        //Init switch buttons
+        var $switchButtons = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+        $switchButtons.forEach(function (e) {
+            var size = $(e).data('size');
+            var options = {};
+            options['color'] = '#009688';
+            if (size !== undefined) options['size'] = size;
+
+            var switchery = new Switchery(e, options);
+        });
+    });
+}(jQuery))

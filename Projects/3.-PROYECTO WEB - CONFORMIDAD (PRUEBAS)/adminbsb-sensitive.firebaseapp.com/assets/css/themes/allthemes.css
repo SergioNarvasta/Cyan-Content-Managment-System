@@ -1,0 +1,26 @@
+﻿.theme-blue .navbar.navbar-default {
+  background-color: #2992A7; }
+
+.theme-blue .sidebar .sidebar-nav .metismenu li.active a {
+  border-color: #2992A7; }
+
+.theme-red .navbar.navbar-default {
+  background-color: #da4453; }
+  .theme-red .navbar.navbar-default .navbar-nav > .open > a {
+    background-color: #da4453; }
+
+.theme-red .sidebar .sidebar-nav .metismenu li.active a {
+  border-color: #da4453; }
+
+.theme-purple .navbar.navbar-default {
+  background-color: #a7296a; }
+
+.theme-purple .sidebar .sidebar-nav .metismenu li.active a {
+  border-color: #a7296a; }
+
+.theme-warning .navbar.navbar-default {
+  background-color: #f6b225; }
+
+.theme-warning .sidebar .sidebar-nav .metismenu li.active a {
+  border-color: #f6b225; }
+
