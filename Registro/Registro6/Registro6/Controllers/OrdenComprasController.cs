@@ -43,7 +43,7 @@ namespace Registro6.Controllers
             return View(ordenCompraImp);
         }
 
-        // GET: OrdenCompras/Create
+        // GET: /Create
         public IActionResult Create()
         {
             return View();
@@ -65,7 +65,7 @@ namespace Registro6.Controllers
             return View(ordenCompraImp);
         }
 
-        // GET: OrdenCompras/Edit/5
+        // GET:/Edit/
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.OrdenCompraImp == null)
@@ -81,9 +81,9 @@ namespace Registro6.Controllers
             return View(ordenCompraImp);
         }
 
-        // POST: OrdenCompras/Edit/5
+        // POST: /Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdOrdenCompraImp,TipoOCompra,NroOCompra,Fecha,TipoCambio,Estado,CodInterno,CodCotizacion,Proveedor,Contacto,Area,TipoCompra,CondicionPago")] OrdenCompraImp ordenCompraImp)
