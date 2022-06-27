@@ -30,7 +30,6 @@ namespace Registro6.Controllers
             {
                 return NotFound();
             }
-
             var ordenCompraImp = await _context.OrdenCompraImp
                 .FirstOrDefaultAsync(m => m.IdOrdenCompraImp == id);
             if (ordenCompraImp == null)
@@ -40,7 +39,6 @@ namespace Registro6.Controllers
 
             return View(ordenCompraImp);
         }
-
         // GET: /Create
         public IActionResult Create()
         {
@@ -137,12 +135,10 @@ namespace Registro6.Controllers
             if (ordenCompraImp != null)
             {
                 _context.OrdenCompraImp.Remove(ordenCompraImp);
-            }
-            
+            } 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool OrdenCompraImpExists(int id)
         {
           return _context.OrdenCompraImp.Any(e => e.IdOrdenCompraImp == id);

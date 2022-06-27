@@ -14,6 +14,7 @@ namespace Registro6.Data
 
             optionsBuilder.UseSqlServer("Server=HDWSDES01;Database=BDEsp;Trusted_Connection=true; MultipleActiveResultSets=true;");
         }
+
         public DbSet<Registro6.Models.OrdenCompraImp> OrdenCompraImp { get; set; }
     }
 }
