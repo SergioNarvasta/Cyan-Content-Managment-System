@@ -98,19 +98,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\snarvasta\\.nuget\\packages\\": {}
+    "C:\\Users\\MI PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\snarvasta\\Documents\\Docs Sergio\\ASP.NET\\Briefcase 5.0\\Briefcase2.csproj",
+      "projectUniqueName": "F:\\3. PROYECTOS\\Innovation Services\\Desarrollo de Proyecto\\Briefcase2.csproj",
       "projectName": "Briefcase2",
-      "projectPath": "C:\\Users\\snarvasta\\Documents\\Docs Sergio\\ASP.NET\\Briefcase 5.0\\Briefcase2.csproj",
-      "packagesPath": "C:\\Users\\snarvasta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\snarvasta\\Documents\\Docs Sergio\\ASP.NET\\Briefcase 5.0\\obj\\",
+      "projectPath": "F:\\3. PROYECTOS\\Innovation Services\\Desarrollo de Proyecto\\Briefcase2.csproj",
+      "packagesPath": "C:\\Users\\MI PC\\.nuget\\packages\\",
+      "outputPath": "F:\\3. PROYECTOS\\Innovation Services\\Desarrollo de Proyecto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\snarvasta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -177,7 +177,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

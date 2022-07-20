@@ -1,1 +1,0 @@
-Do HDSOFT-PY.app
