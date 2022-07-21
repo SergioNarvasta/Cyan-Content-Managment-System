@@ -11,13 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-Registro6-D8CFA78B-B65D-43AA-8869-929E3C64ADD2")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("Registro6")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("5860c519-92ca-449e-99e4-24f9b2bab38b")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("WebAPIObject")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Registro6")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Registro6")]
+[assembly: System.Reflection.AssemblyProductAttribute("WebAPIObject")]
+[assembly: System.Reflection.AssemblyTitleAttribute("WebAPIObject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
