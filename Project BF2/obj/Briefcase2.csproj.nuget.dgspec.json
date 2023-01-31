@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\3. PROYECTOS\\Innovation Services\\Desarrollo de Proyecto\\Briefcase2.csproj": {}
+    "F:\\3.PROYECTOS\\Project\\Briefcase\\Project BF2\\Briefcase2.csproj": {}
   },
   "projects": {
-    "F:\\3. PROYECTOS\\Innovation Services\\Desarrollo de Proyecto\\Briefcase2.csproj": {
+    "F:\\3.PROYECTOS\\Project\\Briefcase\\Project BF2\\Briefcase2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\3. PROYECTOS\\Innovation Services\\Desarrollo de Proyecto\\Briefcase2.csproj",
+        "projectUniqueName": "F:\\3.PROYECTOS\\Project\\Briefcase\\Project BF2\\Briefcase2.csproj",
         "projectName": "Briefcase2",
-        "projectPath": "F:\\3. PROYECTOS\\Innovation Services\\Desarrollo de Proyecto\\Briefcase2.csproj",
+        "projectPath": "F:\\3.PROYECTOS\\Project\\Briefcase\\Project BF2\\Briefcase2.csproj",
         "packagesPath": "C:\\Users\\MI PC\\.nuget\\packages\\",
-        "outputPath": "F:\\3. PROYECTOS\\Innovation Services\\Desarrollo de Proyecto\\obj\\",
+        "outputPath": "F:\\3.PROYECTOS\\Project\\Briefcase\\Project BF2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,7 +51,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -81,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
