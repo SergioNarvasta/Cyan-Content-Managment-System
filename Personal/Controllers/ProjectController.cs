@@ -21,6 +21,7 @@ namespace Personal.Controllers
         {
             if (project == null)
                 return BadRequest();
+
             if (project.Name == string.Empty)
             {
                 ModelState.AddModelError("Name", "El proyecto no debe ser vacio");
@@ -34,6 +35,7 @@ namespace Personal.Controllers
         {
             if (project == null)
                 return BadRequest();
+
             if (project.Name == string.Empty)
             {
                 ModelState.AddModelError("Name", "El proyecto no debe ser vacio");
@@ -46,7 +48,7 @@ namespace Personal.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteProject(string id) 
         {
-          await db.DeleteProject(id);
+            await db.DeleteProject(id);
             return NoContent();
         }
     }
