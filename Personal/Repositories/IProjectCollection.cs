@@ -6,8 +6,8 @@ namespace Personal.Repositories
     {
         Task InsertProject(Project project);
         Task UpdateProject(Project project);
-        Task DeleteProject(Project project);
-        Task<Project> GetProject(string id);
+        Task DeleteProject(string id);
+        Task<Project> GetProjectById(string id);
         Task<List<Project>> GetAllProjects();
     }
 }
