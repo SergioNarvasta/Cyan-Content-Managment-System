@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Form, FormGroup,Input } from "reactstrap";
 
-const modeloRecibo = {  
+const modeloProject = {  
     id : 0,
     name :"",
     description :"",
@@ -9,28 +9,28 @@ const modeloRecibo = {
 }
 
 const ProyectoRegistro = () =>{
-   const [recibo,setrecibo]= useState(modeloRecibo);
+   const [project,setProject]= useState(modeloProject);
         
    const actualizaDato = (e) => {
      console.log(e.target.name+" : "+ e.target.value);
-     setrecibo(
+     setProject(
         {
-            ...recibo,
+            ...project,
             [e.target.name] : e.target.value
         }
      )
    }
    const enviarDatos = () => {
-        guardarRecibo(recibo)
+        guardarProject(project)
     
    }
-   const guardarRecibo = async (recibo) =>{
+   const guardarProject = async (project) =>{
     const response = await fetch("api/project",{
       method:'POST',
       headers: {
          'Content-Type':'application/json;charset=utf-8'
       },
-      body:JSON.stringify(recibo)
+      body:JSON.stringify(project)
     })
     if(response.ok){
         console.log("Registrado con exito");
@@ -46,16 +46,16 @@ const ProyectoRegistro = () =>{
   
                 <FormGroup className="d-flex flex-row fg-tit">
                   <label>Nombre de Proyeco</label>
-                  <Input id="form-titulo" name="titulo" onChange={(e) => actualizaDato(e) } value={recibo.name}></Input>
+                  <Input id="form-titulo" name="name" onChange={(e) => actualizaDato(e) } value={project.name}></Input>
                </FormGroup>
                 <div className="d-flex flex-row fg-box2">
                    <FormGroup className="d-flex flex-row">
                      <label>Description</label>
-                     <Input id="form-nroDoc" name="nroDoc" onChange={(e) => actualizaDato(e) } value={recibo.description}></Input>
+                     <Input id="form-nroDoc" name="description" onChange={(e) => actualizaDato(e) } value={project.description}></Input>
                    </FormGroup>
                    <FormGroup className="d-flex flex-row">
                      <label>Link</label>
-                     <Input id="form-tipodoc" name="tipoDoc" onChange={(e) => actualizaDato(e) } value={recibo.link}></Input>
+                     <Input id="form-tipodoc" name="link" onChange={(e) => actualizaDato(e) } value={project.link}></Input>
                    </FormGroup>                  
                 </div>
     </Form>

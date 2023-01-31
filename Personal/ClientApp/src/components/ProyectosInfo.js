@@ -5,10 +5,9 @@ const ProyectosInfo = ({data}) =>{
         <Table striped responsive>
             <thead>
                 <tr>
-                    <th>NroDoc      </th>
-                    <th>Titulo      </th>
-                    <th>Descripcion </th>
-                    <th>Moneda      </th>
+                    <th>Nombre      </th>
+                    <th>Descripcion      </th>
+                    <th>link </th>
                     
                 </tr>
             </thead>
@@ -21,9 +20,9 @@ const ProyectosInfo = ({data}) =>{
                 ):(
                     data.map((item) =>(
                     <tr key={item.id} >
-                        <td>{item.nroDoc}</td>
-                        <td>{item.titulo     }</td>
-                        <td>{item.descripcion}</td>
+                        <td>{item.name}</td>
+                        <td>{item.description     }</td>
+                        <td>{item.link}</td>
             
                     </tr>                    
                     ))
