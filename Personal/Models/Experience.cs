@@ -7,10 +7,15 @@ namespace Personal.Models
     {
         [BsonId]
         public ObjectId Id { get; set; }
+
         public string Empresa { get; set; }
+
         public string Cargo { get; set; }
+
         public string Descripcion { get; set; }
+
         public string Fecha { get; set; }
+        
         public string Skills {get;set;}
     }
 }
