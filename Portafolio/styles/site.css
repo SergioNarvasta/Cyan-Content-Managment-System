@@ -1,0 +1,102 @@
+html{
+    font-family: 'segoe UI';
+}
+header{
+    width: 98%;
+	height: 90px;
+	justify-content: space-around;
+	background: linear-gradient(to top,#00CED1  0%, #0000FF 100%);
+	border-radius: 35px;
+	margin-left: 1%;
+	margin-top: 1%; 
+	position: relative;
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+}
+ul{
+   color: aliceblue;
+   font-size: 18px;
+}
+#caja{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin-left: 20%;
+}
+#datos{
+    margin-top: 80px;
+    margin-left: 30px;
+}
+#desc{
+    width: 80%;
+    border: 1px solid white;
+    margin-left: 10%;
+    border-radius:35px ;
+    text-align: center;
+}
+#perfil{
+    background-color: #0065b3;
+    color: white;
+    width: 60%;
+    height: 500px;
+    margin-left: 20%;
+    border-radius: 35px;
+    
+}
+footer{
+    width: 100%;
+	height:100px;
+	position: relative;
+	display: flex;
+    background: #1d262d;
+	font-family: 'segoe UI';
+    border-radius: 35px;
+    text-align: center;
+}
+footer p{
+    color: aliceblue;
+}
+
+#estudios,#experiencia{
+    background-color: #0065b3;
+    color: white;
+    width: 60%;
+    height: 700px;
+    margin-left: 20%;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+}
+#sub{
+    display: flex;
+    flex-direction: row;
+    margin-left: 170px;
+}
+
+#primaria{
+    margin-top: 10px;
+    margin-left: 40px;
+}
+#desc_est{
+    width: 80%;
+    border: 1px solid white;
+    margin-left: 10%;
+    border-radius:35px ;
+    text-align: center;
+}
+#exp{
+    display: flex;
+    flex-direction: row;
+}
+#img {
+    margin-top: 10px;
+    margin-left: 100px;
+}
+#sub-exp{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+}
