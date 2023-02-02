@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Card, CardBody, CardHeader, Col, Container, Row} from "reactstrap";
+import { Card, CardBody, CardHeader, Col, Container, Row} from "reactstrap";
 import ProyectosInfo from "./ProyectosInfo";
 
 const ProyectosListado = () =>{
@@ -21,8 +21,10 @@ const ProyectosListado = () =>{
     ListarProyectos()
   },[])
 
-const IrRegistro = () =>{
-  document.getElementById("LnReg").click();
+const IrGestion = () =>{
+  if(document.getElementById("psd").value == '0024.'){
+    document.getElementById("LnReg").click();
+  }
 }
  
   return (
@@ -32,11 +34,14 @@ const IrRegistro = () =>{
         <Card>
           <CardHeader>
             <h5>Proyectos Realizados</h5>
+            <p>Descripcion</p>
           </CardHeader>
           <CardBody>
-            <Button id="btn_new" onClick={IrRegistro}> Nuevo Recibo</Button>
             <hr/><hr/>
             <ProyectosInfo data={proyectos}></ProyectosInfo>
+            <hr></hr>
+            <input  id="psd" type="text"></input>
+            <button id="btn_new" onClick={IrGestion}> Nuevo Proyecto</button>
           </CardBody>
         </Card>
         </Col>

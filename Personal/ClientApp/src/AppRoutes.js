@@ -15,7 +15,7 @@ const AppRoutes = [
   {
     path: '/registro',
     element: <ProyectoRegistro />
-  }
+  },
 
 ];
 

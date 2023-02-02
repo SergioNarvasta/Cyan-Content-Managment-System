@@ -1,35 +1,19 @@
-import { Table } from "reactstrap";
+import './Proyectos.css';
 
 const ProyectosInfo = ({data}) =>{
     return (
-        <Table striped responsive>
-            <thead>
-                <tr>
-                    <th>Nombre      </th>
-                    <th>Descripcion      </th>
-                    <th>link </th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-               {
-                (data.length < 1) ?(
-                    <tr>
-                        <td colSpan="8">Sin registros</td>
-                    </tr>
-                ):(
-                    data.map((item) =>(
-                    <tr key={item.id} >
-                        <td>{item.name}</td>
-                        <td>{item.description     }</td>
-                        <td>{item.link}</td>
-            
-                    </tr>                    
-                    ))
-                )
-               }
-            </tbody>
-        </Table>
+    <div id="List">
+        { data.map ((item) =>(
+          <div key={item.id} id="item"> <br></br>
+            <div className="img">Imagen</div>
+            <div><p>{item.name}</p></div>
+            <div><p>{item.description}</p></div>
+            <div><a href={item.link}>{item.link}</a></div>
+          </div>
+          ))
+        }
+    </div>
+        
     )
 }
 export default ProyectosInfo;
