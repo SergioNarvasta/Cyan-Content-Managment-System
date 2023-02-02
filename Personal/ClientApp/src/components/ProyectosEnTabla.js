@@ -33,8 +33,7 @@ const ProyectosTabla = ({data}) =>{
                 )
                }
             </tbody>
-        </Table>
-        
+        </Table>      
     )
 }
 export default ProyectosTabla;

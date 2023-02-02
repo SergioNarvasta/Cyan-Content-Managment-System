@@ -5,7 +5,6 @@ import ProyectosInfo from "./ProyectosInfo";
 const ProyectosListado = () =>{
   const [proyectos,setProyectos] = useState([]);
   
-
   const ListarProyectos = async () => {
     const response = await fetch("/api/project");
 
