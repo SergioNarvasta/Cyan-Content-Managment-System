@@ -12,6 +12,7 @@ const ProyectosTabla = ({data}) =>{
                     <th>Acciones</th>                
                 </tr>
             </thead>
+            
             <tbody>
                {
                 (data.length < 1) ?(
