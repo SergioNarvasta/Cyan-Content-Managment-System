@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Personal.Repositories
 {
-    public interface IProjectCollection
+    public interface IExperienceCollection
     {
         Task InsertExperience(Experience experience);
 
@@ -11,7 +11,7 @@ namespace Personal.Repositories
 
         Task DeleteExperience(string id);
 
-        Task<Project> GetExperienceById(string id);
+        Task<Experience> GetExperienceById(string id);
         
         Task<IEnumerable<Experience>> GetAllExperience();
     }

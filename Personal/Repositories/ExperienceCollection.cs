@@ -24,23 +24,23 @@ namespace Personal.Repositories
            return await Collection.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
 
-        public async Task<Project> GetProjectById(string id)
+        public async Task<Experience> GetExperienceById(string id)
         {
             return await Collection.FindAsync(new BsonDocument { { "_id", new ObjectId(id) } })
                 .Result.FirstAsync();
         }
 
-        public async Task InsertProject(Project project)
+        public async Task InsertExperience(Experience experience)
         {
-            await Collection.InsertOneAsync(project);
+            await Collection.InsertOneAsync(experience);
         }
 
-        public async Task UpdateProject(Project project)
+        public async Task UpdateExperience(Experience experience)
         {
-            var filter = Builders<Project>
+            var filter = Builders<Experience>
                 .Filter
-                .Eq(s => s.Id, project.Id);
-            await Collection.ReplaceOneAsync(filter, project);
+                .Eq(s => s.Id, experience.Id);
+            await Collection.ReplaceOneAsync(filter, experience);
         }
     }
 }
