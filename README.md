@@ -1,2 +1,2 @@
 # Briefcase
-Personal Briefcase developed in .NET Core 6, React Js, MongoDb, Bootstrap5, Azure Devops
+Personal Briefcase developed in .NET Core 6, React Js, Javascript, Bootstrap5, MongoDb NoSQL
