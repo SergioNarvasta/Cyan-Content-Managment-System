@@ -19,7 +19,7 @@ namespace Personal.Repositories
             await Collection.DeleteOneAsync(filter);
         }
 
-        public async Task<IEnumerable<Experience>> GetAllExperience()
+        public async Task<IEnumerable<Experience>> GetAllExperiences()
         {
            return await Collection.FindAsync(new BsonDocument()).Result.ToListAsync();
         }

@@ -23,9 +23,9 @@ namespace Personal.Controllers
             if (experience == null)
                 return BadRequest();
 
-            if (experience.Name == string.Empty)
+            if (experience.Descripcion == string.Empty)
             {
-                ModelState.AddModelError("Name", "El proyecto no debe ser vacio");
+                ModelState.AddModelError("Descripcion", "El proyecto no debe ser vacio");
             }
             await db.InsertExperience(experience);
             return Created("Created", true);
@@ -37,9 +37,9 @@ namespace Personal.Controllers
             if (experience == null)
                 return BadRequest();
 
-            if (experience.Name == string.Empty)
+            if (experience.Descripcion == string.Empty)
             {
-                ModelState.AddModelError("Name", "El proyecto no debe ser vacio");
+                ModelState.AddModelError("Descripcion", "El proyecto no debe ser vacio");
             }
             experience.Id = new MongoDB.Bson.ObjectId(id);
             await db.UpdateExperience(experience);

@@ -1,6 +1,9 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace Personal.Models
 {
-    public class Class
+    public class Skill
     {
        [BsonId]
         public ObjectId Id { get; set; }
@@ -9,6 +12,6 @@ namespace Personal.Models
 
         public string Version {get; set;}
 
-        public image Icono {}
+        public string Icono {get;set;}
     }
 }

@@ -13,6 +13,6 @@ namespace Personal.Repositories
 
         Task<Experience> GetExperienceById(string id);
         
-        Task<IEnumerable<Experience>> GetAllExperience();
+        Task<IEnumerable<Experience>> GetAllExperiences();
     }
 }
