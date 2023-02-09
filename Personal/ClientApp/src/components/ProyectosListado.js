@@ -13,7 +13,7 @@ const ProyectosListado = () =>{
       setProyectos(data);
       //console.log(data);
     }else{
-      console.log("Error al listar (/api/recibos)")
+      console.log("Error al listar (/api/project)")
     }
   }
   useEffect(()=>{
