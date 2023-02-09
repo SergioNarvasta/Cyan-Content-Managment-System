@@ -15,6 +15,9 @@ namespace Personal.Models
         public string Descripcion { get; set; }
         
         public string Fecha { get; set; }
+        
+        public string Url {get;set;}
+        
        
     }
 }
