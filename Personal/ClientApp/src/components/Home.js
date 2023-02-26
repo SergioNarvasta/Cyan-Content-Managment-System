@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Home.css';
+import perfil from './assets/Perfil.jpg';
 
 export class Home extends Component {
   static displayName = Home.name;
-
   render() {
     return (
       <div>
@@ -11,7 +11,7 @@ export class Home extends Component {
           <div id="caja">
             <div>
                 <h1>Perfil</h1>
-                <img src="./img/Perfil.jpg" height="200" width="200"></img>
+                <img src={perfil} height="200" width="200"></img>
             </div>
             <div id="datos">
                 <p>Sergio Alan Jesus Narvasta Pichilingue</p>
