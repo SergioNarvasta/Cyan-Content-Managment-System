@@ -11,7 +11,7 @@ namespace Personal.Repositories
 
         public ProjectCollection() 
         {
-            Collection = _repository.db.GetCollection<Project>("Projects");
+            Collection = _repository.db.GetCollection<Project>("Project");
         }
         public async Task DeleteProject(string id)
         {
