@@ -1,7 +1,7 @@
 
 import { Home } from "./components/Home";
-import ProyectosListado from "./components/ProyectosListado";
-import ProyectoRegistro from "./components/ProyectoRegistro";
+import ProyectosListado from "./components/proyecto/ProyectosListado";
+import ProyectoRegistro from "./components/proyecto/ProyectoRegistro";
 const AppRoutes = [
   {
     index: true,
@@ -9,7 +9,7 @@ const AppRoutes = [
   },
   {
     path: '/proyectos',
-    element: <ProyectosListado/>
+    element: <ProyectosListado />
   },
   {
     path: '/registro',
