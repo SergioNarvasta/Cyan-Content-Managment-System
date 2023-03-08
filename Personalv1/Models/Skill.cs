@@ -3,15 +3,15 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Personal.Models
 {
-    public class Skill
+    public class Skill : Audit
     {
-       [BsonId]
-        public ObjectId Id { get; set; }
+        [BsonId]
+        public ObjectId Skill_Id { get; set; }
 
-        public string Nombre { get; set; }
+        public string Skill_Nombre { get; set; }
 
-        public string Version {get; set;}
+        public string Skill_Version {get; set;}
 
-        public string Icono {get;set;}
+        public string Skill_URLImagen {get;set;}
     }
 }

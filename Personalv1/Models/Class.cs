@@ -2,10 +2,14 @@
 {
     public class Class
     {
-        //Index -- Presentacion
-        //Proyectos 
-        //Experiencia
-        //Certificados
+        //**VieW Home 
+        //Perfil
+        //Skills  Nombre, Imagen(Solo guardar URLs)
+        //Experiencia Puesto, Imagen
+        //Proyectos
+        //Servicios
+        //Soluciones
+        //Certificados *-
         //Contacto
 
 

@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Personal.Models
 {
-    public class FileCreate
+    public class FileCreate : Audit
     {
         [BsonId]
         public ObjectId Archivo_Id { get; set; }
@@ -15,10 +15,6 @@ namespace Personal.Models
         public int     Archivo_Estado     {get;set;}   
         public string  Archivo_Base64     {get;set;} 
 
-        public string   Aud_UsuCre  {get;set;} 
-        public string Aud_FecCre  {get;set;} 
-        public string   Aud_UsuAct  {get;set;} 
-        public string Aud_FecAct  {get;set;} 
           
     }
 }
