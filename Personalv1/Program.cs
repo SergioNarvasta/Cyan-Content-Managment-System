@@ -1,8 +1,14 @@
+using Microsoft.AspNetCore.Http.Features;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.Configure<FormOptions>(x =>
+{
+    x.MultipartBodyLengthLimit = Int32.MaxValue;
+});
 
 var app = builder.Build();
 

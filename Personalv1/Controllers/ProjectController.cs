@@ -18,7 +18,7 @@ namespace Personal.Controllers
         {
             return Ok(await _serviceProject.GetAllProjects());
         }
-        [Route("CreateProject")]
+        [Route("createProject")]
         [Consumes("multipart/form-data")]
         [HttpPost]
         public async Task<IActionResult> CreateProject([FromBody] Project project)
@@ -30,26 +30,13 @@ namespace Personal.Controllers
             {
                 ModelState.AddModelError("Name", "El proyecto no debe ser vacio");
             }
-            project.RutaArchivo = await GuardarArchivo(project.Archivo);
+            project.RutaArchivo = await GuardarArchivoEnRuta(project.Archivo);
             project.FechaRegistro = DateTime.Now;
 
             await _serviceProject.InsertProject(project);
             return Created("Created", true);
         }
-        public async Task<string> GuardarArchivo(IFormFile Archivo) {
-            var ruta = String.Empty;
-            string extension = ".jpg";
-            if (Archivo.Length>0)
-            {
-                var nombreArchivo= Guid.NewGuid().ToString()+ extension;
-                ruta = $"Files/{nombreArchivo}";
-                using (var stream = new FileStream(ruta,FileMode.Create))
-                {
-                    await Archivo.CopyToAsync(stream);
-                }
-            }
-            return ruta;
-        }
+       
 
         [HttpPut("{id}")]
         public async Task<IActionResult> CreateProject([FromBody] Project project,string id)
@@ -76,7 +63,7 @@ namespace Personal.Controllers
         [Consumes("multipart/form-data")]
         [HttpPost]
         [Route("RegisterFile")]
-        public async Task<IActionResult> RegisterFile([FromForm] FileClass file)
+        public async Task<IActionResult> RegisterFile([FromBody] FileClass file)
         {
             if (file.Archivo == null)
                 return BadRequest();

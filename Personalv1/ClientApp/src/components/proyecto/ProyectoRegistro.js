@@ -57,7 +57,7 @@ const ProyectoRegistro = () =>{
     formData.append('rutaArchivo',project.rutaArchivo);
     formData.append('usuarioRegistro',project.usuarioRegistro);
 
-    const response = await fetch("api/project",{
+       const response = await fetch("api/project/createProject",{
       method:'POST',
       headers: {
          'Content-Type':'multipart/form-data'
