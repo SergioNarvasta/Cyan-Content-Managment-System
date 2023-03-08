@@ -11,12 +11,15 @@ namespace Personal.Controllers
     public class ProjectController : ControllerBase
     {
         private IProjectCollection _serviceProject = new ProjectCollection();
+        private IFileCollection _serviceFile = new FileCollection();
 
         [HttpGet]
         public async Task<IActionResult> GetAllProjects()
         {
             return Ok(await _serviceProject.GetAllProjects());
         }
+        [Route("CreateProject")]
+        [Consumes("multipart/form-data")]
         [HttpPost]
         public async Task<IActionResult> CreateProject([FromBody] Project project)
         {   
@@ -68,6 +71,36 @@ namespace Personal.Controllers
         {
             await _serviceProject.DeleteProject(id);
             return NoContent();
+        }
+
+
+        [Route("RegisterFile")]
+        [Consumes("multipart/form-data")]
+        [HttpPost]
+        public async Task<IActionResult> RegisterFile([FromBody] FileClass file)
+        {
+            if (file == null)
+                return BadRequest();
+
+            await GuardarArchivoF(file.Archivo);
+
+            await _serviceFile.InsertFile(file);
+            return Created("Created", true);
+        }
+        public async Task<string> GuardarArchivoF(IFormFile Archivo)
+        {
+            var ruta = String.Empty;
+            string extension = ".jpg";
+            if (Archivo.Length > 0)
+            {
+                var nombreArchivo = Guid.NewGuid().ToString() + extension;
+                ruta = $"Files/{nombreArchivo}";
+                using (var stream = new FileStream(ruta, FileMode.Create))
+                {
+                    await Archivo.CopyToAsync(stream);
+                }
+            }
+            return ruta;
         }
     }
 }
