@@ -73,28 +73,50 @@ namespace Personal.Controllers
             return NoContent();
         }
 
-
-        [Route("RegisterFile")]
         [Consumes("multipart/form-data")]
         [HttpPost]
-        public async Task<IActionResult> RegisterFile([FromBody] FileClass file)
+        [Route("RegisterFile")]
+        public async Task<IActionResult> RegisterFile([FromForm] FileClass file)
         {
-            if (file == null)
+            if (file.Archivo == null)
                 return BadRequest();
 
-            await GuardarArchivoF(file.Archivo);
+            var ruta = await GuardarArchivoEnRuta(file.Archivo);
+            var fileCreate = new FileCreate();
+            fileCreate.Archivo_Nombre     = file.Archivo.FileName;
+            fileCreate.Archivo_Extension  = Path.GetExtension(file.Archivo.FileName);
+            fileCreate.Archivo_Tamanio    = file.Archivo.Length;
+            fileCreate.Archivo_Ubicacion  = ruta;
+            fileCreate.Archivo_Estado     = 1;
 
-            await _serviceFile.InsertFile(file);
+            string Base64String = "";
+                if (file.Archivo.Length > 0)
+                {
+                    using (var ms = new MemoryStream())
+                    {
+                        file.Archivo.CopyTo(ms);
+                        var fileBytes = ms.ToArray();
+                        Base64String  = Convert.ToBase64String(fileBytes);
+                        // act on the Base64 data
+                    }
+                }
+            fileCreate.Archivo_Base64 = Base64String;
+            fileCreate.Aud_UsuCre     = "";
+            fileCreate.Aud_FecCre     = DateTime.Now.ToString("dd/MM/yyyy");
+            fileCreate.Aud_UsuAct     = "";
+            fileCreate.Aud_FecAct     = DateTime.Now.ToString("dd/MM/yyyy");
+
+            await _serviceFile.InsertFile(fileCreate);
             return Created("Created", true);
         }
-        public async Task<string> GuardarArchivoF(IFormFile Archivo)
+        public async Task<string> GuardarArchivoEnRuta(IFormFile Archivo)
         {
             var ruta = String.Empty;
-            string extension = ".jpg";
+            string extension = Path.GetExtension(Archivo.FileName); ;
             if (Archivo.Length > 0)
             {
                 var nombreArchivo = Guid.NewGuid().ToString() + extension;
-                ruta = $"Files/{nombreArchivo}";
+                ruta = $"1.Files/{nombreArchivo}";
                 using (var stream = new FileStream(ruta, FileMode.Create))
                 {
                     await Archivo.CopyToAsync(stream);

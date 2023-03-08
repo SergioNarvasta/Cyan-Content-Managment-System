@@ -4,10 +4,10 @@ namespace Personal.Interfaces
 {
     public interface IFileCollection
     {
-        Task InsertFile(FileClass file);
+        Task InsertFile(FileCreate file);
         Task UpdateFile(FileClass file);
         Task DeleteFile(string id);
         Task<FileClass> GetFileById(string id);
-        Task<IEnumerable<FileClass>> GetAllFiles();
+        Task<IEnumerable<FileCreate>> GetAllFiles();
     }
 }

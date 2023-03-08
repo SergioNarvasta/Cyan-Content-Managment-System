@@ -25,8 +25,10 @@ namespace Personal.Controllers
                 return BadRequest();
 
              await GuardarArchivo(file.Archivo);
+            var fileCreate = new FileCreate();
 
-            await _serviceFile.InsertFile(file);
+
+            await _serviceFile.InsertFile(fileCreate);
             return Created("Created", true);
         }
         public async Task<string> GuardarArchivo(IFormFile Archivo) {

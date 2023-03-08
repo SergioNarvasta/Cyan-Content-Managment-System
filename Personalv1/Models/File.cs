@@ -9,5 +9,6 @@ namespace Personal.Models
         public ObjectId Id { get; set; }
 
         public IFormFile Archivo { get; set; }
+
     }
 }

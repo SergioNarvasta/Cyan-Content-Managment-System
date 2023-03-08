@@ -1,5 +1,5 @@
 import React from 'react';
-import axios  from 'axios';
+//import axios  from 'axios';
 
  class ArchivoOld extends React.Component{
     constructor(props) {
@@ -7,7 +7,6 @@ import axios  from 'axios';
         this.state ={
           file: null
         }
-    
         this.onFormSubmit = this.onFormSubmit.bind(this)
         this.onChange = this.onChange.bind(this)
         this.fileUpload = this.fileUpload.bind(this)
@@ -17,31 +16,43 @@ import axios  from 'axios';
         //debugger;
         e.preventDefault() 
         this.fileUpload(this.state.file).then((response)=>{
-          console.log(response.data);
+          //console.log(response.data);
         })
       }
       onChange(e) {
         this.setState({file:e.target.files[0]})
       }
     
-      fileUpload(file){
+      fileUpload = async(file)=>{
         const url = '/api/project/RegisterFile';
     
         const formData = new FormData();
         formData.append('Archivo',file);
-    
+          console.log(file);
+        await fetch(url,{
+          method:'POST',
+          headers: {
+              'Content-Type':'multipart/form-data; boundary=--14737809831466499882746641449'
+          },
+          body:formData
+        }).then(response=>{
+          console.log(response.data);
+        }).catch(error=>{
+          console.log(error);
+        })
+        /*
         const config = {
             headers: {
                 'content-type': 'multipart/form-data'
             }
         }
-        return  axios.post(url, formData,config)
+        return  axios.post(url, formData,config)*/
       }
     
       render () {
         return (
           <div>
-          <form onSubmit={this.onFormSubmit}>
+                <form onSubmit={this.onFormSubmit} enctype="multipart/form-data">
             <h1>File Upload</h1>
             <input type="file" onChange={(e) => this.onChange(e)} />
             <button type="submit">Upload</button>
