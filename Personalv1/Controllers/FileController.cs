@@ -17,7 +17,7 @@ namespace Personal.Controllers
         {
             return Ok(await _serviceFile.GetAllFiles());
         }
-        //[Consumes("multipart/form-data")]
+        [Consumes("multipart/form-data")]
         [HttpPost]
         [Route("registro")]
         public async Task<ActionResult<string>> RegisterFileAsync([FromBody] IFormFile file)
