@@ -24,7 +24,7 @@ import React from 'react';
       }
     
       fileUpload = async(file)=>{
-        const url = 'api/file/registro';
+        const url = 'api/project/registro';
     
         const formData = new FormData();
         formData.append('file',file);
