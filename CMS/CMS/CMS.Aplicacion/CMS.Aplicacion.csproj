@@ -11,4 +11,8 @@
     <Folder Include="Servicios\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CMS.Dominio\CMS.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>

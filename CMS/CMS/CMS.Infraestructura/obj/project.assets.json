@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "CMS.Aplicacion/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CMS.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CMS.Aplicacion.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CMS.Aplicacion.dll": {}
+        }
+      },
+      "CMS.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CMS.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CMS.Dominio.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CMS.Aplicacion/1.0.0": {
+      "type": "project",
+      "path": "../CMS.Aplicacion/CMS.Aplicacion.csproj",
+      "msbuildProject": "../CMS.Aplicacion/CMS.Aplicacion.csproj"
+    },
+    "CMS.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../CMS.Dominio/CMS.Dominio.csproj",
+      "msbuildProject": "../CMS.Dominio/CMS.Dominio.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "CMS.Aplicacion >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Consultor2015\\.nuget\\packages\\": {}
@@ -33,7 +70,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

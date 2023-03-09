@@ -4,7 +4,7 @@ using Personal.Interfaces;
 using Personal.Models;
 using Personal.Repositories;
 
-namespace Personal.Controllers
+namespace WebApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

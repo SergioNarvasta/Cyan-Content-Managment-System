@@ -1,8 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using Personal.Models;
-using Personal.Interfaces;
-using Personal.Data;
+using CMS.Infraestructura.Data;
+using CMS
 
 namespace CMS.Infraestructura.Repositorios
 {

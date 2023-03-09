@@ -1,6 +1,6 @@
 ﻿using CMS.Dominio.Entidades;
 
-namespace Personal.Interfaces
+namespace CMS.Dominio.Interfaces
 {
     public interface ISkillCollection
     {
