@@ -4,78 +4,63 @@ import ProyectosTabla from "./ProyectosEnTabla";
 import ArchivoOld from "../archivo/ArchivoOld";
 import './Proyectos.css';
 
-const modeloProject = {  
-    name :"",
-    description :"",
-    link:"",
-    archivo : null,
-    rutaArchivo : "",
-    usuarioRegistro : ""
+const modeloSkill = {  
+  skill_Nombre :"",
+  skill_Version :"",
+  skill_URLImagen:"",
+  skill_URLDrive : "",
+  aud_UsuCre : "",
+  aud_FecCre : "",
+  aud_UsuAct : "",
+  aud_FecAct : ""
 }
 
 const ProyectoRegistro = () =>{
-   const [project,setProject]= useState(modeloProject);
-   const [proyectos,setProyectos] = useState([]);
+   const [skillList,setSkillList]= useState([]);
+   const [skillCreate,setSkillCreate] = useState(modeloSkill);
   
-   const ListarProyectos = async () => {
-     const response = await fetch("/api/project");
- 
+   const ListarSkills = async () => {
+     const response = await fetch("/api/skill");
      if(response.ok){
        const data = await response.json();
-       setProyectos(data);
+       setSkillList(data);
      }else{
-       console.log("Error al listar (/api/project)")
+       console.log("Error al listar (/api/skill)")
      }
    }
    useEffect(()=>{
-    ListarProyectos()
+    ListarSkills()
   },[])
    const actualizaDato = (e) => {
      console.log(e.target.name+" : "+ e.target.value);
-     setProject(
+     setSkillCreate(
         {
-            ...project,
+            ...skillCreate,
             [e.target.name] : e.target.value
         }
      )
    }
    const enviarDatos = () => {
-        guardarProject(project)
+        guardarProject(skillCreate)
     
    }
-   const guardarProject = async (project) =>{
-    const formData = new FormData();
-
-    /*for(let index=0; index<archivos.length; index++){
-        file.append("files",archivos[index]);
-    }*/
-    formData.append('name',project.name);
-    formData.append('description',project.description);
-    formData.append('link',project.link);
-    formData.append('archivo',project.archivo);
-    formData.append('rutaArchivo',project.rutaArchivo);
-    formData.append('usuarioRegistro',project.usuarioRegistro);
-
-       const response = await fetch("api/project/createProject",{
+   const guardarProject = async (skillCreate) =>{
+       const response = await fetch("api/skill/createSkill",{
       method:'POST',
       headers: {
-         'Content-Type':'multipart/form-data'
+         'Content-Type':'application/json'
       },
-      body:JSON.stringify(formData)
+      body:JSON.stringify(skillCreate)
     })
     if(response.ok){
         console.log("Registrado con exito");
-        document.getElementById("LnList").click();
+        //document.getElementById("LnList").click();
     }
    }
-   const subirArchivos=(e)=>{
-    setProject({archivo:e.target.files[0]});
-   }
-   
    return(   
     <div>
     <Form id="form-registro">
-        <h2 className="text-center">Gestion de Proyectos Registrados</h2> <hr/>    
+        <h2 className="text-center">Gestion de Skills</h2> <hr/>    
         <Button id="btn_gen" onClick={enviarDatos} >Registrar</Button> <hr/> 
         <FormGroup className="d-flex flex-row ">
           <label>Nombre de Proyecto</label>

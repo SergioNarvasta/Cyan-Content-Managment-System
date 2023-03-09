@@ -10,21 +10,22 @@ namespace Personal.Controllers
     [ApiController]
     public class SkillController : ControllerBase
     {
-        private IFileCollection _serviceFile = new FileCollection();
+        private ISkillCollection _serviceSkill = new SkillCollection();
 
         [HttpGet]
         public async Task<IActionResult> GetAllFile()
         {
-            return Ok(await _serviceFile.GetAllFiles());
+            return Ok(await _serviceSkill.GetAllSkills());
         }
-        [Route("RegisterSkill")]
+
+        [Route("createSkill")]
         [HttpPost]
         public async Task<IActionResult> RegisterSkill([FromBody] Skill skill)
         {   
             if (skill == null)
                 return BadRequest();
 
-            await _serviceFile.InsertFile(fileCreate);
+            await _serviceSkill.InsertSkill(skill);
             return Created("Created", true);
         }
 

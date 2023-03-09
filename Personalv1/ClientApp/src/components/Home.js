@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
 import perfil from './assets/Perfil.jpg';
+import SkillListado from './skill/SkillListado';
 
 export class Home extends Component {
   static displayName = Home.name;
@@ -30,6 +31,7 @@ export class Home extends Component {
             </p>
           </div>
         </div>
+        <SkillListado></SkillListado>
       </div>
     );
   }

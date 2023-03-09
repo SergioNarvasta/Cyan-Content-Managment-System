@@ -13,5 +13,6 @@ namespace Personal.Models
         public string Skill_Version {get; set;}
 
         public string Skill_URLImagen {get;set;}
+        public string Skill_URLDrive { get; set; }
     }
 }
