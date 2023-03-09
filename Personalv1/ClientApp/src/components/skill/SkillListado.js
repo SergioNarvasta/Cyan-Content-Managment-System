@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 
 const SkillListado = () => {
   const [skills, setSkills] = useState([]);
@@ -19,20 +17,20 @@ const SkillListado = () => {
   }, [])
 
   return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
+   
+    <div>
+     <h5>Tecnologías</h5>
       {skills.map((item) => (
-        <SwiperSlide key={item.skill_Id}>  
-          <img src={item.skill_URLImagen} width={180} height={170} />
-        </SwiperSlide>
+        <div key={item.skill_Id}> 
+        
+          <img src={item.skill_URLImagen} width={200} height={170} />
+       
+        </div>
       ))
       }
+      </div>
 
-    </Swiper>
+   
 
   )
 }

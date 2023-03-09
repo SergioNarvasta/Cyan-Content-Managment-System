@@ -1,7 +1,7 @@
 import React from 'react';
 //import axios  from 'axios';
 
- class ArchivoOld extends React.Component{
+ class ArchivoService extends React.Component{
     constructor(props) {
         super(props);
         this.state ={
@@ -24,35 +24,30 @@ import React from 'react';
       }
     
       fileUpload = async(file)=>{
-        const url = '/api/project/RegisterFile';
+        const url = 'api/file/registro';
     
         const formData = new FormData();
-        formData.append('Archivo',file);
+        formData.append('file',file);
           console.log(file);
         await fetch(url,{
           method:'POST',
-          headers: {
+          /*headers: {
               'Content-Type':'multipart/form-data; boundary=--14737809831466499882746641449'
-          },
+          },*/
           body:formData
         }).then(response=>{
-          console.log(response.data);
+          console.log(response);
         }).catch(error=>{
           console.log(error);
         })
         /*
-        const config = {
-            headers: {
-                'content-type': 'multipart/form-data'
-            }
-        }
         return  axios.post(url, formData,config)*/
       }
     
       render () {
         return (
           <div>
-                <form onSubmit={this.onFormSubmit} enctype="multipart/form-data">
+                <form onSubmit={this.onFormSubmit} >
             <h1>File Upload</h1>
             <input type="file" onChange={(e) => this.onChange(e)} />
             <button type="submit">Upload</button>
@@ -62,4 +57,4 @@ import React from 'react';
       }
 }
 
-export default ArchivoOld;
+export default ArchivoService;

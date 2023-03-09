@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
 import { Form, FormGroup,Input,Button } from "reactstrap";
 import ProyectosTabla from "./ProyectosEnTabla";
-import ArchivoOld from "../archivo/ArchivoOld";
+import ArchivoService from "../archivo/ArchivoService";
 import './Proyectos.css';
 
 const modeloProject = {  
@@ -93,7 +93,7 @@ const ProyectoRegistro = () =>{
             onChange={(e)=>subirArchivos(e)} > </Input> 
         
     </Form>
-    <ArchivoOld/>
+    <ArchivoService/>
     <ProyectosTabla data={proyectos}></ProyectosTabla>
     </div>
    )

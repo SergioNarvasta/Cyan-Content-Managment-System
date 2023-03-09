@@ -138,7 +138,7 @@ const SkillRegistro = () => {
                       <td>{item.skill_Version}</td>
                       <td id="td_skill_URLDrive"><textarea id="txa_skill_URLDrive">{item.skill_URLDrive}</textarea></td>
                       <td id="td_skill_URLImagen"><textarea id="txa_skill_URLImagen">{item.skill_URLImagen}</textarea></td>
-                      <td><img src={item.skill_URLImagen} width={100} height={80} /></td>
+                      <td><img src={item.skill_URLImagen} width={200} height={80} /></td>
                     </tr>
                     ))
                 )
