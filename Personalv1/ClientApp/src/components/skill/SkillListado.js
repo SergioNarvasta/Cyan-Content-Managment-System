@@ -1,33 +1,39 @@
 import { useEffect, useState } from "react";
-import { Container } from "reactstrap";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const SkillListado = () => {
-    const [skills, setSkills] = useState([]);
+  const [skills, setSkills] = useState([]);
 
   const ListarSkills = async () => {
-      const response = await fetch("/api/skill");
+    const response = await fetch("/api/skill");
     if (response.ok) {
       const data = await response.json();
-        setSkills(data);
+      setSkills(data);
     } else {
       console.log("Error al listar (/api/skill)")
     }
   }
   useEffect(() => {
-      ListarSkills()
+    ListarSkills()
   }, [])
 
   return (
-      <Container>
-          <div id="ListSkills" className="d-flex flex-row">
-              {skills.map((item) => (
-                <div key={item.skill_Id} id="item"> <br></br>
-                    <img src={item.skill_URLImagen} width={30} height={30}/>
-                </div>
-                ))
-              }
-          </div>
-    </Container>
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      {skills.map((item) => (
+        <SwiperSlide key={item.skill_Id}>  
+          <img src={item.skill_URLImagen} width={180} height={170} />
+        </SwiperSlide>
+      ))
+      }
+
+    </Swiper>
+
   )
 }
 export default SkillListado;

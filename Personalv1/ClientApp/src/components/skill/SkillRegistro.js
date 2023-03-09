@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import { Table } from "reactstrap";
+import './Skill.css';
 
 const modeloSkill = {
   skill_Nombre: "",
   skill_Version: "",
   skill_URLImagen: "",
   skill_URLDrive: "",
+  skill_Orden :0,
+  skill_Estado :0,
   aud_UsuCre: "",
   aud_FecCre: "",
   aud_UsuAct: "",
@@ -52,18 +55,21 @@ const SkillRegistro = () => {
     })
     if (response.ok) {
       console.log("Registrado con exito");
+      window.location.href = window.location.href;
       //document.getElementById("LnList").click();
     } 
   }
   const generaURLImage = ()=> {
+    var userLogin = "SNarvasta";
     var URL_Drive = document.getElementById('form-urldrive').value;
-    //var len = URL_Drive.length;
     var URL_Imagen = URL_Drive.substring(32,65);
     var UrlBase = "http://drive.google.com/uc?export=view&id=";
     document.getElementById('form-urlimage').value = UrlBase+ URL_Imagen;
     setSkillCreate({
       ...skillCreate,
-       skill_URLImagen:UrlBase+ URL_Imagen});
+       skill_URLImagen:UrlBase+ URL_Imagen,
+       aud_UsuCre : userLogin,
+      });
     //alert(URL_Drive +'/n '+ " len : "+len +'/n '+ " URL_Imagen : "+URL_Imagen);
   }
   function UrlBase (){
@@ -90,6 +96,11 @@ const SkillRegistro = () => {
             value={skillCreate.skill_Version}></Input>
         </FormGroup>
         <FormGroup className="d-flex flex-row">
+          <label>Orden</label>
+          <Input id="form-version" name="skill_Orden" onChange={(e) => actualizaDato(e)}
+            value={skillCreate.skill_Orden}></Input>
+        </FormGroup>
+        <FormGroup className="d-flex flex-row">
           <label>URL de Imagen</label>
           <Input id="form-urlimage" name="skill_URLImagen" onChange={(e) => actualizaDato(e)}
             value={skillCreate.skill_URLImagen}></Input>
@@ -105,6 +116,7 @@ const SkillRegistro = () => {
       <Table striped responsive className="table-bordered ">
             <thead className="table-warning">
                 <tr>
+                    <th>Orden </th>
                     <th>Nombre </th>
                     <th>Version</th>
                     <th>URL Drive</th>
@@ -120,17 +132,14 @@ const SkillRegistro = () => {
                     </tr>
                 ):(
                   skillList.map((item) => (
-
-                    <div key={item.skill_Id} > <br></br>
-                      <div><p>{item.skill_Nombre}</p></div>
-                      <div><p>{item.skill_Version}</p></div>
-                      <div>
-                          <p>{item.skill_URLImagen}</p></div>
-                      <div>
-                          <p>{item.Skill_URLDrive}</p>
-                      </div>
-                      <div><img src={item.skill_URLImagen} width={80} height={70} /></div>
-                    </div>
+                    <tr key={item.skill_Id}>
+                      <td>{item.skill_Orden}</td>
+                      <td>{item.skill_Nombre}</td>
+                      <td>{item.skill_Version}</td>
+                      <td id="td_skill_URLDrive"><textarea id="txa_skill_URLDrive">{item.skill_URLDrive}</textarea></td>
+                      <td id="td_skill_URLImagen"><textarea id="txa_skill_URLImagen">{item.skill_URLImagen}</textarea></td>
+                      <td><img src={item.skill_URLImagen} width={100} height={80} /></td>
+                    </tr>
                     ))
                 )
                }

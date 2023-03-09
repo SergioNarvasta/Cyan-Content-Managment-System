@@ -14,5 +14,9 @@ namespace Personal.Models
 
         public string Skill_URLImagen {get;set;}
         public string Skill_URLDrive { get; set; }
+
+        public int Skill_Orden { get; set; }
+
+        public int Skill_Estado { get; set; }
     }
 }

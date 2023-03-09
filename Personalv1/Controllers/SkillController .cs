@@ -25,6 +25,10 @@ namespace Personal.Controllers
             if (skill == null)
                 return BadRequest();
 
+            skill.Aud_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
+            skill.Aud_FecAct = DateTime.Now.ToString("dd/MM/yyyy");
+            skill.Skill_Estado = 1;
+
             await _serviceSkill.InsertSkill(skill);
             return Created("Created", true);
         }

@@ -31,7 +31,8 @@ export class Home extends Component {
             </p>
           </div>
         </div>
-        <SkillListado></SkillListado>
+        <br></br>
+        <SkillListado/>
       </div>
     );
   }
