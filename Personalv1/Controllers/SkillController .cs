@@ -18,7 +18,7 @@ namespace Personal.Controllers
             return Ok(await _serviceSkill.GetAllSkills());
         }
 
-        [Route("createSkill")]
+        //[Route("createSkill")]
         [HttpPost]
         public async Task<IActionResult> RegisterSkill([FromBody] Skill skill)
         {   
