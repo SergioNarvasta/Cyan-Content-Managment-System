@@ -1,4 +1,5 @@
 
+using CMS.Dominio.Comunes;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 

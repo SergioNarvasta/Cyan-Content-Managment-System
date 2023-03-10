@@ -1,4 +1,4 @@
-﻿namespace CMS.Dominio.Entidades
+﻿namespace CMS.Dominio.Comunes
 {
     public class Audit
     {

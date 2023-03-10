@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Interfaces\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Querys\" />
     <Folder Include="Servicios\" />
   </ItemGroup>
 

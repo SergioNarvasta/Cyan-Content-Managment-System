@@ -1,6 +1,6 @@
 ﻿using CMS.Dominio.Entidades;
 
-namespace CMS.Dominio.Interfaces
+namespace CMS.Dominio.Interfaces { 
     public interface IProjectCollection
     {
         Task InsertProject(Project project);
