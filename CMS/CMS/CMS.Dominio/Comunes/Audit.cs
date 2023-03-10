@@ -1,10 +1,12 @@
-﻿namespace CMS.Dominio.Comunes
+﻿
+
+namespace CMS.Dominio.Comunes
 {
     public class Audit
     {
-        public string Aud_UsuCre { get; set; }
-        public string Aud_FecCre { get; set; }
-        public string Aud_UsuAct { get; set; }
-        public string Aud_FecAct { get; set; }
+        public string Audit_UsuCre { get; set; }
+        public string Audit_FecCre { get; set; }
+        public string Audit_UsuAct { get; set; }
+        public string Audit_FecAct { get; set; }
     }
 }

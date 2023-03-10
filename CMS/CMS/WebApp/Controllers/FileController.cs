@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CMS.Dominio.Comunes;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Personal.Interfaces;
 using Personal.Models;
@@ -17,42 +18,43 @@ namespace WebApp.Controllers
         {
             return Ok(await _serviceFile.GetAllFiles());
         }
+
+
         [Consumes("multipart/form-data")]
         [HttpPost]
-        [Route("registro")]
-        public async Task<ActionResult<string>> RegisterFileAsync([FromBody] IFormFile file)
+        [Route("RegisterFile")]
+        public async Task<IActionResult> RegisterFile([FromBody] FileClass file)
         {
-            if (file == null)
+            if (file.File_Nombre == null)
                 return BadRequest();
 
-            var ruta = await GuardarArchivoEnRuta(file);
+            var ruta = await GuardarArchivoEnRuta(file.Archivo);
             var fileCreate = new FileCreate();
-            fileCreate.Archivo_Pk = Guid.NewGuid().ToString();
-            fileCreate.Archivo_Nombre = file.FileName;
-            fileCreate.Archivo_Extension = Path.GetExtension(file.FileName);
-            fileCreate.Archivo_Tamanio = file.Length;
+            fileCreate.Archivo_Nombre = file.Archivo.FileName;
+            fileCreate.Archivo_Extension = Path.GetExtension(file.Archivo.FileName);
+            fileCreate.Archivo_Tamanio = file.Archivo.Length;
             fileCreate.Archivo_Ubicacion = ruta;
             fileCreate.Archivo_Estado = 1;
 
             string Base64String = "";
-            if (file.Length > 0)
+            if (file.Archivo.Length > 0)
             {
                 using (var ms = new MemoryStream())
                 {
-                    file.CopyTo(ms);
+                    file.Archivo.CopyTo(ms);
                     var fileBytes = ms.ToArray();
                     Base64String = Convert.ToBase64String(fileBytes);
                     // act on the Base64 data
                 }
             }
             fileCreate.Archivo_Base64 = Base64String;
-            fileCreate.Aud_UsuCre = "SNarvasta";
+            fileCreate.Aud_UsuCre = "";
             fileCreate.Aud_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
             fileCreate.Aud_UsuAct = "";
             fileCreate.Aud_FecAct = DateTime.Now.ToString("dd/MM/yyyy");
 
             await _serviceFile.InsertFile(fileCreate);
-            return Ok(fileCreate.Archivo_Pk);
+            return Created("Created", true);
         }
         public async Task<string> GuardarArchivoEnRuta(IFormFile Archivo)
         {
@@ -69,7 +71,8 @@ namespace WebApp.Controllers
             }
             return ruta;
         }
-
-
     }
+
+
+}
 }
