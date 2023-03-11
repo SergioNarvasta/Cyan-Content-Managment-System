@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\Sistema Gestion Comercial\\Site\\Site\\Site.csproj": {}
+    "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\Site\\Site\\Site.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\Sistema Gestion Comercial\\Site\\Site\\Site.csproj": {
+    "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\Site\\Site\\Site.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\Sistema Gestion Comercial\\Site\\Site\\Site.csproj",
+        "projectUniqueName": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\Site\\Site\\Site.csproj",
         "projectName": "Site",
-        "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\Sistema Gestion Comercial\\Site\\Site\\Site.csproj",
+        "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\Site\\Site\\Site.csproj",
         "packagesPath": "C:\\Users\\Consultor2015\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\Sistema Gestion Comercial\\Site\\Site\\obj\\",
+        "outputPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\Site\\Site\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Consultor2015\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.19.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

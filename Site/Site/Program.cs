@@ -1,8 +1,11 @@
+using Site.Interfaces;
+using Site.Repositorios;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddTransient<IContentMainRepository, ContentMainRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

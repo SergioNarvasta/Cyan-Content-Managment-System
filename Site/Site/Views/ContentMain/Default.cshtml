@@ -1,0 +1,29 @@
+﻿
+@using Site.Models;
+@model IEnumerable<ContentMain>
+
+@foreach( var item in Model)
+{
+	if (item.SliderMain_Estado != 0)
+	{
+		<div id="slider-main" data-imagen="@item.File_Base64" >
+			@if (item.SliderMain_Titulo.Length > 0)
+			{
+			 <p>@item.SliderMain_Titulo</p>	
+			}
+			@if (item.SliderMain_Descripcion.Length > 0)
+			{
+				<p>@item.SliderMain_Descripcion</p>
+			}
+		</div>
+	}
+	
+
+}
+<style>
+	#slider-main {
+	width : 80%;
+	height : 600px
+	}
+
+</style>
