@@ -12,10 +12,6 @@
         //Certificados *-
         //Contacto
 
-
-
-
-
         /* Renderiza Base 64 en Imagen React.js
          data = base64string 
          const Example = ({ data }) => <img src={`data:image/jpeg;base64,${data}`} />

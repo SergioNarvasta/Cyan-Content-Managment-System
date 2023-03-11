@@ -41,7 +41,5 @@ namespace WebApp.Controllers
             await _sSliderMainAppService.InsertSliderMain(contentmain);
             return Created("Created", true);
         }
-
-
     }
 }
