@@ -4,11 +4,11 @@ using Site.Models;
 
 namespace HDProjectWeb.Models.Detalles
 {
-    [ViewComponent(Name = "ContentMain")]
-    public class ContentMainViewComponent : ViewComponent
+    [ViewComponent(Name = "SliderMain")]
+    public class SliderMainViewComponent : ViewComponent
 	{
-        private readonly IContentMainRepository _repository;
-        public ContentMainViewComponent(IContentMainRepository repository)
+        private readonly ISliderMainRepository _repository;
+        public SliderMainViewComponent(ISliderMainRepository repository)
         {
             _repository = repository;
         }

@@ -1,12 +1,13 @@
 ﻿
 @using Site.Models;
-@model IEnumerable<ContentMain>
+@model IEnumerable<SliderMain>
 
+<div id="slider-main">Aqui se debe mostrar el SliderMain
 @foreach( var item in Model)
 {
 	if (item.SliderMain_Estado != 0)
 	{
-		<div id="slider-main" data-imagen="@item.File_Base64" >
+		<div id="slider-item" data-imagen="@item.File_Base64" >
 			@if (item.SliderMain_Titulo.Length > 0)
 			{
 			 <p>@item.SliderMain_Titulo</p>	
@@ -17,13 +18,15 @@
 			}
 		</div>
 	}
-	
-
 }
+</div>
+
 <style>
 	#slider-main {
 	width : 80%;
-	height : 600px
+	height : 400px;
+	margin-left:10%;
+	border:1px solid black;
 	}
 
 </style>

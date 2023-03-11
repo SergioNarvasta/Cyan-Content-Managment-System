@@ -6,18 +6,18 @@ using Site.Models;
 
 namespace Site.Repositorios
 {
-    public class ContentMainRepository  : IContentMainRepository
+    public class SliderMainRepository  : ISliderMainRepository
     {
         internal MongoRepository _repository = new MongoRepository();
 
-        private IMongoCollection<ContentMain> collection;
+        private IMongoCollection<SliderMain> collection;
 
-        public ContentMainRepository() 
+        public SliderMainRepository() 
         {
-            collection = _repository.database.GetCollection<ContentMain>("ContentMain");
+            collection = _repository.database.GetCollection<SliderMain>("SliderMain");
         }
 
-        public async Task<IEnumerable<ContentMain>> Listado() 
+        public async Task<IEnumerable<SliderMain>> Listado() 
         {
           return await collection.FindAsync( new BsonDocument()).Result.ToListAsync();
         }

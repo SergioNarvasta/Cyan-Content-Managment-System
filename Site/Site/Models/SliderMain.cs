@@ -5,10 +5,10 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Site.Models
 {
-    public class ContentMain : FileClass
+    public class SliderMain : FileClass
     {
         [BsonId]
-        public ObjectId ContentMain_Id { get; set; }
+        public ObjectId SliderMain_Id { get; set; }
 
         public string SliderMain_Titulo { get; set; }
 
