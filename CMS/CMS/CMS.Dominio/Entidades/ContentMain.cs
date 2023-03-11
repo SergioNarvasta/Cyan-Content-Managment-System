@@ -15,11 +15,11 @@ namespace CMS.Dominio.Entidades
 
         public string ContentMain_Descripcion { get; set; }
         
-        public string ContentMain_Estado { get; set; }
+        public int   ContentMain_Estado { get; set; }
 
         public int   ContentMain_Orden { get; set; }
 
-        
+        public int 
 
 
     }

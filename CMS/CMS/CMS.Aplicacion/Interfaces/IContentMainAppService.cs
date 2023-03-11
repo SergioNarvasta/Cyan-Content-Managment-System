@@ -1,8 +1,8 @@
 ﻿using CMS.Dominio.Entidades;
 
-namespace CMS.Dominio.Interfaces
+namespace CMS.Aplicacion.Interfaces
 {
-    public interface IContentMainService
+    public interface IContentMainAppService
     {
         Task DeleteContentMain(string id);
         Task<IEnumerable<ContentMain>> GetAllContentMain();

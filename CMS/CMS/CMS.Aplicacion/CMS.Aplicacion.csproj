@@ -7,13 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Commands\" />
-    <Folder Include="Querys\" />
-    <Folder Include="Servicios\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CMS.Dominio\CMS.Dominio.csproj" />
   </ItemGroup>
 
