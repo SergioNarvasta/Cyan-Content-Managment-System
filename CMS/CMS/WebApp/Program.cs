@@ -1,8 +1,10 @@
+using CMS.Aplicacion.Interfaces;
+using CMS.Aplicacion.Servicios;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IContentMainAppService, ContentMainAppService>();
 
 var app = builder.Build();
 
