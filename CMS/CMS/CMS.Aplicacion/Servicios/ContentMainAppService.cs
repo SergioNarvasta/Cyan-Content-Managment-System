@@ -1,6 +1,7 @@
-﻿using CMS.Aplicacion.Interfaces;
+﻿
+using CMS.Aplicacion.Interfaces;
 using CMS.Dominio.Entidades;
-using CMS.Dominio.Interfaces;
+using CMS.Dominio.Interfaces.Servicios;
 
 namespace CMS.Aplicacion.Servicios
 {
@@ -8,6 +9,7 @@ namespace CMS.Aplicacion.Servicios
     {
         private readonly IContentMainService _contentMainService;
 
+       
         public ContentMainAppService(IContentMainService contentMainService) 
         {
           _contentMainService = contentMainService;

@@ -1,12 +1,12 @@
 ﻿using CMS.Dominio.Entidades;
-using CMS.Dominio.Interfaces;
+using CMS.Dominio.Interfaces.Repositorios;
 using CMS.Infraestructura.Data;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace CMS.Infraestructura.Repositorios
 {
-    public class ContentMainCollection : IContentMainService
+    public class ContentMainCollection : IContentMainRepository
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private IMongoCollection<ContentMain> Collection;

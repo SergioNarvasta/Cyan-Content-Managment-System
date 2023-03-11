@@ -9,18 +9,18 @@ namespace WebApp.Controllers
     [ApiController]
     public class ContentMainController : ControllerBase
     {
-        private readonly IContentMainAppService _serviceContentMainAppService;  //= new ProjectCollection();
+        private readonly IContentMainAppService _sContentMainAppService; //= new ContentMainAppService();
 
         public ContentMainController(IContentMainAppService contentMainAppService ) 
         {
-            _serviceContentMainAppService = contentMainAppService;
+            _sContentMainAppService = contentMainAppService;
         }
 
         [Route("lista")]
         [HttpGet]
         public async Task<IActionResult> GetAllContentMain()
         {
-            return Ok(await _serviceContentMainAppService.GetAllContentMain());
+            return Ok(await _sContentMainAppService.GetAllContentMain());
         }
 
         [Route("registro")]
@@ -38,7 +38,7 @@ namespace WebApp.Controllers
             contentmain.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
             contentmain.ContentMain_Pk = Guid.NewGuid().ToString();
 
-            await _serviceContentMainAppService.InsertContentMain(contentmain);
+            await _sContentMainAppService.InsertContentMain(contentmain);
             return Created("Created", true);
         }
 

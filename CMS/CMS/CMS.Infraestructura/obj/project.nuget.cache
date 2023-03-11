@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "fDqWshET10aJuqgI88hnFMA4m4SkUolguqJpXy7GctawQVI1MmbSO9AmuKlV0oNX9E/l7wDdujPmRasy0QXLMA==",
+  "dgSpecHash": "IVBgFqH6flY70+l/ADcSENHmOGfx65ura0z8B+Ky1M4MVCO4LJ8Gak5Fr1decvWKT/jhHy2A8HMXLeGeGWiCbg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\CMS\\CMS\\CMS.Infraestructura\\CMS.Infraestructura.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Consultor2015\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Consultor2015\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Consultor2015\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
+    "C:\\Users\\Consultor2015\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\Consultor2015\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Consultor2015\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
     "C:\\Users\\Consultor2015\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Consultor2015\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",

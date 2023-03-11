@@ -1,9 +1,5 @@
-﻿using CMS.Dominio.Comunes;
-using Microsoft.AspNetCore.Http;
+﻿
 using Microsoft.AspNetCore.Mvc;
-using Personal.Interfaces;
-using Personal.Models;
-using Personal.Repositories;
 
 namespace WebApp.Controllers
 {
@@ -11,15 +7,15 @@ namespace WebApp.Controllers
     [ApiController]
     public class FileController : ControllerBase
     {
-        private IFileCollection _serviceFile = new FileCollection();
-
+        //private IFileCollection _serviceFile = new FileCollection();
+        /*
         [HttpGet]
         public async Task<IActionResult> GetAllFile()
         {
             return Ok(await _serviceFile.GetAllFiles());
         }
 
-
+        
         [Consumes("multipart/form-data")]
         [HttpPost]
         [Route("RegisterFile")]
@@ -72,7 +68,8 @@ namespace WebApp.Controllers
             return ruta;
         }
     }
+    */
 
+    }
+}
 
-}
-}

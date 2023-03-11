@@ -1,0 +1,17 @@
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\CMS.Infraestructura.csproj.AssemblyReference.cache
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\CMS.Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\CMS.Infraestructura.AssemblyInfoInputs.cache
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\CMS.Infraestructura.AssemblyInfo.cs
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\CMS.Infraestructura.csproj.CoreCompileInputs.cache
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\bin\Debug\net6.0\CMS.Infraestructura.deps.json
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\bin\Debug\net6.0\CMS.Infraestructura.dll
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\bin\Debug\net6.0\CMS.Infraestructura.pdb
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\bin\Debug\net6.0\CMS.Aplicacion.dll
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\bin\Debug\net6.0\CMS.Dominio.dll
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\bin\Debug\net6.0\CMS.Aplicacion.pdb
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\bin\Debug\net6.0\CMS.Dominio.pdb
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\CMS.Infraestructura.csproj.CopyComplete
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\CMS.Infraestructura.dll
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\refint\CMS.Infraestructura.dll
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\CMS.Infraestructura.pdb
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Infraestructura\obj\Debug\net6.0\ref\CMS.Infraestructura.dll
