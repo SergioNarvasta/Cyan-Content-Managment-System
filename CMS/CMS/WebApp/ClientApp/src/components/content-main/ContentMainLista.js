@@ -1,7 +1,7 @@
 ﻿
 import { useEffect, useState } from "react";
 
-const ContentMainLista = () => {
+const SliderMainLista = () => {
 
     const [contentmain, setContentmain] = useState([]);
 
@@ -33,4 +33,4 @@ const ContentMainLista = () => {
     )
 
 }
-export default ContentMainLista;
+export default SliderMainLista;

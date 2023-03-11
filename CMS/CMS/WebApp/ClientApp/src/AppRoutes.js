@@ -1,7 +1,7 @@
 import { Counter } from "./components/Counter";
 import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
-import { ContentMainLista } from "./components/content-main/ContentMainLista";
+import { SliderMainLista } from "./components/content-main/SliderMainLista";
 
 const AppRoutes = [
   {
@@ -18,7 +18,7 @@ const AppRoutes = [
     },
     {
         path: '/content-main',
-        element: <ContentMainLista />
+        element: <SliderMainLista />
     }
 ];
 

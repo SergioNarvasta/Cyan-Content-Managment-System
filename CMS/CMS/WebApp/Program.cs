@@ -1,10 +1,12 @@
 using CMS.Aplicacion.Interfaces;
 using CMS.Aplicacion.Servicios;
+using CMS.Dominio.Interfaces.Servicios;
+using CMS.Dominio.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<IContentMainAppService, ContentMainAppService>();
+builder.Services.AddTransient<ISliderMainAppService, SliderMainAppService>();
 
 var app = builder.Build();
 

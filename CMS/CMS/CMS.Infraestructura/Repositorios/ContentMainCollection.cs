@@ -6,34 +6,34 @@ using MongoDB.Driver;
 
 namespace CMS.Infraestructura.Repositorios
 {
-    public class ContentMainCollection : IContentMainRepository
+    public class SliderMainCollection : ISliderMainRepository
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
-        private IMongoCollection<ContentMain> Collection;
+        private IMongoCollection<SliderMain> Collection;
 
-        public ContentMainCollection()
+        public SliderMainCollection()
         {
-            Collection = _repository.db.GetCollection<ContentMain>("ContentMain");
+            Collection = _repository.db.GetCollection<SliderMain>("SliderMain");
         }
-        public async Task DeleteContentMain(string id)
+        public async Task DeleteSliderMain(string id)
         {
-            var filter = Builders<ContentMain>.Filter.Eq(s => s.ContenMain_Id, new ObjectId(id));
+            var filter = Builders<SliderMain>.Filter.Eq(s => s.ContenMain_Id, new ObjectId(id));
             await Collection.DeleteOneAsync(filter);
         }
 
-        public async Task<IEnumerable<ContentMain>> GetAllContentMain()
+        public async Task<IEnumerable<SliderMain>> GetAllSliderMain()
         {
             return await Collection.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
 
-        public async Task InsertContentMain(ContentMain contentmain)
+        public async Task InsertSliderMain(SliderMain contentmain)
         {
             await Collection.InsertOneAsync(contentmain);
         }
 
-        public async Task UpdateContentMain(ContentMain contentmain)
+        public async Task UpdateSliderMain(SliderMain contentmain)
         {
-            var filter = Builders<ContentMain>
+            var filter = Builders<SliderMain>
                 .Filter
                 .Eq(s => s.ContenMain_Id, contentmain.ContenMain_Id);
             await Collection.ReplaceOneAsync(filter, contentmain);

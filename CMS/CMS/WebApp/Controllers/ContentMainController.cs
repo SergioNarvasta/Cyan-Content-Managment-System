@@ -7,38 +7,38 @@ namespace WebApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ContentMainController : ControllerBase
+    public class SliderMainController : ControllerBase
     {
-        private readonly IContentMainAppService _sContentMainAppService; //= new ContentMainAppService();
+        private readonly ISliderMainAppService _sSliderMainAppService; //= new SliderMainAppService();
 
-        public ContentMainController(IContentMainAppService contentMainAppService ) 
+        public SliderMainController(ISliderMainAppService contentMainAppService ) 
         {
-            _sContentMainAppService = contentMainAppService;
+            _sSliderMainAppService = contentMainAppService;
         }
 
         [Route("lista")]
         [HttpGet]
-        public async Task<IActionResult> GetAllContentMain()
+        public async Task<IActionResult> GetAllSliderMain()
         {
-            return Ok(await _sContentMainAppService.GetAllContentMain());
+            return Ok(await _sSliderMainAppService.GetAllSliderMain());
         }
 
         [Route("registro")]
         [HttpPost]
-        public async Task<IActionResult> CreateContentMain([FromBody] ContentMain contentmain)
+        public async Task<IActionResult> CreateSliderMain([FromBody] SliderMain contentmain)
         {
             if (contentmain == null)
                 return BadRequest();
 
-            if (contentmain.ContentMain_Titulo == string.Empty)
+            if (contentmain.SliderMain_Titulo == string.Empty)
             {
                 ModelState.AddModelError("Titulo", "El Titulo de contenido no debe ser vacio");
             }
-            contentmain.ContentMain_Estado = 1;
+            contentmain.SliderMain_Estado = 1;
             contentmain.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
-            contentmain.ContentMain_Pk = Guid.NewGuid().ToString();
+            contentmain.SliderMain_Pk = Guid.NewGuid().ToString();
 
-            await _sContentMainAppService.InsertContentMain(contentmain);
+            await _sSliderMainAppService.InsertSliderMain(contentmain);
             return Created("Created", true);
         }
 
