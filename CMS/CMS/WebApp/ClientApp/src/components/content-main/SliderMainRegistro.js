@@ -6,7 +6,7 @@ const modelo = {
   sliderMain_Titulo: "",
   sliderMain_Pk: "",
   sliderMain_Descripcion: "",
-  SliderMain_Estado : 0,
+  sliderMain_Estado : 0,
   sliderMain_Orden : 0,
   file_Nombre : "",
   file_RutaArchivo  : "",//Opcional solo si se guarta en ruta fisica
@@ -66,20 +66,23 @@ const SliderMainRegistro = () => {
     console.log('Convirtiendo mi blob');
     const myBlob = e.target.files[0];
     const myB64 = await blobToBase64(myBlob);
+    console.log(myB64);
     let nombre = e.target.files[0].name;
-    let tamanio = e.target.files[0].size;
+    let tamanio = e.target.files[0].size.toString();
     let next = nombre.lastIndexOf('.');
     let extension = nombre.substring(next + 1);
-  
+    
+    console.log(nombre +" tamaño: "+tamanio+" extension: "+extension);
     setsliderMainCreate(
       {
         ...sliderMainCreate,
-        [sliderMainCreate.file_Base64]: myB64,
-        [sliderMainCreate.file_Nombre]: nombre,
-        [sliderMainCreate.file_Tamanio]: tamanio,
-        [sliderMainCreate.file_Extension]:extension
+        file_Base64: myB64,
+        file_Nombre: nombre,
+        file_Tamanio: tamanio,
+        file_Extension:extension
       }
     )
+    console.log(sliderMainCreate);
   }
   const blobToBase64 = (blob) => {
     return new Promise( (resolve, reject) =>{
@@ -118,15 +121,22 @@ const SliderMainRegistro = () => {
         
       </Form>
       <br></br>
-      
       <Table striped responsive className="table-bordered ">
             <thead className="table-warning">
                 <tr>
-                    <th>Pk </th>
-                    <th>Titulo </th>
+                    <th>Pk</th>
+                    <th>Titulo</th>
                     <th>Descripcion</th>
                     <th>Estado</th>  
-                    <th>Orden</th>                 
+                    <th>Orden</th>
+                    <th>File_Nombre</th>
+                    <th>File_Base64</th>
+                    <th>File_Tamanio</th>  
+                    <th>File_Extension</th>
+                    <th>Audit_UsuCre</th>
+                    <th>Audit_FecCre</th>
+                    <th>Audit_UsuAct</th>  
+                    <th>Audit_FecAct</th>                      
                 </tr>
             </thead>
             <tbody>
@@ -138,12 +148,19 @@ const SliderMainRegistro = () => {
                 ):(
                   sliderMainList.map((item) => (
                     <tr key={item.sliderMain_Id}>
+                      <td>{item.sliderMain_Pk}</td>
+                      <td>{item.sliderMain_Titulo}</td>
+                      <td>{item.sliderMain_Descripcion}</td>
+                      <td>{item.sliderMain_Estado = 1 ? "Activo" : "No disponible"}</td>                    
                       <td>{item.sliderMain_Orden}</td>
-                      <td>{item.sliderMain_Nombre}</td>
-                      <td>{item.sliderMain_Version}</td>
-                      <td id="td_sliderMain_URLDrive"><textarea id="txa_sliderMain_URLDrive">{item.sliderMain_URLDrive}</textarea></td>
-                      <td id="td_sliderMain_URLImagen"><textarea id="txa_sliderMain_URLImagen">{item.sliderMain_URLImagen}</textarea></td>
-                      <td><img src={item.sliderMain_URLImagen} width={200} height={80} /></td>
+                      <td>{item.file_Nombre}</td>
+                      <td id="td_file_Base64"><textarea >{item.file_Base64}</textarea></td>
+                      <td>{item.file_Tamanio}</td>
+                      <td>{item.file_Extension}</td>
+                      <td>{item.audit_UsuCre}</td>
+                      <td>{item.audit_FecCre}</td>
+                      <td>{item.audit_UsuAct}</td>
+                      <td>{item.audit_FecAct}</td>
                     </tr>
                     ))
                 )

@@ -1,12 +1,12 @@
 ﻿using CMS.Dominio.Entidades;
-using CMS.Dominio.Interfaces.Repositorios;
 using CMS.Infraestructura.Data;
+using CMS.Aplicacion.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace CMS.Infraestructura.Repositorios
 {
-    public class SliderMainCollection : ISliderMainRepository
+    public class SliderMainCollection : ISliderMainAppService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private IMongoCollection<SliderMain> collection;

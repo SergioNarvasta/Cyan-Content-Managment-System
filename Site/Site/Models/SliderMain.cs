@@ -10,7 +10,9 @@ namespace Site.Models
         [BsonId]
         public ObjectId SliderMain_Id { get; set; }
 
-        public string SliderMain_Titulo { get; set; }
+		public string SliderMain_Pk { get; set; }
+
+		public string SliderMain_Titulo { get; set; }
 
         public string SliderMain_Descripcion { get; set; }
 

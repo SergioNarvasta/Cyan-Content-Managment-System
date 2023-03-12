@@ -7,7 +7,8 @@
 {
 	if (item.SliderMain_Estado != 0)
 	{
-		<div id="slider-item" data-imagen="@item.File_Base64" >
+		<div id="slider-item" data-base64="@item.File_Base64" >
+			<img id="img_slider" />
 			@if (item.SliderMain_Titulo.Length > 0)
 			{
 			 <p>@item.SliderMain_Titulo</p>	
@@ -20,7 +21,6 @@
 	}
 }
 </div>
-
 <style>
 	#slider-main {
 	width : 80%;
@@ -30,3 +30,11 @@
 	}
 
 </style>
+<script>
+    var baseStr64 = "/9j/4AAQSkZJRgABAQE...";
+	imgElem.setAttribute('src', "data:image/jpg;base64," + baseStr64);
+
+	data = base64string
+	const Example = ({ data }) => <img src={`data:image/jpeg;base64,${data}`} />
+	ReactDOM.render(<Example data={ data } />, document.getElementById('container'))
+</script>

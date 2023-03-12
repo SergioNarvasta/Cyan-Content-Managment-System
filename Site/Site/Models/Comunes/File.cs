@@ -2,7 +2,7 @@
 
 namespace CMS.Dominio.Comunes
 {
-    public class FileClass
+    public class FileClass : Audit
     {
         public string File_Nombre { get; set; }
 

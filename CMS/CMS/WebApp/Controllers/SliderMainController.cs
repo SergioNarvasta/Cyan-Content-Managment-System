@@ -25,20 +25,20 @@ namespace WebApp.Controllers
 
         [Route("registro")]
         [HttpPost]
-        public async Task<IActionResult> CreateSliderMain([FromBody] SliderMain contentmain)
+        public async Task<IActionResult> CreateSliderMain([FromBody] SliderMain sliderMain)
         {
-            if (contentmain == null)
+            if (sliderMain == null)
                 return BadRequest();
 
-            if (contentmain.SliderMain_Titulo == string.Empty)
+            /*if (contentmain.SliderMain_Titulo == string.Empty)
             {
                 ModelState.AddModelError("Titulo", "El Titulo de contenido no debe ser vacio");
-            }
-            contentmain.SliderMain_Estado = 1;
-            contentmain.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
-            contentmain.SliderMain_Pk = Guid.NewGuid().ToString();
+            }*/
+            sliderMain.SliderMain_Estado = 1;
+            sliderMain.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
+            sliderMain.SliderMain_Pk = Guid.NewGuid().ToString();
 
-            await _sSliderMainAppService.InsertSliderMain(contentmain);
+            await _sSliderMainAppService.InsertSliderMain(sliderMain);
             return Created("Created", true);
         }
     }
