@@ -3,17 +3,16 @@ import { Form, FormGroup, Input, Button } from "reactstrap";
 import { Table } from "reactstrap";
 
 const modelo = {
-  sliderMain_Titulo: "",
   sliderMain_Pk: "",
+  sliderMain_Titulo: "",
   sliderMain_Descripcion: "",
   sliderMain_Estado : 0,
-  sliderMain_Orden : 0,
+  sliderMain_Orden: 0,
+  SliderMain_UsuarioPk: "",
   file_Nombre : "",
-  file_RutaArchivo  : "",//Opcional solo si se guarta en ruta fisica
-  file_RutaDrive : "",   //Opcional si carga desde google drive
   file_Base64 : "",
   file_Tamanio : "",
-  file_Extension : "",
+  file_Extension: "",
   audit_UsuCre : "",
   audit_FecCre : "",
   audit_UsuAct : "",
@@ -25,12 +24,12 @@ const SliderMainRegistro = () => {
   const [sliderMainCreate, setsliderMainCreate] = useState(modelo);
 
   const Listar = async () => {
-    const response = await fetch("/api/slidermain/lista");
+    const response = await fetch("/api/slidermain/listatodos");
     if (response.ok) {
       const data = await response.json();
       setsliderMainList(data);
     } else {
-      console.log("Error al listar (/api/slidermain/lista)")
+        console.log("Error al listar (/api/slidermain/listatodos)")
     }
   }
   useEffect(() => {
@@ -72,16 +71,12 @@ const SliderMainRegistro = () => {
     let next = nombre.lastIndexOf('.');
     let extension = nombre.substring(next + 1);
     
-    console.log(nombre +" tamaño: "+tamanio+" extension: "+extension);
-    setsliderMainCreate(
-      {
-        ...sliderMainCreate,
-        file_Base64: myB64,
-        file_Nombre: nombre,
-        file_Tamanio: tamanio,
-        file_Extension:extension
-      }
-    )
+      console.log(nombre + " tamaño: " + tamanio + " extension: " + extension);
+      document.getElementById('file_Base64').value = myB64;
+      document.getElementById('file_Nombre').value = nombre;
+      document.getElementById('file_Tamanio').value = tamanio;
+      document.getElementById('file_Extension').value = extension;
+
     console.log(sliderMainCreate);
   }
   const blobToBase64 = (blob) => {
@@ -114,6 +109,27 @@ const SliderMainRegistro = () => {
           <Input id="form-input" name="sliderMain_Orden" onChange={(e) => actualizaDato(e)}
             value={sliderMainCreate.sliderMain_Orden}></Input>
         </FormGroup>
+        <FormGroup className="d-flex flex-row">
+            <label>Base 64</label>
+                  <Input id="file_Base64" name="file_Base64" onChange={(e) => actualizaDato(e)}
+                value={sliderMainCreate.file_Base64}></Input>
+        </FormGroup>
+        <FormGroup className="d-flex flex-row">
+            <label>Nombre Archivo</label>
+                  <Input id="file_Nombre" name="file_Nombre" onChange={(e) => actualizaDato(e)}
+                value={sliderMainCreate.file_Nombre}></Input>
+        </FormGroup>
+        <FormGroup className="d-flex flex-row">
+            <label>Tamaño Archivo</label>
+                  <Input id="file_Tamanio" name="file_Tamanio" onChange={(e) => actualizaDato(e)}
+                value={sliderMainCreate.file_Tamanio}></Input>
+        </FormGroup>
+        <FormGroup className="d-flex flex-row">
+            <label>Extension Archivo</label>
+                  <Input id="file_Extension" name="file_Extension" onChange={(e) => actualizaDato(e)}
+                value={sliderMainCreate.file_Extension}></Input>
+        </FormGroup>
+
         <FormGroup className="d-flex flex-row">
           <label>Imagen</label>
           <input type="file" onChange={(e) => cargarArchivo(e)} />
