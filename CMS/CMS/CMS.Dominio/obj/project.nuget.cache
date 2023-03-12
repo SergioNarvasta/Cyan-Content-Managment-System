@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZwDiZMzZ5AGdCLVxYq1mTysO+P1K/CLq8OT1FoR5J5kxZqApFki9FWaanXQ6lpkp9LVUaD2hW5t1wacYJF+0Pw==",
+  "dgSpecHash": "6txtekgyTLCgLJreoSugFxCfVPhLmzIkzJ+acuu+qFmIaalmOGwVzv3ZQwPKCin/QPf+b2fBpSMBTrdTfZRCYw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj",
+  "projectFilePath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Consultor2015\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Consultor2015\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

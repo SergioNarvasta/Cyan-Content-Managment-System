@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IVBgFqH6flY70+l/ADcSENHmOGfx65ura0z8B+Ky1M4MVCO4LJ8Gak5Fr1decvWKT/jhHy2A8HMXLeGeGWiCbg==",
+  "dgSpecHash": "cGtE8hs07WX3jW2EKfNtYiECkxA+0FEkH2HDZZR99lwnG8HRO9WTC9IczlMQGMsanaCfQXwK7QHfS5cfZOBx4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\CMS\\CMS\\CMS.Infraestructura\\CMS.Infraestructura.csproj",
+  "projectFilePath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Infraestructura\\CMS.Infraestructura.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Consultor2015\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Consultor2015\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

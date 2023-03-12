@@ -10,3 +10,15 @@ C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Domini
 C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\refint\CMS.Dominio.dll
 C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\CMS.Dominio.pdb
 C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\PersonalPage\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\ref\CMS.Dominio.dll
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\bin\Debug\net6.0\CMS.Dominio.deps.json
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\bin\Debug\net6.0\CMS.Dominio.dll
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\bin\Debug\net6.0\CMS.Dominio.pdb
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\CMS.Dominio.csproj.AssemblyReference.cache
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\CMS.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\CMS.Dominio.AssemblyInfoInputs.cache
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\CMS.Dominio.AssemblyInfo.cs
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\CMS.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\CMS.Dominio.dll
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\refint\CMS.Dominio.dll
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\CMS.Dominio.pdb
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Dominio\obj\Debug\net6.0\ref\CMS.Dominio.dll

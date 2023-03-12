@@ -9,7 +9,7 @@ namespace WebApp.Controllers
     [ApiController]
     public class SliderMainController : ControllerBase
     {
-        private readonly ISliderMainAppService _sSliderMainAppService; //= new SliderMainAppService();
+        private readonly ISliderMainAppService _sSliderMainAppService;
 
         public SliderMainController(ISliderMainAppService contentMainAppService ) 
         {
@@ -30,10 +30,6 @@ namespace WebApp.Controllers
             if (sliderMain == null)
                 return BadRequest();
 
-            /*if (contentmain.SliderMain_Titulo == string.Empty)
-            {
-                ModelState.AddModelError("Titulo", "El Titulo de contenido no debe ser vacio");
-            }*/
             sliderMain.SliderMain_Estado = 1;
             sliderMain.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
             sliderMain.SliderMain_Pk = Guid.NewGuid().ToString();

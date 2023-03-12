@@ -756,11 +756,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj",
+      "projectUniqueName": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj",
       "projectName": "CMS.Dominio",
-      "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj",
+      "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj",
       "packagesPath": "C:\\Users\\Consultor2015\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\PersonalPage\\CMS\\CMS\\CMS.Dominio\\obj\\",
+      "outputPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Consultor2015\\AppData\\Roaming\\NuGet\\NuGet.Config",

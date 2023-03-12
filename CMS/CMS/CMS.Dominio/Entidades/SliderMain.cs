@@ -18,5 +18,7 @@ namespace CMS.Dominio.Entidades
         public int SliderMain_Estado { get; set; }
 
         public int SliderMain_Orden { get; set; }
-    }
+
+		public string SliderMain_UsuarioPk { get; set; }
+	}
 }
