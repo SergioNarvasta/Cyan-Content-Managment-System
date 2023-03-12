@@ -16,16 +16,16 @@ namespace WebApp.Controllers
             _sSliderMainAppService = contentMainAppService;
         }
 
-        [Route("lista")]
+        [Route("listatodos")]
         [HttpGet]
-        public async Task<IActionResult> GetAllSliderMain()
+        public async Task<IActionResult> GetAll()
         {
             return Ok(await _sSliderMainAppService.GetAllSliderMain());
         }
 
         [Route("registro")]
         [HttpPost]
-        public async Task<IActionResult> CreateSliderMain([FromBody] SliderMain sliderMain)
+        public async Task<IActionResult> Create([FromBody] SliderMain sliderMain)
         {
             if (sliderMain == null)
                 return BadRequest();
@@ -37,5 +37,25 @@ namespace WebApp.Controllers
             await _sSliderMainAppService.InsertSliderMain(sliderMain);
             return Created("Created", true);
         }
-    }
+
+		[Route("actualiza")]
+		[HttpPut("{id}")]
+		public async Task<IActionResult> Update([FromBody] SliderMain sliderMain, string id)
+		{
+			if (sliderMain == null)
+				return BadRequest();
+
+			sliderMain.SliderMain_Id = new MongoDB.Bson.ObjectId(id);
+            await _sSliderMainAppService.UpdateSliderMain(sliderMain);
+			return Created("Update", true);
+		}
+
+		[Route("elimina")]
+		[HttpDelete]
+		public async Task<IActionResult> Delete(string id)
+		{
+			await _sSliderMainAppService.DeleteSliderMain(id);
+			return NoContent();
+		}
+	}
 }

@@ -38,5 +38,11 @@ namespace CMS.Infraestructura.Repositorios
                 .Eq(s => s.SliderMain_Id, contentmain.SliderMain_Id);
             await collection.ReplaceOneAsync(filter, contentmain);
         }
-    }
+
+		public async Task<SliderMain> GetSliderMainById(string id)
+		{
+			return await collection.FindAsync(new BsonDocument { { "_id", new ObjectId(id) } })
+				.Result.FirstAsync();
+		}
+	}
 }

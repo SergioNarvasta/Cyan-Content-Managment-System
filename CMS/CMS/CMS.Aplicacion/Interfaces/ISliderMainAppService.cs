@@ -6,7 +6,8 @@ namespace CMS.Aplicacion.Interfaces
     {
         Task DeleteSliderMain(string id);
         Task<IEnumerable<SliderMain>> GetAllSliderMain();
-        Task InsertSliderMain(SliderMain sliderMain);
+		Task<SliderMain> GetSliderMainById(string id);
+		Task InsertSliderMain(SliderMain sliderMain);
         Task UpdateSliderMain(SliderMain sliderMain);
     }
 }
