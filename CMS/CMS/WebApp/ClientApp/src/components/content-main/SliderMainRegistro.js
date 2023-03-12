@@ -8,11 +8,18 @@ const modelo = {
   sliderMain_Descripcion: "",
   sliderMain_Estado : 0,
   sliderMain_Orden: 0,
-  SliderMain_UsuarioPk: "",
-  file_Nombre : "",
-  file_Base64 : "",
-  file_Tamanio : "",
-  file_Extension: "",
+  sliderMain_UsuarioPk: "",
+  sliderMain_Slider : "",
+  file_NombreF : "",
+  file_Base64F : "",
+  file_TamanioF: "",
+  file_NombreS: "",
+  file_Base64S: "",
+  file_TamanioS: "",
+  file_NombreT: "",
+  file_Base64T: "",
+  file_TamanioT: "",
+
   audit_UsuCre : "",
   audit_FecCre : "",
   audit_UsuAct : "",
@@ -53,31 +60,39 @@ const SliderMainRegistro = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(sliderMainCreate)
+        body: JSON.stringify(sliderMainCreate)
+        
     })
     if (response.ok) {
       console.log("Registrado con exito");
       window.location.href = window.location.href;
       //document.getElementById("LnList").click();
-    } 
+      } 
+      console.log("Event registro -> " + sliderMainCreate);
   }
-  async function cargarArchivo(e) {
-    console.log('Convirtiendo mi blob');
-    const myBlob = e.target.files[0];
-    const myB64 = await blobToBase64(myBlob);
-    console.log(myB64);
-    let nombre = e.target.files[0].name;
-    let tamanio = e.target.files[0].size.toString();
-    let next = nombre.lastIndexOf('.');
-    let extension = nombre.substring(next + 1);
-    
-      console.log(nombre + " tamaño: " + tamanio + " extension: " + extension);
-      document.getElementById('file_Base64').value = myB64;
-      document.getElementById('file_Nombre').value = nombre;
-      document.getElementById('file_Tamanio').value = tamanio;
-      document.getElementById('file_Extension').value = extension;
+    async function cargarArchivo(e) {
+        for (var index = 0; index < 2; index++) {
+            let nombre = e.target.files[index].name;
+            
+            if (nombre.length > 1) {
+                let tamanio = e.target.files[index].size.toString();
+                if (tamanio > 1) {
+                    let extension = nombre.substring(next + 1);
+                    if (extension == "jpg" || extension == "png" || extension == "jpeg" || extension == "gif") {
+                        console.log('Convirtiendo blob' + index);
+                        const myBlob = e.target.files[index];
+                        const myB64 = await blobToBase64(myBlob);
+                        console.log(nombre + " tamaño: " + tamanio + " extension: " + extension);
+                        document.getElementById('file_Base64').value = myB64;
+                        document.getElementById('file_Nombre').value = nombre;
+                        document.getElementById('file_Tamanio').value = tamanio;
 
-    console.log(sliderMainCreate);
+                    } else { alert("Archivo Invalido!. No tiene formato de imagen solicitado"); }
+                } else { alert("Archivo Invalido!. No tiene contenido"); }
+            } else { alert("Archivo Invalido!. No tiene nombre"); }
+
+        }
+    console.log("Event Archivo :"+sliderMainCreate);
   }
   const blobToBase64 = (blob) => {
     return new Promise( (resolve, reject) =>{
@@ -108,31 +123,56 @@ const SliderMainRegistro = () => {
           <label>Orden</label>
           <Input id="form-input" name="sliderMain_Orden" onChange={(e) => actualizaDato(e)}
             value={sliderMainCreate.sliderMain_Orden}></Input>
-        </FormGroup>
-        <FormGroup className="d-flex flex-row">
-            <label>Base 64</label>
-                  <Input id="file_Base64" name="file_Base64" onChange={(e) => actualizaDato(e)}
-                value={sliderMainCreate.file_Base64}></Input>
-        </FormGroup>
-        <FormGroup className="d-flex flex-row">
-            <label>Nombre Archivo</label>
-                  <Input id="file_Nombre" name="file_Nombre" onChange={(e) => actualizaDato(e)}
-                value={sliderMainCreate.file_Nombre}></Input>
-        </FormGroup>
-        <FormGroup className="d-flex flex-row">
-            <label>Tamaño Archivo</label>
-                  <Input id="file_Tamanio" name="file_Tamanio" onChange={(e) => actualizaDato(e)}
-                value={sliderMainCreate.file_Tamanio}></Input>
-        </FormGroup>
-        <FormGroup className="d-flex flex-row">
-            <label>Extension Archivo</label>
-                  <Input id="file_Extension" name="file_Extension" onChange={(e) => actualizaDato(e)}
-                value={sliderMainCreate.file_Extension}></Input>
-        </FormGroup>
+              </FormGroup>
+        <div className="d-flex flex-column">
+           <div>
+               <FormGroup className="d-flex flex-row">
+                   <label>Base 64 1</label>
+                   <Input id="file_Base641" name="file_Base64F" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_Base64F}></Input>
+               </FormGroup>
+               <FormGroup className="d-flex flex-row">
+                   <label>Nombre Archivo 1</label>
+                   <Input id="file_Nombre1" name="file_NombreF" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_NombreF}></Input>
+               </FormGroup>
+               <FormGroup className="d-flex flex-row">
+                   <label>Tamaño Archivo 1</label>
+                   <Input id="file_Tamanio1" name="file_TamanioF" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_TamanioF}></Input>
+               </FormGroup>
+           </div>
+           <div>
+               <FormGroup className="d-flex flex-row">
+                   <label>Base 64 2</label>
+                   <Input id="file_Base642" name="file_Base64S" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_Base64S}></Input>
+               </FormGroup>
+               <FormGroup className="d-flex flex-row">
+                   <label>Nombre Archivo 2</label>
+                   <Input id="file_Nombre2" name="file_NombreS" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_NombreS}></Input>
+               </FormGroup>
+               <FormGroup className="d-flex flex-row">
+                   <label>Tamaño Archivo 2</label>
+                   <Input id="file_Tamanio2" name="file_TamanioS" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_TamanioS}></Input>
+               </FormGroup>
+           </div>
+           <div>
+               <FormGroup className="d-flex flex-row">
+                   <label>Base 64 3</label>
+                   <Input id="file_Base643" name="file_Base64T" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_Base64T}></Input>
+               </FormGroup>
+               <FormGroup className="d-flex flex-row">
+                   <label>Nombre Archivo 3</label>
+                   <Input id="file_Nombre3" name="file_NombreT" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_NombreT}></Input>
+               </FormGroup>
+               <FormGroup className="d-flex flex-row">
+                   <label>Tamaño Archivo 3</label>
+                   <Input id="file_Tamanio3" name="file_TamanioT" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_TamanioT}></Input>
+               </FormGroup>
+           </div>
+
+        </div>
 
         <FormGroup className="d-flex flex-row">
           <label>Imagen</label>
-          <input type="file" onChange={(e) => cargarArchivo(e)} />
+          <input type="file" multiple accept=".jpg,.png,.gif" onChange={(e) => cargarArchivo(e)} />
         </FormGroup>
         
       </Form>

@@ -10,7 +10,7 @@ namespace CMS.Infraestructura.Data
 
         public MongoDBRepository(){
             client = new MongoClient("mongodb+srv://s76325953:s76325953@cluster0.acwg8vw.mongodb.net");
-            db = client.GetDatabase("CMS");
+            db = client.GetDatabase("CMS_Dev");
         }
     }
 }

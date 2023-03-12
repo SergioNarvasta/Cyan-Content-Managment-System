@@ -19,6 +19,8 @@ namespace CMS.Dominio.Entidades
 
         public int SliderMain_Orden { get; set; }
 
-		public int SliderMain_UsuarioPk { get; set; }
+		public string SliderMain_UsuarioPk { get; set; }
+		
+        public string SliderMain_Slider { get; set; } // 1 indica que es slider 0 solo mostrara una imagen
 	}
 }
