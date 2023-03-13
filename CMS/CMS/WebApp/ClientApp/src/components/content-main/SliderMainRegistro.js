@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Form, FormGroup, Input, Button, Textarea } from "reactstrap";
+import { Form, FormGroup, Input, Button } from "reactstrap";
 import { Table } from "reactstrap";
 import './Style.css';
 
@@ -114,21 +114,25 @@ const SliderMainRegistro = () => {
         <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success">Registrar</Button> <hr />
         <FormGroup className="d-flex flex-row ">
           <label className="me-2" >Titulo</label>
-          <Input id="form_input" name="sliderMain_Titulo" onChange={(e) => actualizaDato(e)}
+          <Input id="txt_titulo" name="sliderMain_Titulo" onChange={(e) => actualizaDato(e)}
             value={sliderMainCreate.sliderMain_Titulo}></Input>
         </FormGroup>
-        <FormGroup className="d-flex flex-row">
-            <label className="me-3">Tipo</label>
-            <select onChange={(e) => actualizaDato(e)} value={sliderMainCreate.sliderMain_Slider}>
-                <option value="1">Carousel Automatico</option>
-                <option value="0">Banner Estatico</option>
-            </select>
-        </FormGroup>
-        <FormGroup className="d-flex flex-row">
-          <label className="me-2">Descripcion</label>
-          <Textarea id="form_input" name="sliderMain_Descripcion" onChange={(e) => actualizaDato(e)}
-             value={sliderMainCreate.sliderMain_Descripcion}></Textarea>
-        </FormGroup>
+
+        <div className="d-flex flex-row">
+            <FormGroup className="d-flex flex-row" id="group_desc">
+                <label className="me-2">Descripcion</label>
+                <textarea id="txa_desc" name="sliderMain_Descripcion" onChange={(e) => actualizaDato(e)}
+                    value={sliderMainCreate.sliderMain_Descripcion}></textarea>
+            </FormGroup>
+            <FormGroup className="d-flex flex-row ms-1" id="group_tipo">
+                 <label className="me-1">Tipo</label>
+                <select id="cbo_tipo" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.sliderMain_Slider}>
+                    <option value="1">Carousel Automatico</option>
+                    <option value="0">Banner Estatico</option>
+                </select>
+            </FormGroup>
+        </div>
+        
         <FormGroup className="d-flex flex-row">
           <label className="me-3">Archivos</label>
           <input type="file" multiple accept=".jpg,.png,.gif" onChange={(e) => cargarArchivo(e)} />

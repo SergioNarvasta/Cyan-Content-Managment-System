@@ -1,12 +1,26 @@
 ﻿body {
 }
-#form_input {
-    width: 40%;
+#txt_titulo {
+    width: 60%;
 }
 
 #container_files {
     display: none;
 }
-label {
+.me-2 {
    width:90px;
+}
+#group_desc {
+    width: 40%;
+}
+#txa_desc {
+    width: 80%;
+}
+
+#group_tipo {
+    width: 30%;
+}
+#cbo_tipo {
+    width: 78%;
+    height: 30px;
 }
