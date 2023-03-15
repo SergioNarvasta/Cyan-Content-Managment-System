@@ -9,21 +9,11 @@ namespace CMS.Dominio.Entidades
 	{
         [BsonId]
         public ObjectId SliderSec_Id { get; set; }
-
 		public string SliderSec_Pk { get; set; }
-
 		public string SliderSec_Titulo { get; set; }
-
 		public string SliderSec_Descripcion { get; set; }
-
 		public int SliderSec_Estado { get; set; }
-
 		public int SliderSec_Orden { get; set; }
-
-		public string SliderSec_UsuarioPk { get; set; }
-
-	
-
-
+		public string Company_Pk { get; set; }
 	}
 }

@@ -13,7 +13,6 @@ namespace CMS.Dominio.Entidades
 		public string Company_Direccion { get; set; }
 		public string Company_Telefono { get; set; }
 		public string Company_Email { get; set; }
-
 		public string Plan_Pk {get;set;}
 		public string User_Pk { get; set; }
 
