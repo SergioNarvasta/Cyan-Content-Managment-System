@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/CMS-Site/CMS/CMS/CMS.Aplicacion/CMS.Aplicacion.csproj": {}
+    "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj": {}
   },
   "projects": {
-    "/workspaces/CMS-Site/CMS/CMS/CMS.Aplicacion/CMS.Aplicacion.csproj": {
+    "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/CMS-Site/CMS/CMS/CMS.Aplicacion/CMS.Aplicacion.csproj",
+        "projectUniqueName": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj",
         "projectName": "CMS.Aplicacion",
-        "projectPath": "/workspaces/CMS-Site/CMS/CMS/CMS.Aplicacion/CMS.Aplicacion.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/CMS-Site/CMS/CMS/CMS.Aplicacion/obj/",
+        "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj",
+        "packagesPath": "C:\\Users\\Consultor2015\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Aplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Consultor2015\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/workspaces/CMS-Site/CMS/CMS/CMS.Dominio/CMS.Dominio.csproj": {
-                "projectPath": "/workspaces/CMS-Site/CMS/CMS/CMS.Dominio/CMS.Dominio.csproj"
+              "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj"
               }
             }
           }
@@ -58,37 +60,33 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.14, 6.0.14]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.201/sdk/7.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/workspaces/CMS-Site/CMS/CMS/CMS.Dominio/CMS.Dominio.csproj": {
+    "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/CMS-Site/CMS/CMS/CMS.Dominio/CMS.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj",
         "projectName": "CMS.Dominio",
-        "projectPath": "/workspaces/CMS-Site/CMS/CMS/CMS.Dominio/CMS.Dominio.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/CMS-Site/CMS/CMS/CMS.Dominio/obj/",
+        "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj",
+        "packagesPath": "C:\\Users\\Consultor2015\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Consultor2015\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -123,18 +121,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.14, 6.0.14]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.201/sdk/7.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

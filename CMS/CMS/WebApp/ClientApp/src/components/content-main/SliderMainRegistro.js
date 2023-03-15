@@ -40,23 +40,19 @@ const SliderMainRegistro = () => {
     )
   }
   const enviarDatos = () => {
-    guardarsliderMain(sliderMainCreate)
+      registrar(sliderMainCreate)
   }
-  const guardarsliderMain = async (sliderMainCreate) => {
+  const registrar = async (sliderMainCreate) => {
     const response = await fetch("api/slidermain/registro", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-        body: JSON.stringify(sliderMainCreate)
-        
+        body: JSON.stringify(sliderMainCreate)   
     })
     if (response.ok) {
-      console.log("Registrado con exito");
-      window.location.href = window.location.href;
-      //document.getElementById("LnList").click();
+        window.location.reload();
       } 
-      console.log("Event registro -> " + sliderMainCreate);
   }
   async function cargarArchivo(e) {
         var cant = e.target.files.length;
@@ -76,7 +72,8 @@ const SliderMainRegistro = () => {
                             document.getElementById('file_Base64' + index).value = myB64;
                             document.getElementById('file_Nombre' + index).value = nombre;
                             document.getElementById('file_Tamanio' + index).value = tamanio;
-                            console.log("nombre : "+nombre + " tamaño : " + tamanio);
+                            console.log("nombre : " + nombre + " tamaño : " + tamanio);
+                            console.log(myB64);
                         } else { alert("Archivo Invalido!. No tiene formato de imagen solicitado"); }
                     } else { alert("Archivo Invalido!. Supera el limite 5MB"); }                  
                 } else { alert("Archivo Invalido!. No tiene contenido"); }
@@ -114,7 +111,7 @@ const SliderMainRegistro = () => {
             </FormGroup>
             <FormGroup className="d-flex flex-row ms-1" id="group_tipo">
                  <label className="me-1">Tipo</label>
-                <select id="cbo_tipo" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.sliderMain_Slider}>
+                <select id="cbo_tipo" onChange={(e) => actualizaDato(e)} >
                     <option value="1">Carousel Automatico</option>
                     <option value="0">Banner Estatico</option>
                 </select>
@@ -126,7 +123,10 @@ const SliderMainRegistro = () => {
                 <label className="me-5">Archivos</label>
                 <input type="file" multiple accept=".jpg,.png,.gif" onChange={(e) => cargarArchivo(e)} />
             </FormGroup>
-            <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success sm ms-3">Registrar</Button>
+            <FormGroup >
+                <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success ms-5">Registrar</Button>
+            </FormGroup>
+            
         </div>
               <div id="container_files">
                   <div >
@@ -171,12 +171,11 @@ const SliderMainRegistro = () => {
                           <Input id="file_Tamanio2" name="file_TamanioT" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_TamanioT}></Input>
                       </FormGroup>
                   </div>
-                <SliderMainListado/>
               </div>
       </Form>
       <br></br>
-      <h3>Listado de Registros</h3>
-       
+      
+      <SliderMainListado/>
     </div>
   )
 }

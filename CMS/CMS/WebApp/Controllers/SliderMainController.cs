@@ -2,6 +2,7 @@
 using CMS.Aplicacion.Interfaces;
 using CMS.Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography;
 
 namespace WebApp.Controllers
 {
@@ -29,8 +30,8 @@ namespace WebApp.Controllers
         {
             if (sliderMain == null)
                 return BadRequest();
-
-            sliderMain.SliderMain_Estado = 1;
+			
+			sliderMain.SliderMain_Estado = 1;
             sliderMain.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
             sliderMain.SliderMain_Pk = Guid.NewGuid().ToString();
 
@@ -52,7 +53,7 @@ namespace WebApp.Controllers
 
 		[Route("elimina")]
 		[HttpDelete]
-		public async Task<IActionResult> Delete(string id)
+		public async Task<IActionResult> Delete([FromBody] string id)
 		{
 			await _sSliderMainAppService.DeleteSliderMain(id);
 			return NoContent();
