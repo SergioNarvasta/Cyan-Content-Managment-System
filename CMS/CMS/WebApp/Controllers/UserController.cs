@@ -35,7 +35,7 @@ namespace WebApp.Controllers
             user.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
 			user.User_Pk = Guid.NewGuid().ToString();
 
-            await _userAppService.(user);
+            await _userAppService.InsertUser(user);
             return Created("Created", true);
         }
 
