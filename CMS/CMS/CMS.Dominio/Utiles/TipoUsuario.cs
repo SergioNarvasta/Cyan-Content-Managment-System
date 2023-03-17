@@ -13,7 +13,7 @@ namespace ReactVentas.Models
 
         public string Descripcion { get; set; }
 
-        public virtual ICollection<Usuario> Usuario { get; set; }
+       // public virtual ICollection<Usuario> Usuario { get; set; }
 
     }
 }

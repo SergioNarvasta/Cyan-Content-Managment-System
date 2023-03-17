@@ -11,6 +11,6 @@ namespace ReactVentas.Models
         
         public string RegSanit { get; set; }
 
-        public ICollection<Producto> Producto { get; set; }
+        //public ICollection<Producto> Producto { get; set; }
     }
 }

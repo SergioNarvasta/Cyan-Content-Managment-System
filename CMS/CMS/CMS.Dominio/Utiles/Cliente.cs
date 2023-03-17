@@ -37,7 +37,7 @@ namespace ReactVentas.Models
         public DateTime FechaReg { get; set; } = DateTime.Now;
 
         //Referencia de Relacion 
-        public virtual ICollection<Venta> Venta { get; set; }
+        //public virtual ICollection<Venta> Venta { get; set; }
       
 
     }

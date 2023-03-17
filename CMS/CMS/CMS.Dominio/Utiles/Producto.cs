@@ -49,9 +49,9 @@ namespace ReactVentas.Models
 
         //Foreign Key
         public int CodLote { get; set; }
-        public virtual Lote Lote { get; set; }
+        //public virtual Lote Lote { get; set; }
 
-        public virtual ICollection<DetalleIngreso> DetalleIngreso { get; set; }
-        public virtual ICollection<DetalleVenta> DetalleVenta { get; set; }
+       // public virtual ICollection<DetalleIngreso> DetalleIngreso { get; set; }
+       // public virtual ICollection<DetalleVenta> DetalleVenta { get; set; }
     }
 }
