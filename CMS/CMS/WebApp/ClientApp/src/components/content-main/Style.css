@@ -5,6 +5,7 @@
 }
 
 #container_files {
+   display:none;
 }
 .me-2 {
    width:90px;
@@ -23,6 +24,12 @@
     width: 78%;
     height: 30px;
 }
-#btnRegistrar {
-   height:25px;
+#td_file1, #td_file2, #td_file3 {
+    width: 200px;
+    height: 80px;
+    border:1px solid white;
+}
+img {
+    width: 200px;
+    height: 100px;
 }
