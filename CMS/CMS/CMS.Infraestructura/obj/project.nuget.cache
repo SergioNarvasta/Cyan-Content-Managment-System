@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "VXecdqeual2nDhxqzyzF0E3iW2ym7MzenvJp1AfwmHz1EWHkzv7uqRcKgsjGzYD18w7QesI8H99JC8qISW+sDg==",
   "success": true,
   "projectFilePath": "C:\\Users\\FABRIZIO\\Documents\\proyecto\\cms\\CMS\\CMS\\CMS.Infraestructura\\CMS.Infraestructura.csproj",
@@ -23,6 +24,32 @@
     "C:\\Users\\FABRIZIO\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\FABRIZIO\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\FABRIZIO\\.nuget\\packages\\zstdsharp.port\\0.6.2\\zstdsharp.port.0.6.2.nupkg.sha512"
+=======
+  "dgSpecHash": "ywRDOHomvI4PdfH7MFIDoEG1F5JfBDJjA64G0yZWUeFy/WDCM6xor8htKjv14wie5BUQdiOCCNVnbJi0QErmSg==",
+  "success": true,
+  "projectFilePath": "/workspaces/CMS-Site/CMS/CMS/CMS.Infraestructura/CMS.Infraestructura.csproj",
+  "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
+    "/home/codespace/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",
+    "/home/codespace/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.dependencyinjection/7.0.0/microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.extensions.logging.abstractions/2.0.0/microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/mongodb.bson/2.19.0/mongodb.bson.2.19.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/mongodb.driver/2.19.0/mongodb.driver.2.19.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/mongodb.driver.core/2.19.0/mongodb.driver.core.2.19.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/mongodb.libmongocrypt/1.7.0/mongodb.libmongocrypt.1.7.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/sharpcompress/0.30.1/sharpcompress.0.30.1.nupkg.sha512",
+    "/home/codespace/.nuget/packages/snappier/1.0.0/snappier.1.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.runtime.compilerservices.unsafe/5.0.0/system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/zstdsharp.port/0.6.2/zstdsharp.port.0.6.2.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.netcore.app.ref/6.0.14/microsoft.netcore.app.ref.6.0.14.nupkg.sha512"
+>>>>>>> refs/remotes/origin/main
   ],
   "logs": []
 }

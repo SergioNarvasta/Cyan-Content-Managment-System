@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Form, FormGroup, Input, Button } from "reactstrap";
-import { Table } from "reactstrap";
+import SliderMainListado from './SliderMainListado';
 import './Style.css';
 
 const modelo = {
@@ -27,21 +27,9 @@ const modelo = {
 }
 
 const SliderMainRegistro = () => {
-  const [sliderMainList, setsliderMainList] = useState([]);
+  
   const [sliderMainCreate, setsliderMainCreate] = useState(modelo);
 
-  const Listar = async () => {
-    const response = await fetch("/api/slidermain/listatodos");
-    if (response.ok) {
-      const data = await response.json();
-      setsliderMainList(data);
-    } else {
-        console.log("Error al listar (/api/slidermain/listatodos)")
-    }
-  }
-  useEffect(() => {
-    Listar()
-  }, [])
   const actualizaDato = (e) => {
     console.log(e.target.name + " : " + e.target.value);
     setsliderMainCreate(
@@ -111,7 +99,7 @@ const SliderMainRegistro = () => {
     <div>
       <Form id="form-registro">
         <h2 className="text-center">Gestion de SliderMain</h2> <hr />
-        <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success">Registrar</Button> <hr />
+         <hr />
         <FormGroup className="d-flex flex-row ">
           <label className="me-2" >Titulo</label>
           <Input id="txt_titulo" name="sliderMain_Titulo" onChange={(e) => actualizaDato(e)}
@@ -132,11 +120,14 @@ const SliderMainRegistro = () => {
                 </select>
             </FormGroup>
         </div>
-        
-        <FormGroup className="d-flex flex-row">
-          <label className="me-3">Archivos</label>
-          <input type="file" multiple accept=".jpg,.png,.gif" onChange={(e) => cargarArchivo(e)} />
-        </FormGroup>
+
+        <div className="d-flex flex-row ">
+            <FormGroup className="d-flex flex-row">
+                <label className="me-5">Archivos</label>
+                <input type="file" multiple accept=".jpg,.png,.gif" onChange={(e) => cargarArchivo(e)} />
+            </FormGroup>
+            <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success sm ms-3">Registrar</Button>
+        </div>
               <div id="container_files">
                   <div >
                       <FormGroup className="d-flex flex-row">
@@ -180,10 +171,11 @@ const SliderMainRegistro = () => {
                           <Input id="file_Tamanio2" name="file_TamanioT" onChange={(e) => actualizaDato(e)} value={sliderMainCreate.file_TamanioT}></Input>
                       </FormGroup>
                   </div>
-
+                <SliderMainListado/>
               </div>
       </Form>
       <br></br>
+<<<<<<< HEAD
       <Table striped responsive className="table-bordered ">
             <thead className="table-warning">
                 <tr>
@@ -230,6 +222,10 @@ const SliderMainRegistro = () => {
                }
             </tbody>
         </Table>     
+=======
+      <h3>Listado de Registros</h3>
+       
+>>>>>>> refs/remotes/origin/main
     </div>
   )
 }
