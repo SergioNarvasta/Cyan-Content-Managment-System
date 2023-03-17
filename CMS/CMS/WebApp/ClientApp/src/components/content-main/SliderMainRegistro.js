@@ -217,7 +217,7 @@ const SliderMainRegistro = () => {
                       <td>{item.sliderMain_Estado = 1 ? "Activo" : "No disponible"}</td>                    
                       <td>{item.sliderMain_Orden}</td>
                       <td>{item.file_Nombre}</td>
-                      <td id="td_file_Base64"><textarea >{item.file_Base64}</textarea></td>
+                      <td id="td_file_Base64"><textarea >{item.file_Base64T}</textarea></td>
                       <td>{item.file_Tamanio}</td>
                       <td>{item.file_Extension}</td>
                       <td>{item.audit_UsuCre}</td>
