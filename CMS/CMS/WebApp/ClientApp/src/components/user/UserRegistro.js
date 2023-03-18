@@ -84,8 +84,12 @@ const UserRegistro = () => {
         </FormGroup>
         <FormGroup className="d-flex flex-row ">
           <label className="me-2">Rol</label>
-          <Input id="Rol_Pk" name="Rol_Pk" onChange={(e) => actualizaDato(e)}
-            value={user.Rol_Pk}></Input>
+          <select id="Rol_Pk" name="Rol_Pk" onChange={(e) => actualizaDato(e)}
+            value={user.Rol_Pk}>
+            <option>Rol 1</option>
+            <option>Rol 2</option>
+          </select>
+         
         </FormGroup>
         <FormGroup >
           <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success ms-5">Registrar</Button>

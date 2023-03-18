@@ -78,13 +78,13 @@ const UserListado = () => {
             user.map((item) => (
              <tr key={item.User_Pk} >
                  
-                 <td>{item.User_Nombre}</td>
-                 <td>{item.User_Direccion}</td>
-                 <td>{item.User_Telefono = 1 ? "Activo" : "Inactivo"}</td>                    
-                 <td>{item.User_Email}</td>               
-                 <td>{item.User_Estado}</td>
-                 <td>{item.Plan_Pk}</td>
-                 <td>{item.Rol_Pk}</td>
+                 <td>{item.user_Nombre}</td>
+                 <td>{item.user_Direccion}</td>
+                 <td>{item.user_Telefono }</td>                    
+                 <td>{item.user_Email}</td>               
+                 <td>{item.user_Estado = 1 ? "Activo" : "Inactivo"}</td>
+                 <td>{item.plan_Pk}</td>
+                 <td>{item.rol_Pk}</td>
                  <td>{item.audit_UsuCre}</td>
                  <td>{item.audit_FecCre}</td>
                  <td>{item.audit_UsuAct}</td>

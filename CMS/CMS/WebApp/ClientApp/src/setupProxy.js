@@ -6,7 +6,9 @@ const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_H
 
 const context =  [
     "/api/slidermain",
-    "/api/session"
+    "/api/session",
+    "/api/user",
+    "/api/compania"
 ];
 
 module.exports = function(app) {

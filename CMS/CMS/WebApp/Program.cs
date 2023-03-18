@@ -1,10 +1,13 @@
 using CMS.Aplicacion.Interfaces;
 using CMS.Infraestructura.Repositorios;
+using CMS.Infraestructura.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<ISliderMainAppService,SliderMainCollection>();    
+builder.Services.AddTransient<ISliderMainAppService,SliderMainCollection>();
+builder.Services.AddTransient<IUserAppService, UserCollection>();
 
 var app = builder.Build();
 

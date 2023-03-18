@@ -3,6 +3,7 @@ import { Home } from "./components/Home";
 import SliderMainRegistro from "./components/slider-main/SliderMainRegistro";
 import Login from './components/login/Login';
 import UserRegistro from './components/user/UserRegistro';
+import CompaniaRegistro from './components/compania/companiaRegistro';
 
 const AppRoutes = [
   {
@@ -20,6 +21,10 @@ const AppRoutes = [
     {
         path: '/user',
         element: <UserRegistro />
+    },
+    {
+      path: '/compania',
+      element: <CompaniaRegistro/>
     }
 ];
 

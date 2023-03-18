@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace CMS.Infraestructura.Repositorios
 {
-    public class UserCollection 
+    public class UserCollection :IUserAppService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private readonly IMongoCollection<User> collection;

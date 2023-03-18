@@ -4,17 +4,19 @@ using CMS.Infraestructura.Data;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Driver.Core.Configuration;
 
 
 namespace CMS.Infraestructura.Servicios
 {
-    public class UserService : IUserAppService
+    public class UserService
     {
         public readonly AppDbContext _dbContext;
-        public UserService(AppDbContext dbContext)
+        private readonly string conn;
+        public UserService(IConfiguration configuration)
         {
-            _dbContext = dbContext;
+            conn = configuration.GetConnectionString("");
         }
         public async Task DeleteUser(string id)
         {

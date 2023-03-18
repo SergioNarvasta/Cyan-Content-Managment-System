@@ -4,8 +4,6 @@ using CMS.Infraestructura.Data;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using MongoDB.Driver.Core.Configuration;
-
 
 namespace CMS.Infraestructura.Servicios
 {
@@ -16,7 +14,8 @@ namespace CMS.Infraestructura.Servicios
         {
             _dbContext = dbContext;
         }
-        public async Task DeleteCompany(string id)
+       
+		public async Task DeleteCompany(string id)
         {
             using var connection = new SqlConnection(_dbContext.connectionString);
             await connection.QuerySingleAsync<int>(@" ", new { });

@@ -59,15 +59,15 @@ const SliderMainListado = () => {
                     <th>Estado</th>                 
                     <th>Nombre Archivo</th>
                    
-                    <th>Tamaño</th> 
+                    <th>Tamaï¿½o</th> 
                     <th>Vista previa </th>                   
                     <th>Nombre Archivo</th>
                     
-                    <th>Tamaño</th>
+                    <th>Tamaï¿½o</th>
                     <th>Vista previa </th>
                     <th>Nombre Archivo</th>
                    
-                    <th>Tamaño</th>
+                    <th>Tamaï¿½o</th>
                     <th>Vista previa </th>
                     <th>Usuario Creacion</th>
                     <th>Fecha Creacion</th>
@@ -84,7 +84,7 @@ const SliderMainListado = () => {
                </tr>
            ):(
              sliderMainList.map((item) => (
-             <tr key={item.SliderMain_Pk} >
+             <tr key={item.sliderMain_Pk} >
                  
                  <td>{item.sliderMain_Titulo}</td>
                  <td>{item.sliderMain_Descripcion}</td>

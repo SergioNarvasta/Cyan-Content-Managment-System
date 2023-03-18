@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CMS.Infraestructura.Data
 {
+	
 	public class AppDbContext : DbContext
 	{
 		public readonly string connectionString;
@@ -11,7 +12,7 @@ namespace CMS.Infraestructura.Data
 		public AppDbContext(DbContextOptions<AppDbContext> options)
 		   : base(options)
 		{
-			connectionString = "34.71.157.48/";
+			connectionString = "";
 				//configuration.GetConnectionString("DefaultConnection");
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
