@@ -2,7 +2,6 @@
 using CMS.Aplicacion.Interfaces;
 using CMS.Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography;
 
 namespace WebApp.Controllers
 {

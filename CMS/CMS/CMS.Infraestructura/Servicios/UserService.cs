@@ -19,7 +19,7 @@ namespace CMS.Infraestructura.Servicios
         public async Task DeleteUser(string id)
         {
             using var connection = new SqlConnection(_dbContext.connectionString);
-            await connection.QuerySingleAsync<int>(@" ", new { });
+            await connection.QuerySingleAsync<int>(@"DELETE FROM User WHERE User_Pk = @id", new {id });
         }
 
         public async Task<IEnumerable<User>> GetAllUser()

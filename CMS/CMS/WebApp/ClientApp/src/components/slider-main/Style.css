@@ -1,0 +1,35 @@
+﻿body {
+}
+#txt_titulo {
+    width: 60%;
+}
+
+#container_files {
+   display:none;
+}
+.me-2 {
+   width:90px;
+}
+#group_desc {
+    width: 40%;
+}
+#txa_desc {
+    width: 80%;
+}
+
+#group_tipo {
+    width: 30%;
+}
+#cbo_tipo {
+    width: 78%;
+    height: 30px;
+}
+#td_file1, #td_file2, #td_file3 {
+    width: 200px;
+    height: 80px;
+    border:1px solid white;
+}
+img {
+    width: 200px;
+    height: 100px;
+}
