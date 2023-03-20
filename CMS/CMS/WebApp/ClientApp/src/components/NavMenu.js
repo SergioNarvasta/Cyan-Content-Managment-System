@@ -5,7 +5,9 @@ import './NavMenu.css';
 
 
 export class NavMenu extends Component {
+
   static displayName = NavMenu.name;
+  
 
   constructor(props) {
     super(props);
@@ -29,16 +31,20 @@ export class NavMenu extends Component {
           <NavbarBrand tag={Link} to="/">CMS</NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse className="d-sm-inline-flex flex-sm-row-reverse center " isOpen={!this.state.collapsed} navbar>
-            <ul className="navbar-nav flex-grow">
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/slider-main">SliderMain</NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/user">Usuarios</NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/compania">Compañia</NavLink>
-              </NavItem>
+                    
+                     
+                    <ul className="navbar-nav flex-grow">
+                        <ul className="navbar-nav flex-grow">
+                            <NavItem>
+                                <NavLink tag={Link} className="text-dark" to="/slider-main">SliderMain</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} className="text-dark" to="/user">Usuarios</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} className="text-dark" to="/compania">Compañia</NavLink>
+                            </NavItem>
+                        </ul>
               <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/login">Login</NavLink>
               </NavItem>

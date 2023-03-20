@@ -1,17 +1,12 @@
 ﻿import { useContext, useState } from "react"
 import { UserContext } from "../context/UserProvider"
 import Swal from 'sweetalert2'
-import { Navigate } from "react-router-dom"
 
 const Login = () => {
 
     const [_correo, set_Correo] = useState("")
     const [_clave, set_Clave] = useState("")
-    const { user, iniciarSession } = useContext(UserContext)
-
-    if (user != null) {
-        return <Navigate to="/"/>
-    }
+    const { user, setuser } = useState(window.localStorage.getItem("sesion_user"))
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -39,7 +34,8 @@ const Login = () => {
                     'error'
                 )
             } else {
-                iniciarSession(dataJson)
+                setuser(dataJson)
+                window.localStorage.setItem("sesion_user", JSON.stringify(dataJson))
             }
 
         }).catch((error) => {
@@ -74,13 +70,13 @@ const Login = () => {
                                                     value={_correo}
                                                     onChange={(e) => set_Correo(e.target.value)}
                                                 />
-                                            </div>
+                                            </div> <br></br>
                                             <div className="form-group">
                                                 <input type="password" className="form-control form-control-user" placeholder="Contraseña"
                                                     value={_clave}
                                                     onChange={(e) => set_Clave(e.target.value)}
                                                 />
-                                            </div>
+                                            </div><br></br>
                                             <button type="submit" className="btn btn-primary btn-user btn-block"> Ingresar </button>
                                             
                                         </form>
