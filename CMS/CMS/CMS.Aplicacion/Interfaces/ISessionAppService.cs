@@ -1,10 +1,5 @@
 ﻿using CMS.Dominio.Entidades;
-using ReactVentas.Models.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CMS.Dominio.Dto;
 
 namespace CMS.Aplicacion.Interfaces
 {

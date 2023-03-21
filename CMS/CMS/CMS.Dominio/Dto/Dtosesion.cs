@@ -1,4 +1,4 @@
-﻿namespace ReactVentas.Models.DTO
+﻿namespace CMS.Dominio.Dto
 {
     public class Dtosesion
     {

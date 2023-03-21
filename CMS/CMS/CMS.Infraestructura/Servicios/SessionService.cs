@@ -8,7 +8,7 @@ using ReactVentas.Models.DTO;
 
 namespace CMS.Infraestructura.Servicios
 {
-    public class SessionService : ISessionAppService
+    public class SessionService 
     {
         public readonly AppDbContext _dbContext;
         public SessionService(AppDbContext dbContext)

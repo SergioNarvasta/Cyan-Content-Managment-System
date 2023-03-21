@@ -27,7 +27,7 @@ const Login = () => {
             return response.ok ? response.json() : Promise.reject(response);
         })
         .then((dataJson) => {
-            if (dataJson.idUsuario === 0) {
+            if (dataJson.user_Pk === "") {
                 Swal.fire(
                     'Opps!',
                     'No se encontro el usuario',
@@ -36,11 +36,11 @@ const Login = () => {
             } else {
                 setuser(dataJson)
                 window.localStorage.setItem("sesion_user", JSON.stringify(dataJson))
+                window.location = "/home";
             }
 
         }).catch((error) => {
             Swal.fire(
-                'Opps!',
                 'No se pudo iniciar sessión',
                 'error'
             )

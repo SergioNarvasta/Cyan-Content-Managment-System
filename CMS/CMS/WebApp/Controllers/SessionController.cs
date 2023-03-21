@@ -3,7 +3,7 @@ using CMS.Dominio.Entidades;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ReactVentas.Models.DTO;
+using CMS.Dominio.Dto;
 
 namespace WebApp.Controllers
 {

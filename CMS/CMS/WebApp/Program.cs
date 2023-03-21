@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<ISliderMainAppService,SliderMainCollection>();
 builder.Services.AddTransient<IUserAppService, UserCollection>();
+builder.Services.AddTransient<ISessionAppService,SessionRepository>();
 
 var app = builder.Build();
 
