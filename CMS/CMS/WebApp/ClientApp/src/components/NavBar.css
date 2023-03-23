@@ -1,0 +1,8 @@
+#accordionSidebar {
+    width: 15%;
+    position: absolute;
+    border: 1px solid blue;
+    border-radius: 15px;
+    top: 50px;
+    left: 1%;
+}

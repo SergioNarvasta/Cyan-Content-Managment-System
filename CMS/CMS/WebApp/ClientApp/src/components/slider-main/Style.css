@@ -1,11 +1,10 @@
-﻿body {
-}
+﻿
 #txt_titulo {
     width: 60%;
 }
 
 #container_files {
-   display:none;
+   border: 1px solid blue;
 }
 .me-2 {
    width:90px;
