@@ -2,26 +2,6 @@ import React, { Component } from 'react';
 import './Home.css';
 //import perfil from './assets/Perfil.jpg';
 
-const user = {
-    User_Pk: "s7632-5953.",
-    User_Nombre: "SNarvasta",
-    User_Direccion: "",
-    User_Telefono: 980202425,
-    User_Email: "sergio.jn024@gmail.com",
-    User_Token: "s76325953.",
-    User_Estado: 1,
-    Plan_Pk: "1",
-    Rol_Pk: "1",
-    Audit_UsuCre: "",
-    Audit_FecCre: "18/03/2023",
-    Audit_UsuAct: "",
-    Audit_FecAct: ""
-}
-const iniciarSession = (data) => {
-    window.localStorage.setItem("sesion_user", JSON.stringify(data))
-    console.log("se inserto " + JSON.stringify(data));
-    //setUser(JSON.stringify(data))
-}
 const cerrarSession = () => {
     window.localStorage.removeItem("sesion_user")
     //setUser(null)
@@ -52,8 +32,8 @@ export class Home extends Component {
                Especialistas en Administración de Bases de Datos SQL Server
             </p>
                 </div> <br></br>
-                <button class="btn btn-warning ms-5" onClick={iniciarSession(user)}>Insert User</button>
-                <button class="btn btn-danger ms-3" onClick={cerrarSession}>Remove User</button>
+            
+                <button className="btn btn-danger ms-3" onClick={cerrarSession}>Remove User</button>
         </div>
         <br></br>
       </div>

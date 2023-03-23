@@ -103,3 +103,5 @@ C:/Users/Consultor2015/Documents/SERGIO/RECURSOS/CMS/CMS/CMS/CMS.Infraestructura
 /workspaces/CMS-Site/CMS/CMS/CMS.Infraestructura/obj/Debug/net6.0/CMS.Infraestructura.pdb
 /workspaces/CMS-Site/CMS/CMS/CMS.Infraestructura/obj/Debug/net6.0/ref/CMS.Infraestructura.dll
 >>>>>>> refs/remotes/origin/main
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Infraestructura\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Consultor2015\Documents\SERGIO\RECURSOS\CMS\CMS\CMS\CMS.Infraestructura\bin\Debug\net6.0\appsettings.json

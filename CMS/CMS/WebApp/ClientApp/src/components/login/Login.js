@@ -1,50 +1,48 @@
-﻿import { useContext, useState } from "react"
-import { UserContext } from "../context/UserProvider"
+﻿import { useState } from "react"
 import Swal from 'sweetalert2'
 
 const Login = () => {
-
     const [_correo, set_Correo] = useState("")
     const [_clave, set_Clave] = useState("")
-    const { user, setuser } = useState(window.localStorage.getItem("sesion_user"))
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-
         let request = {
             correo: _correo,
-            clave:_clave
+            clave: _clave
         }
-
-        const api = fetch("api/session/Login", {
+        const response = await fetch("api/session/Login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify(request)
-        })
-        .then((response) => {
-            return response.ok ? response.json() : Promise.reject(response);
-        })
-        .then((dataJson) => {
-            if (dataJson.user_Pk === "") {
+        });
+        if (response.ok) {
+            const data = await response.json();
+            if (data.user_Pk == "") {
                 Swal.fire(
                     'Opps!',
                     'No se encontro el usuario',
                     'error'
                 )
             } else {
-                setuser(dataJson)
-                window.localStorage.setItem("sesion_user", JSON.stringify(dataJson))
-                window.location = "/home";
+                console.log(data);
+                window.localStorage.setItem("sesion_user", JSON.stringify(data))
+                Swal.fire(
+                    'Credenciales validas!',
+                    'Bienvenido',
+                    'success'
+                )
+                window.location = "/";
             }
-
-        }).catch((error) => {
+        } else {
             Swal.fire(
-                'No se pudo iniciar sessión',
+                'No se pudo iniciar session!',
+                'verifique credenciales',
                 'error'
             )
-        })
+        }
     }
 
     return (
@@ -78,21 +76,21 @@ const Login = () => {
                                                 />
                                             </div><br></br>
                                             <button type="submit" className="btn btn-primary btn-user btn-block"> Ingresar </button>
-                                            
+
                                         </form>
                                         <hr></hr>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                </div>
+                    </div>
 
                 </div>
 
             </div>
 
         </div>
-        )
+    )
 }
 
 export default Login

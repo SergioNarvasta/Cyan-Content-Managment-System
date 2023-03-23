@@ -4,7 +4,8 @@ using CMS.Dominio.Entidades;
 using CMS.Infraestructura.Data;
 using Dapper;
 using Microsoft.Data.SqlClient;
-using ReactVentas.Models.DTO;
+using CMS.Dominio.Dto;
+
 
 namespace CMS.Infraestructura.Servicios
 {

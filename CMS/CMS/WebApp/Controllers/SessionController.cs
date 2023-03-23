@@ -27,7 +27,7 @@ namespace WebApp.Controllers
 			{
 				usuario = await _sessionAppService.Session(request);
 
-				if (usuario == null)
+                if (usuario == null)
 					usuario = new User();
 
 				return StatusCode(StatusCodes.Status200OK, usuario);
