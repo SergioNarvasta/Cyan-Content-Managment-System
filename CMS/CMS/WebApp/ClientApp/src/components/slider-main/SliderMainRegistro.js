@@ -93,7 +93,7 @@ const SliderMainRegistro = () => {
     };
 
     return (
-        <div>
+        <div id="comp_slidermain">
             <Form id="form-registro">
                 <h2 className="text-center">Gestion de SliderMain</h2> <hr />
                 <hr />

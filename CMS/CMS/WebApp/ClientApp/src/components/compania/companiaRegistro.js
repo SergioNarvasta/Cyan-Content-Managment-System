@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, FormGroup, Input, Button } from "reactstrap";
-
+import './Style.css';
 const modelo = {
      Company_Pk :"",
      Company_Nombre :"",
@@ -40,8 +40,8 @@ const CompaniaRegistro = ()=>{
         }
       }
       return (
-        <div>
-      <Form id="form-registro">
+        <div id="comp_compania">
+      <Form id="form-registro"><br/><br/>
         <h2 className="text-center">Gestion de Compañias</h2> <br/>   
         <FormGroup className="d-flex flex-row ">
           <label className="me-2">Nombre</label>

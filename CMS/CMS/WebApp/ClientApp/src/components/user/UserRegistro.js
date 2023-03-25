@@ -49,7 +49,7 @@ const UserRegistro = () => {
   }
 
   return (
-    <div>
+    <div id="comp_user">
       <Form id="form-registro">
         <h2 className="text-center">Gestion de Usuarios</h2> <br/>   
         <FormGroup className="d-flex flex-row ">

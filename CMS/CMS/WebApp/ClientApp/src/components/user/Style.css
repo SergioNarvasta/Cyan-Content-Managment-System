@@ -1,5 +1,4 @@
-﻿body {
-}
+﻿
 #txt_titulo {
     width: 60%;
 }
@@ -32,4 +31,7 @@
 img {
     width: 200px;
     height: 100px;
+}
+#comp_user{
+    margin-left: 18%;
 }
