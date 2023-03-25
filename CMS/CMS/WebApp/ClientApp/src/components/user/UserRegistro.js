@@ -50,8 +50,8 @@ const UserRegistro = () => {
 
   return (
     <div id="comp_user">
-      <Form id="form-registro">
-        <h2 className="text-center">Gestion de Usuarios</h2> <br/>   
+      <Form id="form-registro"><br/>
+        <h3>Gestion de Usuarios</h3> <br/>   
         <FormGroup className="d-flex flex-row ">
           <label className="me-2">Nombre</label>
           <Input id="txt_titulo" name="User_Nombre" onChange={(e) => actualizaDato(e)}

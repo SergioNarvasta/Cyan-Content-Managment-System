@@ -50,7 +50,6 @@ const SliderMainListado = () => {
 
  return (
  <div>
-       <h3>Listado de Registros</h3>
     <Table responsive className="table-bordered table-hover">
         <thead className="table-warning">
                 <tr>
@@ -58,16 +57,10 @@ const SliderMainListado = () => {
                     <th>Descripcion</th>
                     <th>Estado</th>                 
                     <th>Nombre Archivo</th>
-                   
-                    <th>Tama�o</th> 
                     <th>Vista previa </th>                   
                     <th>Nombre Archivo</th>
-                    
-                    <th>Tama�o</th>
                     <th>Vista previa </th>
                     <th>Nombre Archivo</th>
-                   
-                    <th>Tama�o</th>
                     <th>Vista previa </th>
                     <th>Usuario Creacion</th>
                     <th>Fecha Creacion</th>
@@ -90,13 +83,13 @@ const SliderMainListado = () => {
                  <td>{item.sliderMain_Descripcion}</td>
                  <td>{item.sliderMain_Estado = 1 ? "Activo" : "No disponible"}</td>                    
                  <td>{item.file_NombreF}</td>               
-                 <td>{item.file_TamanioF}</td>
+                
                  <td><img src={"data:image/jpg;base64," + item.file_Base64F} /></td>
                  <td>{item.file_NombreS}</td>
-                 <td>{item.file_TamanioS}</td>
+                 
                  <td><img src={"data:image/jpg;base64," + item.file_Base64S} /></td>        
                  <td>{item.file_NombreT}</td>                
-                 <td>{item.file_TamanioT}</td>
+                 
                  <td><img src={"data:image/jpg;base64," + item.file_Base64T} /></td>                
                  <td>{item.audit_UsuCre}</td>
                  <td>{item.audit_FecCre}</td>

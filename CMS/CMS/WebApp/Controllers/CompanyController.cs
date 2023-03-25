@@ -32,6 +32,7 @@ namespace WebApp.Controllers
 
 			company.Company_Estado = 1;
 			company.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
+            company.Company_Pk = Guid.NewGuid().ToString();
 
             await _companyAppService.InsertCompany(company);
             return Created("Created", true);

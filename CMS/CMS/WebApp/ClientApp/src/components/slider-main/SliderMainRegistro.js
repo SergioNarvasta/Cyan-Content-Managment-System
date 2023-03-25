@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import SliderMainListado from './SliderMainListado';
 import './Style.css';
@@ -19,30 +19,37 @@ const modelo = {
     file_NombreT: "",
     file_Base64T: "",
     file_TamanioT: "",
-
     audit_UsuCre: "",
     audit_FecCre: "",
     audit_UsuAct: "",
     audit_FecAct: ""
 }
-const modelo_files ={
-    file_NombreF: "",
-    file_Base64F: "",
-    file_TamanioF: "",
-    file_NombreS: "",
-    file_Base64S: "",
-    file_TamanioS: "",
-    file_NombreT: "",
-    file_Base64T: "",
-    file_TamanioT: "",
-}
-
+const modelo_user = {
+    user_Pk: "",
+    user_Nombre: "",
+    user_Direccion: "",
+    user_Telefono: 0,
+    user_Email: "",
+    user_Token: "",
+    user_Estado: 0,
+    plan_Pk: "",
+    rol_Pk: "",
+    audit_UsuCre: "",
+    audit_FecCre: "",
+    audit_UsuAct: "",
+    audit_FecAct: ""
+  }
 const SliderMainRegistro = () => {
-
     const [sliderMainCreate, setsliderMainCreate] = useState(modelo);
-    const [files, setfiles] = useState(modelo);
+    const [user] = useState(window.localStorage.getItem("sesion_user"))
+    const [dataUser, setDataUser] = useState(modelo_user)
+  
+    useEffect(() => {
+      let dt = JSON.parse(user)
+      setDataUser(dt)
+    }, [])
+
     const actualizaDato = (e) => {
-        console.log(e.target.name + " : " + e.target.value);
         setsliderMainCreate(
             {
                 ...sliderMainCreate,
@@ -51,6 +58,7 @@ const SliderMainRegistro = () => {
         )
     }
     const enviarDatos = () => {
+        sliderMainCreate.audit_UsuCre = dataUser.user_Nombre
         registrar(sliderMainCreate)
     }
     const registrar = async (sliderMainCreate) => {
@@ -69,7 +77,6 @@ const SliderMainRegistro = () => {
         var cant = e.target.files.length;
         for (var index = 0; index < cant; index++) {
             let nombre = e.target.files[index].name;
-
             if (nombre.length > 1) {
                 let tamanio = e.target.files[index].size.toString();
                 if (tamanio > 1) {
@@ -80,11 +87,21 @@ const SliderMainRegistro = () => {
                             console.log('Convirtiendo blob -> ' + index);
                             const myBlob = e.target.files[index];
                             const myB64 = await blobToBase64(myBlob);
-                            document.getElementById('file_Base64' + index).value = myB64;
-                            document.getElementById('file_Nombre' + index).value = nombre;
-                            document.getElementById('file_Tamanio' + index).value = tamanio;
-                            console.log("nombre : " + nombre + " tamaño : " + tamanio);
-                            console.log(myB64);
+                            switch (index) {
+                                case 0:
+                                    sliderMainCreate.file_Base64F = myB64;
+                                    sliderMainCreate.file_NombreF = nombre;
+                                    sliderMainCreate.file_TamanioF = tamanio;
+                                    break;
+                                case 1:
+                                    sliderMainCreate.file_Base64S = myB64;
+                                    sliderMainCreate.file_NombreS = nombre;
+                                    sliderMainCreate.file_TamanioS = tamanio;
+                                case 2:
+                                    sliderMainCreate.file_Base64T = myB64;
+                                    sliderMainCreate.file_NombreT = nombre;
+                                    sliderMainCreate.file_TamanioT = tamanio;
+                            }
                         } else { alert("Archivo Invalido!. No tiene formato de imagen solicitado"); }
                     } else { alert("Archivo Invalido!. Supera el limite 5MB"); }
                 } else { alert("Archivo Invalido!. No tiene contenido"); }
@@ -92,6 +109,7 @@ const SliderMainRegistro = () => {
 
         }
         console.log("Se leyeron :" + cant + " archivos");
+        console.log(sliderMainCreate);
     }
     const blobToBase64 = (blob) => {
         return new Promise((resolve, reject) => {
@@ -106,13 +124,12 @@ const SliderMainRegistro = () => {
     return (
         <div id="comp_slidermain">
             <Form id="form-registro"><br /><br />
-                <h2 className="text-center">Gestion de SliderMain</h2> <br />               
+                <h3 >Gestion de SliderMain</h3> <br />
                 <FormGroup className="d-flex flex-row ">
                     <label className="me-2" >Titulo</label>
                     <Input id="txt_titulo" name="sliderMain_Titulo" onChange={(e) => actualizaDato(e)}
                         value={sliderMainCreate.sliderMain_Titulo}></Input>
                 </FormGroup>
-
                 <div className="d-flex flex-row">
                     <FormGroup className="d-flex flex-row" id="group_desc">
                         <label className="me-2">Descripcion</label>
@@ -127,7 +144,6 @@ const SliderMainRegistro = () => {
                         </select>
                     </FormGroup>
                 </div>
-
                 <div className="d-flex flex-row ">
                     <FormGroup className="d-flex flex-row">
                         <label className="me-5">Archivos</label>
@@ -136,7 +152,6 @@ const SliderMainRegistro = () => {
                     <FormGroup >
                         <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success ms-5">Registrar</Button>
                     </FormGroup>
-
                 </div>
                 <div id="container_files">
                     <div >
