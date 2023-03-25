@@ -25,11 +25,22 @@ const modelo = {
     audit_UsuAct: "",
     audit_FecAct: ""
 }
+const modelo_files ={
+    file_NombreF: "",
+    file_Base64F: "",
+    file_TamanioF: "",
+    file_NombreS: "",
+    file_Base64S: "",
+    file_TamanioS: "",
+    file_NombreT: "",
+    file_Base64T: "",
+    file_TamanioT: "",
+}
 
 const SliderMainRegistro = () => {
 
     const [sliderMainCreate, setsliderMainCreate] = useState(modelo);
-
+    const [files, setfiles] = useState(modelo);
     const actualizaDato = (e) => {
         console.log(e.target.name + " : " + e.target.value);
         setsliderMainCreate(
@@ -94,9 +105,8 @@ const SliderMainRegistro = () => {
 
     return (
         <div id="comp_slidermain">
-            <Form id="form-registro">
-                <h2 className="text-center">Gestion de SliderMain</h2> <hr />
-                <hr />
+            <Form id="form-registro"><br /><br />
+                <h2 className="text-center">Gestion de SliderMain</h2> <br />               
                 <FormGroup className="d-flex flex-row ">
                     <label className="me-2" >Titulo</label>
                     <Input id="txt_titulo" name="sliderMain_Titulo" onChange={(e) => actualizaDato(e)}

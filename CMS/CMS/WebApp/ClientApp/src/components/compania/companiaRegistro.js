@@ -1,79 +1,154 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form, FormGroup, Input, Button } from "reactstrap";
 import './Style.css';
 const modelo = {
-     Company_Pk :"",
-     Company_Nombre :"",
-     Company_Direccion :"",
-     Company_Telefono :0,
-     Company_Email :"",
-     Company_Estado :0,
-     Plan_Pk :"",
-     User_Pk :""
+  company_Pk: "",
+  company_Nombre: "",
+  company_Direccion: "",
+  company_Telefono: 0,
+  company_Email: "",
+  company_Estado: 0,
+  plan_Pk: "",
+  user_Pk: "",
+  file_Nombre: "",
+  file_Base64: "",
+  file_Tamanio: "",
+  audit_UsuCre: "",
+  audit_FecCre: "",
+  audit_UsuAct: "",
+  audit_FecAct: ""
 }
+const modelo_user = {
+  user_Pk: "",
+  user_Nombre: "",
+  user_Direccion: "",
+  user_Telefono: 0,
+  user_Email: "",
+  user_Token: "",
+  user_Estado: 0,
+  plan_Pk: "",
+  rol_Pk: "",
+  audit_UsuCre: "",
+  audit_FecCre: "",
+  audit_UsuAct: "",
+  audit_FecAct: ""
+}
+const CompaniaRegistro = () => {
+  const [compania, setcompania] = useState(modelo);
+  const [user] = useState(window.localStorage.getItem("sesion_user"))
+  const [dataUser, setDataUser] = useState(modelo_user)
 
-const CompaniaRegistro = ()=>{
-    const [compania, setcompania] = useState(modelo);
+  useEffect(() => {
+    colocaIdUser()
+    let dt = JSON.parse(user)
+    setDataUser(dt)
+  }, [])
+
+  const colocaIdUser = () => {
+    let comp_compania = document.getElementById('comp_compania');
+    comp_compania.addEventListener('onload', function () {
+      if (dataUser.user_Pk != null) {
+        document.getElementById('User_Pk').value = dataUser.user_Pk;
+      } else {
+        console.log("Error en colocaIdUser")
+      }
+    })
+
+  }
+  const actualizaDato = (e) => {
+    console.log(e.target.name + " : " + e.target.value);
+    setcompania(
+      {
+        ...compania,
+        [e.target.name]: e.target.value
+      }
+    )
+  }
+  const enviarDatos = () => {
+    compania.user_Pk = dataUser.user_Pk   //Asigno el usuario
+
+    registrar(compania)
+  }
+  const registrar = async (compania) => {
+    const response = await fetch("api/company/registro", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(compania)
+    })
+    if (response.ok) {
+      window.location.reload();
+    }
+  }
+  async function cargarArchivo(e) {
+      let index = 0;
+        let nombre = e.target.files[index].name;
+        if (nombre.length > 1) {
+            let tamanio = e.target.files[index].size.toString();
+            if (tamanio > 1) {
+                if (tamanio < 5120000) {
+                    let next = nombre.lastIndexOf('.');
+                    let extension = nombre.substring(next + 1);
+                    if (extension === "jpg" || extension === "png" || extension === "jpeg" || extension === "gif") {
+                        console.log('Convirtiendo blob -> ' + index);
+                        const myBlob = e.target.files[index];
+                        const myB64 = await blobToBase64(myBlob);
+                        compania.file_Base64 = myB64;
+                        compania.file_Nombre = nombre;
+                        compania.file_Tamanio  = tamanio;
+                        console.log("Object :");
+                        console.log(compania);
+                    } else { alert("Archivo Invalido!. No tiene formato de imagen solicitado"); }
+                } else { alert("Archivo Invalido!. Supera el limite 5MB"); }
+            } else { alert("Archivo Invalido!. No tiene contenido"); }
+        } else { alert("Archivo Invalido!. No tiene nombre"); }
+
     
-    const actualizaDato = (e) => {
-        console.log(e.target.name + " : " + e.target.value);
-        setcompania(
-          {
-            ...compania,
-            [e.target.name]: e.target.value
-          }
-        )
-      }
-      const enviarDatos = () => {
-        registrar(compania)
-      }
-      const registrar = async (compania) => {
-        const response = await fetch("api/compania/registro", {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(compania)
-        })
-        if (response.ok) {
-          window.location.reload();
-        }
-      }
-      return (
-        <div id="comp_compania">
-      <Form id="form-registro"><br/><br/>
-        <h2 className="text-center">Gestion de Compañias</h2> <br/>   
+    console.log("Se leyeron :" + cant + " archivos");
+}
+const blobToBase64 = (blob) => {
+  return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = () => {
+          resolve(reader.result.split(',')[1]);
+      };
+  });
+}
+  return (
+    <div id="comp_compania">
+      <Form id="form-registro"><br /><br />
+        <h2 className="text-center">Gestion de Compañias</h2> <br />
         <FormGroup className="d-flex flex-row ">
           <label className="me-2">Nombre</label>
-          <Input id="Company_Nombre" name="Company_Nombre" onChange={(e) => actualizaDato(e)}
-            value={compania.Company_Nombre}></Input>
+          <Input id="company_Nombre" name="company_Nombre" onChange={(e) => actualizaDato(e)}
+            value={compania.company_Nombre}></Input>
         </FormGroup>
         <FormGroup className="d-flex flex-row" id="group_desc">
           <label className="me-2">Direccion</label>
-          <Input id="Company_Direccion" name="Company_Direccion" onChange={(e) => actualizaDato(e)}
-            value={compania.Company_Direccion}></Input>
+          <Input id="company_Direccion" name="company_Direccion" onChange={(e) => actualizaDato(e)}
+            value={compania.company_Direccion}></Input>
         </FormGroup>
         <FormGroup className="d-flex flex-row ">
           <label className="me-2">Telefono</label>
-          <Input id="Company_Telefono" name="Company_Telefono" onChange={(e) => actualizaDato(e)}
-            value={compania.Company_Telefono}></Input>
+          <Input id="company_Telefono" name="company_Telefono" onChange={(e) => actualizaDato(e)}
+            value={compania.company_Telefono}></Input>
         </FormGroup>
         <FormGroup className="d-flex flex-row ">
           <label className="me-2">Email</label>
-          <Input id="Company_Email" name="Company_Email" onChange={(e) => actualizaDato(e)}
-            value={compania.Company_Email}></Input>
+          <Input id="company_Email" name="company_Email" onChange={(e) => actualizaDato(e)}
+            value={compania.company_Email}></Input>
         </FormGroup>
         <FormGroup className="d-flex flex-row ">
           <label className="me-2">Plan</label>
-          <Input id="Plan_Pk" name="Plan_Pk" onChange={(e) => actualizaDato(e)}
-            value={compania.Plan_Pk}></Input>
+          <Input id="plan_Pk" name="plan_Pk" onChange={(e) => actualizaDato(e)}
+            value={compania.plan_Pk}></Input>
         </FormGroup>
-        <FormGroup className="d-flex flex-row ">
-          <label className="me-2">Usuario</label>
-          <Input id="User_Pk" name="User_Pk" onChange={(e) => actualizaDato(e)}
-            value={compania.User_Pk}></Input>
+        <FormGroup className="d-flex flex-row">
+          <label className="me-5">Archivo</label>
+          <input type="file" accept=".jpg,.png,.gif" onChange={(e) => cargarArchivo(e)} />
         </FormGroup>
-        
         <FormGroup >
           <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success ms-5">Registrar</Button>
         </FormGroup>
@@ -81,6 +156,6 @@ const CompaniaRegistro = ()=>{
       <br></br>
 
     </div>
-      )
+  )
 }
 export default CompaniaRegistro;

@@ -4,19 +4,19 @@ import UserListado from './UserListado';
 import './Style.css';
 
 const modelo = {
-  User_Pk: "",
-  User_Nombre: "",
-  User_Direccion: "",
-  User_Telefono: 0,
-  User_Email: "",
-  User_Token: "",
-  User_Estado: 1,
-  Plan_Pk: "",
-  Rol_Pk: "",
-  Audit_UsuCre: "",
-  Audit_FecCre: "",
-  Audit_UsuAct: "",
-  Audit_FecAct: ""
+  user_Pk: "",
+  user_Nombre: "",
+  user_Direccion: "",
+  user_Telefono: 0,
+  user_Email: "",
+  user_Token: "",
+  user_Estado: 1,
+  plan_Pk: "",
+  rol_Pk: "",
+  audit_UsuCre: "",
+  audit_FecCre: "",
+  audit_UsuAct: "",
+  audit_FecAct: ""
 }
 
 const UserRegistro = () => {
