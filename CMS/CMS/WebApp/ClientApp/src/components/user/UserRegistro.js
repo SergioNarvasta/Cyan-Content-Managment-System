@@ -76,13 +76,13 @@ const UserRegistro = () => {
           <FormGroup className="d-flex flex-row ">
             <label className="me-2">Nombre</label>
             <Input id="txt_titulo" name="user_Nombre" onChange={(e) => actualizaDato(e)}
-              value={user.user_Nombre}></Input>
-            <FormGroup className="d-flex flex-row" id="group_desc">
+              value={user.user_Nombre}></Input>           
+          </FormGroup>
+          <FormGroup className="d-flex flex-row ms-5" id="group_desc">
               <label className="me-2">Direccion</label>
               <Input id="User_Direccion" name="user_Direccion" onChange={(e) => actualizaDato(e)}
                 value={user.user_Direccion}></Input>
             </FormGroup>
-          </FormGroup>
         </div>
         <div className="d-flex flex-row ">
           <FormGroup className="d-flex flex-row ">
@@ -90,29 +90,29 @@ const UserRegistro = () => {
             <Input id="User_Telefono" name="user_Telefono" onChange={(e) => actualizaDato(e)}
               value={user.user_Telefono}></Input>
           </FormGroup>
-          <FormGroup className="d-flex flex-row ">
+          <FormGroup className="d-flex flex-row ms-5">
             <label className="me-2">Email</label>
             <Input id="User_Email" name="user_Email" onChange={(e) => actualizaDato(e)}
               value={user.user_Email}></Input>
           </FormGroup>
         </div>
         <div className="d-flex flex-row ">
-          <FormGroup className="d-flex flex-row ">
+          <FormGroup className="d-flex flex-row">
             <label className="me-2">Token</label>
             <Input id="User_Token" name="user_Token" onChange={(e) => actualizaDato(e)}
               value={user.user_Token}></Input>
           </FormGroup>
-          <FormGroup className="d-flex flex-row ">
+          <FormGroup className="d-flex flex-row ms-5">
             <label className="me-2">Plan</label>
             <Input id="Plan_Pk" name="plan_Pk" onChange={(e) => actualizaDato(e)}
               value={user.plan_Pk}></Input>
           </FormGroup>
         </div>
         <div className="d-flex flex-row ">
-          <FormGroup className="d-flex flex-row ">
-            <label className="me-2">Rol</label>
+          <FormGroup className="d-flex flex-row me-4">
+            <label className="me-5">Rol</label>
             <select id="Rol_Pk" name="rol_Pk" onChange={(e) => actualizaDato(e)}
-              value={user.rol_Pk}>
+              value={user.rol_Pk} className="form-control" >
               <option>Rol 1</option>
               <option>Rol 2</option>
             </select>
