@@ -76,7 +76,7 @@ const UserListado = () => {
                </tr>
            ):(
             user.map((item) => (
-             <tr key={item.User_Pk} >
+             <tr key={item.user_Pk} >
                  
                  <td>{item.user_Nombre}</td>
                  <td>{item.user_Direccion}</td>
