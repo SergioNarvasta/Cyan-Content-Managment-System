@@ -40,9 +40,9 @@ namespace CMS.Infraestructura.Repositorios
             await collection.ReplaceOneAsync(filter, company);
         }
 
-		public async Task<Company> GetCompanyById(string id)
+		public async Task<Company> GetCompanyById(string User_Pk)
 		{
-			return await collection.FindAsync(new BsonDocument { { "_id", new ObjectId(id) } })
+			return await collection.FindAsync(new BsonDocument { { "User_Pk", User_Pk } })
 				.Result.FirstAsync();
 		}
 	}

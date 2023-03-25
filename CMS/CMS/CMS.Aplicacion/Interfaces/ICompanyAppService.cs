@@ -6,7 +6,7 @@ namespace CMS.Aplicacion.Interfaces
 	{
 		Task DeleteCompany(string id);
 		Task<IEnumerable<Company>> GetAllCompany();
-		Task<Company> GetCompanyById(string id);
+		Task<Company> GetCompanyById(string company_Pk);
 		Task InsertCompany(Company company);
 		Task UpdateCompany(Company company);
 	}

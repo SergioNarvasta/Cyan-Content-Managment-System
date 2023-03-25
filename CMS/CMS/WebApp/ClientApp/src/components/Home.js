@@ -11,13 +11,13 @@ export class Home extends Component {
   static displayName = Home.name;
   render() {
     return (
-      <div>
+      <div id='comp_home'>
         <div id='perfil'>
           <div id="caja">
-            <div>
+            <div> <br/><br/>
                 <h3>Sistema de Gestion de Contenido  CMS</h3>
                 <img  height="200" width="200"></img>
-            </div> <br></br>
+            </div> <br/>
             <div id="datos">
                 <p>Descripcion</p>
                 <p>General</p>

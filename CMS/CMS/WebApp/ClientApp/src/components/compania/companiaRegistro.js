@@ -106,7 +106,7 @@ const CompaniaRegistro = () => {
   return (
     <div id="comp_compania">
       <Form id="form-registro"><br />
-        <h3>Gestion de Compañias</h3> <br />
+        <h3>Gestion de Compañias</h3><p className="text-danger">El usuario ve sus compañias y puede editar</p><p className="text-danger">El admin ve todas las compañias y puede editar,eliminar,desactivar</p>
         <div className="d-flex flex-row ">
           <FormGroup className="d-flex flex-row ">
             <label className="me-2">Nombre</label>

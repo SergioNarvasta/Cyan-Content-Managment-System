@@ -82,9 +82,9 @@ const UserListado = () => {
                  <td>{item.user_Direccion}</td>
                  <td>{item.user_Telefono }</td>                    
                  <td>{item.user_Email}</td>               
-                 <td>{item.user_Estado = 1 ? "Activo" : "Inactivo"}</td>
+                 <td>{item.user_Estado == 1 ? "Activo" : "Inactivo"}</td>
                  <td>{item.plan_Pk}</td>
-                 <td>{item.rol_Pk}</td>
+                 <td>{item.rol_Pk == "1" ? "Cliente" : "Administrador"}</td>
                  <td>{item.audit_UsuCre}</td>
                  <td>{item.audit_FecCre}</td>
                  <td>{item.audit_UsuAct}</td>

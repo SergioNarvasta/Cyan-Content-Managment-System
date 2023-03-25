@@ -50,8 +50,12 @@ const NavBar = () => {
                     (dataUser !== null) &&
                     <div className=" py-2 collapse-inner rounded">
                         <p className='item'>Administracion</p>
-                        <NavLink to="/user" className="collapse-item item">Usuarios</NavLink><br />
-                        <NavLink to="/compania" className="collapse-item item">Compañia</NavLink>
+                        <NavLink to="/compania" className="collapse-item item">Compañia</NavLink><br/>
+                        {
+                            (dataUser.rol_Pk === "2") &&
+                            <NavLink to="/user" className="collapse-item item">Usuarios</NavLink>
+                        }                   
+                       
 
                     </div>
                 }

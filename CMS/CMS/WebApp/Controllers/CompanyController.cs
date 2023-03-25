@@ -23,6 +23,13 @@ namespace WebApp.Controllers
             return Ok(await _companyAppService.GetAllCompany());
         }
 
+        [Route("listbyid")]
+        [HttpGet]
+        public async Task<IActionResult> GetById(string User_Pk)
+        {
+            return Ok(await _companyAppService.GetCompanyById(User_Pk));
+        }
+
         [Route("registro")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Company company)
