@@ -1,30 +1,14 @@
-import { useEffect, useState } from "react";
-import './Style.css';
 
-const CompanyListado = () => {
-    const [company, setCompany] = useState([]);
 
-    const Listar = async () => {
-        const response = await fetch("/api/company/listatodos");
-        if (response.ok) {
-            const data = await response.json();
-            setCompany(data);
-        } else {
-            console.log("Error : (api/company/listatodos)")
-        }
-    }
-    useEffect(() => {
-        Listar()
-    }, [])
-
+const RegistrosInCard = ({ data }) => {
     return (
         <div><h4>Registros :</h4>
-            <div className="d-flex flex-row">              
+            <div className="d-flex flex-row">
                 {
-                    (company.length < 1) ? (
+                    (data.length < 1) ? (
                         <div> </div>
                     ) : (
-                        company.map((item) => (
+                        data.map((item) => (
                             <div key={item.company_Pk} className="me-5">
                                 <div className="card d-flex flex-row">
                                     <img src={"data:image/jpg;base64," + item.file_Base64} className="card-img-top mt-5" alt="..." />
@@ -37,11 +21,11 @@ const CompanyListado = () => {
                                     </div>
                                 </div>
                             </div>
-                        )))
+                        ))
+                    )
                 }
             </div>
         </div>
-
     )
 }
-export default CompanyListado;
+export default RegistrosInCard;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Form, FormGroup, Input, Button } from "reactstrap";
-import CompanyListado from './companiaListado';
+import CompanyListado from './CompanyListado';
 import './Style.css';
 const modelo = {
   company_Pk: "",
@@ -34,7 +34,7 @@ const modelo_user = {
   audit_UsuAct: "",
   audit_FecAct: ""
 }
-const CompaniaRegistro = () => {
+const CompanyRegistro = () => {
   const [compania, setcompania] = useState(modelo);
   const [user] = useState(window.localStorage.getItem("sesion_user"))
   const [dataUser, setDataUser] = useState(modelo_user)
@@ -105,6 +105,8 @@ const CompaniaRegistro = () => {
   }
   return (
     <div id="comp_compania">
+    {
+      (dataUser.rol_Pk == "2")&&
       <Form id="form-registro"><br />
         <h3>Gestion de Compañias</h3><p className="text-danger">El usuario ve sus compañias y puede editar</p><p className="text-danger">El admin ve todas las compañias y puede editar,eliminar,desactivar</p>
         <div className="d-flex flex-row ">
@@ -146,9 +148,10 @@ const CompaniaRegistro = () => {
           </FormGroup>
         </div>
       </Form>
+    }    
       <br/>
       <CompanyListado/>
     </div>
   )
 }
-export default CompaniaRegistro;
+export default CompanyRegistro;

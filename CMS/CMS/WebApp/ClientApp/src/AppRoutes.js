@@ -3,7 +3,7 @@ import { Home } from "./components/Home";
 import SliderMainRegistro from "./components/slider-main/SliderMainRegistro";
 import Login from './components/login/Login';
 import UserRegistro from './components/user/UserRegistro';
-import CompaniaRegistro from './components/compania/companiaRegistro';
+import CompanyRegistro from './components/company/CompanyRegistro';
 
 const AppRoutes = [
   {
@@ -23,9 +23,9 @@ const AppRoutes = [
         element: <UserRegistro />
     },
     {
-      path: '/compania',
-      element: <CompaniaRegistro/>
-    }
+      path: '/companies',
+      element: <CompanyRegistro/>
+    },
 ];
 
 export default AppRoutes;
