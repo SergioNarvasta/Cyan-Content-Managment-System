@@ -4,10 +4,10 @@ namespace CMS.Aplicacion.Interfaces
 {
 	public interface ICompanyAppService
 	{
-		Task DeleteCompany(string id);
-		Task<IEnumerable<Company>> GetAllCompany();
-		Task<Company> GetCompanyById(string company_Pk);
-		Task InsertCompany(Company company);
-		Task UpdateCompany(Company company);
+		Task Delete(string id);
+		Task<IEnumerable<Company>> GetAll();
+		Task<Company> GetById(string company_Pk);
+		Task Insert(Company model);
+		Task Update(Company model);
 	}
 }

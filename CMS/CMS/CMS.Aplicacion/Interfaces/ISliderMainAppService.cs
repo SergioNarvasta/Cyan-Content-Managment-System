@@ -4,10 +4,10 @@ namespace CMS.Aplicacion.Interfaces
 {
     public interface ISliderMainAppService
     {
-        Task DeleteSliderMain(string id);
-        Task<IEnumerable<SliderMain>> GetAllSliderMain();
-		Task<SliderMain> GetSliderMainById(string id);
-		Task InsertSliderMain(SliderMain sliderMain);
-        Task UpdateSliderMain(SliderMain sliderMain);
+        Task Delete(string id);
+        Task<IEnumerable<SliderMain>> GetAll();
+		Task<SliderMain> GetById(string id);
+		Task Insert(SliderMain sliderMain);
+        Task Update(SliderMain sliderMain);
     }
 }

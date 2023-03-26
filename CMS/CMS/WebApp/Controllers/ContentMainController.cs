@@ -8,46 +8,46 @@ namespace WebApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SliderMainController : ControllerBase
+    public class ContentMainController : ControllerBase
     {
-        private readonly ISliderMainAppService _sSliderMainAppService;
+        private readonly IContentMainAppService _contentMainAppService;
 
-        public SliderMainController(ISliderMainAppService sliderMainAppService) 
+        public ContentMainController(IContentMainAppService contentMainAppService ) 
         {
-            _sSliderMainAppService = sliderMainAppService;
+            _contentMainAppService = contentMainAppService;
         }
 
         [Route("listatodos")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _sSliderMainAppService.GetAllSliderMain());
+            return Ok(await _contentMainAppService.GetAll());
         }
 
         [Route("registro")]
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] SliderMain model)
+        public async Task<IActionResult> Create([FromBody] ContentMain model)
         {
             if (model == null)
                 return BadRequest();
-			
-			model.SliderMain_Estado = 1;
-            model.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
-            model.SliderMain_Pk = Guid.NewGuid().ToString();
 
-            await _sSliderMainAppService.InsertSliderMain(model);
+            model.ContentMain_Estado = 1;
+            model.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
+            model.ContentMain_Pk = Guid.NewGuid().ToString();
+
+            await _contentMainAppService.Insert(model);
             return Created("Created", true);
         }
 
 		[Route("actualiza")]
 		[HttpPut("{id}")]
-		public async Task<IActionResult> Update([FromBody] SliderMain model, string id)
+		public async Task<IActionResult> Update([FromBody] ContentMain model, string id)
 		{
 			if (model == null)
 				return BadRequest();
 
-            model.SliderMain_Id = new MongoDB.Bson.ObjectId(id);
-            await _sSliderMainAppService.UpdateSliderMain(model);
+			model.ContentMain_Id = new MongoDB.Bson.ObjectId(id);
+            await _contentMainAppService.Update(model);
 			return Created("Update", true);
 		}
 
@@ -55,7 +55,7 @@ namespace WebApp.Controllers
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{
-			await _sSliderMainAppService.DeleteSliderMain(id);
+			await _contentMainAppService.Delete(id);
 			return NoContent();
 		}
 	}

@@ -15,32 +15,32 @@ namespace CMS.Infraestructura.Repositorios
         {
             collection = _repository.db.GetCollection<User>("User");
         }
-        public async Task DeleteUser(string id)
+        public async Task Delete(string id)
         {
             var filter = Builders<User>.Filter.Eq(s => s.User_Id, new ObjectId(id));
             await collection.DeleteOneAsync(filter);
         }
 
-        public async Task<IEnumerable<User>> GetAllUser()
+        public async Task<IEnumerable<User>> GetAll()
         {
             return await collection.FindAsync(new BsonDocument{ { "User_Estado", 1 } }
                 ).Result.ToListAsync();
         }
 
-        public async Task InsertUser(User user)
+        public async Task Insert(User model)
         {
-            await collection.InsertOneAsync(user);
+            await collection.InsertOneAsync(model);
         }
 
-        public async Task UpdateUser(User user)
+        public async Task Update(User model)
         {
             var filter = Builders<User>
                 .Filter
-                .Eq(s => s.User_Id, user.User_Id);
-            await collection.ReplaceOneAsync(filter, user);
+                .Eq(s => s.User_Id, model.User_Id);
+            await collection.ReplaceOneAsync(filter, model);
         }
 
-		public async Task<User> GetUserById(string id)
+		public async Task<User> GetById(string id)
 		{
 			return await collection.FindAsync(new BsonDocument { { "_id", new ObjectId(id) } })
 				.Result.FirstAsync();

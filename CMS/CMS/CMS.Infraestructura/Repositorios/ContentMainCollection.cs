@@ -6,40 +6,40 @@ using MongoDB.Driver;
 
 namespace CMS.Infraestructura.Repositorios
 {
-    public class SliderMainCollection : ISliderMainAppService
+    public class ContentMainCollection : IContentMainAppService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
-        private readonly IMongoCollection<SliderMain> collection;
+        private readonly IMongoCollection<ContentMain> collection;
 
-        public SliderMainCollection()
+        public ContentMainCollection()
         {
-            collection = _repository.db.GetCollection<SliderMain>("SliderMain");
+            collection = _repository.db.GetCollection<ContentMain>("ContentMain");
         }
         public async Task Delete(string id)
         {
-            var filter = Builders<SliderMain>.Filter.Eq(s => s.SliderMain_Id, new ObjectId(id));
+            var filter = Builders<ContentMain>.Filter.Eq(s => s.ContentMain_Id, new ObjectId(id));
             await collection.DeleteOneAsync(filter);
         }
 
-        public async Task<IEnumerable<SliderMain>> GetAll()
+        public async Task<IEnumerable<ContentMain>> GetAll()
         {
             return await collection.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
 
-        public async Task Insert(SliderMain contentmain)
+        public async Task Insert(ContentMain contentmain)
         {
             await collection.InsertOneAsync(contentmain);
         }
 
-        public async Task Update(SliderMain contentmain)
+        public async Task Update(ContentMain contentmain)
         {
-            var filter = Builders<SliderMain>
+            var filter = Builders<ContentMain>
                 .Filter
-                .Eq(s => s.SliderMain_Id, contentmain.SliderMain_Id);
+                .Eq(s => s.ContentMain_Id, contentmain.ContentMain_Id);
             await collection.ReplaceOneAsync(filter, contentmain);
         }
 
-		public async Task<SliderMain> GetById(string id)
+		public async Task<ContentMain> GetById(string id)
 		{
 			return await collection.FindAsync(new BsonDocument { { "_id", new ObjectId(id) } })
 				.Result.FirstAsync();

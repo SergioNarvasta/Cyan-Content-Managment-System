@@ -15,32 +15,32 @@ namespace CMS.Infraestructura.Repositorios
         {
             collection = _repository.db.GetCollection<Company>("Company");
         }
-        public async Task DeleteCompany(string id)
+        public async Task Delete(string id)
         {
             var filter = Builders<Company>.Filter.Eq(s => s.Company_Id, new ObjectId(id));
             await collection.DeleteOneAsync(filter);
         }
 
-        public async Task<IEnumerable<Company>> GetAllCompany()
+        public async Task<IEnumerable<Company>> GetAll()
         {
             return await collection.FindAsync(new BsonDocument{ { "Company_Estado", 1 } }
                 ).Result.ToListAsync();
         }
 
-        public async Task InsertCompany(Company company)
+        public async Task Insert(Company model)
         {
-            await collection.InsertOneAsync(company);
+            await collection.InsertOneAsync(model);
         }
 
-        public async Task UpdateCompany(Company company)
+        public async Task Update(Company model)
         {
             var filter = Builders<Company>
                 .Filter
-                .Eq(s => s.Company_Id, company.Company_Id);
-            await collection.ReplaceOneAsync(filter, company);
+                .Eq(s => s.Company_Id, model.Company_Id);
+            await collection.ReplaceOneAsync(filter, model);
         }
 
-		public async Task<Company> GetCompanyById(string User_Pk)
+		public async Task<Company> GetById(string User_Pk)
 		{
 			return await collection.FindAsync(new BsonDocument { { "User_Pk", User_Pk } })
 				.Result.FirstOrDefaultAsync();
