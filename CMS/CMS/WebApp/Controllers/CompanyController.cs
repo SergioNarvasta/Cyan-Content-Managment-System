@@ -20,14 +20,14 @@ namespace WebApp.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _companyAppService.GetAllCompany());
+            return Ok(await _companyAppService.GetAll());
         }
 
         [Route("listbyid")]
         [HttpPost]
         public async Task<IActionResult> GetById(string User_Pk)
         {
-            return Ok(await _companyAppService.GetCompanyById(User_Pk));
+            return Ok(await _companyAppService.GetById(User_Pk));
         }
 
         [Route("registro")]
@@ -41,7 +41,7 @@ namespace WebApp.Controllers
 			company.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
             company.Company_Pk = Guid.NewGuid().ToString();
 
-            await _companyAppService.InsertCompany(company);
+            await _companyAppService.Insert(company);
             return Created("Created", true);
         }
 
@@ -53,7 +53,7 @@ namespace WebApp.Controllers
 				return BadRequest();
 
 			company.Company_Id = new MongoDB.Bson.ObjectId(id);
-            await _companyAppService.UpdateCompany(company);
+            await _companyAppService.Update(company);
 			return Created("Update", true);
 		}
 
@@ -61,7 +61,7 @@ namespace WebApp.Controllers
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{
-			await _companyAppService.DeleteCompany(id);
+			await _companyAppService.Delete(id);
 			return NoContent();
 		}
 	}

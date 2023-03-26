@@ -20,7 +20,7 @@ namespace WebApp.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _userAppService.GetAllUser());
+            return Ok(await _userAppService.GetAll());
         }
 
         [Route("registro")]
@@ -34,7 +34,7 @@ namespace WebApp.Controllers
             user.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
 			user.User_Pk = Guid.NewGuid().ToString();
 
-            await _userAppService.InsertUser(user);
+            await _userAppService.Insert(user);
             return Created("Created", true);
         }
 
@@ -46,7 +46,7 @@ namespace WebApp.Controllers
 				return BadRequest();
 
 			user.User_Id = new MongoDB.Bson.ObjectId(id);
-            await _userAppService.UpdateUser(user);
+            await _userAppService.Update(user);
 			return Created("Update", true);
 		}
 
@@ -54,7 +54,7 @@ namespace WebApp.Controllers
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{
-			await _userAppService.DeleteUser(id);
+			await _userAppService.Delete(id);
 			return NoContent();
 		}
 	}

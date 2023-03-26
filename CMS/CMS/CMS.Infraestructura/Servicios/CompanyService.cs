@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CMS.Infraestructura.Servicios
 {
-    public class CompanyService : ICompanyAppService
+    public class CompanyService 
 	{
         public readonly AppDbContext _dbContext;
         public CompanyService(AppDbContext dbContext)
@@ -29,8 +29,10 @@ namespace CMS.Infraestructura.Servicios
 
         public async Task<Company> GetCompanyById(string id)
         {
-			Company? company = new Company();
-			company = await _dbContext.Company.FindAsync(id);
+            Company companyEmpty = new Company();
+            var company = await _dbContext.Company.FindAsync(id);
+            if (company == null)
+                return companyEmpty;
             return company;
         }
 
