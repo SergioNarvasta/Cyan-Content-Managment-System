@@ -24,7 +24,7 @@ namespace WebApp.Controllers
         }
 
         [Route("listbyid")]
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> GetById(string User_Pk)
         {
             return Ok(await _companyAppService.GetCompanyById(User_Pk));

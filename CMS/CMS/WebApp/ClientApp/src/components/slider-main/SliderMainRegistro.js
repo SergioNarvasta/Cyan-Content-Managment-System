@@ -124,7 +124,9 @@ const SliderMainRegistro = () => {
     return (
         <div id="comp_slidermain">
             <Form id="form-registro"><br /><br />
-                <h3 >Gestion de SliderMain</h3> <br />
+                <h3 >Gestion de SliderMain</h3>
+                <p className="text-danger">El usuario ve sus SliderMain, puede editar,eliminar,agregar y debe seleccionar un slider a mostrar</p>
+                <p className="text-danger">El admin ve todas los registros asociados a usuarios y compañias, puede editar,eliminar,desactivar</p> <br />
                 <FormGroup className="d-flex flex-row ">
                     <label className="me-2" >Titulo</label>
                     <Input id="txt_titulo" name="sliderMain_Titulo" onChange={(e) => actualizaDato(e)}

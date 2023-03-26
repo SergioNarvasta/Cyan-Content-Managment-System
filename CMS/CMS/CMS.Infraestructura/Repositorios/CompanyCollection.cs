@@ -43,7 +43,7 @@ namespace CMS.Infraestructura.Repositorios
 		public async Task<Company> GetCompanyById(string User_Pk)
 		{
 			return await collection.FindAsync(new BsonDocument { { "User_Pk", User_Pk } })
-				.Result.FirstAsync();
+				.Result.FirstOrDefaultAsync();
 		}
 	}
 }

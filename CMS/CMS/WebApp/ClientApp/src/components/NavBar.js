@@ -51,6 +51,7 @@ const NavBar = () => {
                     <div className=" py-2 collapse-inner rounded">
                         <p className='item'>Administracion</p>
                         <NavLink to="/companies" className="collapse-item item">Compañia</NavLink><br/>
+                        <NavLink to="/" className="collapse-item item">Menu opciones</NavLink>
                         {
                             (dataUser.rol_Pk === "2") &&
                             <NavLink to="/user" className="collapse-item item">Usuarios</NavLink>
