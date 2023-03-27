@@ -23,6 +23,7 @@ namespace CMS.Infraestructura.Repositorios
 
         public async Task<IEnumerable<Aside>> GetAll()
         {
+            //Filtrar campo estado
             return await collection.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
 
