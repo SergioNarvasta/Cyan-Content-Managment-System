@@ -6,40 +6,40 @@ using MongoDB.Driver;
 
 namespace CMS.Infraestructura.Repositorios
 {
-    public class ContentMainCollection : IContentMainAppService
+    public class AsideCollection : IAsideAppService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
-        private readonly IMongoCollection<ContentMain> collection;
+        private readonly IMongoCollection<Aside> collection;
 
-        public ContentMainCollection()
+        public AsideCollection()
         {
-            collection = _repository.db.GetCollection<ContentMain>("ContentMain");
+            collection = _repository.db.GetCollection<Aside>("Aside");
         }
         public async Task Delete(string id)
         {
-            var filter = Builders<ContentMain>.Filter.Eq(s => s.ContentMain_Id, new ObjectId(id));
+            var filter = Builders<Aside>.Filter.Eq(s => s.Aside_Id, new ObjectId(id));
             await collection.DeleteOneAsync(filter);
         }
 
-        public async Task<IEnumerable<ContentMain>> GetAll()
+        public async Task<IEnumerable<Aside>> GetAll()
         {
             return await collection.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
 
-        public async Task Insert(ContentMain model)
+        public async Task Insert(Aside model)
         {
             await collection.InsertOneAsync(model);
         }
 
-        public async Task Update(ContentMain model)
+        public async Task Update(Aside model)
         {
-            var filter = Builders<ContentMain>
+            var filter = Builders<Aside>
                 .Filter
-                .Eq(s => s.ContentMain_Id, model.ContentMain_Id);
+                .Eq(s => s.Aside_Id, model.Aside_Id);
             await collection.ReplaceOneAsync(filter, model);
         }
 
-		public async Task<ContentMain> GetById(string id)
+		public async Task<Aside> GetById(string id)
 		{
 			return await collection.FindAsync(new BsonDocument { { "_id", new ObjectId(id) } })
 				.Result.FirstAsync();

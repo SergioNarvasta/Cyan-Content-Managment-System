@@ -7,7 +7,7 @@ namespace CMS.Aplicacion.Interfaces
         Task Delete(string id);
         Task<IEnumerable<ContentMain>> GetAll();
 		Task<ContentMain> GetById(string id);
-		Task Insert(ContentMain sliderMain);
-        Task Update(ContentMain sliderMain);
+		Task Insert(ContentMain model);
+        Task Update(ContentMain model);
     }
 }
