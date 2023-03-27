@@ -8,7 +8,10 @@ const context =  [
     "/api/slidermain",
     "/api/session",
     "/api/user",
-    "/api/company"
+    "/api/company",
+    "/api/contentmain",
+    "/api/contentsec",
+    "/api/aside"
 ];
 
 module.exports = function(app) {

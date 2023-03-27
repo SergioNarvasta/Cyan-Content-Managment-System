@@ -29,7 +29,7 @@ const CompanyListado = () => {
             const data = await response.json();
             setCompany(data);
         } else {
-            console.log("Error : (api/company/listatodos)")
+            console.log("Error : api/company/listatodos")
         }
     }
     const ListarById = async () => {
@@ -38,13 +38,13 @@ const CompanyListado = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ User_Pk : "HJG" })
+            body: dataUser.user_Pk
         })
         if (response.ok) {
             const data = await response.json();
             setCompanybyid(data);
         } else {
-            console.log("Error : (api/company/listbyid)")
+            console.log("Error : api/company/listbyid")
         }
     }
 

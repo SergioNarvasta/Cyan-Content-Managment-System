@@ -39,7 +39,7 @@ const NavBar = () => {
                 }
                 {
                     (dataUser !== null) &&
-                    <NavLink tag={Link} className=" item" to="" ><FaUserAlt style={{ fontSize: '25px',marginRight:'5px'}}/> {dataUser.user_Nombre}</NavLink>
+                    <NavLink tag={Link} className=" item" to="/" ><FaUserAlt style={{ fontSize: '25px', marginRight: '5px' }} /> {dataUser.user_Nombre}</NavLink>
                 }
 
                 <hr className="sidebar-divider my-0" />
@@ -50,13 +50,13 @@ const NavBar = () => {
                     (dataUser !== null) &&
                     <div className=" py-2 collapse-inner rounded">
                         <p className='item'>Administracion</p>
-                        <NavLink to="/companies" className="collapse-item item">Compañia</NavLink><br/>
-                        <NavLink to="/" className="collapse-item item">Menu opciones</NavLink>
+                        <NavLink to="/companies" className="collapse-item item">Compañia</NavLink><br />
+
                         {
                             (dataUser.rol_Pk === "2") &&
                             <NavLink to="/user" className="collapse-item item">Usuarios</NavLink>
-                        }                   
-                       
+                        }
+
 
                     </div>
                 }
@@ -64,20 +64,26 @@ const NavBar = () => {
                 {
                     (dataUser !== null) &&
                     <div className=" py-2 collapse-inner rounded">
-                    <p className='item'>Componentes</p>
-                        <NavLink className="collapse-item item" to="/slider-main">SliderMain</NavLink>
+                        <p className='item'>Componentes</p>
+                        <NavLink className="collapse-item item" to="/slider-main">SliderMain</NavLink><br />
+                        <NavLink className="collapse-item item" to="/content-main">ContentMain</NavLink><br />
+                        <NavLink className="collapse-item item" to="/aside">Aside</NavLink><br />
+                        <NavLink className="collapse-item item" to="/content-sec">ContentSec</NavLink>
                     </div>
                 }
 
-                <hr className="sidebar-divider d-none d-md-block" />
-
-                <div className="text-center d-none d-md-inline">
-                    <button className="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
+                {
+                    (dataUser !== null) &&
+                    <div className=" py-2 collapse-inner rounded">
+                        <p className='item'>Configuracion</p>
+                        <NavLink to="/" className="collapse-item item">Menu opciones</NavLink><br />
+                        <NavLink to="/" className="collapse-item item">Titulos Componentes</NavLink><br />
+                        <NavLink to="/" className="collapse-item item">Partners</NavLink><br />
+                        <NavLink to="/" className="collapse-item item">Footer</NavLink>
+                    </div>
+                }
 
             </div>
-
-
         </ul>
     )
 }
