@@ -28,8 +28,7 @@ const ContentMainListado = () => {
                     <th>Contenido</th>
                     <th>Estado</th>    
                     <th>Orden</th>             
-                    <th>Imagen</th>
-                    
+                    <th>Imagen</th>                  
                     <th>Usuario Creacion</th>
                     <th>Fecha Creacion</th>
                     <th>Usuario Actualiza</th>  
@@ -51,10 +50,8 @@ const ContentMainListado = () => {
                  <td>{item.contentMain_Descripcion}</td>
                  <td>{item.contentMain_Contenido}</td>
                  <td>{item.contentMain_Estado = 1 ? "Activo" : "No disponible"}</td>                    
-                 <td>{item.contentMain_Orden}</td>               
-                
-                 <td><img src={"data:image/jpg;base64," + item.file_Base64F} /></td>
-                 
+                 <td>{item.contentMain_Orden}</td>                         
+                 <td><img src={"data:image/jpg;base64," + item.file_Base64} /></td>                
                  <td>{item.audit_UsuCre}</td>
                  <td>{item.audit_FecCre}</td>
                  <td>{item.audit_UsuAct}</td>

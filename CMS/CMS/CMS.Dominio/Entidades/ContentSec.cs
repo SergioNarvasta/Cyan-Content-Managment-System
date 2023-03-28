@@ -1,10 +1,12 @@
 ﻿using MongoDB.Bson;
 using CMS.Dominio.Comunes;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace CMS.Dominio.Entidades
 {
     public class ContentSec :FileUnit
     {
+        [BsonId]
         public ObjectId ContentSec_Id { get; set; }
 
         public string ContentSec_Pk { get; set; }

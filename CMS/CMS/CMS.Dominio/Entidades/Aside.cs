@@ -1,10 +1,12 @@
 ﻿using MongoDB.Bson;
 using CMS.Dominio.Comunes;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace CMS.Dominio.Entidades
 {
     public class Aside :FileUnit
     {
+        [BsonId]
         public ObjectId Aside_Id { get; set; }
 
         public string Aside_Pk { get; set; }
