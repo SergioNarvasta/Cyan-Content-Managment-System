@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Form, FormGroup, Input, Button } from "reactstrap";
-import SliderMainListado from './ContentMainListado';
+import ContentMainListado from './ContentMainListado';
 import './Style.css';
 
 const modelo = {
@@ -138,6 +138,7 @@ const ContentMainRegistro = () => {
 
             </Form>
             <br></br>
+            <ContentMainListado/>
         </div>
     )
 }
