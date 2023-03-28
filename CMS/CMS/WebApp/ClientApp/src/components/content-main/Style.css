@@ -1,0 +1,25 @@
+﻿
+#container_files {
+   border: 1px solid blue;
+}
+.me-2 {
+   width:90px;
+}
+#txa_contenido{
+    height:70px;
+    width:80%;
+}
+#txt_titulo,#txtDesc{
+    width:80%;
+}
+#txtOrden {
+    width: 40px;
+    margin-right: 60px;
+}
+img {
+    width: 200px;
+    height: 100px;
+}
+#comp_slidermain{
+    margin-left: 18%;
+}

@@ -65,8 +65,8 @@ const NavBar = () => {
                     (dataUser !== null) &&
                     <div className=" py-2 collapse-inner rounded">
                         <p className='item'>Componentes</p>
-                        <NavLink className="collapse-item item" to="/slider-main">SliderMain</NavLink><br />
-                        <NavLink className="collapse-item item" to="/content-main">ContentMain</NavLink><br />
+                        <NavLink className="collapse-item item" to="/slidermain">SliderMain</NavLink><br />
+                        <NavLink className="collapse-item item" to="/contentmain">ContentMain</NavLink><br />
                         <NavLink className="collapse-item item" to="/aside">Aside</NavLink><br />
                         <NavLink className="collapse-item item" to="/content-sec">ContentSec</NavLink>
                     </div>

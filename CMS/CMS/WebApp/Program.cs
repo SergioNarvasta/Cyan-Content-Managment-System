@@ -10,6 +10,9 @@ builder.Services.AddTransient<ISliderMainAppService,SliderMainCollection>();
 builder.Services.AddTransient<IUserAppService, UserCollection>();
 builder.Services.AddTransient<ISessionAppService,SessionRepository>();
 builder.Services.AddTransient<ICompanyAppService, CompanyCollection>();
+builder.Services.AddTransient<IContentMainAppService, ContentMainCollection>();
+builder.Services.AddTransient<IContentSecAppService, ContentSecCollection>();
+builder.Services.AddTransient<IAsideAppService, AsideCollection>();
 
 var app = builder.Build();
 

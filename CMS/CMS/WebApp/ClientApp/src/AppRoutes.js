@@ -4,6 +4,7 @@ import SliderMainRegistro from "./components/slider-main/SliderMainRegistro";
 import Login from './components/login/Login';
 import UserRegistro from './components/user/UserRegistro';
 import CompanyRegistro from './components/company/CompanyRegistro';
+import ContentMainRegistro from './components/content-main/ContentMainRegistro';
 
 const AppRoutes = [
   {
@@ -11,7 +12,7 @@ const AppRoutes = [
     element: <Home />
   },
   {
-    path: '/slider-main',
+    path: '/slidermain',
     element: <SliderMainRegistro />
     },
     {
@@ -26,6 +27,10 @@ const AppRoutes = [
       path: '/companies',
       element: <CompanyRegistro/>
     },
+    {
+      path: '/contentmain',
+      element: <ContentMainRegistro/>
+    }
 ];
 
 export default AppRoutes;
