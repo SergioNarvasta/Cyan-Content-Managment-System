@@ -7,7 +7,6 @@ namespace CMS.Dominio.Entidades
     public class ContentMain :FileUnit
     {
         [BsonId]
-        public ObjectId _id { get; set; }
         public ObjectId ContentMain_Id { get; set; }
 
         public string ContentMain_Pk { get; set; }
