@@ -46,16 +46,13 @@ const CompanyRegistro = () => {
 
   const actualizaDato = (e) => {
     console.log(e.target.name + " : " + e.target.value);
-    setcompania(
-      {
+    setcompania( {
         ...compania,
         [e.target.name]: e.target.value
-      }
-    )
+      } )
   }
   const enviarDatos = () => {
     compania.user_Pk = dataUser.user_Pk   //Asigno el usuario
-    compania.company_Pk = "sebg-sd"
     compania.audit_UsuCre = dataUser.user_Nombre
     registrar(compania)
   }
