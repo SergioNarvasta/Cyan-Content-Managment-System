@@ -25,66 +25,75 @@ const NavBar = () => {
         let dt = JSON.parse(user)
         setDataUser(dt)
     }, [])
+
+    const oculta=()=>{
+        var accordionSidebar = document.getElementById('accordionSidebar');
+        accordionSidebar.style.display = 'none';
+    }
     return (
-        <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <Link className="sidebar-brand d-flex align-items-center justify-content-center item" to="/">
-                <div className="sidebar-brand-icon">
+        <div>
+            <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <Link className="sidebar-brand d-flex align-items-center justify-content-center item" to="/">
+                    <div className="sidebar-brand-icon">
+                    </div>
+                    <div className="sidebar-brand-text mx-3" id='titleMain'><p>Sistema de Gestion de Contenido - CMS</p></div>
+                </Link>
+                <div id='sidebar_options'>
+                    {
+                        (dataUser === null) &&
+                        <NavLink tag={Link} className="text-dark item" to="/login">Inicie Sesion</NavLink>
+                    }
+                    {
+                        (dataUser !== null) &&
+                        <NavLink tag={Link} className=" item" to="/" ><FaUserAlt style={{ fontSize: '25px', marginRight: '5px' }} /> {dataUser.user_Nombre}</NavLink>
+                    }
+
+                    <hr className="sidebar-divider my-0" />
+
+
+                    <hr className="sidebar-divider" />
+                    {
+                        (dataUser !== null) &&
+                        <div className=" py-2 collapse-inner rounded">
+                            <p className='item'>Administracion</p>
+                            <NavLink to="/companies" className="collapse-item item">Compañia</NavLink><br />
+
+                            {
+                                (dataUser.rol_Pk === "2") &&
+                                <NavLink to="/user" className="collapse-item item">Usuarios</NavLink>
+                            }
+
+
+                        </div>
+                    }
+
+                    {
+                        (dataUser !== null) &&
+                        <div className=" py-2 collapse-inner rounded">
+                            <p className='item'>Componentes</p>
+                            <NavLink className="collapse-item item" to="/slidermain">SliderMain</NavLink><br />
+                            <NavLink className="collapse-item item" to="/contentmain">ContentMain</NavLink><br />
+                            <NavLink className="collapse-item item" to="/aside">Aside</NavLink><br />
+                            <NavLink className="collapse-item item" to="/content-sec">ContentSec</NavLink>
+                        </div>
+                    }
+
+                    {
+                        (dataUser !== null) &&
+                        <div className=" py-2 collapse-inner rounded">
+                            <p className='item'>Configuracion</p>
+                            <NavLink to="/" className="collapse-item item">Menu opciones</NavLink><br />
+                            <NavLink to="/" className="collapse-item item">Titulos Componentes</NavLink><br />
+                            <NavLink to="/" className="collapse-item item">Partners</NavLink><br />
+                            <NavLink to="/" className="collapse-item item">Footer</NavLink>
+                        </div>
+                    }
+
                 </div>
-                <div className="sidebar-brand-text mx-3" id='titleMain'><p>Sistema de Gestion de Contenido - CMS</p></div>
-            </Link>
-            <div id='sidebar_options'>
-                {
-                    (dataUser === null) &&
-                    <NavLink tag={Link} className="text-dark item" to="/login">Inicie Sesion</NavLink>
-                }
-                {
-                    (dataUser !== null) &&
-                    <NavLink tag={Link} className=" item" to="/" ><FaUserAlt style={{ fontSize: '25px', marginRight: '5px' }} /> {dataUser.user_Nombre}</NavLink>
-                }
+            </ul>
+            <a id='btnocultaSlide' onClick={oculta } className="btn btn-warning">zz</a>
 
-                <hr className="sidebar-divider my-0" />
-
-
-                <hr className="sidebar-divider" />
-                {
-                    (dataUser !== null) &&
-                    <div className=" py-2 collapse-inner rounded">
-                        <p className='item'>Administracion</p>
-                        <NavLink to="/companies" className="collapse-item item">Compañia</NavLink><br />
-
-                        {
-                            (dataUser.rol_Pk === "2") &&
-                            <NavLink to="/user" className="collapse-item item">Usuarios</NavLink>
-                        }
-
-
-                    </div>
-                }
-
-                {
-                    (dataUser !== null) &&
-                    <div className=" py-2 collapse-inner rounded">
-                        <p className='item'>Componentes</p>
-                        <NavLink className="collapse-item item" to="/slidermain">SliderMain</NavLink><br />
-                        <NavLink className="collapse-item item" to="/contentmain">ContentMain</NavLink><br />
-                        <NavLink className="collapse-item item" to="/aside">Aside</NavLink><br />
-                        <NavLink className="collapse-item item" to="/content-sec">ContentSec</NavLink>
-                    </div>
-                }
-
-                {
-                    (dataUser !== null) &&
-                    <div className=" py-2 collapse-inner rounded">
-                        <p className='item'>Configuracion</p>
-                        <NavLink to="/" className="collapse-item item">Menu opciones</NavLink><br />
-                        <NavLink to="/" className="collapse-item item">Titulos Componentes</NavLink><br />
-                        <NavLink to="/" className="collapse-item item">Partners</NavLink><br />
-                        <NavLink to="/" className="collapse-item item">Footer</NavLink>
-                    </div>
-                }
-
-            </div>
-        </ul>
+        </div>
     )
 }
 

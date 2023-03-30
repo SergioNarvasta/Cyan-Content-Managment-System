@@ -100,7 +100,7 @@ const ContentSecRegistro = () => {
     };
 
     return (
-        <div id="comp_aside">
+        <div id="comp">
             <Form id="form-registro"><br /><br />
                 <h3 >Gestion de ContentSec</h3>
                 <p className="text-danger">El usuario ve sus ContentSec, puede editar,eliminar,agregar</p>

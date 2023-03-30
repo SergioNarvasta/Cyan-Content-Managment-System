@@ -20,6 +20,11 @@ img {
     width: 200px;
     height: 100px;
 }
-#comp_aside{
+#comp{
     margin-left: 18%;
+}
+#btnocultaSlide{
+    position: absolute;
+    left:19%;
+    
 }
