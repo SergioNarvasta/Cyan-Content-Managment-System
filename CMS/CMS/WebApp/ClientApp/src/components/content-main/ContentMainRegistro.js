@@ -108,7 +108,7 @@ const ContentMainRegistro = () => {
     }
 
     return (
-        <div id="comp_slidermain"><br />
+        <div id="comp_slidermain">
             <h3 >Gestion de ContentMain</h3>
             <Form id="form_registro">
                 <FormGroup className="d-flex flex-row ">

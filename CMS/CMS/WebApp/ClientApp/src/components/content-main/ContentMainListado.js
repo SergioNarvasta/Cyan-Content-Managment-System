@@ -29,10 +29,10 @@ const ContentMainListado = () => {
                     <th>Estado</th>    
                     <th>Orden</th>             
                     <th>Imagen</th>                  
-                    <th>Usuario Creacion</th>
-                    <th>Fecha Creacion</th>
-                    <th>Usuario Actualiza</th>  
-                    <th>Fecha Actualiza</th>    
+                    <th>Creacion</th>
+                    <th>Fecha</th>
+                    <th>Actualiza</th>  
+                    <th>Fecha</th>    
                     <th></th>
                 </tr>
             </thead>
