@@ -38,15 +38,15 @@ const modelo_user = {
     audit_FecCre: "",
     audit_UsuAct: "",
     audit_FecAct: ""
-  }
+}
 const SliderMainRegistro = () => {
     const [sliderMainCreate, setsliderMainCreate] = useState(modelo);
     const [user] = useState(window.localStorage.getItem("sesion_user"))
     const [dataUser, setDataUser] = useState(modelo_user)
-  
+
     useEffect(() => {
-      let dt = JSON.parse(user)
-      setDataUser(dt)
+        let dt = JSON.parse(user)
+        setDataUser(dt)
     }, [])
 
     const actualizaDato = (e) => {
@@ -121,17 +121,17 @@ const SliderMainRegistro = () => {
         });
     }
     const ocultarForm = () => {
-        document.getElementById('form_registro').style.display = 'none';       
+        document.getElementById('form_registro').style.display = 'none';
         document.getElementById('group_filtro').style.display = 'block';
     }
-    const mostrarForm = () => { 
-        document.getElementById('group_filtro').style.display = 'none';       
+    const mostrarForm = () => {
+        document.getElementById('group_filtro').style.display = 'none';
         document.getElementById('form_registro').style.display = 'block';
     }
     return (
         <div id="comp_slidermain">
-        <h3 >Gestion de SliderMain</h3>
-            <Form id="form_registro">             
+            <h3 >Gestion de SliderMain</h3>
+            <Form id="form_registro">
                 <p className="text-danger">El usuario ve sus SliderMain, puede editar,eliminar,agregar y debe seleccionar un slider a mostrar</p>
                 <p className="text-danger">El admin ve todas los registros asociados a usuarios y compañias, puede editar,eliminar,desactivar</p> <br />
                 <FormGroup className="d-flex flex-row ">
@@ -214,11 +214,10 @@ const SliderMainRegistro = () => {
                     <Input id="txtBusqueda" ></Input>
                 </FormGroup>
                 <FormGroup >
-                <Button id="btnMostrar" onClick={mostrarForm} className="btn btn-warning ms-5">Nuevo</Button>
-                </FormGroup>      
+                    <Button id="btnMostrar" onClick={mostrarForm} className="btn btn-warning ms-5">Nuevo</Button>
+                </FormGroup>
             </div>
             <br></br>
-
             <SliderMainListado />
         </div>
     )

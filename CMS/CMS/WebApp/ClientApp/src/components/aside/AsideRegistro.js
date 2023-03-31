@@ -99,17 +99,17 @@ const AsideRegistro = () => {
         });
     };
     const ocultarForm = () => {
-        document.getElementById('form_registro').style.display = 'none';       
+        document.getElementById('form_registro').style.display = 'none';
         document.getElementById('group_filtro').style.display = 'block';
     }
-    const mostrarForm = () => { 
-        document.getElementById('group_filtro').style.display = 'none';       
+    const mostrarForm = () => {
+        document.getElementById('group_filtro').style.display = 'none';
         document.getElementById('form_registro').style.display = 'block';
     }
     return (
         <div id="comp_aside">
-        <h3 >Gestion de Aside</h3>
-            <Form id="form_registro"><br />                
+            <h3 >Gestion de Aside</h3>
+            <Form id="form_registro"><br />
                 <FormGroup className="d-flex flex-row ">
                     <label className="me-2" >Titulo</label>
                     <Input id="txt_titulo" name="aside_Titulo" onChange={(e) => actualizaDato(e)}
@@ -149,11 +149,11 @@ const AsideRegistro = () => {
                     <Input id="txtBusqueda" ></Input>
                 </FormGroup>
                 <FormGroup >
-                <Button id="btnMostrar" onClick={mostrarForm} className="btn btn-warning ms-5">Nuevo</Button>
-                </FormGroup>      
+                    <Button id="btnMostrar" onClick={mostrarForm} className="btn btn-warning ms-5">Nuevo</Button>
+                </FormGroup>
             </div>
             <br></br>
-            <AsideListado/>
+            <AsideListado />
         </div>
     )
 }
