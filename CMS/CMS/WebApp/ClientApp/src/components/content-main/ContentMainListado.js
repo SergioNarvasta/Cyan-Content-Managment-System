@@ -49,7 +49,7 @@ const ContentMainListado = () => {
                  <td>{item.contentMain_Titulo}</td>
                  <td><textarea id="item_desc">{item.contentMain_Descripcion}</textarea> </td>
                  <td>{item.contentMain_Contenido}</td>
-                 <td>{item.contentMain_Estado = 1 ? "Activo" : "No disponible"}</td>                    
+                 <td>{item.contentMain_Estado == 1 ? "Activo" : "Inactivo"}</td>                    
                  <td>{item.contentMain_Orden}</td>                         
                  <td><img src={"data:image/jpg;base64," + item.file_Base64} /></td>                
                  <td>{item.audit_UsuCre}</td>

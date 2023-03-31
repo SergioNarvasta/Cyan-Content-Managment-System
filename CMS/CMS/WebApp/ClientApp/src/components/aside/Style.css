@@ -23,3 +23,11 @@ img {
 #comp_aside{
     margin-left: 18%;
 }
+#item_desc{
+    width: 400px;
+    height: 100px;
+    border: 1px solid white;
+}
+.busqueda{
+    width: 40%;
+}

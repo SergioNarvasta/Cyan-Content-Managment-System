@@ -150,7 +150,7 @@ const ContentMainRegistro = () => {
                     <Input id="txtBusqueda" ></Input>
                 </FormGroup>
                 <FormGroup >
-                <Button id="btnMostrar" onClick={mostrarForm} className="btn btn-warning ms-5">Nuevo Registro</Button>
+                <Button id="btnMostrar" onClick={mostrarForm} className="btn btn-warning ms-5">Nuevo</Button>
                 </FormGroup>      
             </div>
             <br></br>
