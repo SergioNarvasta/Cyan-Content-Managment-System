@@ -97,7 +97,7 @@ const ContentMainRegistro = () => {
                 resolve(reader.result.split(',')[1]);
             };
         });
-    };
+    }
     const ocultarForm = () => {
         document.getElementById('form_registro').style.display = 'none';       
         document.getElementById('group_filtro').style.display = '';

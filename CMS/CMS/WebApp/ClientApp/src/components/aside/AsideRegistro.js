@@ -100,11 +100,11 @@ const AsideRegistro = () => {
     };
     const ocultarForm = () => {
         document.getElementById('form_registro').style.display = 'none';       
-        document.getElementById('group_filtro').style.display = '';
+        document.getElementById('group_filtro').style.display = 'block';
     }
     const mostrarForm = () => { 
         document.getElementById('group_filtro').style.display = 'none';       
-        document.getElementById('form_registro').style.display = '';
+        document.getElementById('form_registro').style.display = 'block';
     }
     return (
         <div id="comp_aside">

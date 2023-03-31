@@ -31,3 +31,6 @@ img {
 .busqueda{
     width: 40%;
 }
+#form_registro{
+    display: none;
+}

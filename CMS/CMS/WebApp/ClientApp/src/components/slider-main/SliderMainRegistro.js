@@ -119,12 +119,19 @@ const SliderMainRegistro = () => {
                 resolve(reader.result.split(',')[1]);
             };
         });
-    };
-
+    }
+    const ocultarForm = () => {
+        document.getElementById('form_registro').style.display = 'none';       
+        document.getElementById('group_filtro').style.display = 'block';
+    }
+    const mostrarForm = () => { 
+        document.getElementById('group_filtro').style.display = 'none';       
+        document.getElementById('form_registro').style.display = 'block';
+    }
     return (
         <div id="comp_slidermain">
-            <Form id="form-registro"><br /><br />
-                <h3 >Gestion de SliderMain</h3>
+        <h3 >Gestion de SliderMain</h3>
+            <Form id="form_registro">             
                 <p className="text-danger">El usuario ve sus SliderMain, puede editar,eliminar,agregar y debe seleccionar un slider a mostrar</p>
                 <p className="text-danger">El admin ve todas los registros asociados a usuarios y compañias, puede editar,eliminar,desactivar</p> <br />
                 <FormGroup className="d-flex flex-row ">
@@ -153,6 +160,7 @@ const SliderMainRegistro = () => {
                     </FormGroup>
                     <FormGroup >
                         <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success ms-5">Registrar</Button>
+                        <Button id="btnOcultar" onClick={ocultarForm} className="btn btn-danger ms-5">Ocultar</Button>
                     </FormGroup>
                 </div>
                 <div id="container_files">
@@ -200,6 +208,15 @@ const SliderMainRegistro = () => {
                     </div>
                 </div>
             </Form>
+            <div id="group_filtro" className="d-flex flex-row">
+                <FormGroup className="d-flex flex-row busqueda" >
+                    <label className="me-2">Busqueda</label>
+                    <Input id="txtBusqueda" ></Input>
+                </FormGroup>
+                <FormGroup >
+                <Button id="btnMostrar" onClick={mostrarForm} className="btn btn-warning ms-5">Nuevo</Button>
+                </FormGroup>      
+            </div>
             <br></br>
 
             <SliderMainListado />
