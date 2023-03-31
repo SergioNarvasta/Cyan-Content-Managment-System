@@ -78,13 +78,11 @@ const CompanyRegistro = () => {
           let next = nombre.lastIndexOf('.');
           let extension = nombre.substring(next + 1);
           if (extension === "jpg" || extension === "png" || extension === "jpeg" || extension === "gif") {
-            console.log('Convirtiendo blob -> ' + index);
             const myBlob = e.target.files[index];
             const myB64 = await blobToBase64(myBlob);
             compania.file_Base64 = myB64;
             compania.file_Nombre = nombre;
             compania.file_Tamanio = tamanio;
-            console.log("Object :");
             console.log(compania);
           } else { alert("Archivo Invalido!. No tiene formato de imagen solicitado"); }
         } else { alert("Archivo Invalido!. Supera el limite 5MB"); }
