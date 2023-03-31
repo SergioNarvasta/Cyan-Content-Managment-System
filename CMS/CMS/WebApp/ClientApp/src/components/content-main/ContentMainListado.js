@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Table,  } from "reactstrap";
+import { Table,Button  } from "reactstrap";
 import './Style.css';
 
 const ContentMainListado = () => {
@@ -47,7 +47,7 @@ const ContentMainListado = () => {
              <tr key={item.contentMain_Pk} >
                  
                  <td>{item.contentMain_Titulo}</td>
-                 <td>{item.contentMain_Descripcion}</td>
+                 <td><textarea id="item_desc">{item.contentMain_Descripcion}</textarea> </td>
                  <td>{item.contentMain_Contenido}</td>
                  <td>{item.contentMain_Estado = 1 ? "Activo" : "No disponible"}</td>                    
                  <td>{item.contentMain_Orden}</td>                         
@@ -56,7 +56,7 @@ const ContentMainListado = () => {
                  <td>{item.audit_FecCre}</td>
                  <td>{item.audit_UsuAct}</td>
                  <td>{item.audit_FecAct}</td>
-                     
+                 <td><Button className="btn btn-danger">Eliminar</Button></td>  
                </tr>
             ))
            )

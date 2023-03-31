@@ -104,7 +104,7 @@ const ContentSecRegistro = () => {
             <Form id="form-registro"><br /><br />
                 <h3 >Gestion de ContentSec</h3>
                 <p className="text-danger">El usuario ve sus ContentSec, puede editar,eliminar,agregar</p>
-                <p className="text-danger">El admin ve todas los registros asociados a usuarios y compañias, puede editar,eliminar,desactivar</p> <br />
+                <p className="text-danger">El admin ve todas los registros asociados a usuarios y compañias, puede editar,eliminar</p> <br />
                 <FormGroup className="d-flex flex-row ">
                     <label className="me-2" >Titulo</label>
                     <Input id="txt_titulo" name="contentSec_Titulo" onChange={(e) => actualizaDato(e)}

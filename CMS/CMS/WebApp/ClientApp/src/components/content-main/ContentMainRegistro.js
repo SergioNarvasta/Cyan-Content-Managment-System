@@ -98,13 +98,19 @@ const ContentMainRegistro = () => {
             };
         });
     };
+    const ocultarForm = () => {
+        document.getElementById('form_registro').style.display = 'none';       
+        document.getElementById('group_filtro').style.display = '';
+    }
+    const mostrarForm = () => { 
+        document.getElementById('group_filtro').style.display = 'none';       
+        document.getElementById('form_registro').style.display = '';
+    }
 
     return (
-        <div id="comp_slidermain">
-            <Form id="form-registro"><br /><br />
-                <h3 >Gestion de ContentMain</h3>
-                <p className="text-danger">El usuario ve sus ContentMain, puede editar,eliminar,agregar</p>
-                <p className="text-danger">El admin ve todas los registros asociados a usuarios y compañias, puede editar,eliminar,desactivar</p> <br />
+        <div id="comp_slidermain"><br />
+            <h3 >Gestion de ContentMain</h3>
+            <Form id="form_registro">
                 <FormGroup className="d-flex flex-row ">
                     <label className="me-2" >Titulo</label>
                     <Input id="txt_titulo" name="contentMain_Titulo" onChange={(e) => actualizaDato(e)}
@@ -133,12 +139,22 @@ const ContentMainRegistro = () => {
                     </FormGroup>
                     <FormGroup >
                         <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success ms-5">Registrar</Button>
+                        <Button id="btnOcultar" onClick={ocultarForm} className="btn btn-danger ms-5">Ocultar</Button>
                     </FormGroup>
                 </div>
 
             </Form>
+            <div id="group_filtro" className="d-flex flex-row">
+                <FormGroup className="d-flex flex-row busqueda" >
+                    <label className="me-2">Busqueda</label>
+                    <Input id="txtBusqueda" ></Input>
+                </FormGroup>
+                <FormGroup >
+                <Button id="btnMostrar" onClick={mostrarForm} className="btn btn-warning ms-5">Nuevo Registro</Button>
+                </FormGroup>      
+            </div>
             <br></br>
-            <ContentMainListado/>
+            <ContentMainListado />
         </div>
     )
 }
