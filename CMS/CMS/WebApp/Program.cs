@@ -13,6 +13,7 @@ builder.Services.AddTransient<ICompanyAppService, CompanyCollection>();
 builder.Services.AddTransient<IContentMainAppService, ContentMainCollection>();
 builder.Services.AddTransient<IContentSecAppService, ContentSecCollection>();
 builder.Services.AddTransient<IAsideAppService, AsideCollection>();
+builder.Services.AddTransient<ITitleComponentService,TitleComponentCollection>();   
 
 var app = builder.Build();
 
