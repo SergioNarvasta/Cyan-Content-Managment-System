@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Table,Button } from "reactstrap";
+import { Table, Button } from "reactstrap";
 import './Style.css';
 
 const AsideListado = () => {
