@@ -26,7 +26,7 @@ const NavBar = () => {
         setDataUser(dt)
     }, [])
 
-    const oculta=()=>{
+    const oculta = () => {
         var accordionSidebar = document.getElementById('accordionSidebar');
         accordionSidebar.style.display = 'none';
     }
@@ -41,15 +41,20 @@ const NavBar = () => {
                 <div id='sidebar_options'>
                     {
                         (dataUser === null) &&
-                        <NavLink tag={Link} className="text-dark item" to="/login">Inicie Sesion</NavLink>
+                        <NavLink tag={Link} className="item" to="/login">Inicie Sesion</NavLink>
                     }
                     {
                         (dataUser !== null) &&
-                        <NavLink tag={Link} className=" item" to="/" ><FaUserAlt style={{ fontSize: '25px', marginRight: '5px' }} /> {dataUser.user_Nombre}</NavLink>
+                        <div>
+                            <NavLink tag={Link} className=" item" to="/" >
+                                <FaUserAlt style={{ fontSize: '25px', marginRight: '5px' }} /> {dataUser.user_Nombre}
+                            </NavLink><br />
+                            <NavLink tag={Link} className="item" onClick={}>Cerrar Sesion</NavLink>
+                        </div>
+
                     }
 
                     <hr className="sidebar-divider my-0" />
-
 
                     <hr className="sidebar-divider" />
                     {
@@ -91,7 +96,7 @@ const NavBar = () => {
 
                 </div>
             </ul>
-            <a id='btnocultaSlide' onClick={oculta } className="btn btn-warning">zz</a>
+            <a id='btnocultaSlide' onClick={oculta} className="btn btn-warning">zz</a>
 
         </div>
     )
