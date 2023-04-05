@@ -46,10 +46,10 @@ const CompanyRegistro = () => {
 
   const actualizaDato = (e) => {
     console.log(e.target.name + " : " + e.target.value);
-    setcompania( {
-        ...compania,
-        [e.target.name]: e.target.value
-      } )
+    setcompania({
+      ...compania,
+      [e.target.name]: e.target.value
+    })
   }
   const enviarDatos = () => {
     compania.user_Pk = dataUser.user_Pk   //Asigno el usuario
@@ -98,54 +98,75 @@ const CompanyRegistro = () => {
       };
     });
   }
+  const ocultarForm = () => {
+    document.getElementById('form_registro').style.display = 'none';
+    document.getElementById('group_filtro').style.display = 'block';
+  }
+  const mostrarForm = () => {
+    document.getElementById('group_filtro').style.display = 'none';
+    document.getElementById('form_registro').style.display = 'block';
+  }
   return (
     <div id="comp_compania">
-    {
-      (dataUser.rol_Pk == "1")&&
-      <Form id="form-registro"><br />
-        <h3>Gestion de Compañias</h3><p className="text-danger">El usuario ve sus compañias y puede editar</p><p className="text-danger">El admin ve todas las compañias y puede editar,eliminar,desactivar</p>
-        <div className="d-flex flex-row ">
-          <FormGroup className="d-flex flex-row ">
-            <label className="me-2">Nombre</label>
-            <Input id="company_Nombre" name="company_Nombre" onChange={(e) => actualizaDato(e)}
-              value={compania.company_Nombre}></Input>
-          </FormGroup>
-          <FormGroup className="d-flex flex-row ms-5">
-            <label className="me-2">Telefono</label>
-            <Input id="company_Telefono" name="company_Telefono" onChange={(e) => actualizaDato(e)}
-              value={compania.company_Telefono}></Input>
-          </FormGroup>
+      {
+        (dataUser.rol_Pk == "1") &&
+        <div>
+          <Form id="form_registro"><br />
+            <h3>Gestion de Compañias</h3><p className="text-danger">El usuario ve sus compañias y puede editar</p><p className="text-danger">El admin ve todas las compañias y puede editar,eliminar,desactivar</p>
+            <div className="d-flex flex-row ">
+              <FormGroup className="d-flex flex-row ">
+                <label className="me-2">Nombre</label>
+                <Input id="company_Nombre" name="company_Nombre" onChange={(e) => actualizaDato(e)}
+                  value={compania.company_Nombre}></Input>
+              </FormGroup>
+              <FormGroup className="d-flex flex-row ms-5">
+                <label className="me-2">Telefono</label>
+                <Input id="company_Telefono" name="company_Telefono" onChange={(e) => actualizaDato(e)}
+                  value={compania.company_Telefono}></Input>
+              </FormGroup>
+            </div>
+            <div className="d-flex flex-row ">
+              <FormGroup className="d-flex flex-row ">
+                <label className="me-2">Email</label>
+                <Input id="company_Email" name="company_Email" onChange={(e) => actualizaDato(e)}
+                  value={compania.company_Email}></Input>
+              </FormGroup>
+              <FormGroup className="d-flex flex-row ms-5">
+                <label className="me-2">Plan</label>
+                <Input id="plan_Pk" name="plan_Pk" onChange={(e) => actualizaDato(e)}
+                  value={compania.plan_Pk}></Input>
+              </FormGroup>
+            </div>
+            <FormGroup className="d-flex flex-row">
+              <label className="me-2">Direccion</label>
+              <Input id="company_Direccion" name="company_Direccion" onChange={(e) => actualizaDato(e)}
+                value={compania.company_Direccion}></Input>
+            </FormGroup>
+            <div className="d-flex flex-row">
+              <FormGroup className="d-flex flex-row">
+                <label className="me-5">Archivo</label>
+                <input type="file" accept=".jpg,.png,.gif" onChange={(e) => cargarArchivo(e)} />
+              </FormGroup>
+              <FormGroup >
+                <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success ms-5">Registrar</Button>
+                <Button id="btnOcultar" onClick={ocultarForm} className="btn btn-danger ms-5">Ocultar</Button>
+              </FormGroup>
+            </div>
+          </Form>
+          <div id="group_filtro" className="d-flex flex-row">
+            <FormGroup className="d-flex flex-row busqueda" >
+              <label className="me-2">Busqueda</label>
+              <Input id="txtBusqueda" ></Input>
+            </FormGroup>
+            <FormGroup >
+              <Button id="btnMostrar" onClick={mostrarForm} className="btn btn-warning ms-5">Nuevo</Button>
+            </FormGroup>
+          </div>
         </div>
-        <div className="d-flex flex-row ">
-          <FormGroup className="d-flex flex-row ">
-            <label className="me-2">Email</label>
-            <Input id="company_Email" name="company_Email" onChange={(e) => actualizaDato(e)}
-              value={compania.company_Email}></Input>
-          </FormGroup>
-          <FormGroup className="d-flex flex-row ms-5">
-            <label className="me-2">Plan</label>
-            <Input id="plan_Pk" name="plan_Pk" onChange={(e) => actualizaDato(e)}
-              value={compania.plan_Pk}></Input>
-          </FormGroup>
-        </div>
-        <FormGroup className="d-flex flex-row">
-          <label className="me-2">Direccion</label>
-          <Input id="company_Direccion" name="company_Direccion" onChange={(e) => actualizaDato(e)}
-            value={compania.company_Direccion}></Input>
-        </FormGroup>
-        <div className="d-flex flex-row">
-          <FormGroup className="d-flex flex-row">
-            <label className="me-5">Archivo</label>
-            <input type="file" accept=".jpg,.png,.gif" onChange={(e) => cargarArchivo(e)} />
-          </FormGroup>
-          <FormGroup >
-            <Button id="btnRegistrar" onClick={enviarDatos} className="btn btn-success ms-5">Registrar</Button>
-          </FormGroup>
-        </div>
-      </Form>
-    }    
-      <br/>
-      <CompanyListado/>
+
+      }
+      <br />
+      <CompanyListado />
     </div>
   )
 }
