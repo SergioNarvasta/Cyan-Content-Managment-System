@@ -141,7 +141,6 @@ const AsideRegistro = () => {
                         <Button id="btnOcultar" onClick={ocultarForm} className="btn btn-danger ms-5">Ocultar</Button>
                     </FormGroup>
                 </div>
-
             </Form>
             <div id="group_filtro" className="d-flex flex-row">
                 <FormGroup className="d-flex flex-row busqueda" >
