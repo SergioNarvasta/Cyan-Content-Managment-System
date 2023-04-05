@@ -30,6 +30,10 @@ const NavBar = () => {
         var accordionSidebar = document.getElementById('accordionSidebar');
         accordionSidebar.style.display = 'none';
     }
+    const cerrarSession = () => {
+        window.localStorage.removeItem("sesion_user");
+        window.location = "/";
+    }
     return (
         <div>
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -49,12 +53,9 @@ const NavBar = () => {
                             <NavLink tag={Link} className=" item" to="/" >
                                 <FaUserAlt style={{ fontSize: '25px', marginRight: '5px' }} /> {dataUser.user_Nombre}
                             </NavLink><br />
-                            <NavLink tag={Link} className="item" onClick={}>Cerrar Sesion</NavLink>
+                            <NavLink tag={Link} className="item" to="/" onClick={cerrarSession}>Cerrar Sesion</NavLink>
                         </div>
-
                     }
-
-                    <hr className="sidebar-divider my-0" />
 
                     <hr className="sidebar-divider" />
                     {

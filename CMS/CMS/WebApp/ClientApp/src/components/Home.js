@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import './Home.css';
 //import perfil from './assets/Perfil.jpg';
 
-const cerrarSession = () => {
-    window.localStorage.removeItem("sesion_user")
-    //setUser(null)
-}
-
 export class Home extends Component {
   static displayName = Home.name;
   render() {
@@ -31,9 +26,7 @@ export class Home extends Component {
                Implementación de Integración y despliegue continuo en Azure Devops con Infraestructura como código Terraform. <br/>
                Especialistas en Administración de Bases de Datos SQL Server
             </p>
-                </div> <br></br>
-            
-                <button className="btn btn-danger ms-3" onClick={cerrarSession}>Remove User</button>
+                </div> 
         </div>
         <br></br>
       </div>
