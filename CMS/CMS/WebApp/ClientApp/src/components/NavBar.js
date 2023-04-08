@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaUserAlt } from "react-icons/fa";
+import { AiOutlineArrowDown } from "react-icons/ai";
 import './NavBar.css';
 
 const modelo = {
@@ -68,15 +69,13 @@ const NavBar = () => {
                                 (dataUser.rol_Pk === "2") &&
                                 <NavLink to="/user" className="collapse-item item">Usuarios</NavLink>
                             }
-
-
                         </div>
                     }
 
                     {
                         (dataUser !== null) &&
                         <div className=" py-2 collapse-inner rounded">
-                            <p className='item'>Componentes</p>
+                            <a className='item'>Componentes <AiOutlineArrowDown style={{color:'white'}}/> </a> <br />
                             <NavLink className="collapse-item item" to="/slidermain">SliderMain</NavLink><br />
                             <NavLink className="collapse-item item" to="/contentmain">ContentMain</NavLink><br />
                             <NavLink className="collapse-item item" to="/aside">Aside</NavLink><br />

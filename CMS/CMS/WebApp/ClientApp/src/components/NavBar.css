@@ -18,6 +18,7 @@
 .item{
     color: white; 
     text-decoration: none;
+    cursor: pointer;
 }
 .item:hover{
     color: white; 
