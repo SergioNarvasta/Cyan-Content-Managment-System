@@ -27,3 +27,7 @@
 #sidebar_options{
     margin-left: 20px;
 }
+#box_components
+{
+    display: none;
+}

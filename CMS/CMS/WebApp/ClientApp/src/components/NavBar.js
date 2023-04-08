@@ -35,6 +35,12 @@ const NavBar = () => {
         window.localStorage.removeItem("sesion_user");
         window.location = "/";
     }
+    const showComponents = () =>{
+      document.getElementById('box_components').style.display='block';
+    }
+    const hideComponents = () =>{
+        document.getElementById('box_components').style.display='none';
+      }
     return (
         <div>
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -75,11 +81,13 @@ const NavBar = () => {
                     {
                         (dataUser !== null) &&
                         <div className=" py-2 collapse-inner rounded">
-                            <a className='item'>Componentes <AiOutlineArrowDown style={{color:'white'}}/> </a> <br />
-                            <NavLink className="collapse-item item" to="/slidermain">SliderMain</NavLink><br />
-                            <NavLink className="collapse-item item" to="/contentmain">ContentMain</NavLink><br />
-                            <NavLink className="collapse-item item" to="/aside">Aside</NavLink><br />
-                            <NavLink className="collapse-item item" to="/content-sec">ContentSec</NavLink>
+                            <a className='item' onClick={showComponents} onMouseOver={hideComponents}>Componentes <AiOutlineArrowDown style={{ color: 'white' }} /> </a> <br />
+                            <div id='box_components'>
+                                <NavLink className="collapse-item item" to="/slidermain">SliderMain</NavLink><br />
+                                <NavLink className="collapse-item item" to="/contentmain">ContentMain</NavLink><br />
+                                <NavLink className="collapse-item item" to="/aside">Aside</NavLink><br />
+                                <NavLink className="collapse-item item" to="/content-sec">ContentSec</NavLink>
+                            </div>
                         </div>
                     }
 
