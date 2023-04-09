@@ -106,7 +106,6 @@ const NavBar = () => {
                 </div>
             </ul>
             <a id='btnocultaSlide' onClick={oculta} className="btn btn-warning">zz</a>
-
         </div>
     )
 }
