@@ -2,6 +2,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { FaUserAlt } from "react-icons/fa";
 import { AiOutlineArrowDown } from "react-icons/ai";
+import { FcDataConfiguration } from "react-icons/fc";
 import './NavBar.css';
 
 const modelo = {
@@ -35,12 +36,12 @@ const NavBar = () => {
         window.localStorage.removeItem("sesion_user");
         window.location = "/";
     }
-    const showComponents = () =>{
-      document.getElementById('box_components').style.display='block';
+    const showComponents = () => {
+        document.getElementById('box_components').style.display = 'block';
     }
-    const hideComponents = () =>{
-        document.getElementById('box_components').style.display='none';
-      }
+    const hideComponents = () => {
+        document.getElementById('box_components').style.display = 'none';
+    }
     return (
         <div>
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -58,31 +59,32 @@ const NavBar = () => {
                         (dataUser !== null) &&
                         <div>
                             <NavLink tag={Link} className=" item" to="/" >
-                                <FaUserAlt style={{ fontSize: '25px', marginRight: '5px' }} /> {dataUser.user_Nombre}
+                                <FaUserAlt style={{ fontSize: '23px', marginRight: '5px' }} /> {dataUser.user_Nombre}
                             </NavLink><br />
+                            <NavLink tag={Link} className="item" to="/perfil" >Perfil</NavLink><br />
                             <NavLink tag={Link} className="item" to="/" onClick={cerrarSession}>Cerrar Sesion</NavLink>
                         </div>
                     }
-
                     <hr className="sidebar-divider" />
                     {
                         (dataUser !== null) &&
                         <div className=" py-2 collapse-inner rounded">
-                            <p className='item'>Administracion</p>
+                            <a className='item'>Administracion <FcDataConfiguration style={{ fontsize: '35px',color: 'white' }}/> </a><br />
                             <NavLink to="/companies" className="collapse-item item">Compañia</NavLink><br />
 
                             {
-                                (dataUser.rol_Pk === "2") &&
+                                (dataUser.rol_Pk === "1") &&
                                 <NavLink to="/user" className="collapse-item item">Usuarios</NavLink>
                             }
                         </div>
                     }
-
                     {
                         (dataUser !== null) &&
-                        <div className=" py-2 collapse-inner rounded">
-                            <a className='item' onClick={showComponents} onMouseOver={hideComponents}>Componentes <AiOutlineArrowDown style={{ color: 'white' }} /> </a> <br />
-                            <div id='box_components'>
+                        <div className=" py-2 collapse-inner rounded" >
+                            <a className='item' onClick={showComponents} >Componentes
+                                <AiOutlineArrowDown style={{ color: 'white' }} />
+                            </a> <br />
+                            <div id='box_components' onMouseOut={hideComponents}>
                                 <NavLink className="collapse-item item" to="/slidermain">SliderMain</NavLink><br />
                                 <NavLink className="collapse-item item" to="/contentmain">ContentMain</NavLink><br />
                                 <NavLink className="collapse-item item" to="/aside">Aside</NavLink><br />
@@ -90,7 +92,6 @@ const NavBar = () => {
                             </div>
                         </div>
                     }
-
                     {
                         (dataUser !== null) &&
                         <div className=" py-2 collapse-inner rounded">
