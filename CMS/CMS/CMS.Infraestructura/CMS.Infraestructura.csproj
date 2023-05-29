@@ -35,4 +35,8 @@
     <ProjectReference Include="..\CMS.Aplicacion\CMS.Aplicacion.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Utiles\" />
+  </ItemGroup>
+
 </Project>
