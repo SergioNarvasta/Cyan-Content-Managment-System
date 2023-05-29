@@ -1,9 +1,10 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FaUserAlt } from "react-icons/fa";
-import { AiOutlineArrowDown } from "react-icons/ai";
-import { FcDataConfiguration } from "react-icons/fc";
+import { GrDocumentConfig } from "react-icons/gr";
+import { RxComponent1 } from "react-icons/rx";
+import { MdManageAccounts } from "react-icons/md";
 import { VscDebugBreakpointData } from "react-icons/vsc";
+import { FcManager } from "react-icons/fc";
 import './NavBar.css';
 
 const modelo = {
@@ -27,6 +28,10 @@ const NavBar = () => {
     useEffect(() => {
         let dt = JSON.parse(user)
         setDataUser(dt)
+        hideComponents()
+        hideAdministration()
+        hideUser()
+        hideConfiguration()
     }, [])
 
     const oculta = () => {
@@ -79,11 +84,11 @@ const NavBar = () => {
                         (dataUser !== null) &&
                         <div>
                             <a tag={Link} className=" item" onClick={showUser} >
-                                <FaUserAlt style={{ fontSize: '23px', marginRight: '5px' }} /> {dataUser.user_Nombre}
+                                <FcManager style={{ fontSize: '23px', marginRight: '5px' }} /> {dataUser.user_Nombre}
                             </a><br />
                             <div id='box_user' onMouseLeave={hideUser} >
-                                <NavLink tag={Link} className="item" to="/perfil" >Perfil</NavLink><br />
-                                <NavLink tag={Link} className="item" to="/" onClick={cerrarSession}>Cerrar Sesion</NavLink>
+                                <NavLink tag={Link} className="item" to="/perfil" ><VscDebugBreakpointData />Perfil</NavLink><br />
+                                <NavLink tag={Link} className="item" to="/" onClick={cerrarSession}><VscDebugBreakpointData />Cerrar Sesion</NavLink>
                             </div>
                         </div>
                     }
@@ -91,12 +96,14 @@ const NavBar = () => {
                     {
                         (dataUser !== null) &&
                         <div>
-                            <a className='item' onClick={showAdministration} >Administracion <FcDataConfiguration style={{ fontsize: '35px', color: 'white' }} /> </a><br />
+                            <a className='item' onClick={showAdministration} >Administracion
+                                <MdManageAccounts style={{ fontsize: '40px', color: 'white' }} />
+                            </a><br />
                             <div id='box_administration' onMouseLeave={hideAdministration}>
-                                <NavLink to="/companies" className="collapse-item item"><VscDebugBreakpointData/>Compañia</NavLink><br />
+                                <NavLink to="/companies" className="collapse-item item"><VscDebugBreakpointData />Compañia</NavLink><br />
                                 {
                                     (dataUser.rol_Pk === "1") &&
-                                    <NavLink to="/user" className="collapse-item item"><VscDebugBreakpointData/>Usuarios</NavLink>
+                                    <NavLink to="/user" className="collapse-item item"><VscDebugBreakpointData />Usuarios</NavLink>
                                 }
 
                             </div>
@@ -106,25 +113,27 @@ const NavBar = () => {
                         (dataUser !== null) &&
                         <div className=" py-2 collapse-inner rounded" >
                             <a className='item' onClick={showComponents} >Componentes
-                                <AiOutlineArrowDown style={{ color: 'white' }} />
+                                <RxComponent1 style={{ color: 'white' }} />
                             </a> <br />
                             <div id='box_components' onMouseLeave={hideComponents}>
-                                <NavLink className="item" to="/slidermain"><VscDebugBreakpointData/>SliderMain</NavLink><br />
-                                <NavLink className="item" to="/contentmain"><VscDebugBreakpointData/>ContentMain</NavLink><br />
-                                <NavLink className="item" to="/aside"><VscDebugBreakpointData/>Aside</NavLink><br />
-                                <NavLink className="item" to="/content-sec"><VscDebugBreakpointData/>ContentSec</NavLink>
+                                <NavLink className="item" to="/slidermain"><VscDebugBreakpointData />SliderMain</NavLink><br />
+                                <NavLink className="item" to="/contentmain"><VscDebugBreakpointData />ContentMain</NavLink><br />
+                                <NavLink className="item" to="/aside"><VscDebugBreakpointData />Aside</NavLink><br />
+                                <NavLink className="item" to="/content-sec"><VscDebugBreakpointData />ContentSec</NavLink>
                             </div>
                         </div>
                     }
                     {
                         (dataUser !== null) &&
                         <div>
-                            <a className='item' onClick={showConfiguration} >Configuracion</a>
+                            <a className='item' onClick={showConfiguration} > Configuracion
+                                <GrDocumentConfig style={{ color: 'white' }} />
+                            </a><br />
                             <div id='box_configuration' onMouseLeave={hideConfiguration}>
-                                <NavLink to="/" className="item">Menu opciones</NavLink><br />
-                                <NavLink to="/" className="item">Titulos Componentes</NavLink><br />
-                                <NavLink to="/" className="item">Partners</NavLink><br />
-                                <NavLink to="/" className="item">Footer</NavLink>
+                                <NavLink to="/" className="item"><VscDebugBreakpointData />Menu opciones</NavLink><br />
+                                <NavLink to="/" className="item"><VscDebugBreakpointData />Titulos Componentes</NavLink><br />
+                                <NavLink to="/" className="item"><VscDebugBreakpointData />Partners</NavLink><br />
+                                <NavLink to="/" className="item"><VscDebugBreakpointData />Footer</NavLink>
                             </div>
                         </div>
                     }

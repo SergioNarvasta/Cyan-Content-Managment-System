@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import './Style.css';
 import RegistrosInCard from './RegistrosInCard';
+import './Style.css';
 
 const modelo_user = {
     user_Pk: "",
@@ -18,11 +18,11 @@ const modelo_user = {
     audit_FecAct: ""
 }
 const CompanyListado = () => {
-    const [company, setCompany] = useState([]);
+    const [company,     setCompany]     = useState([]);
     const [companybyid, setCompanybyid] = useState([]);
     const [user] = useState(window.localStorage.getItem("sesion_user"))
     const [dataUser, setDataUser] = useState(modelo_user)
-
+    const userPk = user && user.user_Pk;
     const Listar = async () => {
         const response = await fetch("/api/company/listatodos");
         if (response.ok) {
@@ -33,24 +33,32 @@ const CompanyListado = () => {
         }
     }
     const ListarById = async () => {
-        const response = await fetch("api/company/listbyid", {
+        if (dataUser.user_Pk !== "") {
+          const response = await fetch("api/company/listbyid", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+              'Content-Type': 'application/json'
             },
-            body: dataUser.user_Pk
-        })
-        if (response.ok) {
+            body: JSON.stringify({ user_Pk: dataUser.user_Pk })
+          });      
+          if (response.ok) {
             const data = await response.json();
             setCompanybyid(data);
+          } else {
+            console.log("Error : api/company/listbyid" + dataUser.user_Pk);
+          }
         } else {
-            console.log("Error : api/company/listbyid")
+          console.log("dataUser.user_Pk is empty");
         }
-    }
+      }
 
     useEffect(() => {
         let dt = JSON.parse(user)
         setDataUser(dt)
+        setDataUser(dataUser => ({
+            ...dataUser,
+            user_Pk :userPk
+        }))
         Listar()
         ListarById()
     }, [])
