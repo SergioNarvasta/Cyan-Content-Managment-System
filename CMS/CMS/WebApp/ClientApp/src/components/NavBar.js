@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { FaUserAlt } from "react-icons/fa";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { FcDataConfiguration } from "react-icons/fc";
+import { VscDebugBreakpointData } from "react-icons/vsc";
 import './NavBar.css';
 
 const modelo = {
@@ -42,6 +43,25 @@ const NavBar = () => {
     const hideComponents = () => {
         document.getElementById('box_components').style.display = 'none';
     }
+    const showAdministration = () => {
+        document.getElementById('box_administration').style.display = 'block';
+    }
+    const hideAdministration = () => {
+        document.getElementById('box_administration').style.display = 'none';
+    }
+    const showUser = () => {
+        document.getElementById('box_user').style.display = 'block';
+    }
+    const hideUser = () => {
+        document.getElementById('box_user').style.display = 'none';
+    }
+    const showConfiguration = () => {
+        document.getElementById('box_configuration').style.display = 'block';
+    }
+    const hideConfiguration = () => {
+        document.getElementById('box_configuration').style.display = 'none';
+    }
+
     return (
         <div>
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -58,24 +78,28 @@ const NavBar = () => {
                     {
                         (dataUser !== null) &&
                         <div>
-                            <NavLink tag={Link} className=" item" to="/" >
+                            <a tag={Link} className=" item" onClick={showUser} >
                                 <FaUserAlt style={{ fontSize: '23px', marginRight: '5px' }} /> {dataUser.user_Nombre}
-                            </NavLink><br />
-                            <NavLink tag={Link} className="item" to="/perfil" >Perfil</NavLink><br />
-                            <NavLink tag={Link} className="item" to="/" onClick={cerrarSession}>Cerrar Sesion</NavLink>
+                            </a><br />
+                            <div id='box_user' onMouseLeave={hideUser} >
+                                <NavLink tag={Link} className="item" to="/perfil" >Perfil</NavLink><br />
+                                <NavLink tag={Link} className="item" to="/" onClick={cerrarSession}>Cerrar Sesion</NavLink>
+                            </div>
                         </div>
                     }
                     <hr className="sidebar-divider" />
                     {
                         (dataUser !== null) &&
-                        <div className=" py-2 collapse-inner rounded">
-                            <a className='item'>Administracion <FcDataConfiguration style={{ fontsize: '35px',color: 'white' }}/> </a><br />
-                            <NavLink to="/companies" className="collapse-item item">Compañia</NavLink><br />
+                        <div>
+                            <a className='item' onClick={showAdministration} >Administracion <FcDataConfiguration style={{ fontsize: '35px', color: 'white' }} /> </a><br />
+                            <div id='box_administration' onMouseLeave={hideAdministration}>
+                                <NavLink to="/companies" className="collapse-item item"><VscDebugBreakpointData/>Compañia</NavLink><br />
+                                {
+                                    (dataUser.rol_Pk === "1") &&
+                                    <NavLink to="/user" className="collapse-item item"><VscDebugBreakpointData/>Usuarios</NavLink>
+                                }
 
-                            {
-                                (dataUser.rol_Pk === "1") &&
-                                <NavLink to="/user" className="collapse-item item">Usuarios</NavLink>
-                            }
+                            </div>
                         </div>
                     }
                     {
@@ -84,25 +108,26 @@ const NavBar = () => {
                             <a className='item' onClick={showComponents} >Componentes
                                 <AiOutlineArrowDown style={{ color: 'white' }} />
                             </a> <br />
-                            <div id='box_components' onMouseOut={hideComponents}>
-                                <NavLink className="collapse-item item" to="/slidermain">SliderMain</NavLink><br />
-                                <NavLink className="collapse-item item" to="/contentmain">ContentMain</NavLink><br />
-                                <NavLink className="collapse-item item" to="/aside">Aside</NavLink><br />
-                                <NavLink className="collapse-item item" to="/content-sec">ContentSec</NavLink>
+                            <div id='box_components' onMouseLeave={hideComponents}>
+                                <NavLink className="item" to="/slidermain"><VscDebugBreakpointData/>SliderMain</NavLink><br />
+                                <NavLink className="item" to="/contentmain"><VscDebugBreakpointData/>ContentMain</NavLink><br />
+                                <NavLink className="item" to="/aside"><VscDebugBreakpointData/>Aside</NavLink><br />
+                                <NavLink className="item" to="/content-sec"><VscDebugBreakpointData/>ContentSec</NavLink>
                             </div>
                         </div>
                     }
                     {
                         (dataUser !== null) &&
-                        <div className=" py-2 collapse-inner rounded">
-                            <p className='item'>Configuracion</p>
-                            <NavLink to="/" className="collapse-item item">Menu opciones</NavLink><br />
-                            <NavLink to="/" className="collapse-item item">Titulos Componentes</NavLink><br />
-                            <NavLink to="/" className="collapse-item item">Partners</NavLink><br />
-                            <NavLink to="/" className="collapse-item item">Footer</NavLink>
+                        <div>
+                            <a className='item' onClick={showConfiguration} >Configuracion</a>
+                            <div id='box_configuration' onMouseLeave={hideConfiguration}>
+                                <NavLink to="/" className="item">Menu opciones</NavLink><br />
+                                <NavLink to="/" className="item">Titulos Componentes</NavLink><br />
+                                <NavLink to="/" className="item">Partners</NavLink><br />
+                                <NavLink to="/" className="item">Footer</NavLink>
+                            </div>
                         </div>
                     }
-
                 </div>
             </ul>
             <a id='btnocultaSlide' onClick={oculta} className="btn btn-warning">zz</a>
