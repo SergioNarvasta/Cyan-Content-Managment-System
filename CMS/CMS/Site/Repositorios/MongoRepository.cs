@@ -10,8 +10,8 @@ namespace Site.Repositorios
 
         public MongoRepository()
         {
-            mongoclient = new MongoClient("mongodb+srv://s76325953:s76325953@cluster0.acwg8vw.mongodb.net/test");
-            database = mongoclient.GetDatabase("CMS_Dev");
+            mongoclient = new MongoClient("mongodb+srv://Sergio:<0024>@cluster0.3neun83.mongodb.net/");
+            database = mongoclient.GetDatabase("SampleCMS_Dev");
 
         }
     }
