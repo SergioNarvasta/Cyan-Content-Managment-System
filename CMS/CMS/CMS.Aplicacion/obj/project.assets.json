@@ -863,19 +863,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Consultor2015\\.nuget\\packages\\": {}
+    "C:\\Users\\MI PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj",
+      "projectUniqueName": "F:\\3.PROYECTOS\\CMS-Site\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj",
       "projectName": "CMS.Aplicacion",
-      "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj",
-      "packagesPath": "C:\\Users\\Consultor2015\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Aplicacion\\obj\\",
+      "projectPath": "F:\\3.PROYECTOS\\CMS-Site\\CMS\\CMS\\CMS.Aplicacion\\CMS.Aplicacion.csproj",
+      "packagesPath": "C:\\Users\\MI PC\\.nuget\\packages\\",
+      "outputPath": "F:\\3.PROYECTOS\\CMS-Site\\CMS\\CMS\\CMS.Aplicacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Consultor2015\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -889,8 +889,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj": {
-              "projectPath": "C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj"
+            "F:\\3.PROYECTOS\\CMS-Site\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj": {
+              "projectPath": "F:\\3.PROYECTOS\\CMS-Site\\CMS\\CMS\\CMS.Dominio\\CMS.Dominio.csproj"
             }
           }
         }
@@ -926,16 +926,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Consultor2015\\Documents\\SERGIO\\RECURSOS\\CMS\\CMS\\CMS\\CMS.Aplicacion\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
