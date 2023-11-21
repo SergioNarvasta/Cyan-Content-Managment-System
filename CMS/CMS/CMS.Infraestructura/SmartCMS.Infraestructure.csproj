@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CMS.Aplicacion\CMS.Aplicacion.csproj" />
+    <ProjectReference Include="..\CMS.Aplicacion\SmartCMS.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

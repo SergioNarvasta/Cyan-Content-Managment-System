@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -27,8 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CMS.Aplicacion\CMS.Aplicacion.csproj" />
-    <ProjectReference Include="..\CMS.Infraestructura\CMS.Infraestructura.csproj" />
+    <ProjectReference Include="..\CMS.Aplicacion\SmartCMS.Application.csproj" />
+    <ProjectReference Include="..\CMS.Infraestructura\SmartCMS.Infraestructure.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

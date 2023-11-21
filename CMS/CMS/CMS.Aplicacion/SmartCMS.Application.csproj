@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CMS.Dominio\CMS.Dominio.csproj" />
+    <ProjectReference Include="..\CMS.Dominio\SmartCMS.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

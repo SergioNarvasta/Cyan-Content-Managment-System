@@ -18,7 +18,6 @@ namespace Site.Controllers
 		public HomeController(ILogger<HomeController> logger, 
             ISiteMenuOptionsRepository siteMenuOptionsRepository,
 			ICompanyRepository companyRepository,
-
 			IConfiguration configuration)
         {
             _siteMenuOptionsRepository = siteMenuOptionsRepository;
