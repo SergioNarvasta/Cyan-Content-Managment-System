@@ -50,3 +50,7 @@
 *.txt
 /.vs/VSWorkspaceState.json
 /CMS/CMS/.vs/CMS/DesignTimeBuild/.dtbcache.v2
+*.dll
+*.dll
+*.BuildWithSkipAnalyzers
+*.CopyComplete
