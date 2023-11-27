@@ -49,3 +49,4 @@
 *.bin
 *.txt
 /.vs/VSWorkspaceState.json
+/CMS/CMS/.vs/CMS/DesignTimeBuild/.dtbcache.v2
