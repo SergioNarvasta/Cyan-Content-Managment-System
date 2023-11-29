@@ -54,3 +54,4 @@
 *.dll
 *.BuildWithSkipAnalyzers
 *.CopyComplete
+*.pdb
