@@ -1,5 +1,5 @@
 using CMS.Aplicacion.Interfaces;
-using CMS.Infraestructura.Repositorios;
+using SmartCMS.Infraestructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
