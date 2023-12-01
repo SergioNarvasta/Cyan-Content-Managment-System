@@ -4,7 +4,7 @@ using CyanCMS.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 
-namespace WebApp.Controllers
+namespace CyanCMS.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -17,14 +17,14 @@ namespace WebApp.Controllers
             _contentSecAppService = contentSecAppService;
         }
 
-        [Route("listatodos")]
+        [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _contentSecAppService.GetAll());
         }
 
-        [Route("registro")]
+        [Route("Create")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] ContentSec model)
         {
@@ -39,7 +39,7 @@ namespace WebApp.Controllers
             return Created("Created", true);
         }
 
-		[Route("actualiza")]
+		[Route("Update")]
 		[HttpPut("{id}")]
 		public async Task<IActionResult> Update([FromBody] ContentSec model, string id)
 		{
@@ -51,7 +51,7 @@ namespace WebApp.Controllers
 			return Created("Update", true);
 		}
 
-		[Route("elimina")]
+		[Route("Delete")]
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{

@@ -1,6 +1,8 @@
 ﻿
 using CMS.Aplicacion.Interfaces;
 using CMS.Dominio.Entidades;
+using CyanCMS.Domain.Entities;
+using CyanCMS.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 
@@ -17,14 +19,14 @@ namespace WebApp.Controllers
 			_titleComponentService = titleComponentService;
         }
 
-        [Route("listatodos")]
+        [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _titleComponentService.GetAll());
         }
 
-        [Route("registro")]
+        [Route("Create")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] TitleComponent model)
         {
@@ -38,7 +40,7 @@ namespace WebApp.Controllers
             return Created("Created", true);
         }
 
-		[Route("actualiza")]
+		[Route("Update")]
 		[HttpPut("{id}")]
 		public async Task<IActionResult> Update([FromBody] TitleComponent model, string id)
 		{
@@ -50,7 +52,7 @@ namespace WebApp.Controllers
 			return Created("Update", true);
 		}
 
-		[Route("elimina")]
+		[Route("Delete")]
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{

@@ -1,55 +1,54 @@
 ﻿
 using CMS.Aplicacion.Interfaces;
 using CMS.Dominio.Entidades;
-using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
+using CyanCMS.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 
-namespace WebApp.Controllers
+namespace CyanCMS.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SliderMainController : ControllerBase
+    public class TitleComponentController : ControllerBase
     {
-        private readonly ISliderMainAppService _sSliderMainAppService;
+        private readonly ITitleComponentService _titleComponentService;
 
-        public SliderMainController(ISliderMainAppService sliderMainAppService) 
+        public TitleComponentController(ITitleComponentService titleComponentService) 
         {
-            _sSliderMainAppService = sliderMainAppService;
+			_titleComponentService = titleComponentService;
         }
 
         [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _sSliderMainAppService.GetAll());
+            return Ok(await _titleComponentService.GetAll());
         }
 
         [Route("Create")]
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] SliderMain model)
+        public async Task<IActionResult> Create([FromBody] TitleComponent model)
         {
             if (model == null)
                 return BadRequest();
-			
-			model.SliderMain_Estado = 1;
-            model.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
-            model.SliderMain_Pk = Guid.NewGuid().ToString();
 
-            await _sSliderMainAppService.Insert(model);
+            model.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
+            model.TitleComponent_Pk = Guid.NewGuid().ToString();
+
+            await _titleComponentService.Insert(model);
             return Created("Created", true);
         }
 
 		[Route("Update")]
 		[HttpPut("{id}")]
-		public async Task<IActionResult> Update([FromBody] SliderMain model, string id)
+		public async Task<IActionResult> Update([FromBody] TitleComponent model, string id)
 		{
 			if (model == null)
 				return BadRequest();
 
-            model.SliderMain_Id = new MongoDB.Bson.ObjectId(id);
-            await _sSliderMainAppService.Update(model);
+			model.TitleComponent_Id = new MongoDB.Bson.ObjectId(id);
+            await _titleComponentService.Update(model);
 			return Created("Update", true);
 		}
 
@@ -57,7 +56,7 @@ namespace WebApp.Controllers
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{
-			await _sSliderMainAppService.Delete(id);
+			await _titleComponentService.Delete(id);
 			return NoContent();
 		}
 	}

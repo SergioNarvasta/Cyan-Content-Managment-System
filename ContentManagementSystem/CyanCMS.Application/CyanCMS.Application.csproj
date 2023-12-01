@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CyanCMS.Domain\CyanCMS.Domain.csproj" />
     <ProjectReference Include="..\CyanCMS.Infraestructure\CyanCMS.Infraestructure.csproj" />
   </ItemGroup>

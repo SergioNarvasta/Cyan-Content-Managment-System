@@ -9,7 +9,7 @@ namespace CMS.Infraestructura.Data
         public IMongoDatabase db;
 
         public MongoDBRepository(){
-            client = new MongoClient("mongodb+srv://s76325953:s76325953@cluster0.acwg8vw.mongodb.net");
+            client = new MongoClient("mongodb+srv://sergio:<password>@itcyandb.d0wzskg.mongodb.net/");
             db = client.GetDatabase("CyanCMSDb_Dev");
         }
     }

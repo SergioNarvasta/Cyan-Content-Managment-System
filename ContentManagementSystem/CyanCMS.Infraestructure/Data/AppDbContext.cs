@@ -7,19 +7,26 @@ namespace CMS.Infraestructure.Data
 {
 	public class AppDbContext : DbContext
 	{
-		public readonly string connectionString;
+        /*
+         
+         Add-Migration -Context Infraestructure.Data.AppDbContext -name init_01 -verbose
+         Update-Database -Verbose -Context AppDbContext
+         
+         Remove-Migration -Context AppDbContext
 
-		public AppDbContext(DbContextOptions<AppDbContext> options)
+        */
+        public AppDbContext(DbContextOptions<AppDbContext> options)
 		   : base(options)
 		{
 			
 		}
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseSqlServer(connectionString);
-		}
 
 		public DbSet<User> User { get; set; }
 		public DbSet<Company> Company { get; set; }
-	}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+        }
+    }
 }

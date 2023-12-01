@@ -2,7 +2,7 @@
 
 namespace CyanCMS.Application.Interfaces
 {
-    public interface ITitleComponentService
+    public interface ITitleComponentAppService
 	{
         Task Delete(string id);
         Task<IEnumerable<TitleComponent>> GetAll();

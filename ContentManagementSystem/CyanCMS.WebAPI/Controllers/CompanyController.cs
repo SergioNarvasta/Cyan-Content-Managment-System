@@ -1,11 +1,10 @@
 ﻿
-using CMS.Aplicacion.Interfaces;
-using CMS.Dominio.Entidades;
+
 using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApp.Controllers
+namespace CyanCMS.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -18,21 +17,21 @@ namespace WebApp.Controllers
 			_companyAppService = companyAppService;
         }
 
-        [Route("Company/GetAll")]
+        [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _companyAppService.GetAll());
         }
 
-        [Route("Company/GetById")]
+        [Route("GetById")]
         [HttpPost]
         public async Task<IActionResult> GetById(string User_Pk)
         {
             return Ok(await _companyAppService.GetById(User_Pk));
         }
 
-        [Route("Company/Create")]
+        [Route("Create")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Company company)
         {
@@ -47,7 +46,7 @@ namespace WebApp.Controllers
             return Created("Created", true);
         }
 
-		[Route("Company/Update")]
+		[Route("Update")]
 		[HttpPut("{id}")]
 		public async Task<IActionResult> Update([FromBody] Company company, string id)
 		{
@@ -59,7 +58,7 @@ namespace WebApp.Controllers
 			return Created("Update", true);
 		}
 
-		[Route("Company/Delete")]
+		[Route("Delete")]
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{

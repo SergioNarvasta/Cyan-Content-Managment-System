@@ -3,7 +3,8 @@ using CMS.Dominio.Entidades;
 using CMS.Infraestructura.Data;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using CMS.Dominio.Dto;
+using CyanCMS.Domain.Entities;
+using CyanCMS.Domain.Dto;
 
 namespace SmartCMS.Infraestructure.Services
 {
@@ -16,7 +17,7 @@ namespace SmartCMS.Infraestructure.Services
         {
             collection = _repository.db.GetCollection<User>("User");
         }
-        public async Task<User> Session(Dtosesion request)
+        public async Task<User> Session(SessionDto request)
         {
             User user = await collection.FindAsync(new BsonDocument
                { { "User_Email", request.correo },{ "User_Token",request.clave } })

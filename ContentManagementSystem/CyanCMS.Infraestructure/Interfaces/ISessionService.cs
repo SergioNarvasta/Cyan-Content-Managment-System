@@ -1,10 +1,12 @@
-﻿using CMS.Dominio.Entidades;
-using CMS.Dominio.Dto;
+﻿
+
+using CyanCMS.Domain.Dto;
+using CyanCMS.Domain.Entities;
 
 namespace CMS.Aplicacion.Interfaces
 {
 	public interface ISessionService
 	{
-		Task<User> Session(Dtosesion request);
+		Task<User> Session(SessionDto request);
 	}
 }

@@ -3,7 +3,7 @@ using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApp.Controllers
+namespace CyanCMS.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -16,14 +16,14 @@ namespace WebApp.Controllers
             _asideAppService = asideAppService;
         }
 
-        [Route("Aside/GetAll")]
+        [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _asideAppService.GetAll());
         }
 
-        [Route("Aside/Create")]
+        [Route("Create")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Aside model)
         {
@@ -38,7 +38,7 @@ namespace WebApp.Controllers
             return Created("Created", true);
         }
 
-		[Route("Aside/Update")]
+		[Route("Update")]
 		[HttpPut("{id}")]
 		public async Task<IActionResult> Update([FromBody] Aside model, string id)
 		{
@@ -50,7 +50,7 @@ namespace WebApp.Controllers
 			return Created("Update", true);
 		}
 
-		[Route("Aside/Delete")]
+		[Route("Delete")]
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{

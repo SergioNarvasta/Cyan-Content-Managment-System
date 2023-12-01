@@ -4,6 +4,6 @@ namespace CyanCMS.Application.Interfaces
 {
 	public interface ISessionAppService
 	{
-		Task<User> Session(Dtosesion request);
+		//Task<User> Session(Dtosesion request);
 	}
 }

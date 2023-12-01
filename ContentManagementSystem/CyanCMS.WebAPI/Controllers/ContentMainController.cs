@@ -3,7 +3,7 @@ using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApp.Controllers
+namespace CyanCMS.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

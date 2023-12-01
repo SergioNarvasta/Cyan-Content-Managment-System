@@ -18,8 +18,8 @@ namespace CMS.Infraestructura.Services
        
 		public async Task Delete(string id)
         {
-            using var connection = new SqlConnection(_dbContext.connectionString);
-            await connection.QuerySingleAsync<int>(@" ", new { });
+            //using var connection = new SqlConnection(_dbContext.connectionString);
+            //await connection.QuerySingleAsync<int>(@" ", new { });
         }
 
         public async Task<IEnumerable<Company>> GetAll()
@@ -45,8 +45,8 @@ namespace CMS.Infraestructura.Services
 
         public async Task Update(Company company)
         {
-            using var connection = new SqlConnection(_dbContext.connectionString);
-            await connection.QuerySingleAsync<int>(@" ", new { });
+            //using var connection = new SqlConnection(_dbContext.connectionString);
+            //await connection.QuerySingleAsync<int>(@" ", new { });
         }
     }
 }

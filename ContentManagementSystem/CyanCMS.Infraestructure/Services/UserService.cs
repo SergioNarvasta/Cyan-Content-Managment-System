@@ -5,21 +5,22 @@ using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace CMS.Infraestructura.Services
 {
     public class UserService
     {
         public readonly AppDbContext _dbContext;
-        private readonly string conn;
+        private readonly string connection;
         public UserService(IConfiguration configuration)
         {
-            conn = configuration.GetConnectionString("");
+            connection = configuration.GetConnectionString("AzureSQLDatabaseConnection");
         }
         public async Task DeleteUser(string id)
         {
-            using var connection = new SqlConnection(_dbContext.connectionString);
-            await connection.QuerySingleAsync<int>(@"DELETE FROM User WHERE User_Pk = @id", new {id });
+            using var cn = new SqlConnection(connection);
+            await cn.QuerySingleAsync<int>(@"DELETE FROM User WHERE User_Pk = @id", new {id });
         }
 
         public async Task<IEnumerable<User>> GetAllUser()
@@ -43,8 +44,8 @@ namespace CMS.Infraestructura.Services
 
         public async Task UpdateUser(User user)
         {
-            using var connection = new SqlConnection(_dbContext.connectionString);
-            await connection.QuerySingleAsync<int>(@" ", new { });
+            using var cn = new SqlConnection(connection);
+            await cn.QuerySingleAsync<int>(@" ", new { });
         }
     }
 }

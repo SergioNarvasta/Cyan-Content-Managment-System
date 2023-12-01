@@ -1,12 +1,10 @@
 ﻿
-using CMS.Aplicacion.Interfaces;
-using CMS.Dominio.Entidades;
 using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 
-namespace WebApp.Controllers
+namespace CyanCMS.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -19,7 +17,7 @@ namespace WebApp.Controllers
 			_partnerAppService = partnerAppService;
         }
 
-        [Route("listatodos")]
+        [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {

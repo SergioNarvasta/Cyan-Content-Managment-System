@@ -6,7 +6,7 @@ using CyanCMS.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 
-namespace WebApp.Controllers
+namespace CyanCMS.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

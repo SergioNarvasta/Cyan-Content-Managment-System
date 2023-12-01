@@ -3,6 +3,8 @@ using Dapper;
 using Microsoft.Data.SqlClient;
 using CMS.Infraestructure.Data;
 using CyanCMS.Domain.Entities;
+using CyanCMS.Domain.Dto;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace CMS.Infraestructura.Services
@@ -16,14 +18,15 @@ namespace CMS.Infraestructura.Services
         }
 
 
-        public async Task<User> Session(Dtosesion request)
+        public async Task<User> Session(SessionDto request)
         {
             string User_Email = request.correo;
             string User_Token = request.clave;
-            using var connection = new SqlConnection(_dbContext.connectionString);
-            return await connection.QueryFirstOrDefaultAsync<User>(@"SELECT * FROM User 
-                            WHERE User_Email= @User_Email AND User_Token = @User_Token ", 
-                            new { User_Email, User_Token });
+
+            return await _dbContext.User
+                .Where(s => string.Equals(s.User_Email, User_Email) && string.Equals(s.User_Token, User_Token))
+                .FirstAsync();
+           
 
         }
     }

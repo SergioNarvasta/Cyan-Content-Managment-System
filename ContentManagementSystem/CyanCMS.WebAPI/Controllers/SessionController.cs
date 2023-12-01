@@ -1,8 +1,10 @@
 ﻿using CMS.Aplicacion.Interfaces;
+using CyanCMS.Domain.Dto;
+using CyanCMS.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApp.Controllers
+namespace CyanCMS.WebAPI.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
@@ -15,9 +17,9 @@ namespace WebApp.Controllers
 		}
 
 
-		/*[HttpPost]
+		[HttpPost]
 		[Route("Login")]
-		public async Task<IActionResult> Login([FromBody] Dtosesion request)
+		public async Task<IActionResult> Login([FromBody] SessionDto request)
 		{
 			User usuario = new User();
 			try
@@ -33,6 +35,6 @@ namespace WebApp.Controllers
 			{
 				return StatusCode(StatusCodes.Status500InternalServerError, usuario);
 			}
-		}*/
+		}
 	}
 }
