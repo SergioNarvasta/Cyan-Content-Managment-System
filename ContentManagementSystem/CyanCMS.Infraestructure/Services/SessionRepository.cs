@@ -7,7 +7,7 @@ using CMS.Dominio.Dto;
 
 namespace SmartCMS.Infraestructure.Services
 {
-    public class SessionRepository : ISessionAppService
+    public class SessionRepository : ISessionService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private readonly IMongoCollection<User> collection;

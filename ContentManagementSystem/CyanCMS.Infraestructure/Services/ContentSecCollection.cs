@@ -1,12 +1,13 @@
-﻿using CMS.Dominio.Entidades;
+﻿
 using CMS.Infraestructura.Data;
-using CMS.Aplicacion.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using CyanCMS.Domain.Entities;
+using CyanCMS.Infraestructure.Interfaces;
 
 namespace SmartCMS.Infraestructure.Services
 {
-    public class ContentSecCollection : IContentSecAppService
+    public class ContentSecCollection : IContentSecService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private readonly IMongoCollection<ContentSec> collection;

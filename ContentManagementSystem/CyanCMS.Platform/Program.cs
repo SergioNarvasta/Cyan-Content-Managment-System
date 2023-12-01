@@ -1,4 +1,4 @@
-using CMS.Infraestructura.Data;
+using CMS.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 

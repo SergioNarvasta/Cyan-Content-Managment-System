@@ -1,8 +1,10 @@
-﻿using CyanCMS.Domain.Entities;
+﻿
 
-namespace CyanCMS.Application.Interfaces
+using CyanCMS.Domain.Entities;
+
+namespace CyanCMS.Infraestructure.Interfaces
 {
-	public interface ICompanyAppService
+	public interface ICompanyService
 	{
 		Task Delete(string id);
 		Task<IEnumerable<Company>> GetAll();

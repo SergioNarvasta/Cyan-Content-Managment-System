@@ -1,10 +1,10 @@
-﻿using CMS.Dominio.Entidades;
+﻿
+using CyanCMS.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace CMS.Infraestructura.Data
+namespace CMS.Infraestructure.Data
 {
-	
 	public class AppDbContext : DbContext
 	{
 		public readonly string connectionString;
@@ -12,8 +12,7 @@ namespace CMS.Infraestructura.Data
 		public AppDbContext(DbContextOptions<AppDbContext> options)
 		   : base(options)
 		{
-			connectionString = "";
-				//configuration.GetConnectionString("DefaultConnection");
+			
 		}
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{

@@ -1,4 +1,4 @@
-﻿using CyanCMS.Domain.Entities
+﻿using CyanCMS.Domain.Entities;
 
 namespace CyanCMS.Application.Interfaces
 {

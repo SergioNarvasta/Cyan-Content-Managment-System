@@ -1,5 +1,6 @@
-﻿using MongoDB.Bson;
-using CMS.Dominio.Comunes;
+﻿using CyanCMS.Domain.Common;
+using MongoDB.Bson;
+
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace CyanCMS.Domain.Entities

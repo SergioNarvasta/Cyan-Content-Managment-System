@@ -1,4 +1,5 @@
-﻿using CMS.Dominio.Comunes;
+﻿using CMS.Dominio.Common;
+using CyanCMS.Domain.Common;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 

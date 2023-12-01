@@ -1,8 +1,9 @@
-﻿using CyanCMS.Domain.Entities;
+﻿using CMS.Dominio.Entidades;
+using CyanCMS.Domain.Entities;
 
-namespace CyanCMS.Application.Interfaces
+namespace CyanCMS.Infraestructure.Interfaces
 {
-    public interface IAsideAppService
+    public interface IAsideService
     {
         Task Delete(string id);
         Task<IEnumerable<Aside>> GetAll();

@@ -1,12 +1,13 @@
-﻿using CMS.Dominio.Entidades;
+﻿
 using CMS.Infraestructura.Data;
-using CMS.Aplicacion.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using CyanCMS.Domain.Entities;
+using CyanCMS.Infraestructure.Interfaces;
 
 namespace SmartCMS.Infraestructure.Services
 {
-    public class AsideCollection : IAsideAppService
+    public class AsideCollection : IAsideService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private readonly IMongoCollection<Aside> collection;

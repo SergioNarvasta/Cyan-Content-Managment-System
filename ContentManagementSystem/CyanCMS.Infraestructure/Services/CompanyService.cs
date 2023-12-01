@@ -1,33 +1,34 @@
-﻿using CMS.Aplicacion.Interfaces;
-using CMS.Dominio.Entidades;
-using CMS.Infraestructura.Data;
+﻿
+using CMS.Infraestructure.Data;
+using CyanCMS.Domain.Entities;
+using CyanCMS.Infraestructure.Interfaces;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace CMS.Infraestructura.Services
 {
-    public class CompanyService 
-	{
+    public class CompanyService : ICompanyService
+    {
         public readonly AppDbContext _dbContext;
         public CompanyService(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
        
-		public async Task DeleteCompany(string id)
+		public async Task Delete(string id)
         {
             using var connection = new SqlConnection(_dbContext.connectionString);
             await connection.QuerySingleAsync<int>(@" ", new { });
         }
 
-        public async Task<IEnumerable<Company>> GetAllCompany()
+        public async Task<IEnumerable<Company>> GetAll()
         {
             var list = await _dbContext.Company.ToListAsync();
             return list;
         }
 
-        public async Task<Company> GetCompanyById(string id)
+        public async Task<Company> GetById(string id)
         {
             Company companyEmpty = new Company();
             var company = await _dbContext.Company.FindAsync(id);
@@ -36,13 +37,13 @@ namespace CMS.Infraestructura.Services
             return company;
         }
 
-        public async Task InsertCompany(Company company)
+        public async Task Insert(Company company)
         {
             _dbContext.Company.Add(company);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task UpdateCompany(Company company)
+        public async Task Update(Company company)
         {
             using var connection = new SqlConnection(_dbContext.connectionString);
             await connection.QuerySingleAsync<int>(@" ", new { });

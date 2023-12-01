@@ -1,12 +1,13 @@
-﻿using CMS.Dominio.Entidades;
+﻿
 using CMS.Infraestructura.Data;
-using CMS.Aplicacion.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using CyanCMS.Infraestructure.Interfaces;
+using CyanCMS.Domain.Entities;
 
 namespace SmartCMS.Infraestructure.Services
 {
-    public class UserCollection : IUserAppService
+    public class UserCollection : IUserService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private readonly IMongoCollection<User> collection;

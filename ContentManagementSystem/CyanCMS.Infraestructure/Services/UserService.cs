@@ -1,12 +1,10 @@
-﻿using CMS.Aplicacion.Interfaces;
-using CMS.Dominio.Entidades;
-using CMS.Infraestructura.Data;
+﻿
+using CMS.Infraestructure.Data;
+using CyanCMS.Domain.Entities;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using MongoDB.Driver.Core.Configuration;
-
 
 namespace CMS.Infraestructura.Services
 {

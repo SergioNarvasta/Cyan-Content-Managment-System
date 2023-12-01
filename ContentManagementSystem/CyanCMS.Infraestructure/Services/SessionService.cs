@@ -1,10 +1,8 @@
 ﻿
-using CMS.Aplicacion.Interfaces;
-using CMS.Dominio.Entidades;
-using CMS.Infraestructura.Data;
 using Dapper;
 using Microsoft.Data.SqlClient;
-using CMS.Dominio.Dto;
+using CMS.Infraestructure.Data;
+using CyanCMS.Domain.Entities;
 
 
 namespace CMS.Infraestructura.Services

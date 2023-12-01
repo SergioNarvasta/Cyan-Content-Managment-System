@@ -1,8 +1,9 @@
-﻿using CyanCMS.Domain.Entities;
+﻿
+using CyanCMS.Domain.Entities;
 
-namespace CyanCMS.Application.Interfaces
+namespace CyanCMS.Infraestructure.Interfaces
 {
-    public interface IContentSecAppService
+    public interface IContentSecService
     {
         Task Delete(string id);
         Task<IEnumerable<ContentSec>> GetAll();

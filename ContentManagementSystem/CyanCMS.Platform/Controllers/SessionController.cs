@@ -11,8 +11,8 @@ namespace WebApp.Controllers
 	[ApiController]
 	public class SessionController : ControllerBase
 	{
-		private readonly ISessionAppService _sessionAppService;
-		public SessionController(ISessionAppService sessionAppService) 
+		private readonly ISessionService _sessionAppService;
+		public SessionController(ISessionService sessionAppService) 
 		{
 		    _sessionAppService = sessionAppService;
 		}

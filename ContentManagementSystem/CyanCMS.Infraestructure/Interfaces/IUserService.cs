@@ -1,8 +1,9 @@
-﻿using CyanCMS.Domain.Entities;
+﻿using CMS.Dominio.Entidades;
+using CyanCMS.Domain.Entities;
 
-namespace CyanCMS.Application.Interfaces
+namespace CyanCMS.Infraestructure.Interfaces
 {
-	public interface IUserAppService
+	public interface IUserService
 	{
 		Task Delete(string id);
 		Task<IEnumerable<User>> GetAll();

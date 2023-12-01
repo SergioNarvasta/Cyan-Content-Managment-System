@@ -2,7 +2,7 @@
 
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
-using CMS.Dominio.Comunes;
+using CyanCMS.Domain.Common;
 
 namespace CyanCMS.Domain.Entities
 {

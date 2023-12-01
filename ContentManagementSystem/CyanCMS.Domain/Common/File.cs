@@ -1,8 +1,5 @@
 ﻿
-
-using CyanCMS.Domain.Common;
-
-namespace CMS.Dominio.Common
+namespace CyanCMS.Domain.Common
 {
     public class FileClass : Audit
     {

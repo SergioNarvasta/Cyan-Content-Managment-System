@@ -3,10 +3,12 @@ using CMS.Infraestructura.Data;
 using CMS.Aplicacion.Interfaces;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using CyanCMS.Infraestructure.Interfaces;
+using CyanCMS.Domain.Entities;
 
 namespace SmartCMS.Infraestructure.Services
 {
-    public class SliderMainCollection : ISliderMainAppService
+    public class SliderMainCollection : ISliderMainService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private readonly IMongoCollection<SliderMain> collection;
