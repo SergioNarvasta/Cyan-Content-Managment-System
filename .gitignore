@@ -36,3 +36,14 @@
 *.v2
 /ContentManagementSystem/.vs/ProjectEvaluation/contentmanagementsystem.metadata.v7.bin
 /ContentManagementSystem/.vs/ProjectEvaluation/contentmanagementsystem.projects.v7.bin
+/ContentManagementSystem/CyanCMS.Application/bin/Debug/net8.0
+*.config
+/ContentManagementSystem/CyanCMS.Domain/bin/Debug/net8.0
+/ContentManagementSystem/CyanCMS.Infraestructure/bin/Debug/net8.0
+/ContentManagementSystem/CyanCMS.WebAPI/bin/Debug/net8.0/runtimes
+/ContentManagementSystem/CyanCMS.WebAPI/bin/Debug/net8.0
+/ContentManagementSystem/CyanCMS.WebAPI/obj/Debug/net8.0/ref
+*.dll
+/ContentManagementSystem/CyanCMS.WebAPI/obj/Debug/net8.0/staticwebassets
+/ContentManagementSystem/CyanCMS.WebAPI/obj/Debug/net8.0
+/ContentManagementSystem/CyanCMS.WebAPI/obj
