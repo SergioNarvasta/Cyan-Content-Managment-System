@@ -33,3 +33,6 @@
 /ContentManagementSystem/CyanCMS.Site/obj
 /ContentManagementSystem/CyanCMS.Utils/obj/Debug/net8.0
 /ContentManagementSystem/CyanCMS.Utils/obj
+*.v2
+/ContentManagementSystem/.vs/ProjectEvaluation/contentmanagementsystem.metadata.v7.bin
+/ContentManagementSystem/.vs/ProjectEvaluation/contentmanagementsystem.projects.v7.bin
