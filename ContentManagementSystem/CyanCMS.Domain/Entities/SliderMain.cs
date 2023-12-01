@@ -2,7 +2,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace CMS.Dominio.Entidades
+namespace CyanCMS.Domain.Entities
 {
     public class SliderMain : FileClass
     {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMS.Dominio.Comunes
+namespace CMS.Dominio.Common
 {
-    internal class BaseEntity
+    public class BaseEntity
     {
     }
 }

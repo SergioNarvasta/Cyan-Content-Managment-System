@@ -11,4 +11,8 @@
     <Folder Include="Dto\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.22.0" />
+  </ItemGroup>
+
 </Project>

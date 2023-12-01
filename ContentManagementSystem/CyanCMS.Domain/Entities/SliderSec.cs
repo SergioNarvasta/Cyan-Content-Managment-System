@@ -3,7 +3,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using CMS.Dominio.Comunes;
 
-namespace CMS.Dominio.Entidades
+namespace CyanCMS.Domain.Entities
 {
     public class SliderSec : FileUnit
 	{

@@ -1,6 +1,6 @@
 ﻿
 
-namespace CMS.Dominio.Comunes
+namespace CyanCMS.Domain.Common
 {
     public class Audit
     {
