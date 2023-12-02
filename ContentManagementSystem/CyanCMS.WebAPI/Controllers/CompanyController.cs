@@ -17,23 +17,23 @@ namespace CyanCMS.WebAPI.Controllers
 			_companyAppService = companyAppService;
         }
 
-        [Route("GetAll")]
+        [Route("GetAllCompany")]
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllCompany()
         {
             return Ok(await _companyAppService.GetAll());
         }
 
-        [Route("GetById")]
+        [Route("GetCompanyById")]
         [HttpPost]
-        public async Task<IActionResult> GetById(string User_Pk)
+        public async Task<IActionResult> GetCompanyById(string User_Pk)
         {
             return Ok(await _companyAppService.GetById(User_Pk));
         }
 
-        [Route("Create")]
+        [Route("CreateCompany")]
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Company company)
+        public async Task<IActionResult> CreateCompany([FromBody] Company company)
         {
             if (company == null)
                 return BadRequest();
@@ -46,8 +46,8 @@ namespace CyanCMS.WebAPI.Controllers
             return Created("Created", true);
         }
 
-		[Route("Update")]
-		[HttpPut("{id}")]
+		[Route("UpdateCompany")]
+		[HttpPut]
 		public async Task<IActionResult> Update([FromBody] Company company, string id)
 		{
 			if (company == null)
@@ -58,7 +58,7 @@ namespace CyanCMS.WebAPI.Controllers
 			return Created("Update", true);
 		}
 
-		[Route("Delete")]
+		[Route("DeleteCompany")]
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{

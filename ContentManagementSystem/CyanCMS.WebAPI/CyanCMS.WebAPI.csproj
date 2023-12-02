@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CyanCMS.Application\CyanCMS.Application.csproj" />
     <ProjectReference Include="..\CyanCMS.Domain\CyanCMS.Domain.csproj" />
+    <ProjectReference Include="..\CyanCMS.Infraestructure\CyanCMS.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

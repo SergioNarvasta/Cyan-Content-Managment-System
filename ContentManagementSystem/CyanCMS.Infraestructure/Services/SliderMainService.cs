@@ -8,12 +8,12 @@ using CyanCMS.Domain.Entities;
 
 namespace SmartCMS.Infraestructure.Services
 {
-    public class SliderMainCollection : ISliderMainService
+    public class SliderMainService : ISliderMainService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private readonly IMongoCollection<SliderMain> collection;
 
-        public SliderMainCollection()
+        public SliderMainService()
         {
             collection = _repository.db.GetCollection<SliderMain>("SliderMain");
         }

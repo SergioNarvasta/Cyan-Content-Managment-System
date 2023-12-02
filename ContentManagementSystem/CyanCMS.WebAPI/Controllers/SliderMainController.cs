@@ -41,8 +41,8 @@ namespace CyanCMS.WebAPI.Controllers
             return Created("Created", true);
         }
 
-		[Route("Update")]
-		[HttpPut("{id}")]
+		[Route("UpdateSliderMain")]
+		[HttpPut]
 		public async Task<IActionResult> Update([FromBody] SliderMain model, string id)
 		{
 			if (model == null)

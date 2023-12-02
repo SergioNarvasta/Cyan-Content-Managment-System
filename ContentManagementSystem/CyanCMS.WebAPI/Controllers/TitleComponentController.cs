@@ -40,8 +40,8 @@ namespace CyanCMS.WebAPI.Controllers
             return Created("Created", true);
         }
 
-		[Route("Update")]
-		[HttpPut("{id}")]
+		[Route("UpdateTitleComponent")]
+		[HttpPut]
 		public async Task<IActionResult> Update([FromBody] TitleComponent model, string id)
 		{
 			if (model == null)

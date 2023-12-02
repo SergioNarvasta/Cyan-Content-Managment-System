@@ -17,14 +17,14 @@ namespace CyanCMS.WebAPI.Controllers
             _contentSecAppService = contentSecAppService;
         }
 
-        [Route("GetAll")]
+        [Route("GetAllContentSec")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _contentSecAppService.GetAll());
         }
 
-        [Route("Create")]
+        [Route("CreateContentSec")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] ContentSec model)
         {
@@ -39,8 +39,8 @@ namespace CyanCMS.WebAPI.Controllers
             return Created("Created", true);
         }
 
-		[Route("Update")]
-		[HttpPut("{id}")]
+		[Route("UpdateContentSec")]
+		[HttpPut]
 		public async Task<IActionResult> Update([FromBody] ContentSec model, string id)
 		{
 			if (model == null)
@@ -51,7 +51,7 @@ namespace CyanCMS.WebAPI.Controllers
 			return Created("Update", true);
 		}
 
-		[Route("Delete")]
+		[Route("DeleteContentSec")]
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{

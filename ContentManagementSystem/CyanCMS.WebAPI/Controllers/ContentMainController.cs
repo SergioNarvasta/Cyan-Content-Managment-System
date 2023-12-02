@@ -16,14 +16,14 @@ namespace CyanCMS.WebAPI.Controllers
             _contentMainAppService = contentMainAppService;
         }
 
-        [Route("GetAll")]
+        [Route("GetAllContentMain")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _contentMainAppService.GetAll());
         }
 
-        [Route("Create")]
+        [Route("CreateContentMain")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] ContentMain model)
         {
@@ -38,8 +38,8 @@ namespace CyanCMS.WebAPI.Controllers
             return Created("Created", true);
         }
 
-		[Route("Update")]
-		[HttpPut("{id}")]
+		[Route("UpdateContentMain")]
+		[HttpPut]
 		public async Task<IActionResult> Update([FromBody] ContentMain model, string id)
 		{
 			if (model == null)
@@ -50,7 +50,7 @@ namespace CyanCMS.WebAPI.Controllers
 			return Created("Update", true);
 		}
 
-		[Route("Delete")]
+		[Route("DeleteContentMain")]
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{

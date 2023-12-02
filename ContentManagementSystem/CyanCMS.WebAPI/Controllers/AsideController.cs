@@ -16,16 +16,16 @@ namespace CyanCMS.WebAPI.Controllers
             _asideAppService = asideAppService;
         }
 
-        [Route("GetAll")]
+        [Route("GetAllAside")]
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllAside()
         {
             return Ok(await _asideAppService.GetAll());
         }
 
-        [Route("Create")]
+        [Route("CreateAside")]
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Aside model)
+        public async Task<IActionResult> CreateAside([FromBody] Aside model)
         {
             if (model == null)
                 return BadRequest();
@@ -38,9 +38,9 @@ namespace CyanCMS.WebAPI.Controllers
             return Created("Created", true);
         }
 
-		[Route("Update")]
-		[HttpPut("{id}")]
-		public async Task<IActionResult> Update([FromBody] Aside model, string id)
+		[Route("UpdateAside")]
+		[HttpPut]
+		public async Task<IActionResult> UpdateAside([FromBody] Aside model, string id)
 		{
 			if (model == null)
 				return BadRequest();
@@ -50,9 +50,9 @@ namespace CyanCMS.WebAPI.Controllers
 			return Created("Update", true);
 		}
 
-		[Route("Delete")]
+		[Route("DeleteAside")]
 		[HttpDelete]
-		public async Task<IActionResult> Delete([FromBody] string id)
+		public async Task<IActionResult> DeleteAside([FromBody] string id)
 		{
 			await _asideAppService.Delete(id);
 			return NoContent();

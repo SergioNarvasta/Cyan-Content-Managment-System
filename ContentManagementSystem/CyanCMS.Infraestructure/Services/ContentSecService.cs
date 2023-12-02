@@ -7,12 +7,12 @@ using CyanCMS.Infraestructure.Interfaces;
 
 namespace SmartCMS.Infraestructure.Services
 {
-    public class ContentSecCollection : IContentSecService
+    public class ContentSecService : IContentSecService
     {
         internal MongoDBRepository _repository = new MongoDBRepository();
         private readonly IMongoCollection<ContentSec> collection;
 
-        public ContentSecCollection()
+        public ContentSecService()
         {
             collection = _repository.db.GetCollection<ContentSec>("ContentSec");
         }

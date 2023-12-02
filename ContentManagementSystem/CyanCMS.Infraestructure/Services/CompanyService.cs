@@ -18,8 +18,16 @@ namespace CMS.Infraestructura.Services
        
 		public async Task Delete(string id)
         {
-            //using var connection = new SqlConnection(_dbContext.connectionString);
-            //await connection.QuerySingleAsync<int>(@" ", new { });
+            var model = await _dbContext.Company
+                 .Where(x => x.Company_Pk == id && x.Company_Estado == 0)
+                 .AsNoTracking()
+                 .FirstOrDefaultAsync();
+
+            if(model!= null)
+            {
+                _dbContext.Company.Remove(model);
+                await _dbContext.SaveChangesAsync();
+            }  
         }
 
         public async Task<IEnumerable<Company>> GetAll()
@@ -43,10 +51,10 @@ namespace CMS.Infraestructura.Services
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task Update(Company company)
+        public async Task Update(Company model)
         {
-            //using var connection = new SqlConnection(_dbContext.connectionString);
-            //await connection.QuerySingleAsync<int>(@" ", new { });
+            _dbContext.Company.Update(model);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

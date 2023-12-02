@@ -39,8 +39,8 @@ namespace CyanCMS.WebAPI.Controllers
             return Created("Created", true);
         }
 
-		[Route("actualiza")]
-		[HttpPut("{id}")]
+		[Route("UpdatePartner")]
+		[HttpPut]
 		public async Task<IActionResult> Update([FromBody] Partner model, string id)
 		{
 			if (model == null)

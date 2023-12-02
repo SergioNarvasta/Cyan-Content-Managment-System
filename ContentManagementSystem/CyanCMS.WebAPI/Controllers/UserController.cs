@@ -38,8 +38,8 @@ namespace CyanCMS.WebAPI.Controllers
             return Created("Created", true);
         }
 
-		[Route("Update")]
-		[HttpPut("{id}")]
+		[Route("UpdateUser")]
+		[HttpPut]
 		public async Task<IActionResult> Update([FromBody] User user, string id)
 		{
 			if (user == null)
