@@ -48,3 +48,15 @@
 /ContentManagementSystem/CyanCMS.WebAPI/obj/Debug/net8.0
 /ContentManagementSystem/CyanCMS.WebAPI/obj
 /ContentManagementSystem/CyanCMS.Utils/bin/Debug/net8.0
+/ContentManagementSystem/CyanCMS.API/bin/Debug/net8.0/runtimes/linux/native
+/ContentManagementSystem/CyanCMS.API/bin/Debug/net8.0/runtimes/osx/native
+/ContentManagementSystem/CyanCMS.API/bin/Debug/net8.0
+/ContentManagementSystem/CyanCMS.API/obj/Debug/net8.0
+/ContentManagementSystem/CyanCMS.API/obj
+/ContentManagementSystem/CyanCMS.Application/bin/Release/net8.0
+/ContentManagementSystem/CyanCMS.Domain/bin/Release/net8.0
+/ContentManagementSystem/CyanCMS.Infraestructure/bin/Release/net8.0
+/ContentManagementSystem/CyanCMS.WebAPI/bin/Release/net8.0/linux-x64
+/ContentManagementSystem/CyanCMS.WebAPI/bin/Release/net8.0
+/ContentManagementSystem/CyanCMS.WebAPI/Properties
+/ContentManagementSystem/CyanCMS.API/Properties
