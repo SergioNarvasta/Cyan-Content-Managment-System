@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyanCMS.Infraestructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyanCMS.Utils", "CyanCMS.Utils\CyanCMS.Utils.csproj", "{8897908D-6342-43B8-A0BC-F3BEF58AF75E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyanCMS.WebAPI", "CyanCMS.WebAPI\CyanCMS.WebAPI.csproj", "{DAC666A8-A112-4591-8DF7-162D7269F86E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyanCMS.API", "CyanCMS.API\CyanCMS.API.csproj", "{4CF58AEF-1356-41D3-9330-B73178C46012}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{8897908D-6342-43B8-A0BC-F3BEF58AF75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8897908D-6342-43B8-A0BC-F3BEF58AF75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8897908D-6342-43B8-A0BC-F3BEF58AF75E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DAC666A8-A112-4591-8DF7-162D7269F86E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAC666A8-A112-4591-8DF7-162D7269F86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAC666A8-A112-4591-8DF7-162D7269F86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAC666A8-A112-4591-8DF7-162D7269F86E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF58AEF-1356-41D3-9330-B73178C46012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF58AEF-1356-41D3-9330-B73178C46012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF58AEF-1356-41D3-9330-B73178C46012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF58AEF-1356-41D3-9330-B73178C46012}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
