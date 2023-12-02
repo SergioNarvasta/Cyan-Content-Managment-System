@@ -11,11 +11,12 @@ namespace CyanCMS.Infraestructure.Services
 {
     public class UserService : IUserService
     {
-        public readonly AppDbContext _dbContext;
+        private readonly AppDbContext _dbContext;
         private readonly string connection;
-        public UserService(IConfiguration configuration)
+        public UserService(IConfiguration configuration, AppDbContext dbContext)
         {
             connection = configuration.GetConnectionString("AzureSQLDatabaseConnection");
+            _dbContext = dbContext;
         }
         public async Task Delete(string id)
         {
