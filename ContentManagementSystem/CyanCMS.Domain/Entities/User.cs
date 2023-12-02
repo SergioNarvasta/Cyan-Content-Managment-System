@@ -16,6 +16,8 @@ namespace CyanCMS.Domain.Entities
 		public string User_Token { get; set; }
 		public int User_Estado { get; set; }
 		public string Plan_Pk { get; set; }
-		public string Rol_Pk { get; set; }
+
+		public int Rol_Id_Fk { get; set; }
+		public Rol Rol { get; set; }
 	}
 }

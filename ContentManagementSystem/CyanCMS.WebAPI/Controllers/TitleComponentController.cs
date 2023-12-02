@@ -1,6 +1,8 @@
 ﻿
 using CMS.Aplicacion.Interfaces;
 using CMS.Dominio.Entidades;
+using CyanCMS.Application.Interfaces;
+using CyanCMS.Application.Services;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -12,18 +14,18 @@ namespace CyanCMS.WebAPI.Controllers
     [ApiController]
     public class TitleComponentController : ControllerBase
     {
-        private readonly ITitleComponentService _titleComponentService;
+        private readonly ITitleComponentAppService _titleComponentAppService;
 
-        public TitleComponentController(ITitleComponentService titleComponentService) 
+        public TitleComponentController(ITitleComponentAppService titleComponentAppService) 
         {
-			_titleComponentService = titleComponentService;
+			_titleComponentAppService = titleComponentAppService;
         }
 
         [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _titleComponentService.GetAll());
+            return Ok(await _titleComponentAppService.GetAll());
         }
 
         [Route("Create")]
@@ -36,7 +38,7 @@ namespace CyanCMS.WebAPI.Controllers
             model.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
             model.TitleComponent_Pk = Guid.NewGuid().ToString();
 
-            await _titleComponentService.Insert(model);
+            await _titleComponentAppService.Insert(model);
             return Created("Created", true);
         }
 
@@ -48,7 +50,7 @@ namespace CyanCMS.WebAPI.Controllers
 				return BadRequest();
 
 			model.TitleComponent_Id = new MongoDB.Bson.ObjectId(id);
-            await _titleComponentService.Update(model);
+            await _titleComponentAppService.Update(model);
 			return Created("Update", true);
 		}
 
@@ -56,7 +58,7 @@ namespace CyanCMS.WebAPI.Controllers
 		[HttpDelete]
 		public async Task<IActionResult> Delete([FromBody] string id)
 		{
-			await _titleComponentService.Delete(id);
+			await _titleComponentAppService.Delete(id);
 			return NoContent();
 		}
 	}

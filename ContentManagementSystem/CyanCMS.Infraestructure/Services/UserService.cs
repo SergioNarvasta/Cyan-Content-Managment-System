@@ -1,15 +1,15 @@
 ﻿
-using CMS.Infraestructure.Data;
+using CyanCMS.Infraestructure.Data;
 using CyanCMS.Domain.Entities;
+using CyanCMS.Infraestructure.Interfaces;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
-namespace CMS.Infraestructura.Services
+namespace CyanCMS.Infraestructure.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         public readonly AppDbContext _dbContext;
         private readonly string connection;
@@ -17,35 +17,35 @@ namespace CMS.Infraestructura.Services
         {
             connection = configuration.GetConnectionString("AzureSQLDatabaseConnection");
         }
-        public async Task DeleteUser(string id)
+        public async Task Delete(string id)
         {
             using var cn = new SqlConnection(connection);
             await cn.QuerySingleAsync<int>(@"DELETE FROM User WHERE User_Pk = @id", new {id });
         }
 
-        public async Task<IEnumerable<User>> GetAllUser()
+        public async Task<IEnumerable<User>> GetAll()
         {
             var list = await _dbContext.User.ToListAsync();
             return list;
         }
 
-        public async Task<User> GetUserById(string id)
+        public async Task<User> GetById(string id)
         {
             User? user = new User();
             user = await _dbContext.User.FindAsync(id);
             return user;
         }
 
-        public async Task InsertUser(User user)
+        public async Task Insert(User user)
         {
             _dbContext.User.Add(user);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task UpdateUser(User user)
+        public async Task Update(User user)
         {
-            using var cn = new SqlConnection(connection);
-            await cn.QuerySingleAsync<int>(@" ", new { });
+            _dbContext.User.Update(user);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

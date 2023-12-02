@@ -1,12 +1,11 @@
-﻿using CMS.Dominio.Entidades;
-using CMS.Infraestructura.Data;
-using CMS.Aplicacion.Interfaces;
+﻿
+using CyanCMS.Infraestructure.Data;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using CyanCMS.Infraestructure.Interfaces;
 using CyanCMS.Domain.Entities;
 
-namespace SmartCMS.Infraestructure.Services
+namespace CyanCMS.Infraestructure.Services
 {
     public class SliderMainService : ISliderMainService
     {

@@ -1,13 +1,13 @@
 ﻿
 using Dapper;
 using Microsoft.Data.SqlClient;
-using CMS.Infraestructure.Data;
+using CyanCMS.Infraestructure.Data;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Domain.Dto;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace CMS.Infraestructura.Services
+namespace CyanCMS.Infraestructure.Services
 {
     public class SessionService 
     {

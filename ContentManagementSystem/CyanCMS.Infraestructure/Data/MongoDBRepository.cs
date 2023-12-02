@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 
-namespace CMS.Infraestructura.Data
+namespace CyanCMS.Infraestructure.Data
 {
     public class MongoDBRepository
     {

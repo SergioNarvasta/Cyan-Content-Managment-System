@@ -1,11 +1,11 @@
 ﻿
-using CMS.Infraestructura.Data;
+using CyanCMS.Infraestructure.Data;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using CyanCMS.Infraestructure.Interfaces;
 using CyanCMS.Domain.Entities;
 
-namespace SmartCMS.Infraestructure.Services
+namespace CyanCMS.Infraestructure.Services
 {
     public class TitleComponentService : ITitleComponentService
     {

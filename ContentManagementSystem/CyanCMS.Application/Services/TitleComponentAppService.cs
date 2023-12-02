@@ -5,10 +5,10 @@ using CyanCMS.Infraestructure.Interfaces;
 
 namespace CyanCMS.Application.Services
 {
-    public class TitleComponentService : ITitleComponentAppService
+    public class TitleComponentAppService : ITitleComponentAppService
     {
         public readonly ITitleComponentService _titleComponentService;
-        public TitleComponentService(ITitleComponentService titleComponentService) {
+        public TitleComponentAppService(ITitleComponentService titleComponentService) {
             _titleComponentService = titleComponentService;
         }
         public async Task Delete(string id)

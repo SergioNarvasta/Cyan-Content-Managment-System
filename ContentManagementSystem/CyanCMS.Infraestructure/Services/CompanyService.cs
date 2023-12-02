@@ -1,12 +1,12 @@
 ﻿
-using CMS.Infraestructure.Data;
+using CyanCMS.Infraestructure.Data;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
-namespace CMS.Infraestructura.Services
+namespace CyanCMS.Infraestructure.Services
 {
     public class CompanyService : ICompanyService
     {

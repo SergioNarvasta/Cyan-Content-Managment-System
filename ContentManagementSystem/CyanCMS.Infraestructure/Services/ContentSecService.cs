@@ -1,11 +1,11 @@
 ﻿
-using CMS.Infraestructura.Data;
+using CyanCMS.Infraestructure.Data;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
 
-namespace SmartCMS.Infraestructure.Services
+namespace CyanCMS.Infraestructure.Services
 {
     public class ContentSecService : IContentSecService
     {

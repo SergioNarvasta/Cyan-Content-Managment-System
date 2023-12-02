@@ -1,12 +1,11 @@
-using CMS.Infraestructura.Services;
-using CMS.Infraestructure.Data;
+
+using CyanCMS.Infraestructure.Data;
 using CyanCMS.Application.Interfaces;
 using CyanCMS.Application.Services;
 using CyanCMS.Infraestructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using SmartCMS.Infraestructure.Services;
-using System;
+using CyanCMS.Infraestructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,7 +39,17 @@ builder.Services.AddTransient<IContentMainService, ContentMainService>();
 builder.Services.AddTransient<IContentSecAppService, ContentSecAppService>();
 builder.Services.AddTransient<IContentSecService, ContentSecService>();
 
-builder.Services.AddTransient<IContentSecService, ContentSecService>();
+builder.Services.AddTransient<IPartnerAppService, PartnerAppService>();
+builder.Services.AddTransient<IPartnerService, PartnerService>();
+
+builder.Services.AddTransient<ISliderMainAppService, SliderMainAppService>();
+builder.Services.AddTransient<ISliderMainService, SliderMainService>();
+
+builder.Services.AddTransient<ITitleComponentAppService, TitleComponentAppService>();
+builder.Services.AddTransient<ITitleComponentService, TitleComponentService>();
+
+builder.Services.AddTransient<IUserAppService, UserAppService>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 var app = builder.Build();
 

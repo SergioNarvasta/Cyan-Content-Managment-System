@@ -7,33 +7,33 @@ namespace CyanCMS.Application.Services
 {
     public class UserAppService : IUserAppService
     {
-        public readonly IUserAppService _userAppService;
-        public UserAppService(IUserAppService userAppService) {
-            _userAppService = userAppService;
+        public readonly IUserService _userService;
+        public UserAppService(IUserService userService) {
+            _userService = userService;
         }
         public async Task Delete(string id)
         {
-            await _userAppService.Delete(id);
+            await _userService.Delete(id);
         }
 
         public async Task<IEnumerable<User>> GetAll()
         {
-          return await _userAppService.GetAll();
+          return await _userService.GetAll();
         }
 
         public Task<User> GetById(string id)
         {
-            return _userAppService.GetById(id);
+            return _userService.GetById(id);
         }
 
         public async Task Insert(User model)
         {
-            await _userAppService.Insert(model);
+            await _userService.Insert(model);
         }
 
         public async Task Update(User model)
         {
-            await _userAppService.Update(model);
+            await _userService.Update(model);
         }
     }
 }

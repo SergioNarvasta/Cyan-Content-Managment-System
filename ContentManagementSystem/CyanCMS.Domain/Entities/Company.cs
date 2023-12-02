@@ -1,8 +1,6 @@
 ﻿
 using CyanCMS.Domain.Common;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 
 namespace CyanCMS.Domain.Entities
 {
@@ -17,7 +15,8 @@ namespace CyanCMS.Domain.Entities
 		public string Company_Email { get; set; }
 		public int Company_Estado { get; set; }
 		public string Plan_Pk {get;set;}
-		public string User_Pk { get; set; }
 
+		public int User_Id_Fk { get; set; }
+		public User User { get; set; }	
 	}
 }

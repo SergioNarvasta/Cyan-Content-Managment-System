@@ -40,12 +40,12 @@ namespace CyanCMS.WebAPI.Controllers
 
 		[Route("UpdateUser")]
 		[HttpPut]
-		public async Task<IActionResult> Update([FromBody] User user, string id)
+		public async Task<IActionResult> Update([FromBody] User user)
 		{
 			if (user == null)
 				return BadRequest();
 
-			user.User_Id = new MongoDB.Bson.ObjectId(id);
+			//user.User_Id = new MongoDB.Bson.ObjectId(id);
             await _userAppService.Update(user);
 			return Created("Update", true);
 		}
