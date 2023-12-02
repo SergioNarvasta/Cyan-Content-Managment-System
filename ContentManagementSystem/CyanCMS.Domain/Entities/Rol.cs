@@ -1,16 +1,13 @@
 ﻿
-
-using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
 using CyanCMS.Domain.Common;
-
+using System.ComponentModel.DataAnnotations;
 
 namespace CyanCMS.Domain.Entities
 {
 	public class Rol : Audit
 	{
-		[BsonId]
-		public ObjectId Rol_Id { get; set; }
+        [Key]
+        public int Rol_Id { get; set; }
 		public string Rol_Pk { get; set; }
 		public string Rol_Nombre { get; set; }
 		public string Rol_Descripcion { get; set; }

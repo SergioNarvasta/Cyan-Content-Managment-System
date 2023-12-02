@@ -1,14 +1,15 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
+﻿
 using CyanCMS.Domain.Common;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace CyanCMS.Domain.Entities
 {
 	public class Company : FileUnit
 	{
-		[BsonId]
-		public ObjectId Company_Id { get; set; }
+		[Key]
+		public int Company_Id { get; set; }
 		public string Company_Pk { get; set; }
 		public string Company_Nombre { get; set; }
 		public string Company_Direccion { get; set; }

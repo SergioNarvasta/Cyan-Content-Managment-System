@@ -1,15 +1,13 @@
 ﻿
-
-using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
 using CyanCMS.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace CyanCMS.Domain.Entities
 {
 	public class User : Audit
 	{
-		[BsonId]
-		public ObjectId User_Id { get; set; }
+        [Key]
+        public int User_Id { get; set; }
 		public string User_Pk { get; set; }
 		public string User_Nombre { get; set; }
 		public string User_Direccion { get; set; }
