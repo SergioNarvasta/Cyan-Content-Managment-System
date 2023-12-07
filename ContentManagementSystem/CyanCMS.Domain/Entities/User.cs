@@ -6,18 +6,17 @@ namespace CyanCMS.Domain.Entities
 {
 	public class User : Audit
 	{
-        [Key]
-        public int User_Id { get; set; }
-		public string User_Pk { get; set; }
-		public string User_Nombre { get; set; }
-		public string User_Direccion { get; set; }
-		public int User_Telefono { get; set; }
-		public string User_Email { get; set; }
-		public string User_Token { get; set; }
-		public int User_Estado { get; set; }
-		public string Plan_Pk { get; set; }
+		[Key]
+		public int UserId { get; set; }
+		public string UserName { get; set; }
+		public string UserAdress { get; set; }
+        [MaxLength(15, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
+        public string UserPhoneNumber { get; set; }
+		public string UserEmail { get; set; }
+		public string UserToken { get; set; }
+		public string PlanId { get; set; }
 
-		public int Rol_Id_Fk { get; set; }
+		public int RolId { get; set; }
 		public Rol Rol { get; set; }
 	}
 }

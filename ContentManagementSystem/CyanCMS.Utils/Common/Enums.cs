@@ -14,6 +14,7 @@ namespace Utils
         }
         public enum ComponentType
         {
+            MenuOption,
             SliderMain,
             ContentMain,
             ContentSec,
