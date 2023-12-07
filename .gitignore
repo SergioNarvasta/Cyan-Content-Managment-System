@@ -60,3 +60,6 @@
 /ContentManagementSystem/CyanCMS.WebAPI/bin/Release/net8.0
 /ContentManagementSystem/CyanCMS.WebAPI/Properties
 /ContentManagementSystem/CyanCMS.API/Properties
+/ContentManagementSystem/CyanCMS.WebPlatform/obj
+/ContentManagementSystem/CyanCMS.Platform/Properties
+/ContentManagementSystem/CyanCMS.WebPlatform/Properties
