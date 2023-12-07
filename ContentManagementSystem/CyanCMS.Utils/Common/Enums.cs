@@ -12,5 +12,15 @@ namespace Utils
             [Display(Name = "Inactivo")]
             Inactive = 0
         }
+        public enum ComponentType
+        {
+            SliderMain,
+            ContentMain,
+            ContentSec,
+            Aside,
+            SliderSmall,
+            SliderSec,
+            Partner
+        }
     }
 }

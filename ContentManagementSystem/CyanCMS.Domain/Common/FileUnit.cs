@@ -1,13 +1,28 @@
 ﻿
 
+using CyanCMS.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace CyanCMS.Domain.Common
 {
-    public class FileUnit : Audit
+    public class FileUnit :Audit
     {
-        public string File_Nombre { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int FiledId { get; set; }
+        [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
+        public string FileName { get; set; }
+        public string FileDescription { get; set;}
+        public string FileBase64 { get;set;}
+        public string FileSize { get; set; }
+        public bool IsDeleted { get; set; }
 
-        public string File_Base64 { get; set;}
+        [Required]
+        public int ComponentId { get; set; }
 
-        public string File_Tamanio { get;set;}
+        [ForeignKey("ComponentId")]
+        public Component Component { get; set; }
+
     }
 }
