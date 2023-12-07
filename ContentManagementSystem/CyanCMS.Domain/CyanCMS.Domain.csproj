@@ -10,4 +10,8 @@
     <PackageReference Include="MongoDB.Bson" Version="2.22.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CyanCMS.Utils\CyanCMS.Utils.csproj" />
+  </ItemGroup>
+
 </Project>

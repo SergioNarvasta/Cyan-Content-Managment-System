@@ -26,26 +26,8 @@ builder.Services.AddSwaggerGen(c =>
     c.CustomSchemaIds(x => x.FullName);
 });
 
-builder.Services.AddTransient<IAsideAppService, AsideAppService>();
-builder.Services.AddTransient<IAsideService, AsideService>();
-
 builder.Services.AddTransient<ICompanyAppService, CompanyAppService>();
 builder.Services.AddTransient<ICompanyService, CompanyService>();
-
-builder.Services.AddTransient<IContentMainAppService, ContentMainAppService>();
-builder.Services.AddTransient<IContentMainService, ContentMainService>();
-
-builder.Services.AddTransient<IContentSecAppService, ContentSecAppService>();
-builder.Services.AddTransient<IContentSecService, ContentSecService>();
-
-builder.Services.AddTransient<IPartnerAppService, PartnerAppService>();
-builder.Services.AddTransient<IPartnerService, PartnerService>();
-
-builder.Services.AddTransient<ISliderMainAppService, SliderMainAppService>();
-builder.Services.AddTransient<ISliderMainService, SliderMainService>();
-
-builder.Services.AddTransient<ITitleComponentAppService, TitleComponentAppService>();
-builder.Services.AddTransient<ITitleComponentService, TitleComponentService>();
 
 builder.Services.AddTransient<IUserAppService, UserAppService>();
 builder.Services.AddTransient<IUserService, UserService>();

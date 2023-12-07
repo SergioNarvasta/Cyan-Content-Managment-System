@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace CyanCMS.Domain.Entities
 {
-    public class Configuration
+    public class Configuration 
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ConfigurationId { get; set; }
+        public string? MainColor { get; set; }
+        public string? SecondaryColor { get; set;}
+
+        public List<ConfigurationComponentType> ?ConfigurationComponentTypes { get; set;}
     }
 }

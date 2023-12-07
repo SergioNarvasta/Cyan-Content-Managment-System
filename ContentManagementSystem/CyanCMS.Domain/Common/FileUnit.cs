@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CyanCMS.Domain.Common
 {
+    [Table("File")]
     public class FileUnit :Audit
     {
         [Key]

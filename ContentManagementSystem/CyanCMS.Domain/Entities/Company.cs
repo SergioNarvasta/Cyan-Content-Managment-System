@@ -5,14 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CyanCMS.Domain.Entities
 {
-	public class Company 
+	public class Company :Audit
 	{
 		[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CompanyId { get; set; }
 
         [Required]
-        public string? CompanyName { get; set; }
+        public string CompanyName { get; set; }
 		public string? CompanyAdress { get; set; }
 
         [MaxLength(15, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
@@ -23,7 +23,9 @@ namespace CyanCMS.Domain.Entities
 
         public List<Component>? Components { get; set; }
 
-        public int User_Id_Fk { get; set; }
-		public User User { get; set; }	
-	}
+        public int UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public User? User { get; set; }
+    }
 }

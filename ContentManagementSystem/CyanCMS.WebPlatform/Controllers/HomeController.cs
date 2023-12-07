@@ -1,4 +1,4 @@
-﻿using CyanCMS.WebPlatform.Models;
+using CyanCMS.WebPlatform.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

@@ -1,15 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>1e186de8-1df5-4450-b0aa-607097f72b3d</UserSecretsId>
+    <UserSecretsId>d25baa3d-0b9b-4468-af94-1ecb1bcc9ac2</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CyanCMS.Application\CyanCMS.Application.csproj" />
+    <ProjectReference Include="..\CyanCMS.Infraestructure\CyanCMS.Infraestructure.csproj" />
+    <ProjectReference Include="..\CyanCMS.Utils\CyanCMS.Utils.csproj" />
   </ItemGroup>
 
 </Project>
