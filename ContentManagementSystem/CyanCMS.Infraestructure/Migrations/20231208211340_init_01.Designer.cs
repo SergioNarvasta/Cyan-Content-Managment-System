@@ -4,6 +4,7 @@ using CyanCMS.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CyanCMS.Infraestructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231208211340_init_01")]
+    partial class init_01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -227,9 +230,6 @@ namespace CyanCMS.Infraestructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ConfigurationId"));
 
-                    b.Property<int>("CompanyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("MainColor")
                         .HasColumnType("nvarchar(max)");
 
@@ -237,9 +237,6 @@ namespace CyanCMS.Infraestructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ConfigurationId");
-
-                    b.HasIndex("CompanyId")
-                        .IsUnique();
 
                     b.ToTable("Configuration");
                 });
@@ -381,17 +378,6 @@ namespace CyanCMS.Infraestructure.Migrations
                     b.Navigation("Component");
                 });
 
-            modelBuilder.Entity("CyanCMS.Domain.Entities.Configuration", b =>
-                {
-                    b.HasOne("CyanCMS.Domain.Entities.Company", "Company")
-                        .WithOne("Configuration")
-                        .HasForeignKey("CyanCMS.Domain.Entities.Configuration", "CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Company");
-                });
-
             modelBuilder.Entity("CyanCMS.Domain.Entities.ConfigurationComponentType", b =>
                 {
                     b.HasOne("CyanCMS.Domain.Entities.ComponentType", "ComponentType")
@@ -414,8 +400,6 @@ namespace CyanCMS.Infraestructure.Migrations
             modelBuilder.Entity("CyanCMS.Domain.Entities.Company", b =>
                 {
                     b.Navigation("Components");
-
-                    b.Navigation("Configuration");
 
                     b.Navigation("Files");
                 });

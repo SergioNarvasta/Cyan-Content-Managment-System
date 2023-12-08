@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyanCMS.Infraestructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyanCMS.Utils", "CyanCMS.Utils\CyanCMS.Utils.csproj", "{8897908D-6342-43B8-A0BC-F3BEF58AF75E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyanCMS.WebAPI", "CyanCMS.API\CyanCMS.WebAPI.csproj", "{4CF58AEF-1356-41D3-9330-B73178C46012}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyanCMS.WebPlatform", "CyanCMS.WebPlatform\CyanCMS.WebPlatform.csproj", "{DD8B7DCF-FA5C-40F4-B916-597EFA71F1D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyanCMS.WebPlatform", "CyanCMS.WebPlatform\CyanCMS.WebPlatform.csproj", "{DD8B7DCF-FA5C-40F4-B916-597EFA71F1D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{8897908D-6342-43B8-A0BC-F3BEF58AF75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8897908D-6342-43B8-A0BC-F3BEF58AF75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8897908D-6342-43B8-A0BC-F3BEF58AF75E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CF58AEF-1356-41D3-9330-B73178C46012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CF58AEF-1356-41D3-9330-B73178C46012}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CF58AEF-1356-41D3-9330-B73178C46012}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CF58AEF-1356-41D3-9330-B73178C46012}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD8B7DCF-FA5C-40F4-B916-597EFA71F1D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD8B7DCF-FA5C-40F4-B916-597EFA71F1D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD8B7DCF-FA5C-40F4-B916-597EFA71F1D6}.Release|Any CPU.ActiveCfg = Release|Any CPU

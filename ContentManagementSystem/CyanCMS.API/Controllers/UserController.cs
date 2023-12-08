@@ -30,9 +30,9 @@ namespace CyanCMS.WebAPI.Controllers
             if (user == null)
                 return BadRequest();
 
-			user.User_Estado = 1;
-            user.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
-			user.User_Pk = Guid.NewGuid().ToString();
+			user.IsActive = true;
+            user.IsDeleted = false;
+            user.AuditCreateDate = DateTime.Now;
 
             await _userAppService.Insert(user);
             return Created("Created", true);

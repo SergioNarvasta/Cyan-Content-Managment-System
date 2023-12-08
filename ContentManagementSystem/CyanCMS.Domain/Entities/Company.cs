@@ -27,5 +27,7 @@ namespace CyanCMS.Domain.Entities
 
         [ForeignKey("UserId")]
         public User? User { get; set; }
+
+        public Configuration? Configuration { get; set; }
     }
 }

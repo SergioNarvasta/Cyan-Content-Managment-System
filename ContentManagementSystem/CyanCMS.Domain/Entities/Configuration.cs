@@ -13,6 +13,10 @@ namespace CyanCMS.Domain.Entities
         public string? MainColor { get; set; }
         public string? SecondaryColor { get; set;}
 
+        public int CompanyId { get; set; }
+
+        [ForeignKey("CompanyId")]
+        public Company? Company { get; set; }
         public List<ConfigurationComponentType> ?ConfigurationComponentTypes { get; set;}
     }
 }

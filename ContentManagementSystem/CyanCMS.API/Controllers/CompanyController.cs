@@ -38,9 +38,9 @@ namespace CyanCMS.WebAPI.Controllers
             if (company == null)
                 return BadRequest();
 
-			company.Company_Estado = 1;
-			company.Audit_FecCre = DateTime.Now.ToString("dd/MM/yyyy");
-            company.Company_Pk = Guid.NewGuid().ToString();
+			company.IsActive = true;
+            company.IsDeleted = false;
+			company.AuditCreateDate = DateTime.Now;
 
             await _companyAppService.Insert(company);
             return Created("Created", true);

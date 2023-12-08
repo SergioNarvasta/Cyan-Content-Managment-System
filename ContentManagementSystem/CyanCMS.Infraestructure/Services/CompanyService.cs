@@ -19,7 +19,9 @@ namespace CyanCMS.Infraestructure.Services
 		public async Task Delete(string id)
         {
             var model = await _dbContext.Company
-                 .Where(x => x.Company_Pk == id && x.Company_Estado == 0)
+                 .Where(x => x.CompanyId.ToString() == id 
+                             && x.IsActive 
+                             && !x.IsDeleted)
                  .AsNoTracking()
                  .FirstOrDefaultAsync();
 
@@ -32,7 +34,10 @@ namespace CyanCMS.Infraestructure.Services
 
         public async Task<IEnumerable<Company>> GetAll()
         {
-            var list = await _dbContext.Company.ToListAsync();
+            var list = await _dbContext
+                .Company
+                .AsNoTracking() 
+                .ToListAsync();
             return list;
         }
 
