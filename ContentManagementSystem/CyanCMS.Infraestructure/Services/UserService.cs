@@ -2,51 +2,78 @@
 using CyanCMS.Infraestructure.Data;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
-using Dapper;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace CyanCMS.Infraestructure.Services
 {
     public class UserService : IUserService
     {
         private readonly AppDbContext _dbContext;
-        private readonly string connection;
-        public UserService(IConfiguration configuration, AppDbContext dbContext)
+        public UserService(AppDbContext dbContext)
         {
-            connection = configuration.GetConnectionString("AzureSQLDatabaseConnection");
             _dbContext = dbContext;
         }
-        public async Task Delete(string id)
+        public async Task<bool> Delete(string id)
         {
-            using var cn = new SqlConnection(connection);
-            await cn.QuerySingleAsync<int>(@"DELETE FROM User WHERE User_Pk = @id", new {id });
+            try
+            {
+                var model = await _dbContext.User.FindAsync(id);
+                if (model != null)
+                {
+                    _dbContext.Remove(model);
+                    await _dbContext.SaveChangesAsync();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            } 
         }
 
         public async Task<IEnumerable<User>> GetAll()
         {
-            var list = await _dbContext.User.ToListAsync();
+            var list = await _dbContext
+                .User
+                .AsNoTracking()
+                .ToListAsync();
             return list;
         }
 
         public async Task<User> GetById(string id)
         {
-            User? user = new User();
-            user = await _dbContext.User.FindAsync(id);
-            return user;
+            return await _dbContext.User.FindAsync(id);  
         }
 
-        public async Task Insert(User user)
+        public async Task<bool> Insert(User user)
         {
-            _dbContext.User.Add(user);
-            await _dbContext.SaveChangesAsync();
+            try
+            {
+                _dbContext.User.Add(user);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            } 
         }
 
-        public async Task Update(User user)
+        public async Task<bool> Update(User user)
         {
-            _dbContext.User.Update(user);
-            await _dbContext.SaveChangesAsync();
+            try
+            {
+                _dbContext.User.Update(user);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }  
         }
     }
 }

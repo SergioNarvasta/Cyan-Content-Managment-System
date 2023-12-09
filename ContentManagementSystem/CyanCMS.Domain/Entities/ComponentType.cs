@@ -16,10 +16,8 @@ namespace CyanCMS.Domain.Entities
         public string ComponentTypeName { get; set; }
         public string? ComponentTypeDescription { get; set; }
 
-        public int ComponentId { get; set; }
+        public Component? Component { get; set; } //1 to 1
 
-        [ForeignKey("ComponentId")]
-        public Component? Component { get; set; }
         public ConfigurationComponentType? ConfigurationComponentType { get; set; }
     }
 }

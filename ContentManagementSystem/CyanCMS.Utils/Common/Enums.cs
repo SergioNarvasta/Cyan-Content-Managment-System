@@ -12,7 +12,7 @@ namespace Utils
             [Display(Name = "Inactivo")]
             Inactive = 0
         }
-        public enum ComponentType
+        public enum ComponentTypeEnum
         {
             MenuOption = 1,
             SliderMain = 2,

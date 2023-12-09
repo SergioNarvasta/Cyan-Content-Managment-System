@@ -15,28 +15,38 @@ namespace CyanCMS.Infraestructure.Services
         {
             _dbContext = dbContext;
         }
-       
-		public async Task Delete(string id)
+
+        public async Task<bool> Delete(string id)
         {
-            var model = await _dbContext.Company
-                 .Where(x => x.CompanyId.ToString() == id 
-                             && x.IsActive 
+            try
+            {
+                var model = await _dbContext.Company
+                 .Where(x => x.CompanyId.ToString() == id
+                             && x.IsActive
                              && !x.IsDeleted)
                  .AsNoTracking()
                  .FirstOrDefaultAsync();
 
-            if(model!= null)
+                if (model != null)
+                {
+                    _dbContext.Company.Remove(model);
+                    await _dbContext.SaveChangesAsync();
+                }
+                return true;
+            }
+            catch (Exception e)
             {
-                _dbContext.Company.Remove(model);
-                await _dbContext.SaveChangesAsync();
-            }  
+                Console.WriteLine(e);
+                return false;
+            }
+            
         }
 
         public async Task<IEnumerable<Company>> GetAll()
         {
             var list = await _dbContext
                 .Company
-                .AsNoTracking() 
+                .AsNoTracking()
                 .ToListAsync();
             return list;
         }
@@ -50,16 +60,36 @@ namespace CyanCMS.Infraestructure.Services
             return company;
         }
 
-        public async Task Insert(Company company)
+        public async Task<bool> Insert(Company company)
         {
-            _dbContext.Company.Add(company);
-            await _dbContext.SaveChangesAsync();
+            try
+            {
+                _dbContext.Company.Add(company);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
         }
 
-        public async Task Update(Company model)
+        public async Task<bool> Update(Company model)
         {
-            _dbContext.Company.Update(model);
-            await _dbContext.SaveChangesAsync();
+            try
+            {
+                _dbContext.Company.Update(model);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+            
         }
     }
 }

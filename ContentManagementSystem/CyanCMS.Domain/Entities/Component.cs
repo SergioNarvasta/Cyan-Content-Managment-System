@@ -26,7 +26,11 @@ namespace CyanCMS.Domain.Entities
         [ForeignKey("CompanyId")]
         public Company? Company { get; set; }
 
-        public ComponentType? ComponentType { get; set; } //1 to 1
+        public int ComponentTypeId { get; set; }
+
+        [ForeignKey("ComponentTypeId")]
+        public ComponentType? ComponentType { get; set; }
+        
 
         public List<FileUnit>? Files { get; set; }
     }

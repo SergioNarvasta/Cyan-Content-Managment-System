@@ -6,10 +6,10 @@ namespace CyanCMS.Infraestructure.Interfaces
 {
 	public interface ICompanyService
 	{
-		Task Delete(string id);
+		Task<bool> Delete(string id);
 		Task<IEnumerable<Company>> GetAll();
 		Task<Company> GetById(string company_Pk);
-		Task Insert(Company model);
-		Task Update(Company model);
+		Task<bool> Insert(Company model);
+		Task<bool> Update(Company model);
 	}
 }
