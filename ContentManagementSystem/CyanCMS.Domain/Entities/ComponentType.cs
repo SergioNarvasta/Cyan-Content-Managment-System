@@ -13,7 +13,7 @@ namespace CyanCMS.Domain.Entities
         public int ComponentTypeId { get; set; }
 
         [Required]
-        public string ComponentTypeName { get; set; }
+        public string ComponentTypeName { get; set; } = string.Empty;
         public string? ComponentTypeDescription { get; set; }
 
         public Component? Component { get; set; } //1 to 1

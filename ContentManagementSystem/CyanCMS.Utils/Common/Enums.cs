@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 
-namespace Utils
+namespace CyanCMS.Utils.Common
 {
     public class Enums
     {
@@ -14,13 +14,21 @@ namespace Utils
         }
         public enum ComponentTypeEnum
         {
+            [Display(Name = "MenuOption")]
             MenuOption = 1,
+            [Display(Name = "SliderMain")]
             SliderMain = 2,
-            ContentMain= 3,
+            [Display(Name = "ContentMain")]
+            ContentMain = 3,
+            [Display(Name = "ContentSec")]
             ContentSec = 4,
+            [Display(Name = "Aside")]
             Aside      = 5,
-            SliderSmall= 6,
+            [Display(Name = "SliderSmall")]
+            SliderSmall = 6,
+            [Display(Name = "SliderSec")]
             SliderSec  = 7,
+            [Display(Name = "Partner")]
             Partner    = 8
         }
 

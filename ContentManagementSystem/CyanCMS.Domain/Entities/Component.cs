@@ -2,7 +2,8 @@
 using CyanCMS.Domain.Common;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static Utils.Enums;
+using static CyanCMS.Utils.Common.Enums;
+
 
 namespace CyanCMS.Domain.Entities
 {

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ProjectWeb_DRA.Utils
+namespace CyanCMS.Utils.Security
 {
     public static class Cryptography
     {
@@ -32,13 +30,13 @@ namespace ProjectWeb_DRA.Utils
                 return valorVector;
             }
         }
-        public static string EncriptarAES(string val)
+        public static string EncryptValue(string val)
         {
             return BytesToStringBase64(Encriptar(val
                 , ValueKey
                 , ValueVector));
         }
-        public static string DesencriptarAES(string val)
+        public static string DesEncryptValue(string val)
         {
             return Desencriptar(val
                 , ValueKey

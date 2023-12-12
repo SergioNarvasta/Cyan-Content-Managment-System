@@ -1,13 +1,14 @@
 ﻿
 using CyanCMS.Domain.Common;
 using CyanCMS.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 
 namespace CyanCMS.Infraestructure.Data
 {
-	public class AppDbContext : DbContext
-	{
+	public class AppDbContext : IdentityDbContext<User>
+    {
         /*
          Seleccionar Proyecto de Inicio -> WebAPI (Instalar EF Design)
          Seleccionar Proyecto Predeterminado en Consola de Adm Paq Nuget -> Infraestructure (Instalar EF Core, Tools, SQLServer)
@@ -16,7 +17,6 @@ namespace CyanCMS.Infraestructure.Data
          Update-Database -Verbose -Context AppDbContext
          
          Remove-Migration -Context AppDbContext
-
         */
         public AppDbContext(DbContextOptions<AppDbContext> options)
 		   : base(options)

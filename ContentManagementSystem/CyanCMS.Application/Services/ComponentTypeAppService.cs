@@ -1,7 +1,8 @@
 ﻿using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
-using static Utils.Enums;
-
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
+using static CyanCMS.Utils.Common.Enums;
 
 namespace CyanCMS.Application.Services
 {
@@ -18,24 +19,41 @@ namespace CyanCMS.Application.Services
         }
 
         public async Task<bool> InsertMultipleComponentType() {
-            bool IsDone = true;
+           bool IsDone = true;
            int count = await _componentTypeService.GetCountData();
+            int countInserted = 0;
             if(count > 0) {
                 foreach (ComponentTypeEnum componentTypeEnum in Enum.GetValues(typeof(ComponentTypeEnum)))
                 {
+                    DisplayAttribute displayAttribute = GetDisplayAttribute(componentTypeEnum);
+                    string displayName = displayAttribute?.Name ?? componentTypeEnum.ToString();
+
                     ComponentType componentType = new ComponentType
                     {
-                        ComponentTypeName = componentTypeEnum.ToString(),
-                        ComponentTypeDescription = $"Description for {componentTypeEnum}"
-                        
-                    };
+                        ComponentTypeName = displayName,
+                        ComponentTypeDescription = GetComponentDescription((int)componentTypeEnum),
+                        IsActive = true,
+                        IsDeleted = false,
 
+                    };
+                    bool IsInserted = await _componentTypeService.Insert(componentType);
+                    if (IsInserted){
+                       countInserted++;
+                    }
                    
                 }
-
-                return IsDone;
+                if (countInserted > 0){
+                    return IsDone;
+                }
+                
             }
             return !IsDone;
+        }
+
+        private static DisplayAttribute? GetDisplayAttribute(Enum value)
+        {
+            FieldInfo field = value.GetType().GetField(value.ToString());
+            return (DisplayAttribute?)Attribute.GetCustomAttribute(field, typeof(DisplayAttribute));
         }
     }
 }

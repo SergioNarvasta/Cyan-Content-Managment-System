@@ -1,6 +1,7 @@
 ﻿using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
+using CyanCMS.Utils.Security;
 
 
 namespace CyanCMS.Application.Services
@@ -11,9 +12,9 @@ namespace CyanCMS.Application.Services
         public UserAppService(IUserService userService) {
             _userService = userService;
         }
-        public async Task Delete(string id)
+        public async Task<bool> Delete(string id)
         {
-            await _userService.Delete(id);
+            return await _userService.Delete(id);
         }
 
         public async Task<IEnumerable<User>> GetAll()
@@ -26,14 +27,17 @@ namespace CyanCMS.Application.Services
             return _userService.GetById(id);
         }
 
-        public async Task Insert(User model)
+        public async Task<bool> Insert(User model)
         {
-            await _userService.Insert(model);
+            model.UserToken = Cryptography.EncryptValue(model.UserToken);
+            model.AuditCreateDate = DateTime.Now;
+            model.AuditCreateUser = "GET USER LOGIN";
+            return await _userService.Insert(model);
         }
 
-        public async Task Update(User model)
+        public async Task<bool> Update(User model)
         {
-            await _userService.Update(model);
+           return await _userService.Update(model);
         }
     }
 }
