@@ -39,8 +39,7 @@ namespace CyanCMS.Application.Services
                     bool IsInserted = await _componentTypeService.Insert(componentType);
                     if (IsInserted){
                        countInserted++;
-                    }
-                   
+                    }  
                 }
                 if (countInserted > 0){
                     return IsDone;

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CyanCMS.Infraestructure.Data
 {
-	public class AppDbContext : IdentityDbContext<User>
+	public class AppDbContext : DbContext
     {
         /*
          Seleccionar Proyecto de Inicio -> WebAPI (Instalar EF Design)

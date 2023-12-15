@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CyanCMS.Domain.Entities
 {
-	public class User : IdentityUser
+	public class User // : IdentityUser
     {
 		[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
