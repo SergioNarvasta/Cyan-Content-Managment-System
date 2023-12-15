@@ -64,3 +64,9 @@
 /ContentManagementSystem/CyanCMS.Platform/Properties
 /ContentManagementSystem/CyanCMS.WebPlatform/Properties
 /ContentManagementSystem/CyanCMS.WebPlatform/bin/Debug/net8.0
+/ContentManagementSystem/CyanCMS.APIv1/bin/Debug/net8.0/runtimes
+/ContentManagementSystem/CyanCMS.APIv1/bin/Debug/net8.0
+/ContentManagementSystem/CyanCMS.APIv1/bin/Debug/net8.0/CyanCMS.API.deps.json
+/ContentManagementSystem/CyanCMS.APIv1/obj/Container
+/ContentManagementSystem/CyanCMS.APIv1/obj
+/ContentManagementSystem/CyanCMS.APIv1/obj/Debug/net8.0/staticwebassets/msbuild.build.CyanCMS.API.props
