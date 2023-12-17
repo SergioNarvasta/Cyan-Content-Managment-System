@@ -78,10 +78,9 @@ namespace CyanCMS.Infraestructure.Services
         public async Task<Company> GetById(string id)
         {
             Company companyEmpty = new Company();
-            var company = await _dbContext.Company.FindAsync(id);
-            if (company == null)
-                return companyEmpty;
-            return company;
+            return await _dbContext
+                .Company
+                .FindAsync(id) ?? companyEmpty;
         }
 
         public async Task<bool> Insert(Company company)

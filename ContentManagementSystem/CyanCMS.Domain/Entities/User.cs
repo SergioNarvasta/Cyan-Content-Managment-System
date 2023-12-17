@@ -44,10 +44,10 @@ namespace CyanCMS.Domain.Entities
         public List<Company>? Companies { get; set; }
 
         [NotMapped]
-        public Plan? Plan { get; set; }
+        public int? PlanId { get; set; }
 
         [NotMapped]
-        public Rol? Rol { get; set; }
+        public int? RolId { get; set; }
 		
 	}
 }

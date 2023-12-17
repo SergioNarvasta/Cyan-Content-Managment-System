@@ -17,4 +17,12 @@
         public string CompanyName { get; set; } = string.Empty;
         public string IsActiveStr { get; set; } = string.Empty;
     }
+
+    public class UserParams : PageOptions
+    {
+        public string UserName { get; set; } = string.Empty;
+        public string IsActiveStr { get; set; } = string.Empty;
+        public string RolId { get; set; } = string.Empty;
+        public string PlanId { get; set; } = string.Empty;
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
+using CyanCMS.Utils.Request;
 using CyanCMS.Utils.Security;
 
 
@@ -17,9 +18,9 @@ namespace CyanCMS.Application.Services
             return await _userService.Delete(id);
         }
 
-        public async Task<IEnumerable<User>> GetAll()
+        public async Task<IEnumerable<User>> GetAll(UserParams @params)
         {
-          return await _userService.GetAll();
+          return await _userService.GetAll(@params);
         }
 
         public Task<User> GetById(string id)

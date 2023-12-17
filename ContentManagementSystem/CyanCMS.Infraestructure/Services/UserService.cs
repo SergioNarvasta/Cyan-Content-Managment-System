@@ -3,6 +3,7 @@ using CyanCMS.Infraestructure.Data;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using CyanCMS.Utils.Request;
 
 namespace CyanCMS.Infraestructure.Services
 {
@@ -32,18 +33,57 @@ namespace CyanCMS.Infraestructure.Services
             } 
         }
 
-        public async Task<IEnumerable<User>> GetAll()
+        public async Task<IEnumerable<User>> GetAll(UserParams @params)
         {
-            var list = await _dbContext
-                .User
-                .AsNoTracking()
-                .ToListAsync();
-            return list;
+            var query = _dbContext.User
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(@params.UserName))
+            {
+                query = query.Where(s =>
+                   s.UserName.Contains(@params.UserName)
+                );
+            }
+
+            bool isActive;
+            if (bool.TryParse(@params.IsActiveStr, out isActive) &&
+                !string.IsNullOrEmpty(@params.IsActiveStr))
+            {
+                query = query
+                    .Where(s => s.IsActive == isActive
+                );
+            }
+
+            if (!string.IsNullOrEmpty(@params.RolId))
+            {
+                query = query.Where(s =>
+                   s.RolId == int.Parse(@params.RolId)  
+                );
+            }
+
+            if (!string.IsNullOrEmpty(@params.PlanId))
+            {
+                query = query.Where(s =>
+                   s.PlanId == int.Parse(@params.PlanId)
+                );
+            }
+
+            var list = await query
+                 .Where(s => !s.IsDeleted)
+                 .AsNoTracking()
+                 .ToListAsync();
+
+            return list
+                .Skip(@params.PageNumber)
+                .Take(@params.PageSize);
         }
 
         public async Task<User> GetById(string id)
         {
-            return await _dbContext.User.FindAsync(id);  
+            var userEmpty = new User();
+            return await _dbContext
+                .User
+                .FindAsync(id) ?? userEmpty;             
         }
 
         public async Task<bool> Insert(User user)
