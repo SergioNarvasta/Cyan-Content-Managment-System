@@ -5,6 +5,8 @@ using CyanCMS.Infraestructure.Interfaces;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using CyanCMS.Utils.Request;
+using System.Linq;
 
 namespace CyanCMS.Infraestructure.Services
 {
@@ -42,13 +44,35 @@ namespace CyanCMS.Infraestructure.Services
             
         }
 
-        public async Task<IEnumerable<Company>> GetAll()
+        public async Task<IEnumerable<Company>> GetAll(CompanyParams @params)
         {
-            var list = await _dbContext
-                .Company
-                .AsNoTracking()
-                .ToListAsync();
-            return list;
+            var query = _dbContext.Company
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(@params.CompanyName))
+            {
+                query = query.Where(s =>
+                   s.CompanyName.Contains(@params.CompanyName)
+                );
+            }
+
+            bool isActive;
+            if (bool.TryParse(@params.IsActiveStr, out isActive) &&
+                !string.IsNullOrEmpty(@params.IsActiveStr))
+            {
+                query = query
+                    .Where(s => s.IsActive == isActive
+                );
+            }
+
+            var list = await query
+                 .Where(s => !s.IsDeleted)
+                 .AsNoTracking()
+                 .ToListAsync();
+
+            return list
+                .Skip(@params.PageNumber)
+                .Take(@params.PageSize);
         }
 
         public async Task<Company> GetById(string id)

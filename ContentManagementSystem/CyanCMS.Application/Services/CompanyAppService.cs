@@ -1,6 +1,7 @@
 ﻿using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
+using CyanCMS.Utils.Request;
 
 namespace CyanCMS.Application.Services
 {
@@ -10,14 +11,14 @@ namespace CyanCMS.Application.Services
         public CompanyAppService(ICompanyService companyService) {
            _companyService = companyService;
         }
-        public async Task Delete(string id)
+        public async Task<bool> Delete(string id)
         {
-            await _companyService.Delete(id);
+            return await _companyService.Delete(id);
         }
 
-        public async Task<IEnumerable<Company>> GetAll()
+        public async Task<IEnumerable<Company>> GetAll(CompanyParams @params)
         {
-            return await _companyService.GetAll();
+            return await _companyService.GetAll(@params);
         }
 
         public async Task<Company> GetById(string company_Pk)
@@ -25,14 +26,14 @@ namespace CyanCMS.Application.Services
             return await _companyService.GetById(company_Pk);
         }
 
-        public async Task Insert(Company model)
+        public async Task<bool> Insert(Company model)
         {
-            await _companyService.Insert(model);
+            return await _companyService.Insert(model);
         }
 
-        public async Task Update(Company model)
+        public async Task<bool> Update(Company model)
         {
-            await _companyService.Update(model);
+            return await _companyService.Update(model);
         }
     }
 }

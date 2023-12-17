@@ -1,13 +1,14 @@
 ﻿using CyanCMS.Domain.Entities;
+using CyanCMS.Utils.Request;
 
 namespace CyanCMS.Application.Interfaces
 {
 	public interface ICompanyAppService
 	{
-		Task Delete(string id);
-		Task<IEnumerable<Company>> GetAll();
+		Task<bool> Delete(string id);
+		Task<IEnumerable<Company>> GetAll(CompanyParams @params);
 		Task<Company> GetById(string company_Pk);
-		Task Insert(Company model);
-		Task Update(Company model);
+		Task<bool> Insert(Company model);
+		Task<bool> Update(Company model);
 	}
 }

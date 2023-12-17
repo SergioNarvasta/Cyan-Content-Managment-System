@@ -2,6 +2,8 @@
 
 using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
+using CyanCMS.Utils.Common;
+using CyanCMS.Utils.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CyanCMS.WebAPI.Controllers
@@ -19,9 +21,35 @@ namespace CyanCMS.WebAPI.Controllers
 
         [Route("GetAllCompany")]
         [HttpGet]
-        public async Task<IActionResult> GetAllCompany()
+        public async Task<IActionResult> GetAllCompany([FromBody] RequestParams? @params)
         {
-            return Ok(await _companyAppService.GetAll());
+            string companyNameFilter = string.Empty;
+            string companyIsActiveFilter = string.Empty;
+            var queryParams = new CompanyParams();
+
+            if (@params != null) {
+                var attributeValues = DataQueryOperations.GetAttributeValues(@params.Filters);
+                foreach (var attribute in attributeValues)
+                {
+                    if (attribute.Key == "companyName") {
+                        companyNameFilter = attribute.Value;
+                    }
+                     else if (attribute.Key == "isActive")
+                    {
+                        companyIsActiveFilter = attribute.Value;
+                    }
+                }
+                CompanyParams companyParams = new CompanyParams
+                {
+                    CompanyName = companyNameFilter,
+                    IsActiveStr = companyIsActiveFilter,
+                    PageSize = @params.PageSize,
+                    PageNumber = @params.PageNumber,
+                };
+                queryParams = companyParams;
+            }
+
+            return Ok(await _companyAppService.GetAll(queryParams));
         }
 
         [Route("GetCompanyById")]
