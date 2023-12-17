@@ -1,6 +1,8 @@
 ﻿
 using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
+using CyanCMS.Utils.Common;
+using CyanCMS.Utils.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CyanCMS.WebAPI.Controllers
@@ -18,9 +20,49 @@ namespace CyanCMS.WebAPI.Controllers
 
         [Route("GetAll")]
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromBody] RequestParams? @params)
         {
-            return Ok(await _userAppService.GetAll());
+            string userNameFilter = string.Empty;
+            string userIsActiveFilter = string.Empty;
+            string rolIdFilter = string.Empty;
+            string planIdFilter = string.Empty;
+            var queryParams = new UserParams();
+
+            if (@params != null)
+            {
+                var attributeValues = DataQueryOperations.GetAttributeValues(@params.Filters);
+                foreach (var attribute in attributeValues)
+                {
+                    if (attribute.Key == "userName")
+                    {
+                        userNameFilter = attribute.Value;
+                    }
+                    else if (attribute.Key == "isActive")
+                    {
+                        userIsActiveFilter = attribute.Value;
+                    }
+                    else if (attribute.Key == "rolId")
+                    {
+                        rolIdFilter = attribute.Value;
+                    }
+                    else if (attribute.Key == "planId")
+                    {
+                        planIdFilter = attribute.Value;
+                    }
+                }
+                UserParams userParams = new UserParams
+                {
+                    UserName = userNameFilter,
+                    IsActiveStr = userIsActiveFilter,
+                    RolId = rolIdFilter,
+                    PlanId = planIdFilter,
+                    PageSize = @params.PageSize,
+                    PageNumber = @params.PageNumber,
+                };
+                queryParams = userParams;
+            }
+
+            return Ok(await _userAppService.GetAll(queryParams));
         }
 
         [Route("Create")]
