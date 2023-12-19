@@ -17,7 +17,6 @@ namespace CyanCMS.WebAPI.Controllers
         private readonly IConfigurationAppService _configurationAppService;
         private readonly IComponentTypeAppService _componentTypeAppService;
         private readonly IConfigurationComponentTypeAppService _configComponentTypeAppService;
-        private readonly ILogger _logger;
 
         public CompanyController(ICompanyAppService companyAppService, 
             IConfigurationAppService configurationAppService,
@@ -27,6 +26,7 @@ namespace CyanCMS.WebAPI.Controllers
 			_companyAppService = companyAppService;
             _configurationAppService = configurationAppService;
             _componentTypeAppService = componentTypeAppService;
+            _configComponentTypeAppService = configurationComponentTypeAppService;
         }
 
         [Route("GetAllCompany")]
