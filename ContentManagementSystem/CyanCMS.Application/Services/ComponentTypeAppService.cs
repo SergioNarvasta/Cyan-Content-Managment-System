@@ -1,4 +1,5 @@
-﻿using CyanCMS.Domain.Entities;
+﻿using CyanCMS.Application.Interfaces;
+using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
@@ -16,6 +17,10 @@ namespace CyanCMS.Application.Services
         public async Task<bool> Insert(ComponentType model)
         {
             return await _componentTypeService.Insert(model);
+        }
+
+        public async Task<List<ComponentType>> GetAll() {
+            return await _componentTypeService.GetAll();
         }
 
         public async Task<bool> InsertMultipleComponentType() {

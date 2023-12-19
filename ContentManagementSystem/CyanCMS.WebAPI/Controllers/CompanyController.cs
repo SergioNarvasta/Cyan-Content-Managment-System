@@ -16,11 +16,13 @@ namespace CyanCMS.WebAPI.Controllers
         private readonly ICompanyAppService _companyAppService;
         private readonly IConfigurationAppService _configurationAppService;
         private readonly IComponentTypeAppService _componentTypeAppService;
+        private readonly IConfigurationComponentTypeAppService _configComponentTypeAppService;
         private readonly ILogger _logger;
 
         public CompanyController(ICompanyAppService companyAppService, 
             IConfigurationAppService configurationAppService,
-            IComponentTypeAppService componentTypeAppService) 
+            IComponentTypeAppService componentTypeAppService,
+            IConfigurationComponentTypeAppService configurationComponentTypeAppService) 
         {
 			_companyAppService = companyAppService;
             _configurationAppService = configurationAppService;
@@ -85,13 +87,12 @@ namespace CyanCMS.WebAPI.Controllers
                  MainColor = ColorStyle.Default.ToString(),
                  SecondaryColor = ColorStyle.Secondary.ToString(),
                 };
-
+                // La Config se crea una vez
                 var resultConfig = await _configurationAppService.Insert(config);
-                await _componentTypeAppService.InsertMultipleComponentType()
-                   
-                
-                
-                // Insert in ConfigurationComponentType
+                var resultComponentType = await _componentTypeAppService.InsertMultipleComponentType();
+                if (resultComponentType && resultConfig.WasCreated) {
+                    await _configComponentTypeAppService.CreateConfigComponentTypeInit(resultConfig.Id);
+                }   
             }
             return Created("Created", true);
         }

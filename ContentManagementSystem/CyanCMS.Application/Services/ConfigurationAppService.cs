@@ -30,7 +30,7 @@ namespace CyanCMS.Application.Services
             if (countByCompany == 0) {
                 return await _configurationService.Insert(model);
             }
-            return false;
+            return new CreateModel();
         }
         public async Task<bool> Update(Configuration model)
         {

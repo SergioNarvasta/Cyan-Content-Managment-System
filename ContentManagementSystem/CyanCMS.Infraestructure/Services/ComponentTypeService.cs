@@ -40,5 +40,13 @@ namespace CyanCMS.Infraestructure.Services
                 return 0;
             }
         }
+        public async Task<List<ComponentType>> GetAll()
+        {
+           return await _dbContext
+               .ComponentType
+               .Where(s => s.IsActive && !s.IsDeleted)
+               .AsNoTracking()
+               .ToListAsync();
+        }
     }
 }

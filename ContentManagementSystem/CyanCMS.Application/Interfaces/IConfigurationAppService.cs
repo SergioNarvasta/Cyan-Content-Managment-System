@@ -1,5 +1,4 @@
 ﻿using CyanCMS.Domain.Entities;
-using CyanCMS.Utils.Request;
 using CyanCMS.Utils.Response;
 
 namespace CyanCMS.Application.Interfaces

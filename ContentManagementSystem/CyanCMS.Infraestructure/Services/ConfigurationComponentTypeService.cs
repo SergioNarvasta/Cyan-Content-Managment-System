@@ -1,8 +1,6 @@
 ﻿using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Data;
 using CyanCMS.Infraestructure.Interfaces;
-using Microsoft.EntityFrameworkCore;
-
 
 namespace CyanCMS.Infraestructure.Services
 {
