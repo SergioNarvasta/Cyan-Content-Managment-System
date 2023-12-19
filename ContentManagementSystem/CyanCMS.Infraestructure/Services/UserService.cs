@@ -21,8 +21,8 @@ namespace CyanCMS.Infraestructure.Services
                 var model = await _dbContext.User.FindAsync(id);
                 if (model != null)
                 {
-                    _dbContext.Remove(model);
-                    await _dbContext.SaveChangesAsync();
+                    model.IsDeleted = true;
+                    await this.Update(model);
                 }
                 return true;
             }

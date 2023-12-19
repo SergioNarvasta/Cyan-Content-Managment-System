@@ -27,7 +27,7 @@ namespace CyanCMS.Application.Services
            bool IsDone = true;
            int count = await _componentTypeService.GetCountData();
             int countInserted = 0;
-            if(count > 0) {
+            if(count == 0) {
                 foreach (ComponentTypeEnum componentTypeEnum in Enum.GetValues(typeof(ComponentTypeEnum)))
                 {
                     DisplayAttribute displayAttribute = GetDisplayAttribute(componentTypeEnum);

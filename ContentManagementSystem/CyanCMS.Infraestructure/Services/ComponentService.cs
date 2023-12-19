@@ -11,10 +11,10 @@ using CyanCMS.Utils.Response;
 
 namespace CyanCMS.Infraestructure.Services
 {
-    public class CompanyService : ICompanyService
+    public class ComponentService : IComponentService
     {
         public readonly AppDbContext _dbContext;
-        public CompanyService(AppDbContext dbContext)
+        public ComponentService(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -24,13 +24,13 @@ namespace CyanCMS.Infraestructure.Services
             try
             {
                 var model = await _dbContext
-                    .Company
+                    .Component
                     .FindAsync(id);
 
                 if (model != null)
                 {
-                    model.IsDeleted = true;
-                    await this.Update(model);
+                   model.IsDeleted = true;
+                   await this.Update(model);
                 }
                 return true;
             }
@@ -42,15 +42,15 @@ namespace CyanCMS.Infraestructure.Services
             
         }
 
-        public async Task<IEnumerable<Company>> GetAll(CompanyParams @params)
+        public async Task<IEnumerable<Component>> GetAll(ComponentParams @params)
         {
-            var query = _dbContext.Company
+            var query = _dbContext.Component
                 .AsQueryable();
 
-            if (!string.IsNullOrEmpty(@params.CompanyName))
+            if (!string.IsNullOrEmpty(@params.ComponentName))
             {
                 query = query.Where(s =>
-                   s.CompanyName.Contains(@params.CompanyName)
+                   s.ComponentName.Contains(@params.ComponentName)
                 );
             }
 
@@ -60,6 +60,13 @@ namespace CyanCMS.Infraestructure.Services
             {
                 query = query
                     .Where(s => s.IsActive == isActive
+                );
+            }
+
+            if (!string.IsNullOrEmpty(@params.ComponentType))
+            {
+                query = query.Where(s =>
+                   s.ComponentTypeId == int.Parse(@params.ComponentType)
                 );
             }
 
@@ -73,25 +80,25 @@ namespace CyanCMS.Infraestructure.Services
                 .Take(@params.PageSize);
         }
 
-        public async Task<Company> GetById(string id)
+        public async Task<Component> GetById(string id)
         {
-            Company companyEmpty = new Company();
+            var componentEmpty = new Component();
             return await _dbContext
-                .Company
-                .FindAsync(id) ?? companyEmpty;
+                .Component
+                .FindAsync(id) ?? componentEmpty;
         }
 
-        public async Task<CreateModel> Insert(Company model)
+        public async Task<CreateModel> Insert(Component model)
         {
             var createModel = new CreateModel();
             try
             {
-                _dbContext.Company.Add(model);
+                _dbContext.Component.Add(model);
                 int insert = await _dbContext.SaveChangesAsync();
+
                 createModel.WasCreated = true;
                 createModel.Message = "Se creo la configuracion con exito";
-                createModel.Id = model.CompanyId; 
-                
+                createModel.Id = model.ComponentId;              
                 return createModel;
             }
             catch (Exception e)
@@ -105,11 +112,11 @@ namespace CyanCMS.Infraestructure.Services
             }
         }
 
-        public async Task<bool> Update(Company model)
+        public async Task<bool> Update(Component model)
         {
             try
             {
-                _dbContext.Company.Update(model);
+                _dbContext.Component.Update(model);
                 await _dbContext.SaveChangesAsync();
                 return true;
             }

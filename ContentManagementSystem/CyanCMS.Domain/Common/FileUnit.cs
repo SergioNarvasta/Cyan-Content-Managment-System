@@ -15,14 +15,14 @@ namespace CyanCMS.Domain.Common
 
         [Required]
         [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
-        public string FileName { get; set; }
+        public string FileName { get; set; } = string.Empty;
         public string? FileDescription { get; set;}
 
         [Required]
-        public string FileBase64 { get;set;}
+        public string FileBase64 { get;set;} = string.Empty;
 
         [Required]
-        public string FileSize { get; set; } 
+        public string FileSize { get; set; } = string.Empty;
 
         public int? ComponentId { get; set; }
 

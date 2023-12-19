@@ -25,4 +25,11 @@
         public string RolId { get; set; } = string.Empty;
         public string PlanId { get; set; } = string.Empty;
     }
+
+    public class ComponentParams : PageOptions
+    {
+        public string ComponentName { get; set; } = string.Empty;
+        public string ComponentType { get; set; } = string.Empty;
+        public string IsActiveStr { get; set; } = string.Empty;
+    }
 }

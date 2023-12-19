@@ -12,12 +12,12 @@ namespace CyanCMS.Domain.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ComponentId { get; set; }
-        public string? ComponentName { get; set; }
+        public string ComponentName { get; set; } = string.Empty;
 
         [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
-        public string? ComponentTitle { get; set; }
-        public string? ComponentDescription { get; set; }
-        public string? ComponentContent { get; set; }
+        public string ComponentTitle { get; set; } = string.Empty;
+        public string ComponentDescription { get; set; } = string.Empty;
+        public string ComponentContent { get; set; } = string.Empty;
         public int ComponentOrder { get; set; }
         public ComponentStyle ComponentStyle { get; set; } 
         public bool IsSlider { get; set; }

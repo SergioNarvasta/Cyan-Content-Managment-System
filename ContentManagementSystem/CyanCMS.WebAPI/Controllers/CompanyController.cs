@@ -87,10 +87,10 @@ namespace CyanCMS.WebAPI.Controllers
                  MainColor = ColorStyle.Default.ToString(),
                  SecondaryColor = ColorStyle.Secondary.ToString(),
                 };
-                // La Config se crea una vez
+                
                 var resultConfig = await _configurationAppService.Insert(config);
-                var resultComponentType = await _componentTypeAppService.InsertMultipleComponentType();
-                if (resultComponentType && resultConfig.WasCreated) {
+                await _componentTypeAppService.InsertMultipleComponentType();
+                if (resultConfig.WasCreated) {
                     await _configComponentTypeAppService.CreateConfigComponentTypeInit(resultConfig.Id);
                 }   
             }
