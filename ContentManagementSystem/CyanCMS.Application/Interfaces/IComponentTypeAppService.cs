@@ -1,7 +1,6 @@
 ﻿
 
-
-namespace CyanCMS.Application.Services
+namespace CyanCMS.Application.Interfaces
 {
     public interface IComponentTypeAppService
     {

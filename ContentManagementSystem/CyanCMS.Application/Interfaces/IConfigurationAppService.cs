@@ -1,11 +1,10 @@
-﻿using CMS.Dominio.Entidades;
-using CyanCMS.Domain.Entities;
+﻿using CyanCMS.Domain.Entities;
 using CyanCMS.Utils.Request;
 using CyanCMS.Utils.Response;
 
-namespace CyanCMS.Infraestructure.Interfaces
+namespace CyanCMS.Application.Interfaces
 {
-    public interface IConfigurationService
+    public interface IConfigurationAppService
     {
         Task<List<Configuration>> GetByCompanyId(int companyId);
         Task<Configuration> GetById(string id);

@@ -3,6 +3,7 @@ using CyanCMS.Infraestructure.Data;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using CyanCMS.Utils.Response;
 
 namespace CyanCMS.Infraestructure.Services
 {
@@ -22,7 +23,6 @@ namespace CyanCMS.Infraestructure.Services
                  .AsNoTracking()
                  .ToListAsync();               
         }
-
         public async Task<Configuration> GetById(string id)
         {
             var configurationEmpty = new Configuration();
@@ -40,19 +40,29 @@ namespace CyanCMS.Infraestructure.Services
 
             return list.Count;
         }
-        public async Task<bool> Insert(Configuration model)
+        public async Task<CreateModel> Insert(Configuration model)
         {
+            var createModel = new CreateModel();
             try
             {
                 _dbContext.Configuration.Add(model);
                 await _dbContext.SaveChangesAsync();
-                return true;
+
+                createModel.WasCreated = true;
+                createModel.Message = "La operación de inserción fue exitosa";
+                createModel.Id = model.ConfigurationId; 
+
+                return createModel;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                return false;
-            } 
+
+                createModel.WasCreated = false;
+                createModel.Message = "Error durante la operación de inserción";
+                createModel.Id = 0; 
+                return createModel;
+            }
         }
 
         public async Task<bool> Update(Configuration model)

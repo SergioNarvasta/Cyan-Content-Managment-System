@@ -2,6 +2,7 @@
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
 using CyanCMS.Utils.Request;
+using CyanCMS.Utils.Response;
 
 namespace CyanCMS.Application.Services
 {
@@ -26,7 +27,7 @@ namespace CyanCMS.Application.Services
             return await _companyService.GetById(company_Pk);
         }
 
-        public async Task<bool> Insert(Company model)
+        public async Task<CreateModel> Insert(Company model)
         {
             return await _companyService.Insert(model);
         }

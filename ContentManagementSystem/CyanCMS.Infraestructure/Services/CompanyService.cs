@@ -7,6 +7,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using CyanCMS.Utils.Request;
 using System.Linq;
+using CyanCMS.Utils.Response;
 
 namespace CyanCMS.Infraestructure.Services
 {
@@ -83,20 +84,32 @@ namespace CyanCMS.Infraestructure.Services
                 .FindAsync(id) ?? companyEmpty;
         }
 
-        public async Task<bool> Insert(Company company)
+        public async Task<CreateModel> Insert(Company model)
         {
+            var createModel = new CreateModel();
+
             try
             {
-                _dbContext.Company.Add(company);
-                await _dbContext.SaveChangesAsync();
-                return true;
+                _dbContext.Company.Add(model);
+                int insert = await _dbContext.SaveChangesAsync();
+
+                if (insert > 0) {
+                    createModel.WasCreated = true;
+                    createModel.Message = "Se creo la configuracion con exito";
+                    createModel.Id = model.CompanyId;
+                }                
+                return createModel;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                return false;
-            }
 
+                createModel.WasCreated = false;
+                createModel.Message = "Error durante la operación de inserción";
+                createModel.Id = 0;
+
+                return createModel;
+            }
         }
 
         public async Task<bool> Update(Company model)

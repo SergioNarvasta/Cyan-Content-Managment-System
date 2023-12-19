@@ -1,5 +1,6 @@
 ﻿using CyanCMS.Domain.Entities;
 using CyanCMS.Utils.Request;
+using CyanCMS.Utils.Response;
 
 namespace CyanCMS.Application.Interfaces
 {
@@ -8,7 +9,7 @@ namespace CyanCMS.Application.Interfaces
 		Task<bool> Delete(string id);
 		Task<IEnumerable<Company>> GetAll(CompanyParams @params);
 		Task<Company> GetById(string company_Pk);
-		Task<bool> Insert(Company model);
+		Task<CreateModel> Insert(Company model);
 		Task<bool> Update(Company model);
 	}
 }

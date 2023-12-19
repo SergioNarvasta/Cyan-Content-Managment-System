@@ -5,6 +5,7 @@ using CyanCMS.Domain.Entities;
 using CyanCMS.Utils.Common;
 using CyanCMS.Utils.Request;
 using Microsoft.AspNetCore.Mvc;
+using static CyanCMS.Utils.Common.Enums;
 
 namespace CyanCMS.WebAPI.Controllers
 {
@@ -13,10 +14,17 @@ namespace CyanCMS.WebAPI.Controllers
     public class CompanyController : ControllerBase
     {
         private readonly ICompanyAppService _companyAppService;
+        private readonly IConfigurationAppService _configurationAppService;
+        private readonly IComponentTypeAppService _componentTypeAppService;
+        private readonly ILogger _logger;
 
-        public CompanyController(ICompanyAppService companyAppService) 
+        public CompanyController(ICompanyAppService companyAppService, 
+            IConfigurationAppService configurationAppService,
+            IComponentTypeAppService componentTypeAppService) 
         {
 			_companyAppService = companyAppService;
+            _configurationAppService = configurationAppService;
+            _componentTypeAppService = componentTypeAppService;
         }
 
         [Route("GetAllCompany")]
@@ -70,7 +78,21 @@ namespace CyanCMS.WebAPI.Controllers
             company.IsDeleted = false;
 			company.AuditCreateDate = DateTime.Now;
 
-            await _companyAppService.Insert(company);
+            var resultCompany = await _companyAppService.Insert(company);
+            if (resultCompany.WasCreated) {
+                var config = new Configuration() {
+                 CompanyId = resultCompany.Id,
+                 MainColor = ColorStyle.Default.ToString(),
+                 SecondaryColor = ColorStyle.Secondary.ToString(),
+                };
+
+                var resultConfig = await _configurationAppService.Insert(config);
+                await _componentTypeAppService.InsertMultipleComponentType()
+                   
+                
+                
+                // Insert in ConfigurationComponentType
+            }
             return Created("Created", true);
         }
 

@@ -12,6 +12,28 @@ namespace CyanCMS.Utils.Common
             [Display(Name = "Inactivo")]
             Inactive = 0
         }
+        public enum ComponentStyle
+        {
+            [Display(Name = "Rectangulo")]
+            Rectangle = 1,
+            [Display(Name = "Ovalo")]
+            Oval = 2,
+
+        }
+        public enum ColorStyle
+        {
+            [Display(Name = "blue")]
+            Default = 1,
+            [Display(Name = "blue")]
+            Principal = 2,
+            [Display(Name = "sky-blue")]
+            Secondary = 2,
+            [Display(Name = "black")]
+            Dark = 2,
+            [Display(Name = "gray")]
+            Ligth = 2,
+
+        }
         public enum ComponentTypeEnum
         {
             [Display(Name = "MenuOption")]
@@ -45,13 +67,6 @@ namespace CyanCMS.Utils.Common
                8 => "Partners: Se puede mostrar informacion de socios, clientes u otros",
                _ => " " 
             };
-        public enum ComponentStyle
-        {
-            [Display(Name = "Rectangulo")]
-            Rectangle = 1,
-            [Display(Name = "Ovalo")]
-            Oval = 2,
-            
-        }
+        
     }
 }
