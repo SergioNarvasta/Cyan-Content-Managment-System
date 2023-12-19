@@ -29,11 +29,17 @@ namespace CyanCMS.Application.Services
 
         public async Task<CreateModel> Insert(Company model)
         {
+            model.AuditCreateDate = DateTime.Now;
+            model.AuditCreateUser = "User";
+            model.IsActive = true;
+            model.IsDeleted = false;
             return await _companyService.Insert(model);
         }
 
         public async Task<bool> Update(Company model)
         {
+            model.AuditUpdateDate = DateTime.Now;
+            model.AuditUpdateUser = "User";
             return await _companyService.Update(model);
         }
     }

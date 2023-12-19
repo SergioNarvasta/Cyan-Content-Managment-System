@@ -32,13 +32,17 @@ namespace CyanCMS.Application.Services
         {
             model.UserToken = Cryptography.EncryptValue(model.UserToken);
             model.AuditCreateDate = DateTime.Now;
-            model.AuditCreateUser = "GET USER LOGIN";
+            model.AuditCreateUser = "User";
+            model.IsActive = true;
+            model.IsDeleted = false;
             return await _userService.Insert(model);
         }
 
         public async Task<bool> Update(User model)
         {
-           return await _userService.Update(model);
+            model.AuditUpdateDate = DateTime.Now;
+            model.AuditUpdateUser = "User";
+            return await _userService.Update(model);
         }
     }
 }

@@ -16,6 +16,8 @@ namespace CyanCMS.Application.Services
 
         public async Task<bool> Insert(ComponentType model)
         {
+            model.IsActive = true;
+            model.IsDeleted = false;
             return await _componentTypeService.Insert(model);
         }
 
