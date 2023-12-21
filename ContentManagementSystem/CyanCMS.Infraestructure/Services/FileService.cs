@@ -7,30 +7,12 @@ using CyanCMS.Utils.Request;
 
 namespace CyanCMS.Infraestructure.Services
 {
-    public class FileService : IUserService
+    public class FileService : IFileService
     {
         private readonly AppDbContext _dbContext;
         public FileService(AppDbContext dbContext)
         {
             _dbContext = dbContext;
-        }
-        public async Task<bool> Delete(string id)
-        {
-            try
-            {
-                var model = await _dbContext.File.FindAsync(id);
-                if (model != null)
-                {
-                    model.IsDeleted = true;
-                    await this.Update(model);
-                }
-                return true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return false;
-            } 
         }
 
         public async Task<List<File>> GetByCompany(int companyId)
