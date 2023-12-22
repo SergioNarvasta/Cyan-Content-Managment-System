@@ -1,5 +1,4 @@
 ﻿
-
 using Cyan.Utils.Common;
 using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Entities;
@@ -20,6 +19,7 @@ namespace CyanCMS.WebAPI.Controllers
         private readonly IComponentTypeAppService _componentTypeAppService;
         private readonly IConfigurationComponentTypeAppService _configComponentTypeAppService;
         private readonly IFileAppService _fileAppService;
+
         public CompanyController(ICompanyAppService companyAppService, 
             IConfigurationAppService configurationAppService,
             IComponentTypeAppService componentTypeAppService,
@@ -113,9 +113,13 @@ namespace CyanCMS.WebAPI.Controllers
 			if (company == null)
 				return BadRequest();
 
-			//company.Company_Id = new MongoDB.Bson.ObjectId(id);
-            await _companyAppService.Update(company);
-			return Created("Update", true);
+            var update = await _companyAppService.Update(company);
+            var response = new ResponseModel()
+            {
+                Status = update,
+                Message = update ? "Se actualizo exito" : "Error en actualizacion"
+            };
+            return Created("Update", response);
 		}
 
 		[Route("DeleteCompany")]

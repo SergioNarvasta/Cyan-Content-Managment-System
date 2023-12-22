@@ -10,5 +10,12 @@ namespace CyanCMS.Utils.Request
             public FileUnit File { get; set; }
             
         }
+
+        public class CreateComponentModel
+        {
+            public Component Component { get; set; }
+            public List<FileUnit> Files { get; set; }
+
+        }
     }
 }
