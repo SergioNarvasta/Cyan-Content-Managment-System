@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CyanCMS.Domain\CyanCMS.Domain.csproj" />
+    <ProjectReference Include="..\CyanCMS.Utils\CyanCMS.Utils.csproj" />
   </ItemGroup>
 
 </Project>

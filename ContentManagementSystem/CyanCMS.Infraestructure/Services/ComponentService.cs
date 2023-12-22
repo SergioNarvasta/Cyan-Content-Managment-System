@@ -2,11 +2,8 @@
 using CyanCMS.Infraestructure.Data;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
-using Dapper;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using CyanCMS.Utils.Request;
-using System.Linq;
 using CyanCMS.Utils.Response;
 
 namespace CyanCMS.Infraestructure.Services
