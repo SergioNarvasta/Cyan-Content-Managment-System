@@ -29,8 +29,9 @@ namespace CyanCMS.Infraestructure.Services
 
                 if (model != null)
                 {
-                   model.IsDeleted = true;
-                   await this.Update(model);
+                    model.IsDeleted = true;
+                    model.IsActive = false;
+                    await this.Update(model);
                 }
                 return true;
             }
@@ -38,8 +39,7 @@ namespace CyanCMS.Infraestructure.Services
             {
                 Console.WriteLine(e);
                 return false;
-            }
-            
+            }           
         }
 
         public async Task<IEnumerable<Component>> GetAll(ComponentParams @params)
@@ -93,7 +93,7 @@ namespace CyanCMS.Infraestructure.Services
             var createModel = new CreateModel();
             try
             {
-                _dbContext.Component.Add(model);
+                await _dbContext.Component.AddAsync(model);
                 int insert = await _dbContext.SaveChangesAsync();
 
                 createModel.WasCreated = true;

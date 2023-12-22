@@ -1,9 +1,8 @@
 ﻿
 using CyanCMS.Infraestructure.Data;
+using Microsoft.EntityFrameworkCore;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using CyanCMS.Utils.Request;
 
 namespace CyanCMS.Infraestructure.Services
 {
@@ -15,33 +14,34 @@ namespace CyanCMS.Infraestructure.Services
             _dbContext = dbContext;
         }
 
-        public async Task<List<File>> GetByCompany(int companyId)
+        public async Task<FileUnit> GetByCompany(int companyId)
         {
-            var query = _dbContext.File
-                .AsQueryable();
+            var fileempty = new FileUnit();
+            var files = await _dbContext
+                 .File
+                 .Where(s => !s.IsDeleted && s.IsActive &&
+                       s.CompanyId == companyId)
+                 .AsNoTracking()
+                 .FirstOrDefaultAsync();
 
-            var list = await query
-                 .Where(s => !s.IsDeleted && s.CompanyId == companyId)
+            return files ?? fileempty;
+        }
+
+        public async Task<List<FileUnit>> GetByComponent(int componentId)
+        {
+            return await _dbContext
+                 .File
+                 .Where(s => !s.IsDeleted && s.IsActive &&
+                        s.ComponentId == componentId)
                  .AsNoTracking()
                  .ToListAsync();
-
-            return list
-               
         }
 
-        public async Task<User> GetById(string id)
-        {
-            var userEmpty = new User();
-            return await _dbContext
-                .User
-                .FindAsync(id) ?? userEmpty;             
-        }
-
-        public async Task<bool> Insert(User user)
+        public async Task<bool> Insert(FileUnit file)
         {
             try
             {
-                _dbContext.User.Add(user);
+                await _dbContext.File.AddAsync(file);
                 await _dbContext.SaveChangesAsync();
                 return true;
             }
@@ -52,11 +52,11 @@ namespace CyanCMS.Infraestructure.Services
             } 
         }
 
-        public async Task<bool> Update(User user)
+        public async Task<bool> Update(FileUnit file)
         {
             try
             {
-                _dbContext.User.Update(user);
+                _dbContext.File.Update(file);
                 await _dbContext.SaveChangesAsync();
                 return true;
             }
@@ -65,6 +65,29 @@ namespace CyanCMS.Infraestructure.Services
                 Console.WriteLine(e);
                 return false;
             }  
+        }
+
+        public async Task<bool> Delete(int id)
+        {
+            try
+            {
+                var model = await _dbContext
+                    .File
+                    .FindAsync(id);
+
+                if (model != null)
+                {
+                    model.IsDeleted = true;
+                    model.IsActive = false;
+                    await this.Update(model);
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
         }
     }
 }

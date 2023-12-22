@@ -1,10 +1,10 @@
 ﻿
 
-using CyanCMS.Domain.Entities;
+using CyanCMS.Domain.Common;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CyanCMS.Domain.Common
+namespace CyanCMS.Domain.Entities
 {
     [Table("File")]
     public class FileUnit :Audit
