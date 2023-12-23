@@ -10,12 +10,12 @@ namespace CyanCMS.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ComponentController : ControllerBase
+    public class ConfigurationController : ControllerBase
     {
         private readonly IComponentAppService _componentAppService;
         private readonly IFileAppService _fileAppService;
 
-        public ComponentController(IComponentAppService componentAppService,
+        public ConfigurationController(IComponentAppService componentAppService,
             IFileAppService fileAppService) 
         {
 			_componentAppService = componentAppService;
