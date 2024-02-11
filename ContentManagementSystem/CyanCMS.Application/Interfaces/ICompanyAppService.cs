@@ -9,7 +9,9 @@ namespace CyanCMS.Application.Interfaces
 		Task<bool> Delete(string id);
 		Task<IEnumerable<Company>> GetAll(CompanyParams @params);
 		Task<Company> GetById(string company_Pk);
-		Task<CreateModel> Insert(Company model);
+		int GetTotalCount();
+
+        Task<CreateModel> Insert(Company model);
 		Task<bool> Update(Company model);
 	}
 }

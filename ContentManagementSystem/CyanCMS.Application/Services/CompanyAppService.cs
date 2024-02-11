@@ -21,6 +21,7 @@ namespace CyanCMS.Application.Services
         {
             return await _companyService.GetAll(@params);
         }
+        public int GetTotalCount() => _companyService.GetTotalCount();
 
         public async Task<Company> GetById(string company_Pk)
         {

@@ -1,12 +1,8 @@
-﻿
+﻿using Microsoft.EntityFrameworkCore;
 using CyanCMS.Infraestructure.Data;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
-using Dapper;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
 using CyanCMS.Utils.Request;
-using System.Linq;
 using CyanCMS.Utils.Response;
 
 namespace CyanCMS.Infraestructure.Services
@@ -73,6 +69,16 @@ namespace CyanCMS.Infraestructure.Services
                 .Take(@params.PageSize);
         }
 
+        public int GetTotalCount()
+        {
+            return _dbContext.Company
+                 .Where(s => !s.IsDeleted)
+                 .AsNoTracking()
+                 .ToListAsync()
+                 .Result
+                 .Count;
+        }
+
         public async Task<Company> GetById(string id)
         {
             Company companyEmpty = new Company();
@@ -89,7 +95,7 @@ namespace CyanCMS.Infraestructure.Services
                 _dbContext.Company.Add(model);
                 int insert = await _dbContext.SaveChangesAsync();
                 createModel.WasCreated = true;
-                createModel.Message = "Se creo la configuracion con exito";
+                createModel.Message = "Se registro con exito";
                 createModel.Id = model.CompanyId; 
                 
                 return createModel;

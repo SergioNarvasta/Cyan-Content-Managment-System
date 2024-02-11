@@ -8,7 +8,7 @@
 
     public class PageOptions
     {
-        public int PageSize { get; set; } = 20;
+        public int PageSize { get; set; } = 10;
         public int PageNumber { get; set; } = 1;
      }
 
