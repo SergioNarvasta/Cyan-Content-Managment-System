@@ -1,5 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using CyanCMS.Utils.Response;
+@using CyanCMS.Domain.Entities;
+@model DataPaginationRp<Company>
+
 @{
+    ViewData["Title"] = "Company";
 }
+
+<div class="d-flex flex-row justify-content-between">
+    <h2 class="">Gestion de Compañias</h2>   
+    <button id="btn_NewCompany" class="" >Nueva Compañia</button>
+</div> 
+
+<div class="d-flex flex-row align-items-center justify-content-center">
+    <form asp-controller="Company" asp-action="Index" method="post">
+        <div class="d-flex flex-row">
+            <input type="text" name="busqueda" placeholder="Nombre de compañia..." class="ms-2" />
+            <input type="checkbox" name="periodo" class="ms-4" />           
+            <button id="btn_filtrar" type="submit" class="btn btn-primary ms-5"><img class="me-1" src="~/img/buscar.png" />Filtrar</button>
+        </div>
+    </form>
+</div> 
