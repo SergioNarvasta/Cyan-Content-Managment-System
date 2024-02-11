@@ -1,0 +1,45 @@
+﻿@using CyanCMS.Utils.Response;
+@model DataPaginationRp
+@{
+    var actionLink = string.Concat(Model.BaseURL, "?PageNumber={0}&PageSize={1}");
+    var isActivePrevious = Model.PageNumber > 1;
+    var isActiveNext     = Model.PageNumber < Model.PageCount;
+}
+ 
+<nav>
+    <ul class="pagination">        
+        <li class="page-item @(isActivePrevious ? null : "disabled")">
+            @if (isActivePrevious)
+            {
+                <a class="page-link" href="@string.Format(actionLink, Model.PageNumber-1, Model.PageSize)">
+                    Anterior
+                </a>
+            }
+            else
+            {
+              <span class="page-link">Anterior</span>    
+            }
+         </li>
+            
+        @for (var pagina = 1; pagina <= Model.PageCount; pagina++)
+        {
+            <li class="page-item @(pagina == Model.PageNumber ? "active":null)">
+                <a class="page-link" href="@string.Format(actionLink, pagina, Model.PageSize)">
+                    @pagina
+                </a>
+            </li>
+        }
+        <li class="page-item @(isActiveNext ? null : "disabled")">
+            @if (isActiveNext)
+            {
+                <a class="page-link" href="@string.Format(actionLink, Model.PageNumber+1, Model.PageSize)">
+                    Siguiente
+                </a>
+            }
+            else
+            {
+              <span class="page-link">Siguiente</span>    
+            }
+         </li>
+    </ul>
+</nav>

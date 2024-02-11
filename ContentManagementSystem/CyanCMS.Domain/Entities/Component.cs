@@ -2,8 +2,6 @@
 using CyanCMS.Domain.Common;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static CyanCMS.Utils.Common.Enums;
-
 
 namespace CyanCMS.Domain.Entities
 {
@@ -19,7 +17,7 @@ namespace CyanCMS.Domain.Entities
         public string ComponentDescription { get; set; } = string.Empty;
         public string ComponentContent { get; set; } = string.Empty;
         public int ComponentOrder { get; set; }
-        public ComponentStyle ComponentStyle { get; set; } 
+        public int ComponentStyle { get; set; } 
         public bool IsSlider { get; set; }
 
         public int CompanyId { get; set; }

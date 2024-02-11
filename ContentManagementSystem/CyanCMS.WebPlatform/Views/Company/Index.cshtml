@@ -8,15 +8,87 @@
 
 <div class="d-flex flex-row justify-content-between">
     <h2 class="">Gestion de Compañias</h2>   
-    <button id="btn_NewCompany" class="" >Nueva Compañia</button>
+    <button id="btnNewCompany" class="" >Nueva Compañia</button>
 </div> 
 
 <div class="d-flex flex-row align-items-center justify-content-center">
     <form asp-controller="Company" asp-action="Index" method="post">
         <div class="d-flex flex-row">
             <input type="text" name="busqueda" placeholder="Nombre de compañia..." class="ms-2" />
-            <input type="checkbox" name="periodo" class="ms-4" />           
-            <button id="btn_filtrar" type="submit" class="btn btn-primary ms-5"><img class="me-1" src="~/img/buscar.png" />Filtrar</button>
+            <span class="row">
+                <input type="checkbox" name="periodo" class="ms-4" />
+                Compañias activas
+            </span>
+            <button id="btnSearch" type="submit">Buscar</button>
         </div>
     </form>
-</div> 
+</div>
+
+<!-- Table -->
+<div class="table-responsive" style="width:100%">
+    <table class="table table-bordered table-hover">
+        <thead id="Thead" style="background-color:#87CEFA">
+            <tr>
+                <th>   </th>
+                <th style="cursor:pointer">
+                    Id
+                </th>
+                <th>
+                    Nombre 
+                </th>
+                <th>
+                    Direccion
+                </th>
+                <th >
+                    Telefono
+                </th>
+                <th>
+                    Correo
+                </th>
+                <th>
+                   Logo
+                </th>
+                <th>
+                    Activo
+                </th>
+                <th>
+                    
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Elements)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink("Detalles", "Evaluacion", "OrdenCompra", new { item.CompanyId })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyAdress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyPhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyEmail)
+                    </td>                                      
+                </tr>
+                @if (ViewBag.totalCount = "0")
+                {
+                    <tr>
+                        <td colspan="10" class="text-center"> No hay registros para mostrar !!</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<partial name="_Pagination" />

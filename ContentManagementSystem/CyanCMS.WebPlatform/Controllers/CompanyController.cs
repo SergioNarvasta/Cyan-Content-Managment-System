@@ -62,7 +62,10 @@ namespace CyanCMS.WebPlatform.Controllers
 
             var data = await _companyAppService.GetAll(queryParams);
             int totalCount = _companyAppService.GetTotalCount();
-
+            if (data.ToList().Count == 0)
+            {
+                ViewBag.totalCount = "0";
+            }
             DataPaginationRp dataPaginationRp = new DataPaginationRp<Company>() {
                 PageNumber = @params.PageNumber,
                 PageSize   = @params.PageSize,
