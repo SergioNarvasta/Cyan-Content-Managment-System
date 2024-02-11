@@ -1,5 +1,4 @@
 ﻿
-using CyanCMS.Domain.Common;
 using CyanCMS.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -27,8 +26,8 @@ namespace CyanCMS.Infraestructure.Data
 		public DbSet<User> User { get; set; }
 		public DbSet<Company> Company { get; set; }
 
-        //public DbSet<Rol> Rol { get; set; }
-        //public DbSet<Plan> Plan { get; set; }
+        // public DbSet<Rol> Rol { get; set; }
+        // public DbSet<Plan> Plan { get; set; }
         public DbSet<Component> Component { get; set; }
         public DbSet<FileUnit> File { get; set; }
         public DbSet<ComponentType> ComponentType { get; set; }
