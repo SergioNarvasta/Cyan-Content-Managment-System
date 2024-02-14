@@ -1,6 +1,6 @@
 ﻿@using CyanCMS.Utils.Response;
-@using CyanCMS.Domain.Entities;
-@model DataPaginationRp<Company>
+@using CyanCMS.Domain.Dto;
+@model DataPaginationRp<CompanyDto>
 
 @{
     ViewData["Title"] = "Company";
@@ -80,7 +80,7 @@
                         @Html.DisplayFor(modelItem => item.CompanyEmail)
                     </td>                                      
                 </tr>
-                @if (ViewBag.totalCount = "0")
+                @if (Model.TotalCount == 0)
                 {
                     <tr>
                         <td colspan="10" class="text-center"> No hay registros para mostrar !!</td>

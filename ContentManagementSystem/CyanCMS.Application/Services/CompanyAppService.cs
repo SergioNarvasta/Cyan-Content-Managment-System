@@ -1,4 +1,5 @@
 ﻿using CyanCMS.Application.Interfaces;
+using CyanCMS.Domain.Dto;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
 using CyanCMS.Utils.Request;
@@ -12,23 +13,17 @@ namespace CyanCMS.Application.Services
         public CompanyAppService(ICompanyService companyService) {
            _companyService = companyService;
         }
-        public async Task<bool> Delete(string id)
-        {
-            return await _companyService.Delete(id);
-        }
+        public async Task<bool> Delete(string id) => 
+            await _companyService.Delete(id);
+        
 
-        public async Task<IEnumerable<Company>> GetAll(CompanyParams @params)
-        {
-            return await _companyService.GetAll(@params);
-        }
-        public int GetTotalCount() => _companyService.GetTotalCount();
+        public async Task<GenericDto<CompanyDto>> GetAll(CompanyParams @params) => 
+            await _companyService.GetAll(@params);  
 
-        public async Task<Company> GetById(string company_Pk)
-        {
-            return await _companyService.GetById(company_Pk);
-        }
+        public async Task<CompanyDto> GetById(int id) =>
+           await _companyService.GetById(id);
 
-        public async Task<CreateModel> Insert(Company model)
+        public async Task<ResponseModel> Insert(Company model)
         {
             model.AuditCreateDate = DateTime.Now;
             model.AuditCreateUser = "User";

@@ -4,6 +4,8 @@ using CyanCMS.Domain.Entities;
 using CyanCMS.Infraestructure.Interfaces;
 using CyanCMS.Utils.Request;
 using CyanCMS.Utils.Response;
+using CyanCMS.Domain.Dto;
+using System.ComponentModel.Design;
 
 namespace CyanCMS.Infraestructure.Services
 {
@@ -38,10 +40,10 @@ namespace CyanCMS.Infraestructure.Services
             
         }
 
-        public async Task<IEnumerable<Company>> GetAll(CompanyParams @params)
+        public async Task<GenericDto<CompanyDto>> GetAll(CompanyParams @params)
         {
             var query = _dbContext.Company
-                .AsQueryable();
+                .Where(s => !s.IsDeleted);
 
             if (!string.IsNullOrEmpty(@params.CompanyName))
             {
@@ -58,44 +60,56 @@ namespace CyanCMS.Infraestructure.Services
                     .Where(s => s.IsActive == isActive
                 );
             }
+            var totalCount = await query.CountAsync();
 
-            var list = await query
-                 .Where(s => !s.IsDeleted)
-                 .AsNoTracking()
-                 .ToListAsync();
+            var data = await query              
+                .Select(s => new CompanyDto
+                {
+                    CompanyId = s.CompanyId,
+                    CompanyName = s.CompanyName,
+                    CompanyAdress = s.CompanyAdress,
+                    CompanyPhoneNumber = s.CompanyPhoneNumber,
+                    CompanyEmail = s.CompanyEmail
+                })
+                .OrderBy(s => s.CompanyId) 
+                .Skip(@params.PageNumber) 
+                .Take(@params.PageSize) 
+                .AsNoTracking()
+                .ToListAsync();
 
-            return list
-                .Skip(@params.PageNumber)
-                .Take(@params.PageSize)
-                .ToList();
+            return new GenericDto<CompanyDto>()
+            {
+                Elements = data,
+                TotalCount = totalCount
+            };
         }
 
-        public int GetTotalCount()
+        public async Task<CompanyDto> GetById(int id)
         {
-            return _dbContext.Company
-                 .Where(s => !s.IsDeleted)
-                 .AsNoTracking()
-                 .ToListAsync()
-                 .Result
-                 .Count;
-        }
-
-        public async Task<Company> GetById(string id)
-        {
-            Company companyEmpty = new Company();
             return await _dbContext
                 .Company
-                .FindAsync(id) ?? companyEmpty;
+                .Where(s => s.CompanyId == id)
+                .Select(s => new CompanyDto
+                {
+                    CompanyId = s.CompanyId,
+                    CompanyName = s.CompanyName,
+                    CompanyAdress = s.CompanyAdress,
+                    CompanyPhoneNumber = s.CompanyPhoneNumber,
+                    CompanyEmail = s.CompanyEmail,
+                    IsActive = s.IsActive,
+                    IsDeleted= s.IsDeleted,
+                })                
+                .FirstOrDefaultAsync() ?? new CompanyDto();          
         }
 
-        public async Task<CreateModel> Insert(Company model)
+        public async Task<ResponseModel> Insert(Company model)
         {
-            var createModel = new CreateModel();
+            var createModel = new ResponseModel();
             try
             {
                 _dbContext.Company.Add(model);
                 int insert = await _dbContext.SaveChangesAsync();
-                createModel.WasCreated = true;
+                createModel.Status = true;
                 createModel.Message = "Se registro con exito";
                 createModel.Id = model.CompanyId; 
                 
@@ -104,7 +118,7 @@ namespace CyanCMS.Infraestructure.Services
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                createModel.WasCreated = false;
+                createModel.Status = false;
                 createModel.Message = "Error durante la operación de inserción";
                 createModel.Id = 0;
 

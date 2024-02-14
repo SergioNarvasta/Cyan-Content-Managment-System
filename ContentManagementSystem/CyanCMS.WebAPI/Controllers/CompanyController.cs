@@ -69,9 +69,9 @@ namespace CyanCMS.WebAPI.Controllers
 
         [Route("GetCompanyById")]
         [HttpPost]
-        public async Task<IActionResult> GetCompanyById(string User_Pk)
+        public async Task<IActionResult> GetCompanyById(int id)
         {
-            return Ok(await _companyAppService.GetById(User_Pk));
+            return Ok(await _companyAppService.GetById(id));
         }
 
         [Route("CreateCompany")]
@@ -82,7 +82,7 @@ namespace CyanCMS.WebAPI.Controllers
                 return BadRequest();
 
             var resultCompany = await _companyAppService.Insert(createCompany.Company);
-            if (resultCompany.WasCreated) {
+            if (resultCompany.Status) {
                 var config = new Configuration() {
                  CompanyId = resultCompany.Id,
                  MainColor = ColorStyle.Default.ToString(),
@@ -101,8 +101,8 @@ namespace CyanCMS.WebAPI.Controllers
             }
             var response = new ResponseModel()
             {
-                Status = resultCompany.WasCreated,
-                Message = resultCompany.WasCreated ? "Se registro exito" : "Error en creacion"       
+                Status = resultCompany.Status,
+                Message = resultCompany.Status ? "Se registro exito" : "Error en creacion"       
             };
             return Created("Created", response);
         }

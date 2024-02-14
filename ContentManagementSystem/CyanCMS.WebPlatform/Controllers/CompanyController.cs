@@ -1,5 +1,6 @@
 ﻿
 using CyanCMS.Application.Interfaces;
+using CyanCMS.Domain.Dto;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Utils.Common;
 using CyanCMS.Utils.Request;
@@ -60,17 +61,13 @@ namespace CyanCMS.WebPlatform.Controllers
                 queryParams = companyParams;
             }
 
-            var data = await _companyAppService.GetAll(queryParams);
-            int totalCount = _companyAppService.GetTotalCount();
-            if (data.ToList().Count == 0)
-            {
-                ViewBag.totalCount = "0";
-            }
-            DataPaginationRp dataPaginationRp = new DataPaginationRp<Company>() {
+            GenericDto<CompanyDto> data = await _companyAppService.GetAll(queryParams);
+
+            DataPaginationRp dataPaginationRp = new DataPaginationRp<CompanyDto>() {
                 PageNumber = @params.PageNumber,
                 PageSize   = @params.PageSize,
-                TotalCount = totalCount,
-                Elements   = data,
+                TotalCount = data.TotalCount,
+                Elements   = data.Elements,
                 BaseURL    = Url.Action(),
             };
 
@@ -78,9 +75,9 @@ namespace CyanCMS.WebPlatform.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetCompanyById(string User_Pk)
+        public async Task<IActionResult> GetCompanyById(int id)
         {
-            return Ok(await _companyAppService.GetById(User_Pk));
+            return Json(await _companyAppService.GetById(id));
         }
 
         [HttpPost]
@@ -90,7 +87,7 @@ namespace CyanCMS.WebPlatform.Controllers
                 return BadRequest();
 
             var resultCompany = await _companyAppService.Insert(createCompany.Company);
-            if (resultCompany.WasCreated) {
+            if (resultCompany.Status) {
                 var config = new Configuration() {
                  CompanyId = resultCompany.Id,
                  MainColor = ColorStyle.Default.ToString(),
@@ -109,8 +106,8 @@ namespace CyanCMS.WebPlatform.Controllers
             }
             var response = new ResponseModel()
             {
-                Status = resultCompany.WasCreated,
-                Message = resultCompany.WasCreated ? "Se registro exito" : "Error en creacion"       
+                Status = resultCompany.Status,
+                Message = resultCompany.Status ? "Se registro exito" : "Error en creacion"       
             };
             return Json(response);
         }
