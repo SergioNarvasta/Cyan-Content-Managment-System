@@ -38,7 +38,7 @@ namespace CyanCMS.WebPlatform.Controllers
             string companyIsActiveFilter = string.Empty;
             var queryParams = new CompanyParams();
 
-            if (@params != null) {
+            if (@params.Filters != null) {
                 var attributeValues = DataQueryOperations.GetAttributeValues(@params.Filters);
                 foreach (var attribute in attributeValues)
                 {

@@ -66,7 +66,8 @@ namespace CyanCMS.Infraestructure.Services
 
             return list
                 .Skip(@params.PageNumber)
-                .Take(@params.PageSize);
+                .Take(@params.PageSize)
+                .ToList();
         }
 
         public int GetTotalCount()

@@ -14,11 +14,21 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerLocalConnection"));
 });
 
+builder.Services.AddTransient<IUserAppService, UserAppService>();
+builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<ICompanyAppService, CompanyAppService>();
 builder.Services.AddTransient<ICompanyService, CompanyService>();
 
-builder.Services.AddTransient<IUserAppService, UserAppService>();
-builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IConfigurationAppService, ConfigurationAppService>();
+builder.Services.AddTransient<IConfigurationService, ConfigurationService>();
+builder.Services.AddTransient<IConfigurationComponentTypeAppService, ConfigurationComponentTypeAppService>();
+builder.Services.AddTransient<IConfigurationComponentTypeService, ConfigurationComponentTypeService>();
+builder.Services.AddTransient<IComponentAppService, ComponentAppService>();
+builder.Services.AddTransient<IComponentService, ComponentService>();
+builder.Services.AddTransient<IComponentTypeAppService, ComponentTypeAppService>();
+builder.Services.AddTransient<IComponentTypeService, ComponentTypeService>();
+builder.Services.AddTransient<IFileAppService, FileAppService>();
+builder.Services.AddTransient<IFileService, FileService>();
 
 var app = builder.Build();
 
