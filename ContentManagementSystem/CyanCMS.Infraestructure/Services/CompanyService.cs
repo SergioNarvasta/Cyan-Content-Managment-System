@@ -5,7 +5,6 @@ using CyanCMS.Infraestructure.Interfaces;
 using CyanCMS.Utils.Request;
 using CyanCMS.Utils.Response;
 using CyanCMS.Domain.Dto;
-using System.ComponentModel.Design;
 
 namespace CyanCMS.Infraestructure.Services
 {
@@ -52,8 +51,7 @@ namespace CyanCMS.Infraestructure.Services
                 );
             }
 
-            bool isActive;
-            if (bool.TryParse(@params.IsActiveStr, out isActive) &&
+            if (bool.TryParse(@params.IsActiveStr, out bool isActive) &&
                 !string.IsNullOrEmpty(@params.IsActiveStr))
             {
                 query = query
@@ -72,7 +70,7 @@ namespace CyanCMS.Infraestructure.Services
                     CompanyEmail = s.CompanyEmail
                 })
                 .OrderBy(s => s.CompanyId) 
-                .Skip(@params.PageNumber) 
+                .Skip(@params.PageSize * (@params.PageNumber - 1)) 
                 .Take(@params.PageSize) 
                 .AsNoTracking()
                 .ToListAsync();
