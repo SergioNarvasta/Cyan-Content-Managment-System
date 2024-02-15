@@ -1,0 +1,189 @@
+﻿
+<!-- Request.IsAuthenticated -->
+@{
+    bool showTopBar = true;
+}
+@if (showTopBar)
+{
+    <header id="page-topbar">
+        <div class="navbar-header">
+            <div class="d-flex">
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                    <a href=@Url.Action("Index", "Home") class="logo logo-dark">
+                        <span class="logo-sm">
+                            <img src="~/assets/images/IntelliSuite_blanco.png" alt="" height="42">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="~/assets/images/IntelliSuite_blanco.png" alt="" height="42">
+                        </span>
+                    </a>
+
+                    <a href=@Url.Action("Index", "Home") class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="~/assets/images/IntelliSuite_blanco.png" alt="" height="42">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="~/assets/images/IntelliSuite_blanco.png" alt="" height="42">
+                        </span>
+                    </a>
+                </div>
+
+                <button type="button" class="btn btn-sm px-3 font-size-16 vertinav-toggle header-item waves-effect" id="vertical-menu-btn">
+                    <i class="fa fa-fw fa-bars"></i>
+                </button>
+
+                <button type="button" class="btn btn-sm px-3 font-size-16 horinav-toggle header-item waves-effect waves-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                    <i class="fa fa-fw fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="d-flex">
+
+                <div class="dropdown d-inline-block d-lg-none ms-2">
+                    <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="mdi mdi-magnify"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                         aria-labelledby="page-header-search-dropdown">
+
+                        <form class="p-3">
+                            <div class="form-group m-0">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="dropdown d-none d-lg-inline-block ms-1">
+                    <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                        <i class="mdi mdi-fullscreen"></i>
+                    </button>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" id="btn_center_list" class="btn header-item waves-effect" data-id="0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img id="header-center-img" src="" alt="" height="16" class="me-2">
+                        <span id="header-center-name" class="align-middle"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" id="header-center-list">
+                    </div>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="rounded-circle header-profile-user" src="~/assets/images/users/avatar-1.jpg"
+                             alt="Header Avatar">
+                        <span class="d-none d-xl-inline-block ms-1">UserName @* User.Identity.GetUserName() *@</span>
+                        <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <!-- item-->
+                        <h6 class="dropdown-header"><b>Bienvenido  UserName! @* User.Identity.GetUserName() *@</b></h6>
+                        @{
+                            // SessionData sessionData = new SessionData();
+                            string staffId = "1"; // sessionData.GetStaffIdSession().ToString();
+                        }
+                        <a class="dropdown-item" href="/Staff/Details/@staffId"><i class="mdi mdi-account-circle text-muted font-size-16 align-middle me-1"></i> <span class="align-middle" key="t-profile">Perfil</span></a>
+                        <a class="dropdown-item" href="#"><i class="mdi mdi-form-textbox-password text-muted font-size-16 align-middle me-1"></i> <span class="align-middle" key="t-messages">Cambiar Contraseña</span></a>
+                        <a class="dropdown-item" href="#"><i class="mdi mdi-lifebuoy text-muted font-size-16 align-middle me-1"></i> <span class="align-middle" key="t-help">Ayuda</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><span class="badge bg-success bg-soft text-success mt-1 float-end">Nuevo</span><i class="mdi mdi-cog-outline text-muted font-size-16 align-middle me-1"></i> <span class="align-middle" key="t-settings">Configuracion</span></a>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()"><i class="mdi mdi-logout text-muted font-size-16 align-middle me-1"></i> <span class="align-middle" key="t-logout">Cerrar Sesion</span></a>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+}
+
+<script src="~/assets/libs/jquery/jquery.min.js"></script>
+<script src="~/assets/js/sgr.common.js"></script>
+<script>
+    $(document).ready(function () {
+        getCenterSessionList();
+        onClickCenter();
+    });
+
+    function onClickCenter() {
+        $('#header-center-list').on('click', "a.header-center", function (e) {
+            var centerId = $(this).attr('header-center-id');
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Home/SetStaffSessionCenter',
+                    dataType: 'json',
+                    data: { centerId: centerId },
+                    success: function (response) {
+                        if (response.success) {
+                            location.reload();
+                        }
+                    },
+                    error: function (ex) {
+                        showErrorNotification(ex.responseText);
+                    }
+                });
+            } catch (e) {
+                showErrorNotification(e.responseText);
+            }
+        });
+    }
+
+    function getCenterSessionList() {
+        $.ajax({
+            type: 'POST',
+            url: '/Home/GetStaffCenters',
+            data: {},
+            success: function (response) {
+                if (response.success) {
+                    var count = 0;
+                    $.each(response.centerSessionList, function (i, result) {
+                        console.log(result.Selected);
+                        count++;
+                        if (result.Selected) {
+                            $("#header-center-img").attr("src", "../../Resources/CenterLogos/" + getCenterLogo(result.Logo));
+                            $("#header-center-name").text(result.Name);
+                            $("#IdCenterSelected").val(result.Id);
+                            $('#btn_center_list').attr('data-id', result.Id);
+                            $("#IdCenterSelected").val(result.Id);
+                            $("#NameCenterSelected").val(result.Name);
+                        }
+                    });
+                    console.log(count);
+                    if (count > 1) {
+                        $("#header-center-list").append('<a href="javascript:void(0);" class="dropdown-item notify-item header-center" header-center-id="0">' + '<img src="../../Resources/CenterLogos/' + getCenterLogo("") + '" alt="" class="me-1" height="12"> <span class="align-middle">Todos</span>' + '</a>');
+                    }
+                    $.each(response.centerSessionList, function (i, result) {
+                        $("#header-center-list").append('<a href="javascript:void(0);" class="dropdown-item notify-item header-center" header-center-id="' + result.Id + '">' + '<img src="../../Resources/CenterLogos/' + getCenterLogo(result.Logo) + '" alt="" class="me-1" height="12"> <span class="align-middle">' + result.Name + '</span>' + '</a>');
+                    });
+                } else {
+                    showErrorNotification(response.responseText);
+                }
+            },
+            error: function (ex) {
+                showErrorNotification(ex.responseText);
+            }
+        });
+    }
+
+    function getCenterLogo(logo) {
+        if (logo) {
+            return logo;
+        }
+        return "Default.jpg"
+    }
+
+</script>

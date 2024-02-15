@@ -25,4 +25,8 @@
     <ProjectReference Include="..\CyanCMS.Utils\CyanCMS.Utils.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\template-sidebar\" />
+  </ItemGroup>
+
 </Project>
