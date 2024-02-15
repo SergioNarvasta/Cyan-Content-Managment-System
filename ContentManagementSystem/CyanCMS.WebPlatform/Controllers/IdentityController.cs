@@ -1,12 +1,10 @@
 ﻿
 using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Dto;
-using CyanCMS.Domain.Entities;
+
 using CyanCMS.Utils.Constants;
 using CyanCMS.Utils.Response;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CyanCMS.WebPlatform.Controllers
 {
@@ -36,7 +34,9 @@ namespace CyanCMS.WebPlatform.Controllers
             {
 				response.Id = user.UserId;
 				response.Message = "Inicio de Sesion Exitoso";
-                response.Status = true;				
+                response.Status = true;
+
+                _sessionAppService.SetUserSession(keySession, user.UserId.ToString());
             }
             else
             {
