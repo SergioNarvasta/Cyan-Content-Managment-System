@@ -8,47 +8,29 @@
     <title>Cyan - Content Management System </title>
     <!-- App favicon -->
     <link rel="shortcut icon" href="">
-    
+
     <!-- CSS Imports -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CyanCMS.WebPlatform.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-rI9T/nkwl1xHNPCkyU7p9Unlv7IwLaUJ5z9egzLPnJ0eZ+Ks+fFQAZ9KLwz5R5bI" crossorigin="anonymous" />
-   
+
     <!-- Template SideBar Icons Css -->
     <link href="~/css/template-sidebar/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="~/css/template-sidebar/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 </head>
 <body data-sidebar="dark">
-    @if (ViewBag.IsLoginView != null)
-    {
-        @RenderBody()
-    }
-    else
-    {
-        <div id="layout-wrapper">
-            <partial name="_Topbar" />
-            <partial name="_Sidebar" />
-
-            <div class="main-content">
-                <div class="page-content">
-                    <div class="container-fluid">
-                        @RenderBody()
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
+    @RenderBody()
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; <script>document.write(new Date().getFullYear())</script> - Cyan Content Management System
+            &copy; 2024 - Cyan Content Management System
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script src="~/lib/simplebar/simplebar.min.js"></script>
     <script src="~/lib/node-waves/waves.min.js"></script>
     <!-- dashboard init -->

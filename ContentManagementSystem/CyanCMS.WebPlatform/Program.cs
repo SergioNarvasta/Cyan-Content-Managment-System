@@ -4,6 +4,7 @@ using CyanCMS.Application.Interfaces;
 using CyanCMS.Application.Services;
 using CyanCMS.Infraestructure.Interfaces;
 using CyanCMS.Infraestructure.Services;
+using CMS.Infraestructure.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddTransient<IUserAppService, UserAppService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<ISessionAppService, SessionAppService>();
+builder.Services.AddTransient<ISessionService, SessionService>();
 builder.Services.AddTransient<ICompanyAppService, CompanyAppService>();
 builder.Services.AddTransient<ICompanyService, CompanyService>();
 
@@ -48,6 +51,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Identity}/{action=Login}/{id?}");
 
 app.Run();

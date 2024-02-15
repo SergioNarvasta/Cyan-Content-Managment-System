@@ -3,10 +3,11 @@
 using CyanCMS.Domain.Dto;
 using CyanCMS.Domain.Entities;
 
-namespace CMS.Aplicacion.Interfaces
+namespace CMS.Infraestructure.Interfaces
 {
 	public interface ISessionService
 	{
-		Task<User> Session(SessionDto request);
-	}
+		Task<UserDto> GetSession(SessionDto request);
+        Task<bool> UserNameExists(string username);
+    }
 }

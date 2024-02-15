@@ -107,7 +107,7 @@ namespace CyanCMS.WebPlatform.Controllers
             var response = new ResponseModel()
             {
                 Status = resultCompany.Status,
-                Message = resultCompany.Status ? "Se registro exito" : "Error en creacion"       
+                Message = resultCompany.Status ? "Se registro con exito" : "Error en creacion"       
             };
             return Json(response);
         }

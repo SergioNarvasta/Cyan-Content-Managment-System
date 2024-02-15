@@ -35,19 +35,18 @@ namespace CyanCMS.Domain.Entities
         public bool IsDeleted { get; set; }
         public bool IsActive { get; set; }
 
-        public string? AuditCreateUser { get; set; }
+        public string AuditCreateUser { get; set; }
         public DateTime AuditCreateDate { get; set; }
-        public string? AuditUpdateUser { get; set; }
+        public string AuditUpdateUser { get; set; }
         public DateTime AuditUpdateDate { get; set; }
 
-
-        public List<Company>? Companies { get; set; }
-
-        [NotMapped]
-        public int? PlanId { get; set; }
+        public List<Company> Companies { get; set; }
 
         [NotMapped]
-        public int? RolId { get; set; }
+        public int PlanId { get; set; }
+
+        [NotMapped]
+        public int RolId { get; set; }
 		
 	}
 }

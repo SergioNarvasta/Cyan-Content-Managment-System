@@ -1,0 +1,65 @@
+﻿
+<div>
+    <div >
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="text-center mb-3">
+                    <img src="~/assets/images/IntelliSuite_azul.png" alt="" height="84" class="auth-logo-dark">
+                    <p class="font-size-15 text-muted mt-3">Sistema de Gestion de Contenido</p>
+                </div>
+                <div class="card overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-lg-6">
+                            <div class="p-lg-5 p-4">
+                                <div>
+                                    <h5>Bienvenido!</h5>
+                                    <p class="text-muted">Inicie sesion para acceder a Cyan CMS.</p>
+                                </div>
+                                <form asp-controller="Identity" asp-action="Login" method="post">
+                                    <div class="mt-3 pt-3">
+                                        <div class="mb-3">
+                                            <label for="Email" class="fw-semibold">Usuario</label>
+                                            <input type="text" class="form-control" name="UserName" placeholder="Ingrese nombre usuario">
+                                        </div>
+
+                                        <div class="mb-3 mb-4">
+                                            <label for="Password" class="fw-semibold">Contraseña</label>
+                                            <input type="password" class="form-control" name="Token" placeholder="Ingrese contraseña">
+                                        </div>
+
+                                        <div class="row align-items-center">
+                                            <div class="col-6">
+                                                <div class="text-end">
+                                                    <input type="submit" value="Iniciar sesion" class="btn btn-primary w-md waves-effect waves-light" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <a href=@Url.Action("ForgotPassword", "Account") class="text-muted"><i class="mdi mdi-lock me-1"></i> Olvidaste tu contraseña?</a>
+                                        </div>
+
+                                    </div>
+                                </form>
+                                
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="p-lg-2 p-4 mt-2 h-100 d-none d-lg-block">
+                                <img src="~/assets/images/background/Fichier-7.png" alt="" height="380" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end account page -->

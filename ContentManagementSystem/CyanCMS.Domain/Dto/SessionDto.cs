@@ -8,7 +8,7 @@ namespace CyanCMS.Domain.Dto
 {
     public class SessionDto
     {
-        public string correo { get; set; }
-        public string clave { get; set; }
+        public string UserName { get; set; }
+        public string Token { get; set; }
     }
 }
