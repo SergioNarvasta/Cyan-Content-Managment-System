@@ -1,13 +1,19 @@
 
+
 function onSubmitLogin() {
-    let form = "";
-    $.ajax({   
+    let formData = $("#loginForm").serialize(); 
+
+    $.ajax({
         type: "POST",
-        url: "/Identity/Login",
-        data: { form },
+        url: "Identity/Login", 
+        data: formData, 
         success: function (response) {
-            $('#resultado').html('');
-            $('#resultado').html(response);
+            if (response.status) {
+                // toast.success(response.message);
+                location.href="Home/Index"
+            } else {
+                // toast.error(response.message);
+            }
         }
     });
 }

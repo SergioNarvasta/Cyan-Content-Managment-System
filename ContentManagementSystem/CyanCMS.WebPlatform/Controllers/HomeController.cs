@@ -1,3 +1,5 @@
+using CyanCMS.Application.Interfaces;
+using CyanCMS.Utils.Constants;
 using CyanCMS.WebPlatform.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,14 +9,26 @@ namespace CyanCMS.WebPlatform.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ISessionAppService _sessionAppService;
+        private readonly IUserAppService _userAppService;
+        public HomeController(ILogger<HomeController> logger, ISessionAppService sessionAppService, IUserAppService userAppService)
         {
             _logger = logger;
+            _sessionAppService = sessionAppService;
+            _userAppService = userAppService;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
+            string keySession = Constant.key_CurrentSession;
+            string UserIdSession = _sessionAppService.GetUserSession(keySession);
+            if (!string.IsNullOrEmpty(UserIdSession))
+            {
+                var user = await _userAppService.GetById(int.Parse(UserIdSession));
+                ViewBag.UserEmail = user.UserEmail;
+                ViewBag.UserName = user.UserName;
+            }
             return View();
         }
 

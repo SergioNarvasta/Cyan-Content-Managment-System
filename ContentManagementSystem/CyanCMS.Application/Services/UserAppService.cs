@@ -23,7 +23,7 @@ namespace CyanCMS.Application.Services
           return await _userService.GetAll(@params);
         }
 
-        public Task<User> GetById(string id)
+        public Task<User> GetById(int id)
         {
             return _userService.GetById(id);
         }

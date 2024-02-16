@@ -78,7 +78,7 @@ namespace CyanCMS.Infraestructure.Services
                 .Take(@params.PageSize);
         }
 
-        public async Task<User> GetById(string id)
+        public async Task<User> GetById(int id)
         {
             var userEmpty = new User();
             return await _dbContext

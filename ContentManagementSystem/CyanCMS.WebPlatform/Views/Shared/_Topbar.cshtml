@@ -82,12 +82,12 @@
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="rounded-circle header-profile-user" src="~/assets/images/users/avatar-1.jpg"
                              alt="Header Avatar">
-                        <span class="d-none d-xl-inline-block ms-1">UserName @* User.Identity.GetUserName() *@</span>
+                        <span class="d-none d-xl-inline-block ms-1">@ViewBag.UserName</span>
                         <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
-                        <h6 class="dropdown-header"><b>Bienvenido  UserName! @* User.Identity.GetUserName() *@</b></h6>
+                        <h6 class="dropdown-header"><b>Bienvenido  @ViewBag.UserName !</b></h6>
                         @{
                             // SessionData sessionData = new SessionData();
                             string staffId = "1"; // sessionData.GetStaffIdSession().ToString();

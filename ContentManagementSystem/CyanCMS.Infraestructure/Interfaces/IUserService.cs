@@ -8,7 +8,7 @@ namespace CyanCMS.Infraestructure.Interfaces
     {
         Task<bool> Delete(string id);
         Task<IEnumerable<User>> GetAll(UserParams @params);
-        Task<User> GetById(string id);
+        Task<User> GetById(int id);
         Task<bool> Insert(User user);
         Task<bool> Update(User user);
     }
