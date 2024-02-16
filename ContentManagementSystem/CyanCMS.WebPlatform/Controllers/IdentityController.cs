@@ -11,7 +11,8 @@ namespace CyanCMS.WebPlatform.Controllers
 	public class IdentityController : Controller
 	{
 		private readonly ISessionAppService _sessionAppService;
-		public IdentityController(ISessionAppService sessionAppService) 
+        public string keySession = Constant.key_CurrentSession;
+        public IdentityController(ISessionAppService sessionAppService) 
 		{
 		    _sessionAppService = sessionAppService;
 		}
@@ -19,6 +20,12 @@ namespace CyanCMS.WebPlatform.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            string UserIdSession = _sessionAppService.GetUserSession(keySession);
+            if (!string.IsNullOrEmpty(UserIdSession))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             ViewBag.IsLoginView = true;
             return View();
         }
@@ -26,8 +33,7 @@ namespace CyanCMS.WebPlatform.Controllers
         [HttpPost]
 		public async Task<IActionResult> Login(SessionDto request)
 		{
-			string keySession = Constant.key_CurrentSession;
-			ResponseModel response = new();
+            ResponseModel response = new();
             var user = await _sessionAppService.GetSession(request);
 
             if (user.UserId != 0)
@@ -44,6 +50,14 @@ namespace CyanCMS.WebPlatform.Controllers
                 response.Status = false;
             }
             return Json(response);
-        }  
+        }
+
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            _sessionAppService.RemoveUserSession(keySession);
+
+            return RedirectToAction("Login", "Identity");
+        }
     }
 }

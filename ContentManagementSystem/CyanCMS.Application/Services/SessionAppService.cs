@@ -36,5 +36,10 @@ namespace CyanCMS.Application.Services
         {
             return _memoryCache.Get<string>(key) ?? string.Empty;
         }
+
+        public void RemoveUserSession(string key)
+        {
+            _memoryCache.Remove(key);
+        }
     }
 }

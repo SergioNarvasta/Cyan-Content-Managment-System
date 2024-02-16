@@ -7,6 +7,7 @@ namespace CyanCMS.Application.Interfaces
 	{
 		Task<UserDto> GetSession(SessionDto request);
         string GetUserSession(string key);
+        void RemoveUserSession(string key);
         void SetUserSession(string key, string value);
     }
 }
