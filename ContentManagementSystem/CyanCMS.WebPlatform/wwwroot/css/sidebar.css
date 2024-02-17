@@ -1,56 +1,20 @@
-#sidebar {
-    height: 100%;
-    width: 250px;
-    /*position: fixed;*/
-    background-color: #343a40;
-    padding-top: 20px;
-    transition: all 0.3s;
-    color: rgb(193, 187, 187);
-    border-radius: 10px;
+
+
+
+#side-menu .Companies .Img_LogoCompany {
+    width: 70px;
+    height: 70px;
 }
 
-.sidebar-header {
-    text-align: center;
-    padding-bottom: 10px;
+#side-menu .Companies .Cbo_Companies {
+    border-color: #8fa6bf;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 5px;
 }
-
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #d3d3d3;
+#side-menu li a {
+    color: #d6d6d6;
+    display:flex;
+    flex-direction:row;
+    text-decoration:none;
 }
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    text-decoration: none;
-    display: block;
-}
-
-    #sidebar ul li a:hover {
-        color: cyan; /* Cambia el color de los enlaces al pasar el mouse a rosa */
-        background: #f8f9fa;
-    }
-
-@media (max-width: 768px) {
-    #sidebar {
-        width: 100%;
-        position: relative;
-    }
-}
-
-
-#sidebarCollapse {
-    display: none;
-}
-
-#sidebar.collapsed {
-    width: 80px;
-}
-
-    #sidebar.collapsed #sidebarCollapse {
-        display: block;
-    }
-.accordion {
-}
-
-

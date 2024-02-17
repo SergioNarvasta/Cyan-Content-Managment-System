@@ -20,3 +20,15 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.navbar-brand-box .Logo-part-cyan {
+    font-size: 26px;
+    color: #d6d6d6;
+    font-family: "ADLaM Display", system-ui;
+}
+
+.navbar-brand-box .Logo-part-cms {
+    font-size: 26px;
+    color: #d6d6d6;
+    font-family: "arial";
+}
