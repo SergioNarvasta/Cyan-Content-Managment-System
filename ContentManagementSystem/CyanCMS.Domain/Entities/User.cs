@@ -1,11 +1,12 @@
 ﻿
+using CyanCMS.Domain.Common;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CyanCMS.Domain.Entities
 {
-	public class User // : IdentityUser
+	public class User : Audit
     {
 		[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -13,40 +14,40 @@ namespace CyanCMS.Domain.Entities
 
         [Required]
         [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
-        public string UserName { get; set; }
+        [Column(TypeName = "varchar(50)")]
+        public string? Name { get; set; }
 
-        [Required]
-        [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
-        public string UserLastName { get; set; }
-
-        [Required]
         [MaxLength(80, ErrorMessage = "El campo no debe de tener mas de 80 caracteres")]
-        public string UserAdress { get; set; }
+        [Column(TypeName = "varchar(80)")]
+        public string? LastName { get; set; }
+
+        [MaxLength(80, ErrorMessage = "El campo no debe de tener mas de 80 caracteres")]
+        [Column(TypeName = "varchar(80)")]
+        public string? Adress { get; set; }
 
         [MaxLength(15, ErrorMessage = "El campo no debe de tener mas de 15 caracteres")]
-        public string UserPhoneNumber { get; set; }
+        [Column(TypeName = "varchar(15")]
+        public string? PhoneNumber { get; set; }
 
         [Required]
-        public string UserEmail { get; set; }
+        [DataType(DataType.EmailAddress)]
+        [Column(TypeName = "varchar(60")]
+        public string Email { get; set; } 
 
         [Required]
-        public string UserToken { get; set; }
+        [Column(TypeName = "varchar(50")]
+        [DataType(DataType.Password)]
+        public string Token { get; set; }
 
-        public bool IsDeleted { get; set; }
-        public bool IsActive { get; set; }
+        public List<Company>? Companies { get; set; }
 
-        public string AuditCreateUser { get; set; }
-        public DateTime AuditCreateDate { get; set; }
-        public string AuditUpdateUser { get; set; }
-        public DateTime AuditUpdateDate { get; set; }
+        public int? PlanId { get; set; }
+        [ForeignKey("PlanId")]
+        public Plan? Plan { get; set; }
 
-        public List<Company> Companies { get; set; }
+        public int? RolId { get; set; }
 
-        [NotMapped]
-        public int PlanId { get; set; }
-
-        [NotMapped]
-        public int RolId { get; set; }
-		
-	}
+        [ForeignKey("RolId")]
+        public Rol? Rol { get; set; }
+    }
 }

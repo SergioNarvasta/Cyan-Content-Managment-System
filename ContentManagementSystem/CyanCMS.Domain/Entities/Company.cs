@@ -9,25 +9,31 @@ namespace CyanCMS.Domain.Entities
 	{
 		[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CompanyId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public string CompanyName { get; set; }
-		public string CompanyAdress { get; set; }
+        [Column(TypeName = "varchar(50)")]
+        public string Name { get; set; } = "CompanyEmpty";
+
+        [Column(TypeName = "varchar(50)")]
+        public string? Adress { get; set; }
 
         [MaxLength(15, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
-        public string CompanyPhoneNumber { get; set; }
-		public string CompanyEmail { get; set; }
+        [Column(TypeName = "varchar(15)")]
+        public string? PhoneNumber { get; set; }
+        [Column(TypeName = "varchar(40)")]
+        public string? Email { get; set; }
 
-        public List<FileUnit> Files { get; set; }
+        public List<FileUnit>? Files { get; set; }
 
-        public List<Component> Components { get; set; }
+        public List<Component>? Components { get; set; }
 
+        [Required]
         public int UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public User User { get; set; }
+        public User? User { get; set; }
 
-        public Configuration Configuration { get; set; }
+        public Configuration? Configuration { get; set; }
     }
 }

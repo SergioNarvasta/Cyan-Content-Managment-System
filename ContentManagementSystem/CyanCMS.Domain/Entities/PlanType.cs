@@ -1,12 +1,12 @@
 ﻿
+
+using CyanCMS.Domain.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using CyanCMS.Domain.Common;
-using Microsoft.EntityFrameworkCore;
 
 namespace CyanCMS.Domain.Entities
 {
-    public class Plan : Audit
+    public class PlanType : Audit
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -14,17 +14,9 @@ namespace CyanCMS.Domain.Entities
 
         [Column(TypeName = "varchar(50)")]
         [Required]
-        public string Name { get; set; } = "Standar";
+        public string Name { get; set; } = "user";
 
         [Column(TypeName = "varchar(50)")]
         public string? Description { get; set; }
-
-        public int? CompanyQuantity { get; set; };
-
-        [Required]
-        [Precision(6,2)]
-        public decimal Price {  get; set; }
-        public DateTime? DateExpired { get; set; }
-        public  User? User { get; set; }
     }
 }
