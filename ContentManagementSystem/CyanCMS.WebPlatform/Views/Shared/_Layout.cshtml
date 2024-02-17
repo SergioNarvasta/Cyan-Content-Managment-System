@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="Content Management System - Sistema de Gestion de Contenido" name="description" />
-    <meta content="CyanCMS" name="author" />
+    <meta content="InnovaIT" name="author" />
     <title>Cyan - Content Management System </title>
     <!-- App favicon -->
     <link rel="shortcut icon" href="">
@@ -12,7 +12,6 @@
     <!-- CSS Imports -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/CyanCMS.WebPlatform.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" />
    
     <!-- Template SideBar Icons Css -->
@@ -20,7 +19,7 @@
     <!-- App Css-->
     <link href="~/css/template-sidebar/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <!-- Toastr -->
-    <link href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 </head>
 <body data-sidebar="dark">
     @if (ViewBag.IsLoginView != null)
@@ -49,6 +48,7 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     
     <script src="~/lib/simplebar/simplebar.min.js"></script>
@@ -59,7 +59,7 @@
     <script src="~/js/template-sidebar/app.js"></script>
 
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/sidebar.js" asp-append-version="true"></script>
+    <script src="~/js/login.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
