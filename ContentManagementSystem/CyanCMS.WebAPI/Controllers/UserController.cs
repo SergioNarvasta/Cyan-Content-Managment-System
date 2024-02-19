@@ -75,6 +75,7 @@ namespace CyanCMS.WebAPI.Controllers
 			user.IsActive = true;
             user.IsDeleted = false;
             user.AuditCreateDate = DateTime.Now;
+            user.AuditCreateUser = "RequestAPI";
 
             await _userAppService.Insert(user);
             return Created("Created", true);
