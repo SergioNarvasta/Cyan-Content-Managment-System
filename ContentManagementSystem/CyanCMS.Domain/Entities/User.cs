@@ -26,16 +26,16 @@ namespace CyanCMS.Domain.Entities
         public string? Adress { get; set; }
 
         [MaxLength(15, ErrorMessage = "El campo no debe de tener mas de 15 caracteres")]
-        [Column(TypeName = "varchar(15")]
+        [Column(TypeName = "varchar(15)")]
         public string? PhoneNumber { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
-        [Column(TypeName = "varchar(60")]
+        [Column(TypeName = "varchar(60)")]
         public string Email { get; set; } 
 
         [Required]
-        [Column(TypeName = "varchar(50")]
+        [Column(TypeName = "varchar(50)")]
         [DataType(DataType.Password)]
         public string Token { get; set; }
 

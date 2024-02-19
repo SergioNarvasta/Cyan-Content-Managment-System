@@ -396,7 +396,7 @@ namespace CyanCMS.Infraestructure.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("varchar(60");
+                        .HasColumnType("varchar(60)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -415,7 +415,7 @@ namespace CyanCMS.Infraestructure.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(15)
-                        .HasColumnType("varchar(15");
+                        .HasColumnType("varchar(15)");
 
                     b.Property<int?>("PlanId")
                         .HasColumnType("int");
@@ -425,7 +425,7 @@ namespace CyanCMS.Infraestructure.Migrations
 
                     b.Property<string>("Token")
                         .IsRequired()
-                        .HasColumnType("varchar(50");
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
