@@ -10,7 +10,7 @@ namespace CyanCMS.WebAPI.Controllers
         //private IFileCollection _serviceFile = new FileCollection();
         
         [HttpGet]
-        public async Task<IActionResult> GetAllFile()
+        public IActionResult GetAllFile()
         {
             return Ok("");
         }

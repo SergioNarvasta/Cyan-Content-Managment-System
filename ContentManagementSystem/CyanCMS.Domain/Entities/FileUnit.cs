@@ -25,6 +25,7 @@ namespace CyanCMS.Domain.Entities
         public string FileBase64 { get;set;} = string.Empty;
 
         [Required]
+        [Column(TypeName = "varchar(20)")]
         public string Size { get; set; } = string.Empty;
 
         public int? ComponentId { get; set; }

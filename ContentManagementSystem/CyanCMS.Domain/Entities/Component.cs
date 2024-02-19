@@ -10,9 +10,12 @@ namespace CyanCMS.Domain.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [Column(TypeName = "varchar(80)")]
         public string Name { get; set; } = string.Empty;
 
         [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
+        [Column(TypeName = "varchar(50)")]
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Content { get; set; } = string.Empty;

@@ -26,8 +26,8 @@ namespace CyanCMS.WebPlatform.Controllers
             if (!string.IsNullOrEmpty(UserIdSession))
             {
                 var user = await _userAppService.GetById(int.Parse(UserIdSession));
-                ViewBag.UserEmail = user.UserEmail;
-                ViewBag.UserName = user.UserName;
+                ViewBag.UserEmail = user.Email;
+                ViewBag.UserName = user.Name;
             }
             return View();
         }

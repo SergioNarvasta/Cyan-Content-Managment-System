@@ -10,7 +10,7 @@ namespace CyanCMS.Infraestructure.Interfaces
     {
         Task<bool> Delete(int id);
         Task<IEnumerable<Component>> GetAll(ComponentParams @params);
-        Task<Component> GetById(string id);
+        Task<Component> GetById(int id);
         Task<CreateModel> Insert(Component model);
         Task<bool> Update(Component model);
     }

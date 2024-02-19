@@ -1,4 +1,4 @@
-﻿using CMS.Infraestructure.Interfaces;
+﻿using CyanCMS.Infraestructure.Interfaces;
 using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Dto;
 using CyanCMS.Utils.Security;

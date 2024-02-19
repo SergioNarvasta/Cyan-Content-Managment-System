@@ -15,7 +15,7 @@ namespace CyanCMS.Domain.Entities
         [Required]
         [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
         [Column(TypeName = "varchar(50)")]
-        public string? Name { get; set; }
+        public string? Name { get; set; } = string.Empty;
 
         [MaxLength(80, ErrorMessage = "El campo no debe de tener mas de 80 caracteres")]
         [Column(TypeName = "varchar(80)")]

@@ -22,7 +22,7 @@ namespace CyanCMS.Application.Services
             return await _componentService.GetAll(@params);
         }
 
-        public async Task<Component> GetById(string ComponentId)
+        public async Task<Component> GetById(int ComponentId)
         {
             return await _componentService.GetById(ComponentId);
         }

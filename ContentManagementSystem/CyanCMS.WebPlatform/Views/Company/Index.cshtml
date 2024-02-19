@@ -62,22 +62,22 @@
             {
                 <tr>
                     <td>
-                        @Html.ActionLink("Detalles", "Evaluacion", "OrdenCompra", new { item.CompanyId })
+                        @Html.ActionLink("Detalles", "Evaluacion", "OrdenCompra", new { item.Id })
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CompanyId)
+                        @Html.DisplayFor(modelItem => item.Id)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CompanyName)
+                        @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CompanyAdress)
+                        @Html.DisplayFor(modelItem => item.Adress)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CompanyPhoneNumber)
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CompanyEmail)
+                        @Html.DisplayFor(modelItem => item.Email)
                     </td>                                      
                 </tr>
                 @if (Model.TotalCount == 0)

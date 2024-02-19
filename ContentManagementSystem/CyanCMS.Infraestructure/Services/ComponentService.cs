@@ -77,7 +77,7 @@ namespace CyanCMS.Infraestructure.Services
                 .Take(@params.PageSize);
         }
 
-        public async Task<Component> GetById(string id)
+        public async Task<Component> GetById(int id)
         {
             var componentEmpty = new Component();
             return await _dbContext
