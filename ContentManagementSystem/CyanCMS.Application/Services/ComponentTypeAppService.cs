@@ -37,8 +37,8 @@ namespace CyanCMS.Application.Services
 
                     ComponentType componentType = new ComponentType
                     {
-                        ComponentTypeName = displayName,
-                        ComponentTypeDescription = GetComponentDescription((int)componentTypeEnum),
+                        Name = displayName,
+                        Description = GetComponentDescription((int)componentTypeEnum),
                         IsActive = true,
                         IsDeleted = false,
 

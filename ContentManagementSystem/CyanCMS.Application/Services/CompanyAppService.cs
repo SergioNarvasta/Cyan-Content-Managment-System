@@ -13,7 +13,7 @@ namespace CyanCMS.Application.Services
         public CompanyAppService(ICompanyService companyService) {
            _companyService = companyService;
         }
-        public async Task<bool> Delete(string id) => 
+        public async Task<bool> Delete(int id) => 
             await _companyService.Delete(id);
         
 

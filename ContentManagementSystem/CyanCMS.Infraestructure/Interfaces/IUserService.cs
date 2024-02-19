@@ -6,7 +6,7 @@ namespace CyanCMS.Infraestructure.Interfaces
 {
     public interface IUserService
     {
-        Task<bool> Delete(string id);
+        Task<bool> Delete(int id);
         Task<IEnumerable<User>> GetAll(UserParams @params);
         Task<User> GetById(int id);
         Task<bool> Insert(User user);

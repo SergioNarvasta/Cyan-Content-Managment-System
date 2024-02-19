@@ -16,7 +16,7 @@ namespace CyanCMS.Application.Services
         {
             return await _configurationService.GetByCompanyId(companyId);
         }
-        public async Task<Configuration> GetById(string id)
+        public async Task<Configuration> GetById(int id)
         {
             return await _configurationService.GetById(id);
         }

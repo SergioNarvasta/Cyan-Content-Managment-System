@@ -13,7 +13,7 @@ namespace CyanCMS.Application.Services
         public UserAppService(IUserService userService) {
             _userService = userService;
         }
-        public async Task<bool> Delete(string id)
+        public async Task<bool> Delete(int id)
         {
             return await _userService.Delete(id);
         }
@@ -30,7 +30,7 @@ namespace CyanCMS.Application.Services
 
         public async Task<bool> Insert(User model)
         {
-            model.UserToken = Cryptography.EncryptValue(model.UserToken);
+            model.Token = Cryptography.EncryptValue(model.Token);
             model.AuditCreateDate = DateTime.Now;
             model.AuditCreateUser = "User";
             model.IsActive = true;

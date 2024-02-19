@@ -94,7 +94,7 @@ namespace CyanCMS.WebAPI.Controllers
 
 		[Route("Delete")]
 		[HttpDelete]
-		public async Task<IActionResult> Delete([FromBody] string id)
+		public async Task<IActionResult> Delete([FromBody] int id)
 		{
 			await _userAppService.Delete(id);
 			return NoContent();

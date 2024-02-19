@@ -64,9 +64,9 @@ namespace CyanCMS.WebAPI.Controllers
 
         [Route("GetComponentById")]
         [HttpPost]
-        public async Task<IActionResult> GetComponentById(string User_Pk)
+        public async Task<IActionResult> GetComponentById(int id)
         {
-            return Ok(await _componentAppService.GetById(User_Pk));
+            return Ok(await _componentAppService.GetById(id));
         }
 
         [Route("CreateComponent")]
@@ -120,7 +120,7 @@ namespace CyanCMS.WebAPI.Controllers
 
 		[Route("DeleteComponent")]
 		[HttpDelete]
-		public async Task<IActionResult> Delete([FromBody] string id)
+		public async Task<IActionResult> Delete([FromBody] int id)
 		{
 			await _componentAppService.Delete(id);
 			return NoContent();

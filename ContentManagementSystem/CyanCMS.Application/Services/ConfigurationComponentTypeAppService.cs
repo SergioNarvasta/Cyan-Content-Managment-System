@@ -27,7 +27,7 @@ namespace CyanCMS.Application.Services
             {
                 var configComponentType = new ConfigurationComponentType()
                 {
-                    ComponentTypeId = component.ComponentTypeId,
+                    ComponentTypeId = component.Id,
                     ConfigurationId = configurationId,
                     IsActive = isActive,
                     IsDeleted = isDeleted

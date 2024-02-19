@@ -7,7 +7,7 @@ namespace CyanCMS.Application.Interfaces
 {
 	public interface ICompanyAppService
 	{
-		Task<bool> Delete(string id);
+		Task<bool> Delete(int id);
 		Task<GenericDto<CompanyDto>> GetAll(CompanyParams @params);
 		Task<CompanyDto> GetById(int id);
         Task<ResponseModel> Insert(Company model);

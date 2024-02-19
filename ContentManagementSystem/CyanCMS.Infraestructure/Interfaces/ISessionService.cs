@@ -1,9 +1,6 @@
-﻿
+﻿using CyanCMS.Domain.Dto;
 
-using CyanCMS.Domain.Dto;
-using CyanCMS.Domain.Entities;
-
-namespace CMS.Infraestructure.Interfaces
+namespace CyanCMS.Infraestructure.Interfaces
 {
 	public interface ISessionService
 	{

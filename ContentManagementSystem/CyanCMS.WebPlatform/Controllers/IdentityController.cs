@@ -1,7 +1,5 @@
-﻿
-using CyanCMS.Application.Interfaces;
+﻿using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Dto;
-
 using CyanCMS.Utils.Constants;
 using CyanCMS.Utils.Response;
 using Microsoft.AspNetCore.Mvc;
@@ -36,13 +34,13 @@ namespace CyanCMS.WebPlatform.Controllers
             ResponseModel response = new();
             var user = await _sessionAppService.GetSession(request);
 
-            if (user.UserId != 0)
+            if (user.Id != 0)
             {
-				response.Id = user.UserId;
+				response.Id = user.Id;
 				response.Message = "Inicio de Sesion Exitoso";
                 response.Status = true;
 
-                _sessionAppService.SetUserSession(keySession, user.UserId.ToString());
+                _sessionAppService.SetUserSession(keySession, user.Id.ToString());
             }
             else
             {

@@ -12,7 +12,7 @@ namespace CyanCMS.Application.Services
         public ComponentAppService(IComponentService componentService) {
            _componentService = componentService;
         }
-        public async Task<bool> Delete(string id)
+        public async Task<bool> Delete(int id)
         {
             return await _componentService.Delete(id);
         }

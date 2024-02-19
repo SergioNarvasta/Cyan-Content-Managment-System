@@ -6,9 +6,9 @@ namespace CyanCMS.Application.Interfaces
 {
     public interface IComponentAppService
     {
-        Task<bool> Delete(string id);
+        Task<bool> Delete(int id);
         Task<IEnumerable<Component>> GetAll(ComponentParams @params);
-        Task<Component> GetById(string ComponentId);
+        Task<Component> GetById(int ComponentId);
         Task<CreateModel> Insert(Component model);
         Task<bool> Update(Component model);
     }

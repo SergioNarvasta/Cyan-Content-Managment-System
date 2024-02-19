@@ -128,7 +128,7 @@ namespace CyanCMS.WebPlatform.Controllers
 		}
 
 		[HttpDelete]
-		public async Task<IActionResult> Delete(string id)
+		public async Task<IActionResult> Delete(int id)
 		{
 			await _companyAppService.Delete(id);
 			return NoContent();

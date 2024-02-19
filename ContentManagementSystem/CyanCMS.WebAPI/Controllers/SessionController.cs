@@ -1,6 +1,9 @@
-﻿using CMS.Aplicacion.Interfaces;
+﻿
+using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Dto;
 using CyanCMS.Domain.Entities;
+using CyanCMS.Utils.Constants;
+using CyanCMS.Utils.Response;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,8 +13,9 @@ namespace CyanCMS.WebAPI.Controllers
 	[ApiController]
 	public class SessionController : ControllerBase
 	{
-		private readonly ISessionService _sessionAppService;
-		public SessionController(ISessionService sessionAppService) 
+		private readonly ISessionAppService _sessionAppService;
+        public string keySession = Constant.key_CurrentSession;
+        public SessionController(ISessionAppService sessionAppService) 
 		{
 		    _sessionAppService = sessionAppService;
 		}
@@ -21,20 +25,23 @@ namespace CyanCMS.WebAPI.Controllers
 		[Route("Login")]
 		public async Task<IActionResult> Login([FromBody] SessionDto request)
 		{
-			User usuario = new User();
-			try
-			{
-				usuario = await _sessionAppService.Session(request);
+            ResponseModel response = new();
+            var user = await _sessionAppService.GetSession(request);
 
-                if (usuario == null)
-					usuario = new User();
+            if (user.Id != 0)
+            {
+                response.Id = user.Id;
+                response.Message = "Inicio de Sesion Exitoso";
+                response.Status = true;
 
-				return StatusCode(StatusCodes.Status200OK, usuario);
-			}
-			catch
-			{
-				return StatusCode(StatusCodes.Status500InternalServerError, usuario);
-			}
-		}
+                _sessionAppService.SetUserSession(keySession, user.Id.ToString());
+            }
+            else
+            {
+                response.Message = "Inicio de sesion no valido, verifique credenciales!";
+                response.Status = false;
+            }
+            return Ok(response);
+        }
 	}
 }

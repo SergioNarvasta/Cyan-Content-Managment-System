@@ -23,7 +23,7 @@ namespace CyanCMS.Infraestructure.Services
                  .AsNoTracking()
                  .ToListAsync();               
         }
-        public async Task<Configuration> GetById(string id)
+        public async Task<Configuration> GetById(int id)
         {
             var configurationEmpty = new Configuration();
             return await _dbContext
