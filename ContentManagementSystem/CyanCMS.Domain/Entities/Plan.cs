@@ -19,7 +19,7 @@ namespace CyanCMS.Domain.Entities
         [Column(TypeName = "varchar(50)")]
         public string? Description { get; set; }
 
-        public int? CompanyQuantity { get; set; };
+        public int? CompanyQuantity { get; set; }
 
         [Required]
         [Precision(6,2)]

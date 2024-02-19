@@ -6,12 +6,12 @@ namespace CyanCMS.Domain.Dto
 {
     public class CompanyDto : Actions
     {
-        public int CompanyId { get; set; }
-        public string CompanyName { get; set; }
-        public string CompanyAdress { get; set; }
-        public string CompanyPhoneNumber { get; set; }
-        public string CompanyEmail { get; set; }
-        public List<FileUnit> Files { get; set; }
-        public List<Component> Components { get; set; } 
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? Adress { get; set; }
+        public string? PhoneNumber { get; set; }
+        public string? Email { get; set; }
+        public List<FileUnit>? Files { get; set; }
+        public List<Component>? Components { get; set; } 
     }
 }

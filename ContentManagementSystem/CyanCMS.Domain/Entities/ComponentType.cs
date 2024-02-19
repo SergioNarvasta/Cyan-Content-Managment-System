@@ -10,11 +10,14 @@ namespace CyanCMS.Domain.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ComponentTypeId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public string ComponentTypeName { get; set; } = string.Empty;
-        public string? ComponentTypeDescription { get; set; }
+        [Column(TypeName = "varchar(50)")]
+        public string Name { get; set; } = string.Empty;
+
+        [Column(TypeName = "varchar(80)")]
+        public string? Description { get; set; }
 
         public Component? Component { get; set; } //1 to 1
 

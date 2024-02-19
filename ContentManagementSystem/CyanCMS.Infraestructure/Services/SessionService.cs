@@ -1,6 +1,5 @@
 ﻿
 using CyanCMS.Infraestructure.Data;
-using CyanCMS.Domain.Entities;
 using CMS.Infraestructure.Interfaces;
 using CyanCMS.Domain.Dto;
 using Microsoft.EntityFrameworkCore;
@@ -21,14 +20,14 @@ namespace CyanCMS.Infraestructure.Services
             return await _dbContext
                     .User
                     .Where(s => !s.IsDeleted && s.IsActive 
-                              && s.UserEmail == request.UserName 
-                              && s.UserToken == request.Token)
+                              && s.Email == request.UserName 
+                              && s.Token == request.Token)
                     .Select(s => new UserDto
                     {
-                        UserName = s.UserName,
-                        UserId = s.UserId,
-                        UserEmail = s.UserEmail,
-                        UserLastName = s.UserLastName,
+                        Name = s.Name,
+                        Id = s.Id,
+                        Email = s.Email,
+                        LastName = s.LastName,
                         IsActive = s.IsActive,
                         IsDeleted = s.IsDeleted            
                     })
@@ -41,7 +40,7 @@ namespace CyanCMS.Infraestructure.Services
             {
                 var validUserName = await _dbContext
                     .User
-                    .Where(s => !s.IsDeleted && s.IsActive && s.UserEmail == username)
+                    .Where(s => !s.IsDeleted && s.IsActive && s.Email == username)
                     .CountAsync();
                 return validUserName > 0;
             }

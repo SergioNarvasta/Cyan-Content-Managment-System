@@ -10,7 +10,7 @@ namespace CyanCMS.Domain.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ConfigurationComponentTypeId { get; set; }
+        public int Id { get; set; }
 
         public int ConfigurationId { get; set; }
 

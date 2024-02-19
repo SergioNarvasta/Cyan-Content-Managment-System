@@ -50,7 +50,7 @@ namespace CyanCMS.Infraestructure.Services
 
                 createModel.WasCreated = true;
                 createModel.Message = "La operación de inserción fue exitosa";
-                createModel.Id = model.ConfigurationId; 
+                createModel.Id = model.Id; 
 
                 return createModel;
             }

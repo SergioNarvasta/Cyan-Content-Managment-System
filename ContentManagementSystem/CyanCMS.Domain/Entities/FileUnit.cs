@@ -11,18 +11,21 @@ namespace CyanCMS.Domain.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int FiledId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
-        public string FileName { get; set; } = string.Empty;
-        public string? FileDescription { get; set;}
+        [Column(TypeName = "varchar(50)")]
+        public string Name { get; set; } = string.Empty;
+
+        [Column(TypeName = "varchar(50)")]
+        public string? Description { get; set;}
 
         [Required]
         public string FileBase64 { get;set;} = string.Empty;
 
         [Required]
-        public string FileSize { get; set; } = string.Empty;
+        public string Size { get; set; } = string.Empty;
 
         public int? ComponentId { get; set; }
 

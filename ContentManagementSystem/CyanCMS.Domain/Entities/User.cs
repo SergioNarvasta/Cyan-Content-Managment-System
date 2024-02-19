@@ -10,7 +10,7 @@ namespace CyanCMS.Domain.Entities
     {
 		[Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]

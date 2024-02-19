@@ -9,10 +9,14 @@ namespace CyanCMS.Domain.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ConfigurationId { get; set; }
-        public string? MainColor { get; set; }
-        public string? SecondaryColor { get; set;}
+        public int Id { get; set; }
 
+        [Column(TypeName = "varchar(10)")]
+        public string? MainColor { get; set; }
+
+        [Column(TypeName = "varchar(10)")]
+        public string? SecondaryColor { get; set;}
+        [Required]
         public int CompanyId { get; set; }
 
         [ForeignKey("CompanyId")]

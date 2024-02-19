@@ -16,7 +16,7 @@ namespace CyanCMS.Infraestructure.Services
             _dbContext = dbContext;
         }
 
-        public async Task<bool> Delete(string id)
+        public async Task<bool> Delete(int id)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace CyanCMS.Infraestructure.Services
             if (!string.IsNullOrEmpty(@params.ComponentName))
             {
                 query = query.Where(s =>
-                   s.ComponentName.Contains(@params.ComponentName)
+                   s.Name.Contains(@params.ComponentName)
                 );
             }
 
@@ -95,7 +95,7 @@ namespace CyanCMS.Infraestructure.Services
 
                 createModel.WasCreated = true;
                 createModel.Message = "Se creo la configuracion con exito";
-                createModel.Id = model.ComponentId;              
+                createModel.Id = model.Id;              
                 return createModel;
             }
             catch (Exception e)

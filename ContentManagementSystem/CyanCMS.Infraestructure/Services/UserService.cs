@@ -14,7 +14,7 @@ namespace CyanCMS.Infraestructure.Services
         {
             _dbContext = dbContext;
         }
-        public async Task<bool> Delete(string id)
+        public async Task<bool> Delete(int id)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace CyanCMS.Infraestructure.Services
             if (!string.IsNullOrEmpty(@params.UserName))
             {
                 query = query.Where(s =>
-                   s.UserName.Contains(@params.UserName)
+                   s.Name.Contains(@params.UserName)
                 );
             }
 

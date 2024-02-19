@@ -16,7 +16,7 @@ namespace CyanCMS.Infraestructure.Services
             _dbContext = dbContext;
         }
 
-        public async Task<bool> Delete(string id)
+        public async Task<bool> Delete(int id)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace CyanCMS.Infraestructure.Services
             if (!string.IsNullOrEmpty(@params.CompanyName))
             {
                 query = query.Where(s =>
-                   s.CompanyName.Contains(@params.CompanyName)
+                   s.Name.Contains(@params.CompanyName)
                 );
             }
 
@@ -63,13 +63,13 @@ namespace CyanCMS.Infraestructure.Services
             var data = await query              
                 .Select(s => new CompanyDto
                 {
-                    CompanyId = s.CompanyId,
-                    CompanyName = s.CompanyName,
-                    CompanyAdress = s.CompanyAdress,
-                    CompanyPhoneNumber = s.CompanyPhoneNumber,
-                    CompanyEmail = s.CompanyEmail
+                    Id = s.Id,
+                    Name = s.Name,
+                    Adress = s.Adress ?? string.Empty,
+                    PhoneNumber = s.PhoneNumber ?? string.Empty,
+                    Email = s.Email ?? string.Empty
                 })
-                .OrderBy(s => s.CompanyId) 
+                .OrderBy(s => s.Id) 
                 .Skip(@params.PageSize * (@params.PageNumber - 1)) 
                 .Take(@params.PageSize) 
                 .AsNoTracking()
@@ -86,14 +86,14 @@ namespace CyanCMS.Infraestructure.Services
         {
             return await _dbContext
                 .Company
-                .Where(s => s.CompanyId == id)
+                .Where(s => s.Id == id)
                 .Select(s => new CompanyDto
                 {
-                    CompanyId = s.CompanyId,
-                    CompanyName = s.CompanyName,
-                    CompanyAdress = s.CompanyAdress,
-                    CompanyPhoneNumber = s.CompanyPhoneNumber,
-                    CompanyEmail = s.CompanyEmail,
+                    Id = s.Id,
+                    Name = s.Name,
+                    Adress = s.Adress,
+                    PhoneNumber = s.PhoneNumber,
+                    Email = s.Email,
                     IsActive = s.IsActive,
                     IsDeleted= s.IsDeleted,
                 })                
@@ -109,7 +109,7 @@ namespace CyanCMS.Infraestructure.Services
                 int insert = await _dbContext.SaveChangesAsync();
                 createModel.Status = true;
                 createModel.Message = "Se registro con exito";
-                createModel.Id = model.CompanyId; 
+                createModel.Id = model.Id; 
                 
                 return createModel;
             }

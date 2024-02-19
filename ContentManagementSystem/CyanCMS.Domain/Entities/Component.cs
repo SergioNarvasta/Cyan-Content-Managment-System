@@ -9,15 +9,15 @@ namespace CyanCMS.Domain.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ComponentId { get; set; }
-        public string ComponentName { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [MaxLength(50, ErrorMessage = "El campo no debe de tener mas de 50 caracteres")]
-        public string ComponentTitle { get; set; } = string.Empty;
-        public string ComponentDescription { get; set; } = string.Empty;
-        public string ComponentContent { get; set; } = string.Empty;
-        public int ComponentOrder { get; set; }
-        public int ComponentStyle { get; set; } 
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Content { get; set; } = string.Empty;
+        public int Order { get; set; }
+        public int Style { get; set; } 
         public bool IsSlider { get; set; }
 
         public int CompanyId { get; set; }
