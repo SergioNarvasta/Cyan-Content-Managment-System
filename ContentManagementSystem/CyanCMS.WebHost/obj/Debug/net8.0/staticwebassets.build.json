@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "+mUjqvpyMGkZcElf4petiplTmxHolYZ7ef13nca76k8=",
+  "Source": "CyanCMS.WebHost",
+  "BasePath": "_content/CyanCMS.WebHost",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

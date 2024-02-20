@@ -67,6 +67,18 @@ namespace CyanCMS.Utils.Common
                8 => "Partners: Se puede mostrar informacion de socios, clientes u otros",
                _ => " " 
             };
-        
+        public enum UserRolEnum
+        {
+            [Display(Name = "Admin")]
+            Admin = 1,
+            [Display(Name = "User")]
+            User = 2,
+            [Display(Name = "Operations")]
+            Operations = 3,
+            [Display(Name = "Marketing")]
+            Marketing = 4,
+            [Display(Name = "Sales")]
+            Sales = 5         
+        }
     }
 }

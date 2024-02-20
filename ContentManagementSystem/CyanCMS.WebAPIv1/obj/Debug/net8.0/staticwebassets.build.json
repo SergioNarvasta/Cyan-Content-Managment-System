@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zsnNfEu9lrZud9qOmW29hZA9NybX1euYBtDaCWMO0VQ=",
+  "Source": "CyanCMS.WebAPI",
+  "BasePath": "_content/CyanCMS.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CyanCMS.WebAPI.props" />
+</Project>
