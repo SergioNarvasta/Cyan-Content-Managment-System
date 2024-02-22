@@ -1,3 +1,4 @@
+using CyanCMS.Application.Interfaces;
 using CyanCMS.Infraestructure.Data;
 using CyanCMS.WebHost;
 using Microsoft.EntityFrameworkCore;
@@ -30,5 +31,13 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+#region Config Proyect
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var rolAppService = services.GetRequiredService<IRolAppService>();
 
+    await rolAppService.ConfigAddRolsInit(scope);
+}
+#endregion 
 app.Run();
