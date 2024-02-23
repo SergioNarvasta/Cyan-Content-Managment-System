@@ -9,10 +9,12 @@ function onSubmitLogin() {
         data: formData, 
         success: function (response) {
             if (response.status) {
-                toastr.success(response.message);
-                location.href="Home/Index"
+                alert(response.message);
+                // toastr.success(response.message);
+                location.reload();
             } else {
-                toastr.error(response.message);
+                alert(response.message);
+                // toastr.error(response.message);
             }
         }
     });

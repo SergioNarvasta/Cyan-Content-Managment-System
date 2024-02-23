@@ -17,9 +17,13 @@ namespace CyanCMS.Application.Services
             _userAppService = userAppService;
            
         }
-        public async Task<bool> Insert(Rol rol)
+        public async Task<bool> Insert(Rol model)
         {
-            return await _rolService.Insert(rol);
+            model.AuditCreateDate = DateTime.Now;
+            model.AuditCreateUser = "User";
+            model.IsActive = true;
+            model.IsDeleted = false;
+            return await _rolService.Insert(model);
         }
         public async Task<Rol> FindByName(string name)
         {
@@ -44,21 +48,21 @@ namespace CyanCMS.Application.Services
         public async Task ConfigAddRolsInit(IServiceScope scope)
         {
             var count = await this.CountAsync();
+            string adminRolStr = "Admin";
             if (count == 0)
             {
                 await this.InsertMultipleRolInit();
-                
-            }
-            string adminRolStr = "Admin";
-            var adminRol = await this.FindByName(adminRolStr);
+                var adminRol = await this.FindByName(adminRolStr);
 
-            User user = new() { 
-                Name = "Admin",
-                Email = "admin@innovait.pe",
-                Token = "cyancms",
-                RolId = adminRol?.Id ?? 1,
-            };
-            await _userAppService.Insert(user);
+                User user = new()
+                {
+                    Name = "Admin",
+                    Email = "admin@innovait.pe",
+                    Token = "cyancms",
+                    RolId = adminRol?.Id ?? 1,
+                };
+                await _userAppService.Insert(user);
+            }       
         }
     }
 }

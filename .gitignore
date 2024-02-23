@@ -71,3 +71,7 @@
 /ContentManagementSystem/CyanCMS.APIv1/obj
 /ContentManagementSystem/CyanCMS.APIv1/obj/Debug/net8.0/staticwebassets/msbuild.build.CyanCMS.API.props
 /ContentManagementSystem/CyanCMS.WebAPI/CyanCMS.WebAPI.csproj.user
+/ContentManagementSystem/CyanCMS.WebHost/bin/Debug/net8.0/CyanCMS.Application.pdb
+/ContentManagementSystem/CyanCMS.WebHost/bin/Debug/net8.0/CyanCMS.Domain.pdb
+/ContentManagementSystem/CyanCMS.WebHost/bin/Debug/net8.0/CyanCMS.WebHost.exe
+/ContentManagementSystem/.vs/ContentManagementSystem/v17

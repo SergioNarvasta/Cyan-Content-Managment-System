@@ -15,6 +15,11 @@ namespace CyanCMS.WebPlatform
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ISessionAppService, SessionAppService>();
             services.AddTransient<ISessionService, SessionService>();
+            services.AddTransient<IRolAppService, RolAppService>();
+            services.AddTransient<IRolService, RolService>();
+            // services.AddTransient<IPlanAppService, PlanAppService>();
+            // services.AddTransient<IPlanService, PlanService>();
+
             services.AddTransient<ICompanyAppService, CompanyAppService>();
             services.AddTransient<ICompanyService, CompanyService>();
             
