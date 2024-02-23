@@ -1,0 +1,332 @@
+[
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.CompanyController",
+    "Method": "CreateCompany",
+    "RelativePath": "api/Company/CreateCompany",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCompany",
+        "Type": "CyanCMS.Utils.Request.RequestModels\u002BCreateCompanyModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.CompanyController",
+    "Method": "Delete",
+    "RelativePath": "api/Company/DeleteCompany",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.CompanyController",
+    "Method": "GetAllCompany",
+    "RelativePath": "api/Company/GetAllCompany",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "params",
+        "Type": "CyanCMS.Utils.Request.RequestParams",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.CompanyController",
+    "Method": "GetCompanyById",
+    "RelativePath": "api/Company/GetCompanyById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.CompanyController",
+    "Method": "Update",
+    "RelativePath": "api/Company/UpdateCompany",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "company",
+        "Type": "CyanCMS.Domain.Entities.Company",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ComponentController",
+    "Method": "CreateComponent",
+    "RelativePath": "api/Component/CreateComponent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CyanCMS.Utils.Request.RequestModels\u002BCreateComponentModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ComponentController",
+    "Method": "Delete",
+    "RelativePath": "api/Component/DeleteComponent",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ComponentController",
+    "Method": "GetAllComponent",
+    "RelativePath": "api/Component/GetAllComponent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "params",
+        "Type": "CyanCMS.Utils.Request.RequestParams",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ComponentController",
+    "Method": "GetComponentById",
+    "RelativePath": "api/Component/GetComponentById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ComponentController",
+    "Method": "Update",
+    "RelativePath": "api/Component/UpdateComponent",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CyanCMS.Utils.Request.RequestModels\u002BCreateComponentModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ConfigurationController",
+    "Method": "CreateComponent",
+    "RelativePath": "api/Configuration/CreateComponent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CyanCMS.Utils.Request.RequestModels\u002BCreateComponentModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ConfigurationController",
+    "Method": "Delete",
+    "RelativePath": "api/Configuration/DeleteComponent",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ConfigurationController",
+    "Method": "GetAllComponent",
+    "RelativePath": "api/Configuration/GetAllComponent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "params",
+        "Type": "CyanCMS.Utils.Request.RequestParams",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ConfigurationController",
+    "Method": "GetComponentById",
+    "RelativePath": "api/Configuration/GetComponentById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.ConfigurationController",
+    "Method": "Update",
+    "RelativePath": "api/Configuration/UpdateComponent",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CyanCMS.Utils.Request.RequestModels\u002BCreateComponentModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.FileController",
+    "Method": "GetAllFile",
+    "RelativePath": "api/File",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.SessionController",
+    "Method": "Login",
+    "RelativePath": "api/Session/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CyanCMS.Domain.Dto.SessionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.UserController",
+    "Method": "Create",
+    "RelativePath": "api/User/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "CyanCMS.Domain.Entities.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.UserController",
+    "Method": "GetAll",
+    "RelativePath": "api/User/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "params",
+        "Type": "CyanCMS.Utils.Request.RequestParams",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CyanCMS.WebHost.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "api/User/UpdateUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "CyanCMS.Domain.Entities.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

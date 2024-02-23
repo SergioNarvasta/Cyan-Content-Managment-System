@@ -3994,19 +3994,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sergio Narvasta\\.nuget\\packages\\": {}
+    "C:\\Users\\MI PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.WebHost\\CyanCMS.WebHost.csproj",
+      "projectUniqueName": "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.WebHost\\CyanCMS.WebHost.csproj",
       "projectName": "CyanCMS.WebHost",
-      "projectPath": "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.WebHost\\CyanCMS.WebHost.csproj",
-      "packagesPath": "C:\\Users\\Sergio Narvasta\\.nuget\\packages\\",
-      "outputPath": "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.WebHost\\obj\\",
+      "projectPath": "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.WebHost\\CyanCMS.WebHost.csproj",
+      "packagesPath": "C:\\Users\\MI PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.WebHost\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sergio Narvasta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MI PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4020,17 +4020,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.Application\\CyanCMS.Application.csproj": {
-              "projectPath": "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.Application\\CyanCMS.Application.csproj"
+            "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.Application\\CyanCMS.Application.csproj": {
+              "projectPath": "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.Application\\CyanCMS.Application.csproj"
             },
-            "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.Domain\\CyanCMS.Domain.csproj": {
-              "projectPath": "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.Domain\\CyanCMS.Domain.csproj"
+            "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.Domain\\CyanCMS.Domain.csproj": {
+              "projectPath": "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.Domain\\CyanCMS.Domain.csproj"
             },
-            "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.Infraestructure\\CyanCMS.Infraestructure.csproj": {
-              "projectPath": "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.Infraestructure\\CyanCMS.Infraestructure.csproj"
+            "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.Infraestructure\\CyanCMS.Infraestructure.csproj": {
+              "projectPath": "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.Infraestructure\\CyanCMS.Infraestructure.csproj"
             },
-            "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.Utils\\CyanCMS.Utils.csproj": {
-              "projectPath": "D:\\ITCyan\\Projects\\CMS\\ContentManagementSystem\\CyanCMS.Utils\\CyanCMS.Utils.csproj"
+            "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.Utils\\CyanCMS.Utils.csproj": {
+              "projectPath": "C:\\Users\\MI PC\\Documents\\ContentManagementSystem\\ContentManagementSystem\\CyanCMS.Utils\\CyanCMS.Utils.csproj"
             }
           }
         }
@@ -4039,6 +4039,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4073,7 +4078,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

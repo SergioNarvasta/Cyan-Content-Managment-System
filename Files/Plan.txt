@@ -1,0 +1,5 @@
+ 
+
+ Mejora UI          - Gestion Compañias
+ Desarrollo de Func - Gestion Compañias
+ Cambio de Compañia - Vista Inicio

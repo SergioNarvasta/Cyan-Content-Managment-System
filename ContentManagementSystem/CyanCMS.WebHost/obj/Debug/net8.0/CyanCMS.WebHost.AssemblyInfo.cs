@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CyanCMS.WebHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5519ecf8026aeaa66a731aff9a89131e2f97052d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cac3ee34474609c3fb2cec22d1a47e7a3bb40e01")]
 [assembly: System.Reflection.AssemblyProductAttribute("CyanCMS.WebHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CyanCMS.WebHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
