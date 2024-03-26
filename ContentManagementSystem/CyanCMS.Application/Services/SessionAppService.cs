@@ -3,6 +3,7 @@ using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Dto;
 using CyanCMS.Utils.Security;
 using Microsoft.Extensions.Caching.Memory;
+using System.Diagnostics;
 
 namespace CyanCMS.Application.Services
 {
@@ -19,7 +20,10 @@ namespace CyanCMS.Application.Services
 
         public async Task<UserDto> GetSession(SessionDto request)
         {
+
+            // Add IMemoryCache UserName List & Update 
             var userNameExists = await _sessionService.UserNameExists(request.UserName);
+         
             // Encrypt to compare Token Encripted in Db
             request.Token = Cryptography.EncryptValue(request.Token);
             if (userNameExists)
@@ -27,7 +31,7 @@ namespace CyanCMS.Application.Services
                 var session = await _sessionService.GetSession(request);
                 return session ?? new UserDto();
             }
-             return new UserDto();
+            return new UserDto();
         }
 
         public void SetUserSession(string key, string value)

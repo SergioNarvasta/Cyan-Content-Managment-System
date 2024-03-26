@@ -45,7 +45,7 @@ namespace CyanCMS.Application.Services
             return response;
         }
 
-        public async Task ConfigAddRolsInit(IServiceScope scope)
+        public async Task ConfigUserRolsInit()
         {
             var count = await this.CountAsync();
             string adminRolStr = "Admin";
@@ -58,7 +58,7 @@ namespace CyanCMS.Application.Services
                 {
                     Name = "Admin",
                     Email = "admin@innovait.pe",
-                    Token = "cyancms",
+                    Token = "admincyan",
                     RolId = adminRol?.Id ?? 1,
                 };
                 await _userAppService.Insert(user);

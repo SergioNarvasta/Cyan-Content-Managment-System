@@ -6,14 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CyanCMS.WebPlatform.Controllers
 {
-	public class IdentityController : Controller
+	public class IdentityController(ISessionAppService sessionAppService) : Controller
 	{
-		private readonly ISessionAppService _sessionAppService;
+		private readonly ISessionAppService _sessionAppService = sessionAppService;
         public string keySession = Constant.key_CurrentSession;
-        public IdentityController(ISessionAppService sessionAppService) 
-		{
-		    _sessionAppService = sessionAppService;
-		}
 
         [HttpGet]
         public IActionResult Login()

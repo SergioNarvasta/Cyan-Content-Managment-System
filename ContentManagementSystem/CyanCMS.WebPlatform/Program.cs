@@ -33,13 +33,13 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Identity}/{action=Login}/{id?}");
 
-#region Config Proyect
+#region Config Project
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var rolAppService = services.GetRequiredService<IRolAppService>();
 
-    await rolAppService.ConfigAddRolsInit(scope);
+    await rolAppService.ConfigUserRolsInit();
 }
 #endregion 
 

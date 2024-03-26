@@ -31,13 +31,13 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-#region Config Proyect
+#region Config Project
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var rolAppService = services.GetRequiredService<IRolAppService>();
 
-    await rolAppService.ConfigAddRolsInit(scope);
+    await rolAppService.ConfigUserRolsInit();
 }
 #endregion 
 app.Run();

@@ -11,27 +11,18 @@ using static CyanCMS.Utils.Request.RequestModels;
 
 namespace CyanCMS.WebPlatform.Controllers
 {
-    public class CompanyController : Controller
+    public class CompanyController(ICompanyAppService companyAppService,
+        IConfigurationAppService configurationAppService,
+        IComponentTypeAppService componentTypeAppService,
+        IConfigurationComponentTypeAppService configurationComponentTypeAppService,
+        IFileAppService fileAppService) : Controller
     {
-        private readonly ICompanyAppService _companyAppService;
-        private readonly IConfigurationAppService _configurationAppService;
-        private readonly IComponentTypeAppService _componentTypeAppService;
-        private readonly IConfigurationComponentTypeAppService _configComponentTypeAppService;
-        private readonly IFileAppService _fileAppService;
+        private readonly ICompanyAppService _companyAppService = companyAppService;
+        private readonly IConfigurationAppService _configurationAppService = configurationAppService;
+        private readonly IComponentTypeAppService _componentTypeAppService = componentTypeAppService;
+        private readonly IConfigurationComponentTypeAppService _configComponentTypeAppService = configurationComponentTypeAppService;
+        private readonly IFileAppService _fileAppService = fileAppService;
 
-        public CompanyController(ICompanyAppService companyAppService, 
-            IConfigurationAppService configurationAppService,
-            IComponentTypeAppService componentTypeAppService,
-            IConfigurationComponentTypeAppService configurationComponentTypeAppService,
-            IFileAppService fileAppService) 
-        {
-			_companyAppService = companyAppService;
-            _configurationAppService = configurationAppService;
-            _componentTypeAppService = componentTypeAppService;
-            _configComponentTypeAppService = configurationComponentTypeAppService;
-            _fileAppService = fileAppService;
-        }
-       
         [HttpGet]
         public async Task<IActionResult> Index(RequestParams @params)
         {

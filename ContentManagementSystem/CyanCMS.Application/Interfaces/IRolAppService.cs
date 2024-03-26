@@ -6,7 +6,7 @@ namespace CyanCMS.Application.Interfaces
 {
     public interface IRolAppService
     {
-        Task ConfigAddRolsInit(IServiceScope scope);
+        Task ConfigUserRolsInit();
         Task<int> CountAsync();
         Task<bool> Insert(Rol rol);
         Task<bool> InsertMultipleRolInit();
