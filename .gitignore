@@ -71,3 +71,7 @@
 /ContentManagementSystem/CyanCMS.APIv1/obj
 /ContentManagementSystem/CyanCMS.APIv1/obj/Debug/net8.0/staticwebassets/msbuild.build.CyanCMS.API.props
 /ContentManagementSystem/CyanCMS.WebAPI/CyanCMS.WebAPI.csproj.user
+/ContentManagementSystem/CyanCMS.WebHost/obj/Debug/net8.0/CyanCMS.WebHost.AssemblyInfo.cs
+/ContentManagementSystem/CyanCMS.WebHost/obj/Container
+/ContentManagementSystem/CyanCMS.WebHost/obj/Debug/net8.0/CyanCMS.WebHost.AssemblyInfoInputs.cache
+*.user
