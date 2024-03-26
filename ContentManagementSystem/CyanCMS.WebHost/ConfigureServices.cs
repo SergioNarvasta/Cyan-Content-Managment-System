@@ -16,6 +16,12 @@ namespace CyanCMS.WebHost
             services.AddTransient<IUserAppService, UserAppService>();
             services.AddTransient<IUserService, UserService>();
 
+            services.AddTransient<IRolAppService, RolAppService>();
+            services.AddTransient<IRolService, RolService>();
+            // services.AddTransient<IPlanAppService, PlanAppService>();
+            // services.AddTransient<IPlanService, PlanService>();
+
+
             services.AddTransient<IConfigurationAppService, ConfigurationAppService>();
             services.AddTransient<IConfigurationService, ConfigurationService>();
 

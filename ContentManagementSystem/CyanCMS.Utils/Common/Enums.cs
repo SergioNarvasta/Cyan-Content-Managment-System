@@ -1,4 +1,5 @@
 ﻿
+using CyanCMS.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace CyanCMS.Utils.Common
@@ -79,6 +80,29 @@ namespace CyanCMS.Utils.Common
             Marketing = 4,
             [Display(Name = "Sales")]
             Sales = 5         
+        }
+
+        public static List<Rol> GetRolsFromEnum()
+        {
+            var roles = new List<Rol>();
+
+            foreach (UserRolEnum roleEnum in Enum.GetValues(typeof(UserRolEnum)))
+            {
+                roles.Add(new Rol
+                {
+                    Name = roleEnum.ToString(),
+                    Description = GetEnumDisplayName(roleEnum)
+                });
+            }
+
+            return roles;
+        }
+
+        private static string GetEnumDisplayName(UserRolEnum enumValue)
+        {
+            var memberInfo = typeof(UserRolEnum).GetMember(enumValue.ToString());
+            var displayAttribute = memberInfo.FirstOrDefault()?.GetCustomAttributes(typeof(DisplayAttribute), false).OfType<DisplayAttribute>().FirstOrDefault();
+            return displayAttribute?.Name ?? enumValue.ToString();
         }
     }
 }

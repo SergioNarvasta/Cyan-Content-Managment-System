@@ -114,5 +114,22 @@ namespace CyanCMS.Infraestructure.Services
                 return false;
             }  
         }
+
+        public async Task<bool> UserNameExists(string username)
+        {
+            try
+            {
+                var validUserName = await _dbContext
+                    .User
+                    .Where(s => !s.IsDeleted && s.IsActive && s.Email == username)
+                    .CountAsync();
+                return validUserName > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
     }
 }
