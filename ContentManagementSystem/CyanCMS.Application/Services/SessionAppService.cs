@@ -3,7 +3,6 @@ using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Dto;
 using CyanCMS.Utils.Security;
 using Microsoft.Extensions.Caching.Memory;
-using System.Diagnostics;
 
 namespace CyanCMS.Application.Services
 {

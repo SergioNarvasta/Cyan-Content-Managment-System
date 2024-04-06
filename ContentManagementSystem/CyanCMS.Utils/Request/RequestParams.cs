@@ -30,6 +30,7 @@
     {
         public string ComponentName { get; set; } = string.Empty;
         public string ComponentType { get; set; } = string.Empty;
+        public string CompanyId { get; set; } = string.Empty;
         public string IsActiveStr { get; set; } = string.Empty;
     }
 }

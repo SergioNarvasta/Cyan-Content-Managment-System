@@ -8,7 +8,7 @@ using CyanCMS.Domain.Dto;
 
 namespace CyanCMS.Infraestructure.Services
 {
-    public class CompanyService : ICompanyService
+    public class CompanyService: ICompanyService
     {
         public readonly AppDbContext _dbContext;
         public CompanyService(AppDbContext dbContext)
@@ -80,6 +80,25 @@ namespace CyanCMS.Infraestructure.Services
                 Elements = data,
                 TotalCount = totalCount
             };
+        }
+
+        public async Task<List<CompanyDto>> GetByUserId(int userId)
+        {
+            var query = _dbContext.Company
+                .Where(s => s.UserId == userId && !s.IsDeleted);
+
+            return await query
+                .Select(s => new CompanyDto
+                {
+                    Id = s.Id,
+                    Name = s.Name,
+                    Adress = s.Adress ?? string.Empty,
+                    PhoneNumber = s.PhoneNumber ?? string.Empty,
+                    Email = s.Email ?? string.Empty
+                })
+                .OrderBy(s => s.Id)             
+                .AsNoTracking()
+                .ToListAsync();    
         }
 
         public async Task<CompanyDto> GetById(int id)

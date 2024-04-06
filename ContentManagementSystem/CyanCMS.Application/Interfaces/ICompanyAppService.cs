@@ -10,6 +10,7 @@ namespace CyanCMS.Application.Interfaces
 		Task<bool> Delete(int id);
 		Task<GenericDto<CompanyDto>> GetAll(CompanyParams @params);
 		Task<CompanyDto> GetById(int id);
+        Task<List<CompanyDto>> GetByUserId(int userId);
         Task<ResponseModel> Insert(Company model);
 		Task<bool> Update(Company model);
 	}

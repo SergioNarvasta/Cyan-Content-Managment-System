@@ -5,6 +5,7 @@ using CyanCMS.Infraestructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using CyanCMS.Utils.Request;
 using CyanCMS.Utils.Response;
+using CyanCMS.Utils.Constants;
 
 namespace CyanCMS.Infraestructure.Services
 {
@@ -29,6 +30,7 @@ namespace CyanCMS.Infraestructure.Services
                     model.IsDeleted = true;
                     model.IsActive = false;
                     await this.Update(model);
+                    
                 }
                 return true;
             }
@@ -57,6 +59,13 @@ namespace CyanCMS.Infraestructure.Services
             {
                 query = query
                     .Where(s => s.IsActive == isActive
+                );
+            }
+
+            if (!string.IsNullOrEmpty(@params.CompanyId))
+            {
+                query = query.Where(s =>
+                   s.CompanyId == int.Parse(@params.CompanyId)
                 );
             }
 
@@ -94,7 +103,7 @@ namespace CyanCMS.Infraestructure.Services
                 int insert = await _dbContext.SaveChangesAsync();
 
                 createModel.WasCreated = true;
-                createModel.Message = "Se creo la configuracion con exito";
+                createModel.Message = ResponseMessage.RegisterSucess;
                 createModel.Id = model.Id;              
                 return createModel;
             }
@@ -102,7 +111,7 @@ namespace CyanCMS.Infraestructure.Services
             {
                 Console.WriteLine(e);
                 createModel.WasCreated = false;
-                createModel.Message = "Error durante la operación de inserción";
+                createModel.Message = ResponseMessage.OperationError;
                 createModel.Id = 0;
 
                 return createModel;

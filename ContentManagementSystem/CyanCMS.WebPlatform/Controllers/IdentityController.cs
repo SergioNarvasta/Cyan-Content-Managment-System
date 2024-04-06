@@ -3,12 +3,14 @@ using CyanCMS.Domain.Dto;
 using CyanCMS.Utils.Constants;
 using CyanCMS.Utils.Response;
 using Microsoft.AspNetCore.Mvc;
+using static CyanCMS.Utils.Common.Enums;
 
 namespace CyanCMS.WebPlatform.Controllers
 {
-	public class IdentityController(ISessionAppService sessionAppService) : Controller
+	public class IdentityController(ISessionAppService sessionAppService, ICompanyAppService companyAppService) : Controller
 	{
 		private readonly ISessionAppService _sessionAppService = sessionAppService;
+        private readonly ICompanyAppService _companyAppService = companyAppService;
         public string keySession = Constant.key_CurrentSession;
 
         [HttpGet]
@@ -27,21 +29,31 @@ namespace CyanCMS.WebPlatform.Controllers
         [HttpPost]
 		public async Task<IActionResult> Login(SessionDto request)
 		{
-            ResponseModel response = new();
+            
+            ResponseLogin response = new ();
             var user = await _sessionAppService.GetSession(request);
 
-            if (user.Id != 0)
+            if (user is not null)
             {
-				response.Id = user.Id;
-				response.Message = "Inicio de Sesion Exitoso";
-                response.Status = true;
+                var companies = await _companyAppService.GetByUserId(user.Id);
 
+                ResponseModel rp = new()
+                {
+                    Id = user.Id,
+                    Message = ResponseMessage.LoginSucess,
+                    Status = true,
+                 };
+
+                response.Response = rp;
+                response.User = user;
+                response.Companies = companies;
+                
                 _sessionAppService.SetUserSession(keySession, user.Id.ToString());
             }
             else
             {
-                response.Message = "Inicio de sesion no valido, verifique credenciales!";
-                response.Status = false;
+                response.Response.Message = ResponseMessage.LoginError;
+                response.Response.Status = false;
             }
             return Json(response);
         }

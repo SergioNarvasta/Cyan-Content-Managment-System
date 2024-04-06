@@ -18,7 +18,10 @@ namespace CyanCMS.Application.Services
         
 
         public async Task<GenericDto<CompanyDto>> GetAll(CompanyParams @params) => 
-            await _companyService.GetAll(@params);  
+            await _companyService.GetAll(@params);
+
+        public async Task<List<CompanyDto>> GetByUserId(int userId) =>
+           await _companyService.GetByUserId(userId);
 
         public async Task<CompanyDto> GetById(int id) =>
            await _companyService.GetById(id);

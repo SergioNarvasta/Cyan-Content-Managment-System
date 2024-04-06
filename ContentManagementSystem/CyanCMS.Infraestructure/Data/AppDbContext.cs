@@ -15,13 +15,16 @@ namespace CyanCMS.Infraestructure.Data
          
          Remove-Migration -Context AppDbContext
         */
-        public AppDbContext(DbContextOptions<AppDbContext> options)
+        public AppDbContext( DbContextOptions<AppDbContext> options)
 		   : base(options)
 		{
 			
 		}
+        public AppDbContext()
+        {
+        }
 
-		public DbSet<User> User { get; set; }
+        public DbSet<User> User { get; set; }
 		public DbSet<Company> Company { get; set; }
 
         public DbSet<Rol> Rol { get; set; }
