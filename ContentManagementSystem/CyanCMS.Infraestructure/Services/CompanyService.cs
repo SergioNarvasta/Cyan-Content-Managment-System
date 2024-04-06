@@ -84,10 +84,8 @@ namespace CyanCMS.Infraestructure.Services
 
         public async Task<List<CompanyDto>> GetByUserId(int userId)
         {
-            var query = _dbContext.Company
-                .Where(s => s.UserId == userId && !s.IsDeleted);
-
-            return await query
+            return await _dbContext.Company
+                .Where(s => s.UserId == userId && !s.IsDeleted)
                 .Select(s => new CompanyDto
                 {
                     Id = s.Id,

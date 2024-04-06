@@ -3,19 +3,15 @@ using CyanCMS.Application.Interfaces;
 using CyanCMS.Domain.Dto;
 using CyanCMS.Utils.Security;
 using Microsoft.Extensions.Caching.Memory;
+using CyanCMS.Utils.Constants;
 
 namespace CyanCMS.Application.Services
 {
-    public class SessionAppService : ISessionAppService
+    public class SessionAppService(ISessionService sessionService,
+        IMemoryCache memoryCache) : ISessionAppService
     {
-        private readonly ISessionService _sessionService;
-        private readonly IMemoryCache _memoryCache;
-        private readonly TimeSpan TimeUserSession = TimeSpan.FromMinutes(240);
-        public SessionAppService(ISessionService sessionService, IMemoryCache memoryCache)
-        {
-            _sessionService = sessionService;
-            _memoryCache = memoryCache; 
-        }
+        private readonly ISessionService _sessionService = sessionService;
+        private readonly IMemoryCache _memoryCache = memoryCache;
 
         public async Task<UserDto> GetSession(SessionDto request)
         {
@@ -35,7 +31,7 @@ namespace CyanCMS.Application.Services
 
         public void SetUserSession(string key, string value)
         {
-            _memoryCache.Set(key, value, TimeUserSession);
+            _memoryCache.Set(key, value, TimeSession.UserSession);
         }
 
         public string GetUserSession(string key)

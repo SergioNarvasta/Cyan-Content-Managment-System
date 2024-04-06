@@ -1,8 +1,10 @@
 ﻿
 using CyanCMS.Application.Interfaces;
+using CyanCMS.Application.Services;
 using CyanCMS.Domain.Dto;
 using CyanCMS.Domain.Entities;
 using CyanCMS.Utils.Common;
+using CyanCMS.Utils.Constants;
 using CyanCMS.Utils.Request;
 using CyanCMS.Utils.Response;
 using Microsoft.AspNetCore.Mvc;
@@ -15,13 +17,18 @@ namespace CyanCMS.WebPlatform.Controllers
         IConfigurationAppService configurationAppService,
         IComponentTypeAppService componentTypeAppService,
         IConfigurationComponentTypeAppService configurationComponentTypeAppService,
-        IFileAppService fileAppService) : Controller
+        IFileAppService fileAppService,
+        ISessionAppService sessionAppService) : Controller
     {
         private readonly ICompanyAppService _companyAppService = companyAppService;
         private readonly IConfigurationAppService _configurationAppService = configurationAppService;
         private readonly IComponentTypeAppService _componentTypeAppService = componentTypeAppService;
         private readonly IConfigurationComponentTypeAppService _configComponentTypeAppService = configurationComponentTypeAppService;
         private readonly IFileAppService _fileAppService = fileAppService;
+        private readonly ISessionAppService _sessionAppService = sessionAppService;
+
+        public string keySession = Constant.key_CurrentSession;
+        
 
         [HttpGet]
         public async Task<IActionResult> Index(RequestParams @params)
@@ -30,7 +37,7 @@ namespace CyanCMS.WebPlatform.Controllers
             string companyIsActiveFilter = string.Empty;
             var queryParams = new CompanyParams();
 
-            if (@params.Filters != null) {
+            if (@params.Filters is not null) {
                 var attributeValues = DataQueryOperations.GetAttributeValues(@params.Filters);
                 foreach (var attribute in attributeValues)
                 {
@@ -69,6 +76,27 @@ namespace CyanCMS.WebPlatform.Controllers
         public async Task<IActionResult> GetCompanyById(int id)
         {
             return Json(await _companyAppService.GetById(id));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetCompaniesByUser()
+        {
+            string userIdSession = _sessionAppService.GetUserSession(keySession);
+            var companies = new List<CompanyDto>();
+            if (!string.IsNullOrEmpty(userIdSession))
+            {
+                string keyCompaniesByUserSession = $"{Constant.key_CompaniesByUserSession}{userIdSession}";
+                var companiesCache =  _companyAppService.GetCompaniesByUserSession_Cache(keyCompaniesByUserSession);
+                if (companiesCache.Count == 0)
+                {
+                    companies = await _companyAppService.GetByUserId(int.Parse(userIdSession));
+                }
+                else
+                {
+                    companies = companiesCache;
+                }              
+            }
+            return Json(new {companies, count = companies.Count} );
         }
 
         [HttpPost]

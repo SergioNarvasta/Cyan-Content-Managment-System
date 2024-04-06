@@ -11,7 +11,9 @@ namespace CyanCMS.Application.Interfaces
 		Task<GenericDto<CompanyDto>> GetAll(CompanyParams @params);
 		Task<CompanyDto> GetById(int id);
         Task<List<CompanyDto>> GetByUserId(int userId);
+        List<CompanyDto> GetCompaniesByUserSession_Cache(string key);
         Task<ResponseModel> Insert(Company model);
-		Task<bool> Update(Company model);
+        void SetCompaniesByUserSession_Cache(string key, List<CompanyDto> companies);
+        Task<bool> Update(Company model);
 	}
 }
