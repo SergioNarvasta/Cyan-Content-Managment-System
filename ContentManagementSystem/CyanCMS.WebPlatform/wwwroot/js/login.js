@@ -22,13 +22,11 @@ function onSubmitLogin() {
         type: "POST",
         url: "Identity/Login", 
         data: formData, 
-        success: function (response) {
-            if (response.status) {
-                // alert(response.message);
-                toastr.success(response.message);
+        success: function (data) {
+            if (data.Response.status) {
+                toastr.success(data.Response.message);
                 location.reload();
             } else {
-                // alert(response.message);
                 toastr.error(response.message);
             }
         }
