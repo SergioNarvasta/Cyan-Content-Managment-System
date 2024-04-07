@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\CyanCMS.WebAPI.props" />
-</Project>

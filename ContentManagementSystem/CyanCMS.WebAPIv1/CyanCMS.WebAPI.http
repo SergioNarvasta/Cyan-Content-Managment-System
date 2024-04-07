@@ -1,6 +1,0 @@
-@CyanCMS.WebAPI_HostAddress = http://localhost:5250
-
-GET {{CyanCMS.WebAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
